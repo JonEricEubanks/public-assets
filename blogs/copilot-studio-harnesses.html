@@ -1,94 +1,425 @@
-<p>If you've previously built an agent in Copilot Studio, you've utilized a harness, though it wasn&rsquo;t something you had to consider since there was only one available.</p>
-<p>That changed on August 3, 2026, when Microsoft made the GitHub Copilot harness generally available. Copilot Studio now ships three harnesses, and choosing between them is the first real architecture decision you make when starting a new agent.</p>
-<p>This is a good problem to have. It means the platform stopped assuming every agent is the same kind of thing. But "harness" is a genuinely new word for most makers, so let's start there.</p>
+<p>
+  If you've previously built an agent in Copilot Studio, you've utilized a
+  harness, though it wasn&rsquo;t something you had to consider since there was
+  only one available.
+</p>
+<p>
+  That changed on August 3, 2026, when Microsoft made the GitHub Copilot harness
+  generally available. Copilot Studio now ships three harnesses, and choosing
+  between them is the first real architecture decision you make when starting a
+  new agent.
+</p>
+<p>
+  This is a good problem to have. It means the platform stopped assuming every
+  agent is the same kind of thing. But "harness" is a genuinely new word for
+  most makers, so let's start there.
+</p>
 <h2>What a harness is</h2>
-<p>Microsoft defines a harness as the runtime layer between the language model and your agent's configuration. It decides what context reaches the model, when tools get invoked, how responses are interpreted, and how the agent moves through a task toward completion.</p>
-<figure><img src="https://raw.githubusercontent.com/JonEricEubanks/public-assets/main/images/copilot-studio-harness-diagram.svg" alt="Diagram showing the harness layer between the agent configuration above and the language model below" loading="lazy">
-<figcaption>The harness sits between what you configure and the model that reasons over it.</figcaption>
+<p>
+  Microsoft defines a harness as the runtime layer between the language model
+  and your agent's configuration. It decides what context reaches the model,
+  when tools get invoked, how responses are interpreted, and how the agent moves
+  through a task toward completion.
+</p>
+<figure>
+  <img
+    src="https://raw.githubusercontent.com/JonEricEubanks/public-assets/main/images/copilot-studio-harness-diagram.svg"
+    alt="Diagram showing the harness layer between the agent configuration above and the language model below"
+    loading="lazy"
+  />
+  <figcaption>
+    The harness sits between what you configure and the model that reasons over
+    it.
+  </figcaption>
 </figure>
-<p>The analogy <a href="https://www.youtube.com/watch?v=TikbZYsY7nU&amp;t=920s" target="_blank" rel="noopener">Lisa Crosbie</a> uses is the best one I have heard: the model is a newly hired employee, arriving with knowledge, language, and reasoning ability. The harness is everything you give them afterward: the laptop, the system access, the team around them, the policies, the tools. You hired the brain. The harness is what lets the brain do your work.</p>
-<p>Before this release, that layer was invisible, because it was singular. Now it is a deliberate choice, which is a meaningful step toward Copilot Studio being an agent engineering environment rather than a chatbot builder.</p>
+<p>
+  The analogy
+  <a
+    href="https://www.youtube.com/watch?v=TikbZYsY7nU&amp;t=920s"
+    target="_blank"
+    rel="noopener"
+    >Lisa Crosbie</a
+  >
+  uses is the best one I have heard: the model is a newly hired employee,
+  arriving with knowledge, language, and reasoning ability. The harness is
+  everything you give them afterward: the laptop, the system access, the team
+  around them, the policies, the tools. You hired the brain. The harness is what
+  lets the brain do your work.
+</p>
+<p>
+  Before this release, that layer was invisible, because it was singular. Now it
+  is a deliberate choice, which is a meaningful step toward Copilot Studio being
+  an agent engineering environment rather than a chatbot builder.
+</p>
 <h3>The three harnesses</h3>
-<p><img style="width: 100%; max-width: 900px; height: auto;" src="https://raw.githubusercontent.com/JonEricEubanks/public-assets/main/images/table-harnesses.svg" alt="Comparison of the three Copilot Studio harnesses: Copilot Chat, Standard, and GitHub Copilot" loading="lazy"></p>
+<p>
+  <img
+    style="width: 100%; max-width: 900px; height: auto"
+    src="https://raw.githubusercontent.com/JonEricEubanks/public-assets/main/images/table-harnesses.svg"
+    alt="Comparison of the three Copilot Studio harnesses: Copilot Chat, Standard, and GitHub Copilot"
+    loading="lazy"
+  />
+</p>
 <h2>Model choice is the headline</h2>
-<p>Here is the part I would lead with if I only had one sentence: the GitHub Copilot harness is model-agnostic, and the model you choose is the agent's main brain.</p>
-<p>This is different from what came before. Previously, you could bring a Foundry model into a specific prompt, useful but scoped. Now frontier reasoning models like Opus 5, GPT-5.6, and Fable 5 can run the whole agent. Microsoft's own framing, from <a href="https://www.youtube.com/watch?v=v7IA56HJU2E&amp;t=3s" target="_blank" rel="noopener">Ryan Cunningham's</a> launch walkthrough, is that the harness hosts an advanced reasoning model in its own computing environment with a set of tools and skills, and lets it loop over hard problems.</p>
-<figure><img src="https://raw.githubusercontent.com/JonEricEubanks/public-assets/main/gifs/model%20choice.gif" alt="Model picker in Copilot Studio showing available models" loading="lazy">
-<figcaption>Available models depend on what your organization has enabled.</figcaption>
+<p>
+  Here is the part I would lead with if I only had one sentence: the GitHub
+  Copilot harness is model-agnostic, and the model you choose is the agent's
+  main brain.
+</p>
+<p>
+  This is different from what came before. Previously, you could bring a Foundry
+  model into a specific prompt, useful but scoped. Now frontier reasoning models
+  like Opus 5, GPT-5.6, and Fable 5 can run the whole agent. Microsoft's own
+  framing, from
+  <a
+    href="https://www.youtube.com/watch?v=v7IA56HJU2E&amp;t=3s"
+    target="_blank"
+    rel="noopener"
+    >Ryan Cunningham's</a
+  >
+  launch walkthrough, is that the harness hosts an advanced reasoning model in
+  its own computing environment with a set of tools and skills, and lets it loop
+  over hard problems.
+</p>
+<figure>
+  <img
+    src="https://raw.githubusercontent.com/JonEricEubanks/public-assets/main/gifs/model%20choice.gif"
+    alt="Model picker in Copilot Studio showing available models"
+    loading="lazy"
+  />
+  <figcaption>
+    Available models depend on what your organization has enabled.
+  </figcaption>
 </figure>
-<p>Two practical notes. Your organization controls which models are enabled, so what you see in the picker depends on admin configuration. And model availability varies by region, some regions cannot use certain providers. Check what is actually available in your tenant before designing around a specific model.</p>
-<p>If you have been building agents for a while, this is the change that most alters what is possible. The Standard harness could not reach these capabilities. That gap is why the new harness exists.</p>
+<p>
+  Two practical notes. Your organization controls which models are enabled, so
+  what you see in the picker depends on admin configuration. And model
+  availability varies by region, some regions cannot use certain providers.
+  Check what is actually available in your tenant before designing around a
+  specific model.
+</p>
+<p>
+  If you have been building agents for a while, this is the change that most
+  alters what is possible. The Standard harness could not reach these
+  capabilities. That gap is why the new harness exists.
+</p>
 <h2>Standard harness: explicit construction</h2>
-<p>The Standard harness is the model most of us learned on. You author topics. You define triggers. You build branching paths and route into flows. Behavior is constructed explicitly, step by step.</p>
-<p>It remains fully supported and it is still an excellent fit for real work. A service desk agent answering a known set of questions, a scheduling assistant routing into a defined flow, an onboarding agent walking a new hire through a fixed sequence, you want these predictable, and explicit construction gives you that. Some conversational patterns genuinely need a scripted path.</p>
-<figure><img src="https://raw.githubusercontent.com/JonEricEubanks/public-assets/main/images/copilot-studio-topic-canvas.svg" alt="Topic canvas with visible branching in the classic Copilot Studio interface" loading="lazy">
-<figcaption>Explicit construction makes control flow visible, you can see exactly why the agent did what it did.</figcaption>
+<p>
+  The Standard harness is the model most of us learned on. You author topics.
+  You define triggers. You build branching paths and route into flows. Behavior
+  is constructed explicitly, step by step.
+</p>
+<p>
+  It remains fully supported and it is still an excellent fit for real work. A
+  service desk agent answering a known set of questions, a scheduling assistant
+  routing into a defined flow, an onboarding agent walking a new hire through a
+  fixed sequence, you want these predictable, and explicit construction gives
+  you that. Some conversational patterns genuinely need a scripted path.
+</p>
+<figure>
+  <img
+    src="https://raw.githubusercontent.com/JonEricEubanks/public-assets/main/images/copilot-studio-topic-canvas.svg"
+    alt="Topic canvas with visible branching in the classic Copilot Studio interface"
+    loading="lazy"
+  />
+  <figcaption>
+    Explicit construction makes control flow visible, you can see exactly why
+    the agent did what it did.
+  </figcaption>
 </figure>
-<p>If you are learning agent development, this harness teaches you something valuable: it makes control flow visible. You can see exactly why the agent did what it did, because you drew the path.</p>
-<p>Two things to know. Existing Standard harness agents keep running exactly as they are, nothing breaks. But to edit them, you work in the classic interface. The two experiences are separate surfaces.</p>
+<p>
+  If you are learning agent development, this harness teaches you something
+  valuable: it makes control flow visible. You can see exactly why the agent did
+  what it did, because you drew the path.
+</p>
+<p>
+  Two things to know. Existing Standard harness agents keep running exactly as
+  they are, nothing breaks. But to edit them, you work in the classic interface.
+  The two experiences are separate surfaces.
+</p>
 <h2>GitHub Copilot harness: goal-directed reasoning</h2>
-<p>The new harness takes a different approach. Rather than authoring conversation paths, you describe the agent in natural language and the orchestration runtime interprets those instructions at runtime.</p>
-<p>The shape of the reasoning changed too. The older orchestrator worked in a fairly linear pattern, take the input, make a plan, collect what it needed, execute. The new one runs a continuous loop: evaluate the goal, plan, call tools, examine results, adjust, continue until the objective is met. That loop is what lets it handle ambiguity, recover from a step that did not work, and stay on track through multi-stage problems.</p>
+<p>
+  The new harness takes a different approach. Rather than authoring conversation
+  paths, you describe the agent in natural language and the orchestration
+  runtime interprets those instructions at runtime.
+</p>
+<p>
+  The shape of the reasoning changed too. The older orchestrator worked in a
+  fairly linear pattern, take the input, make a plan, collect what it needed,
+  execute. The new one runs a continuous loop: evaluate the goal, plan, call
+  tools, examine results, adjust, continue until the objective is met. That loop
+  is what lets it handle ambiguity, recover from a step that did not work, and
+  stay on track through multi-stage problems.
+</p>
 <blockquote>
-<p>The older orchestrator made a plan and executed it. The new one keeps thinking.</p>
+  <p>
+    The older orchestrator made a plan and executed it. The new one keeps
+    thinking.
+  </p>
 </blockquote>
-<p>Microsoft's published comparison figures show meaningful gains, multi-tool use improving from 87 percent to 98 percent, with reported improvements in file analysis, code analysis, and knowledge work. Worth verifying in the current documentation, since these are the kind of numbers that get updated.</p>
+<p>
+  Microsoft's published comparison figures show meaningful gains, multi-tool use
+  improving from 87 percent to 98 percent, with reported improvements in file
+  analysis, code analysis, and knowledge work. Worth verifying in the current
+  documentation, since these are the kind of numbers that get updated.
+</p>
 <p>What comes with it:</p>
 <ul>
-<li><strong>Skills</strong>: reusable Markdown instruction sets, attachable across agents, exportable as files. They can bundle artifacts too, including documents and Python.</li>
-<li><strong>Memory</strong>: persistent context across interactions, including user preferences.</li>
-<li><strong>Connected agents</strong>: a front-door agent routing to specialists, each owned separately.</li>
-<li><strong>Sandboxed execution</strong> with large file processing and native Word, Excel, PowerPoint, and PDF generation.</li>
-<li><strong>Build, Preview, Evaluate, Monitor</strong>: four tabs, consolidated from nine.</li>
+  <li>
+    <strong>Skills</strong>: reusable Markdown instruction sets, attachable
+    across agents, exportable as files. They can bundle artifacts too, including
+    documents and Python.
+  </li>
+  <li>
+    <strong>Memory</strong>: persistent context across interactions, including
+    user preferences.
+  </li>
+  <li>
+    <strong>Connected agents</strong>: a front-door agent routing to
+    specialists, each owned separately.
+  </li>
+  <li>
+    <strong>Sandboxed execution</strong> with large file processing and native
+    Word, Excel, PowerPoint, and PDF generation.
+  </li>
+  <li>
+    <strong>Build, Preview, Evaluate, Monitor</strong>: four tabs, consolidated
+    from nine.
+  </li>
 </ul>
-<figure><img src="https://raw.githubusercontent.com/JonEricEubanks/public-assets/main/screenshots/classic-tabs.png" alt="Classic Copilot Studio interface showing the full set of configuration tabs" loading="lazy">
-<figcaption>The classic interface had nine tabs: Overview, Knowledge, Tools, Agents, Topics, Activity, Evaluation, Monitor, and Channels.</figcaption>
+<figure>
+  <img
+    src="https://raw.githubusercontent.com/JonEricEubanks/public-assets/main/screenshots/classic-tabs.png"
+    alt="Classic Copilot Studio interface showing the full set of configuration tabs"
+    loading="lazy"
+  />
+  <figcaption>
+    The classic interface had nine tabs: Overview, Knowledge, Tools, Agents,
+    Topics, Activity, Evaluation, Monitor, and Channels.
+  </figcaption>
 </figure>
-<figure><img src="https://raw.githubusercontent.com/JonEricEubanks/public-assets/main/screenshots/new-monitor-tab.png" alt="New Copilot Studio interface showing the consolidated four-tab authoring surface" loading="lazy">
-<figcaption>The new GitHub Copilot harness consolidates everything into four tabs: Build, Preview, Evaluate, Monitor.</figcaption>
+<figure>
+  <img
+    src="https://raw.githubusercontent.com/JonEricEubanks/public-assets/main/screenshots/new-monitor-tab.png"
+    alt="New Copilot Studio interface showing the consolidated four-tab authoring surface"
+    loading="lazy"
+  />
+  <figcaption>
+    The new GitHub Copilot harness consolidates everything into four tabs:
+    Build, Preview, Evaluate, Monitor.
+  </figcaption>
 </figure>
-<p>That Evaluate tab deserves its own mention. Cunningham's framing is that evaluation matters more than ever, giving agents a hard set of problems and scoring how they perform as you refine instructions and skills. Evaluation moving into the primary authoring surface rather than a separate tool is a real signal about where agent development is heading. If you are a student building agents now, getting comfortable with evaluation early will serve you well.</p>
+<p>
+  That Evaluate tab deserves its own mention. Cunningham's framing is that
+  evaluation matters more than ever, giving agents a hard set of problems and
+  scoring how they perform as you refine instructions and skills. Evaluation
+  moving into the primary authoring surface rather than a separate tool is a
+  real signal about where agent development is heading. If you are a student
+  building agents now, getting comfortable with evaluation early will serve you
+  well.
+</p>
 <h2>Topics are gone. Skills replaced them.</h2>
-<p>In the new harness, topics do not exist. This surprised a lot of makers, so it is worth understanding why rather than just noting it.</p>
-<p>Topics were a way to script a conversation, useful when the path must go a certain way, but not how frontier models think. Skills are the replacement, and they work differently: a Markdown file containing a set of instructions the agent can pull in on demand, at the moment it is relevant, rather than one enormous instruction block covering every case.</p>
-<p>This solves a problem anyone who has written long agent instructions will recognize. Instead of bloating a single instruction set, you decompose behavior into procedure manuals the agent reaches for as needed.</p>
-<figure><img src="https://raw.githubusercontent.com/JonEricEubanks/public-assets/main/screenshots/skills.png" alt="A skill file open in an editor, showing the raw Markdown" loading="lazy">
-<figcaption>A skill is a procedure manual the agent picks up when it needs it.</figcaption>
+<p>
+  In the new harness, topics do not exist. This surprised a lot of makers, so it
+  is worth understanding why rather than just noting it.
+</p>
+<p>
+  Topics were a way to script a conversation, useful when the path must go a
+  certain way, but not how frontier models think. Skills are the replacement,
+  and they work differently: a Markdown file containing a set of instructions
+  the agent can pull in on demand, at the moment it is relevant, rather than one
+  enormous instruction block covering every case.
+</p>
+<p>
+  This solves a problem anyone who has written long agent instructions will
+  recognize. Instead of bloating a single instruction set, you decompose
+  behavior into procedure manuals the agent reaches for as needed.
+</p>
+<figure>
+  <img
+    src="https://raw.githubusercontent.com/JonEricEubanks/public-assets/main/screenshots/skills.png"
+    alt="A skill file open in an editor, showing the raw Markdown"
+    loading="lazy"
+  />
+  <figcaption>
+    A skill is a procedure manual the agent picks up when it needs it.
+  </figcaption>
 </figure>
-<p>The reusability is the interesting part. Author a skill once, attach it to several agents, export it, share it. And the format is spreading, skills are appearing in Cowork, PowerPoint, Word, and across GitHub Copilot. That makes a skill file a portable, human-readable, version-controllable unit of agent behavior.</p>
-<p>For anyone teaching this material, that is a genuinely good pedagogical object. A skill file is small enough to read in a class session and real enough to ship. If you experiment with one thing this month, make it authoring a skill by hand and attaching it to more than one agent.</p>
+<p>
+  The reusability is the interesting part. Author a skill once, attach it to
+  several agents, export it, share it. And the format is spreading, skills are
+  appearing in Cowork, PowerPoint, Word, and across GitHub Copilot. That makes a
+  skill file a portable, human-readable, version-controllable unit of agent
+  behavior.
+</p>
+<p>
+  For anyone teaching this material, that is a genuinely good pedagogical
+  object. A skill file is small enough to read in a class session and real
+  enough to ship. If you experiment with one thing this month, make it authoring
+  a skill by hand and attaching it to more than one agent.
+</p>
 <h2>Agents and workflows are now two equal pillars</h2>
 <p>This is the structural change people are underrating.</p>
-<p><img style="width: 100%; max-width: 900px; height: auto;" src="https://raw.githubusercontent.com/JonEricEubanks/public-assets/main/images/table-agent-vs-workflow.svg" alt="Comparison of agents and workflows across behavior, path, best fit, and credit cost" loading="lazy"></p>
-<p>Neither is the "advanced" option. They compose. An agent reasoning through a problem can call a workflow when it needs a reliable sequence. A workflow running its steps can invoke an agent at the step that requires judgment. Cunningham makes a point worth repeating: structuring work this way is also more credit-efficient, because you spend model reasoning only where it adds value.</p>
-<p>The workflow designer was rebuilt for this, horizontal canvas, agents embeddable as nodes, and node-by-node testing so you validate each step as you build rather than running the whole thing and hoping.</p>
-<figure><img src="https://raw.githubusercontent.com/JonEricEubanks/public-assets/main/screenshots/workflow.png" alt="The horizontal workflow designer with an agent node in the sequence" loading="lazy">
-<figcaption>Agents drop into workflows as nodes. Node-by-node testing means you validate as you build.</figcaption>
+<p>
+  <img
+    style="width: 100%; max-width: 900px; height: auto"
+    src="https://raw.githubusercontent.com/JonEricEubanks/public-assets/main/images/table-agent-vs-workflow.svg"
+    alt="Comparison of agents and workflows across behavior, path, best fit, and credit cost"
+    loading="lazy"
+  />
+</p>
+<p>
+  Neither is the "advanced" option. They compose. An agent reasoning through a
+  problem can call a workflow when it needs a reliable sequence. A workflow
+  running its steps can invoke an agent at the step that requires judgment.
+  Cunningham makes a point worth repeating: structuring work this way is also
+  more credit-efficient, because you spend model reasoning only where it adds
+  value.
+</p>
+<p>
+  The workflow designer was rebuilt for this, horizontal canvas, agents
+  embeddable as nodes, and node-by-node testing so you validate each step as you
+  build rather than running the whole thing and hoping.
+</p>
+<figure>
+  <img
+    src="https://raw.githubusercontent.com/JonEricEubanks/public-assets/main/screenshots/workflow.png"
+    alt="The horizontal workflow designer with an agent node in the sequence"
+    loading="lazy"
+  />
+  <figcaption>
+    Agents drop into workflows as nodes. Node-by-node testing means you validate
+    as you build.
+  </figcaption>
 </figure>
-<p>For municipal work this maps cleanly. A permit intake might reason over an ambiguous description to decide which department owns it, then hand to a deterministic workflow for notification, record creation, and routing. Reasoning where reasoning is needed; predictable steps everywhere else.</p>
+<p>
+  For municipal work this maps cleanly. A permit intake might reason over an
+  ambiguous description to decide which department owns it, then hand to a
+  deterministic workflow for notification, record creation, and routing.
+  Reasoning where reasoning is needed; predictable steps everywhere else.
+</p>
 <h2>How to choose</h2>
 <p>The question I ask at the start of every build:</p>
 <blockquote>
-<p>Is the hard part of this agent the retrieval, or the reasoning?</p>
+  <p>Is the hard part of this agent the retrieval, or the reasoning?</p>
 </blockquote>
-<p><img style="width: 100%; max-width: 900px; height: auto;" src="https://raw.githubusercontent.com/JonEricEubanks/public-assets/main/images/table-how-to-choose.svg" alt="Decision table: retrieval points to Standard harness, reasoning points to GitHub Copilot harness, pure repetition points to a workflow" loading="lazy"></p>
-<p>If the hard part is retrieval, ground it well and keep behavior predictable and the maintenance surface small. You are not missing out, you are matching the tool to the problem.</p>
-<p>I build Power Platform solutions for local government, so my examples come from there: a grant eligibility screen reading a federal notice against a city's programs, a code compliance review spanning several ordinances, an intake deciding which of six departments owns a request. Every one is reasoning work. Under the old model I was fighting the platform to express them.</p>
-<p>Your domain has its own version of that list. The sorting question is the same. The documentation includes a comparison table with reasons for and against each harness, worth reading before your next build.</p>
+<p>
+  <img
+    style="width: 100%; max-width: 900px; height: auto"
+    src="https://raw.githubusercontent.com/JonEricEubanks/public-assets/main/images/table-how-to-choose.svg"
+    alt="Decision table: retrieval points to Standard harness, reasoning points to GitHub Copilot harness, pure repetition points to a workflow"
+    loading="lazy"
+  />
+</p>
+<p>
+  If the hard part is retrieval, ground it well and keep behavior predictable
+  and the maintenance surface small. You are not missing out, you are matching
+  the tool to the problem.
+</p>
+<p>
+  I build Power Platform solutions for local government, so my examples come
+  from there: a grant eligibility screen reading a federal notice against a
+  city's programs, a code compliance review spanning several ordinances, an
+  intake deciding which of six departments owns a request. Every one is
+  reasoning work. Under the old model I was fighting the platform to express
+  them.
+</p>
+<p>
+  Your domain has its own version of that list. The sorting question is the
+  same. The documentation includes a comparison table with reasons for and
+  against each harness, worth reading before your next build.
+</p>
 <h2>Two things to know before you start</h2>
-<p><strong>Harness choice is set at creation.</strong> Agents cannot be converted between harnesses in either direction. Different architectures, different runtimes. Existing agents keep running. Know this up front so you choose consciously, ask the retrieval-or-reasoning question during design, not after.</p>
-<p><strong>Billing works differently on the new harness.</strong> Agents powered by the GitHub Copilot harness use Copilot Credits, and per Microsoft's documentation that applies to using, building, testing, and evaluating. Authoring an agent through natural language consumes credits. The Copilot Chat and Standard harnesses continue on the existing rate card, and Standard harness agents remain included for licensed users when deployed to Teams or Microsoft 365 Copilot.</p>
-<p><img style="width: 100%; max-width: 900px; height: auto;" src="https://raw.githubusercontent.com/JonEricEubanks/public-assets/main/images/table-credits.svg" alt="Approximate Copilot Credit costs: lighter conversation 100 to 300 credits, heavier multi-step work 500 or more" loading="lazy"></p>
-<p>A credit is roughly one US cent. Those figures come from Microsoft's published examples and are worth confirming against the current credits guide, but the useful point is that the cost is knowable rather than mysterious.</p>
-<figure><img src="https://raw.githubusercontent.com/JonEricEubanks/public-assets/main/images/copilot-studio-credits.svg" alt="Credit consumption view in the Power Platform admin center" loading="lazy">
-<figcaption>Administrators can allocate credits per environment and review consumption.</figcaption>
+<p>
+  <strong>Harness choice is set at creation.</strong> Agents cannot be converted
+  between harnesses in either direction. Different architectures, different
+  runtimes. Existing agents keep running. Know this up front so you choose
+  consciously, ask the retrieval-or-reasoning question during design, not after.
+</p>
+<p>
+  <strong>Billing works differently on the new harness.</strong> Agents powered
+  by the GitHub Copilot harness use Copilot Credits, and per Microsoft's
+  documentation that applies to using, building, testing, and evaluating.
+  Authoring an agent through natural language consumes credits. The Copilot Chat
+  and Standard harnesses continue on the existing rate card, and Standard
+  harness agents remain included for licensed users when deployed to Teams or
+  Microsoft 365 Copilot.
+</p>
+<p>
+  <img
+    style="width: 100%; max-width: 900px; height: auto"
+    src="https://raw.githubusercontent.com/JonEricEubanks/public-assets/main/images/table-credits.svg"
+    alt="Approximate Copilot Credit costs: lighter conversation 100 to 300 credits, heavier multi-step work 500 or more"
+    loading="lazy"
+  />
+</p>
+<p>
+  A credit is roughly one US cent. Those figures come from Microsoft's published
+  examples and are worth confirming against the current credits guide, but the
+  useful point is that the cost is knowable rather than mysterious.
+</p>
+<figure>
+  <img
+    src="https://raw.githubusercontent.com/JonEricEubanks/public-assets/main/images/copilot-studio-credits.svg"
+    alt="Credit consumption view in the Power Platform admin center"
+    loading="lazy"
+  />
+  <figcaption>
+    Administrators can allocate credits per environment and review consumption.
+  </figcaption>
 </figure>
-<p>For students and educators: check what your tenant or lab environment provides before building. For anyone deploying at scale, the pre-purchase plan offers a discount and its credits are consumed over twelve months rather than resetting monthly, which gives room to experiment.</p>
-<p>The honest framing is Crosbie's: the costs are not trivial, but the capability is substantial, and the skill worth building now is evaluating cost against value rather than avoiding the question.</p>
+<p>
+  For students and educators: check what your tenant or lab environment provides
+  before building. For anyone deploying at scale, the pre-purchase plan offers a
+  discount and its credits are consumed over twelve months rather than resetting
+  monthly, which gives room to experiment.
+</p>
+<p>
+  The honest framing is Crosbie's: the costs are not trivial, but the capability
+  is substantial, and the skill worth building now is evaluating cost against
+  value rather than avoiding the question.
+</p>
 <h2>Getting started</h2>
-<p>Create a new agent from the Copilot Studio homepage and you will choose a harness. Build something small and real on the GitHub Copilot harness, a task from your own work or coursework, scoped to three sentences. Watch the Preview and Evaluate tabs as you iterate. Note what the credit consumption actually looks like on your own tenant. You will learn more in an afternoon than from any writeup, including this one.</p>
-<p>Then revisit something you have already built and ask the retrieval-or-reasoning question. Some of your existing agents are in exactly the right place. Knowing which ones is its own kind of progress.</p>
+<p>
+  Create a new agent from the Copilot Studio homepage and you will choose a
+  harness. Build something small and real on the GitHub Copilot harness, a task
+  from your own work or coursework, scoped to three sentences. Watch the Preview
+  and Evaluate tabs as you iterate. Note what the credit consumption actually
+  looks like on your own tenant. You will learn more in an afternoon than from
+  any writeup, including this one.
+</p>
+<p>
+  Then revisit something you have already built and ask the
+  retrieval-or-reasoning question. Some of your existing agents are in exactly
+  the right place. Knowing which ones is its own kind of progress.
+</p>
 <h2>What is still rolling out</h2>
-<p>The GitHub Copilot harness reached GA on August 3, 2026, so production experience across the community is still accumulating, mine included. The knowledge source options in the new experience are currently a somewhat reduced set compared to the classic interface and will expand. Parts of the wider rebuild remain in preview.</p>
-<p>Benchmark figures, model availability, and credit costs are best confirmed directly in Microsoft Learn rather than from secondary coverage, including mine. If you build for regulated or government environments, confirm feature availability in your specific cloud before designing around it.</p>
-<p><strong>Learn more:</strong> <a href="https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/overview" target="_blank" rel="noopener">Agents overview, GitHub Copilot harness</a> &middot; <a href="https://learn.microsoft.com/en-us/microsoft-copilot-studio/whats-new" target="_blank" rel="noopener">What's new in Copilot Studio</a></p>
+<p>
+  The GitHub Copilot harness reached GA on August 3, 2026, so production
+  experience across the community is still accumulating, mine included. The
+  knowledge source options in the new experience are currently a somewhat
+  reduced set compared to the classic interface and will expand. Parts of the
+  wider rebuild remain in preview.
+</p>
+<p>
+  Benchmark figures, model availability, and credit costs are best confirmed
+  directly in Microsoft Learn rather than from secondary coverage, including
+  mine. If you build for regulated or government environments, confirm feature
+  availability in your specific cloud before designing around it.
+</p>
+<p>
+  <strong>Learn more:</strong>
+  <a
+    href="https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/overview"
+    target="_blank"
+    rel="noopener"
+    >Agents overview, GitHub Copilot harness</a
+  >
+  &middot;
+  <a
+    href="https://learn.microsoft.com/en-us/microsoft-copilot-studio/whats-new"
+    target="_blank"
+    rel="noopener"
+    >What's new in Copilot Studio</a
+  >
+</p>
