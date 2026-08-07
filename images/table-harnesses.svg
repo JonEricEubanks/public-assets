@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="200" viewBox="0 0 900 200" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <clipPath id="round"><rect width="900" height="200" rx="10"/></clipPath>
+  </defs>
+  <g clip-path="url(#round)">
+    <rect width="900" height="200" fill="#ffffff"/>
+    <!-- Header -->
+    <rect width="900" height="48" fill="#2f5496"/>
+    <!-- Striped rows -->
+    <rect y="48" width="900" height="52" fill="#ffffff"/>
+    <rect y="100" width="900" height="52" fill="#f4f7fc"/>
+    <rect y="152" width="900" height="48" fill="#ffffff"/>
+    <!-- Row borders -->
+    <line x1="0" y1="100" x2="900" y2="100" stroke="#e4e9f2"/>
+    <line x1="0" y1="152" x2="900" y2="152" stroke="#e4e9f2"/>
+    <!-- Header text -->
+    <g fill="#ffffff" font-size="15" font-weight="600" letter-spacing="0.5">
+      <text x="18" y="31">Harness</text>
+      <text x="150" y="31">Built for</text>
+      <text x="480" y="31">Authoring model</text>
+      <text x="710" y="31">Billing</text>
+    </g>
+    <!-- Body text -->
+    <g font-size="14" fill="#1a1a1a">
+      <text x="18" y="80" font-weight="700">Copilot Chat</text>
+      <text x="150" y="80">Customizing the Microsoft 365 Copilot Chat experience</text>
+      <text x="480" y="80">Same harness as M365 Copilot Chat</text>
+      <text x="710" y="80">Existing rate card</text>
+
+      <text x="18" y="132" font-weight="700">Standard</text>
+      <text x="150" y="132">Scripted, predictable conversational agents</text>
+      <text x="480" y="132">Topics, triggers, branching paths</text>
+      <text x="710" y="126">Existing rate card; included for</text>
+      <text x="710" y="142">licensed users in Teams and M365</text>
+
+      <text x="18" y="182" font-weight="700">GitHub Copilot</text>
+      <text x="150" y="182">Agentic, multi-step business processes</text>
+      <text x="480" y="182">Natural-language instructions and skills</text>
+      <text x="710" y="182">Copilot Credits, usage-based</text>
+    </g>
+  </g>
+</svg>

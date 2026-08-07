@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="210" viewBox="0 0 900 210" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <clipPath id="round"><rect width="900" height="210" rx="10"/></clipPath>
+  </defs>
+  <g clip-path="url(#round)">
+    <rect width="900" height="210" fill="#ffffff"/>
+    <!-- Header -->
+    <rect width="900" height="48" fill="#2f5496"/>
+    <!-- Striped rows -->
+    <rect y="48" width="900" height="54" fill="#ffffff"/>
+    <rect y="102" width="900" height="54" fill="#f4f7fc"/>
+    <rect y="156" width="900" height="54" fill="#ffffff"/>
+    <!-- Row borders -->
+    <line x1="0" y1="102" x2="900" y2="102" stroke="#e4e9f2"/>
+    <line x1="0" y1="156" x2="900" y2="156" stroke="#e4e9f2"/>
+    <!-- Header text -->
+    <g fill="#ffffff" font-size="15" font-weight="600" letter-spacing="0.5">
+      <text x="18" y="31">If a knowledgeable person would&#8230;</text>
+      <text x="520" y="31">The hard part is&#8230;</text>
+      <text x="700" y="31">Reach for&#8230;</text>
+    </g>
+    <!-- Body text -->
+    <g font-size="14" fill="#1a1a1a">
+      <text x="18" y="81">Find the right document and read the answer out of it</text>
+      <text x="520" y="81">Retrieval</text>
+      <text x="700" y="81">Standard harness, grounded well</text>
+
+      <text x="18" y="129">Read several sources, apply a rule with exceptions,</text>
+      <text x="18" y="145">produce a structured result</text>
+      <text x="520" y="135">Reasoning</text>
+      <text x="700" y="135">GitHub Copilot harness</text>
+
+      <text x="18" y="189">Follow the same steps every time with no judgment involved</text>
+      <text x="520" y="189">Neither</text>
+      <text x="700" y="189">A workflow, or no model at all</text>
+    </g>
+  </g>
+</svg>

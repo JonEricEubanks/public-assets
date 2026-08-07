@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="250" viewBox="0 0 900 250" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <clipPath id="round"><rect width="900" height="250" rx="10"/></clipPath>
+  </defs>
+  <g clip-path="url(#round)">
+    <rect width="900" height="250" fill="#ffffff"/>
+    <!-- Header -->
+    <rect width="900" height="48" fill="#2f5496"/>
+    <!-- Striped rows -->
+    <rect y="48" width="900" height="50" fill="#ffffff"/>
+    <rect y="98" width="900" height="50" fill="#f4f7fc"/>
+    <rect y="148" width="900" height="50" fill="#ffffff"/>
+    <rect y="198" width="900" height="52" fill="#f4f7fc"/>
+    <!-- Row borders -->
+    <line x1="0" y1="98" x2="900" y2="98" stroke="#e4e9f2"/>
+    <line x1="0" y1="148" x2="900" y2="148" stroke="#e4e9f2"/>
+    <line x1="0" y1="198" x2="900" y2="198" stroke="#e4e9f2"/>
+    <!-- Header text -->
+    <g fill="#ffffff" font-size="15" font-weight="600" letter-spacing="0.5">
+      <text x="240" y="31">Agent</text>
+      <text x="560" y="31">Workflow</text>
+    </g>
+    <!-- Body text -->
+    <g font-size="14" fill="#1a1a1a">
+      <text x="18" y="79" font-weight="700">Behavior</text>
+      <text x="240" y="79">Adaptive, goal-seeking</text>
+      <text x="560" y="79">Deterministic sequence</text>
+
+      <text x="18" y="129" font-weight="700">Path</text>
+      <text x="240" y="129">Reasoned at runtime</text>
+      <text x="560" y="129">Defined in advance</text>
+
+      <text x="18" y="179" font-weight="700">Best for</text>
+      <text x="240" y="179">Ambiguity and judgment</text>
+      <text x="560" y="179">Predictable, repeatable steps</text>
+
+      <text x="18" y="230" font-weight="700">Credit cost</text>
+      <text x="240" y="230">Higher, model reasoning</text>
+      <text x="560" y="230">Lower, structured execution</text>
+    </g>
+  </g>
+</svg>
