@@ -1,8 +1,31 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" font-family="'Segoe UI', system-ui, -apple-system, sans-serif">
   <defs>
     <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-      <path d="M 0 1 L 9 5 L 0 9 z" fill="#94A3B8"/>
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#475569"/>
     </marker>
+    <style>
+      .flow {
+        stroke-dasharray: 8 5;
+        animation: dashmove 1.2s linear infinite;
+      }
+      .flow-slow {
+        stroke-dasharray: 6 4;
+        animation: dashmove 2s linear infinite;
+      }
+      @keyframes dashmove {
+        to { stroke-dashoffset: -13; }
+      }
+      .layer-label {
+        animation: pulse 2.4s ease-in-out infinite;
+      }
+      @keyframes pulse {
+        0%, 100% { opacity: 0.55; }
+        50% { opacity: 1; }
+      }
+      .node {
+        filter: drop-shadow(0 2px 4px rgba(15, 23, 42, 0.12));
+      }
+    </style>
   </defs>
 
   <!-- Background -->
@@ -12,19 +35,23 @@
   <text x="400" y="38" text-anchor="middle" font-size="19" font-weight="700" fill="#0F172A" letter-spacing="-0.3">How the Harness Works</text>
 
   <!-- YOUR CONFIGURATION -->
-  <rect x="72" y="58" width="656" height="80" rx="10" fill="#EFF6FF" stroke="#3B82F6" stroke-width="1.5"/>
+  <g class="node">
+    <rect x="72" y="58" width="656" height="80" rx="10" fill="#EFF6FF" stroke="#3B82F6" stroke-width="2"/>
+  </g>
   <text x="400" y="90" text-anchor="middle" font-size="15" font-weight="700" fill="#1D4ED8">Your Configuration</text>
   <text x="400" y="112" text-anchor="middle" font-size="12.5" fill="#3B82F6">Agent instructions  ·  Skills  ·  Knowledge sources  ·  Tool connections</text>
 
   <!-- Fork arrows: config → harnesses -->
-  <path d="M 230 138 C 220 158 205 172 200 192" stroke="#94A3B8" stroke-width="1.5" stroke-dasharray="5 3" fill="none" marker-end="url(#arr)"/>
-  <path d="M 570 138 C 580 158 595 172 600 192" stroke="#94A3B8" stroke-width="1.5" stroke-dasharray="5 3" fill="none" marker-end="url(#arr)"/>
+  <path class="flow" d="M 230 138 C 220 158 205 172 200 192" stroke="#475569" stroke-width="2" fill="none" marker-end="url(#arr)"/>
+  <path class="flow" d="M 570 138 C 580 158 595 172 600 192" stroke="#475569" stroke-width="2" fill="none" marker-end="url(#arr)"/>
 
   <!-- Harness layer label -->
-  <text x="400" y="168" text-anchor="middle" font-size="10" fill="#CBD5E1" letter-spacing="2.5">HARNESS  LAYER</text>
+  <text class="layer-label" x="400" y="168" text-anchor="middle" font-size="10.5" font-weight="600" fill="#64748B" letter-spacing="2.5">HARNESS  LAYER</text>
 
   <!-- STANDARD HARNESS -->
-  <rect x="44" y="198" width="308" height="140" rx="10" fill="#FFFBEB" stroke="#F59E0B" stroke-width="1.5"/>
+  <g class="node">
+    <rect x="44" y="198" width="308" height="140" rx="10" fill="#FFFBEB" stroke="#F59E0B" stroke-width="2"/>
+  </g>
   <text x="198" y="226" text-anchor="middle" font-size="14" font-weight="700" fill="#78350F">Standard Harness</text>
   <line x1="62" y1="234" x2="334" y2="234" stroke="#FDE68A" stroke-width="1"/>
   <text x="198" y="255" text-anchor="middle" font-size="12" fill="#92400E">Topics  ·  Triggers  ·  Branching paths</text>
@@ -34,7 +61,9 @@
   <text x="198" y="321" text-anchor="middle" font-size="10.5" fill="#92400E">Best for: retrieval · scripted conversations</text>
 
   <!-- GITHUB COPILOT HARNESS -->
-  <rect x="448" y="198" width="308" height="140" rx="10" fill="#F0FDF4" stroke="#22C55E" stroke-width="1.5"/>
+  <g class="node">
+    <rect x="448" y="198" width="308" height="140" rx="10" fill="#F0FDF4" stroke="#22C55E" stroke-width="2"/>
+  </g>
   <text x="602" y="226" text-anchor="middle" font-size="14" font-weight="700" fill="#14532D">GitHub Copilot Harness</text>
   <line x1="466" y1="234" x2="738" y2="234" stroke="#86EFAC" stroke-width="1"/>
   <text x="602" y="255" text-anchor="middle" font-size="12" fill="#166534">Skills  ·  Memory  ·  Model-agnostic</text>
@@ -44,14 +73,16 @@
   <text x="602" y="321" text-anchor="middle" font-size="10.5" fill="#14532D">Best for: reasoning · multi-step tasks</text>
 
   <!-- Merge arrows: harnesses → model -->
-  <path d="M 198 338 C 198 362 310 376 336 388" stroke="#94A3B8" stroke-width="1.5" stroke-dasharray="5 3" fill="none" marker-end="url(#arr)"/>
-  <path d="M 602 338 C 602 362 490 376 464 388" stroke="#94A3B8" stroke-width="1.5" stroke-dasharray="5 3" fill="none" marker-end="url(#arr)"/>
+  <path class="flow-slow" d="M 198 338 C 198 362 310 376 336 388" stroke="#475569" stroke-width="2" fill="none" marker-end="url(#arr)"/>
+  <path class="flow-slow" d="M 602 338 C 602 362 490 376 464 388" stroke="#475569" stroke-width="2" fill="none" marker-end="url(#arr)"/>
 
   <!-- LANGUAGE MODEL -->
-  <rect x="155" y="392" width="490" height="62" rx="10" fill="#FDF4FF" stroke="#A855F7" stroke-width="1.5"/>
+  <g class="node">
+    <rect x="155" y="392" width="490" height="62" rx="10" fill="#FDF4FF" stroke="#A855F7" stroke-width="2"/>
+  </g>
   <text x="400" y="420" text-anchor="middle" font-size="15" font-weight="700" fill="#6B21A8">Language Model</text>
   <text x="400" y="442" text-anchor="middle" font-size="12" fill="#7E22CE">Opus 5  ·  GPT-5.6  ·  Fable 5  ·  and others</text>
 
   <!-- Caption -->
-  <text x="400" y="472" text-anchor="middle" font-size="10.5" fill="#CBD5E1" font-style="italic">The harness sits between what you configure and the model that reasons over it.</text>
+  <text x="400" y="472" text-anchor="middle" font-size="11" fill="#94A3B8" font-style="italic">The harness sits between what you configure and the model that reasons over it.</text>
 </svg>
