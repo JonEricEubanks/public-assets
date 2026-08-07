@@ -30,13 +30,13 @@
 
   <!-- TRIGGER node (diamond) -->
   <g class="node">
-    <polygon points="450,84 530,126 450,168 370,126" fill="#DBEAFE" stroke="#2563EB" stroke-width="2"/>
+    <polygon points="450,80 545,132 450,184 355,132" fill="#DBEAFE" stroke="#2563EB" stroke-width="2"/>
   </g>
-  <text x="450" y="120" text-anchor="middle" font-size="13" font-weight="700" fill="#1E40AF">Trigger</text>
-  <text x="450" y="139" text-anchor="middle" font-size="11.5" fill="#2563EB">User sends a message</text>
+  <text x="450" y="127" text-anchor="middle" font-size="13" font-weight="700" fill="#1E40AF">Trigger</text>
+  <text x="450" y="146" text-anchor="middle" font-size="11.5" fill="#2563EB">User sends a message</text>
 
   <!-- Arrow: trigger → welcome -->
-  <line class="flow" x1="450" y1="168" x2="450" y2="196" stroke="#475569" stroke-width="2" marker-end="url(#arr)"/>
+  <line class="flow" x1="450" y1="184" x2="450" y2="196" stroke="#475569" stroke-width="2" marker-end="url(#arr)"/>
 
   <!-- WELCOME TOPIC -->
   <g class="node">
