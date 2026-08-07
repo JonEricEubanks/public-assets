@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 300" font-family="'Segoe UI', system-ui, -apple-system, sans-serif">
+  <!--
+    Animation: each node highlights (gray → green) in sequence, loops every 12s.
+    Uses SMIL <animate> so it works in <img> tags as well as inline SVG.
+    Active window per node: 8%–16% of 12s = 0.96s–1.92s into each node's cycle.
+    Delays: 0s, 2s, 4s, 6s, 8s for nodes 1–5.
+  -->
+
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#D1D5DB"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="860" height="300" fill="#F9FAFB" rx="16"/>
+
+  <!-- Title -->
+  <text x="430" y="32" text-anchor="middle" font-size="17" font-weight="700" fill="#0F172A">Workflow Designer: Node-by-Node Testing</text>
+  <text x="430" y="50" text-anchor="middle" font-size="11.5" fill="#94A3B8">Each step validates as you build, not after the whole thing runs</text>
+
+  <!-- ══════ ARROWS (static, below nodes) ══════ -->
+  <line x1="116" y1="158" x2="144" y2="158" stroke="#D1D5DB" stroke-width="2" marker-end="url(#arr)"/>
+  <line x1="316" y1="158" x2="344" y2="158" stroke="#D1D5DB" stroke-width="2" marker-end="url(#arr)"/>
+  <line x1="514" y1="158" x2="542" y2="158" stroke="#D1D5DB" stroke-width="2" marker-end="url(#arr)"/>
+  <line x1="712" y1="158" x2="740" y2="158" stroke="#D1D5DB" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- ══════ NODE 1: START (circle) ══════ -->
+  <circle cx="78" cy="158" r="38" fill="#F3F4F6" stroke="#D1D5DB" stroke-width="2">
+    <animate attributeName="fill"   values="#F3F4F6;#DCFCE7;#DCFCE7;#F3F4F6;#F3F4F6" keyTimes="0;0.08;0.16;0.22;1" dur="12s" begin="0s"  repeatCount="indefinite"/>
+    <animate attributeName="stroke" values="#D1D5DB;#16A34A;#16A34A;#D1D5DB;#D1D5DB" keyTimes="0;0.08;0.16;0.22;1" dur="12s" begin="0s"  repeatCount="indefinite"/>
+  </circle>
+  <text x="78" y="152" text-anchor="middle" font-size="11" font-weight="700" fill="#374151">START</text>
+  <text x="78" y="168" text-anchor="middle" font-size="18" fill="#16A34A" opacity="0">
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.07;0.09;0.15;0.17;1" dur="12s" begin="0s"  repeatCount="indefinite"/>
+    ✓
+  </text>
+
+  <!-- ══════ NODE 2: Agent Reasoning ══════ -->
+  <rect x="148" y="126" width="164" height="64" rx="10" fill="#F3F4F6" stroke="#D1D5DB" stroke-width="2">
+    <animate attributeName="fill"   values="#F3F4F6;#DCFCE7;#DCFCE7;#F3F4F6;#F3F4F6" keyTimes="0;0.08;0.16;0.22;1" dur="12s" begin="2s"  repeatCount="indefinite"/>
+    <animate attributeName="stroke" values="#D1D5DB;#16A34A;#16A34A;#D1D5DB;#D1D5DB" keyTimes="0;0.08;0.16;0.22;1" dur="12s" begin="2s"  repeatCount="indefinite"/>
+  </rect>
+  <text x="230" y="151" text-anchor="middle" font-size="11" font-weight="700" fill="#374151">Agent</text>
+  <text x="230" y="167" text-anchor="middle" font-size="10.5" fill="#6B7280">Intake reasoning</text>
+  <text x="298" y="138" text-anchor="middle" font-size="16" fill="#16A34A" opacity="0">
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.07;0.09;0.15;0.17;1" dur="12s" begin="2s"  repeatCount="indefinite"/>
+    ✓
+  </text>
+
+  <!-- ══════ NODE 3: Notify ══════ -->
+  <rect x="348" y="126" width="162" height="64" rx="10" fill="#F3F4F6" stroke="#D1D5DB" stroke-width="2">
+    <animate attributeName="fill"   values="#F3F4F6;#DCFCE7;#DCFCE7;#F3F4F6;#F3F4F6" keyTimes="0;0.08;0.16;0.22;1" dur="12s" begin="4s"  repeatCount="indefinite"/>
+    <animate attributeName="stroke" values="#D1D5DB;#16A34A;#16A34A;#D1D5DB;#D1D5DB" keyTimes="0;0.08;0.16;0.22;1" dur="12s" begin="4s"  repeatCount="indefinite"/>
+  </rect>
+  <text x="429" y="151" text-anchor="middle" font-size="11" font-weight="700" fill="#374151">Action</text>
+  <text x="429" y="167" text-anchor="middle" font-size="10.5" fill="#6B7280">Send notification</text>
+  <text x="496" y="138" text-anchor="middle" font-size="16" fill="#16A34A" opacity="0">
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.07;0.09;0.15;0.17;1" dur="12s" begin="4s"  repeatCount="indefinite"/>
+    ✓
+  </text>
+
+  <!-- ══════ NODE 4: Create Record ══════ -->
+  <rect x="546" y="126" width="162" height="64" rx="10" fill="#F3F4F6" stroke="#D1D5DB" stroke-width="2">
+    <animate attributeName="fill"   values="#F3F4F6;#DCFCE7;#DCFCE7;#F3F4F6;#F3F4F6" keyTimes="0;0.08;0.16;0.22;1" dur="12s" begin="6s"  repeatCount="indefinite"/>
+    <animate attributeName="stroke" values="#D1D5DB;#16A34A;#16A34A;#D1D5DB;#D1D5DB" keyTimes="0;0.08;0.16;0.22;1" dur="12s" begin="6s"  repeatCount="indefinite"/>
+  </rect>
+  <text x="627" y="151" text-anchor="middle" font-size="11" font-weight="700" fill="#374151">Action</text>
+  <text x="627" y="167" text-anchor="middle" font-size="10.5" fill="#6B7280">Create record</text>
+  <text x="694" y="138" text-anchor="middle" font-size="16" fill="#16A34A" opacity="0">
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.07;0.09;0.15;0.17;1" dur="12s" begin="6s"  repeatCount="indefinite"/>
+    ✓
+  </text>
+
+  <!-- ══════ NODE 5: END (circle) ══════ -->
+  <circle cx="782" cy="158" r="38" fill="#F3F4F6" stroke="#D1D5DB" stroke-width="2">
+    <animate attributeName="fill"   values="#F3F4F6;#DCFCE7;#DCFCE7;#F3F4F6;#F3F4F6" keyTimes="0;0.08;0.16;0.22;1" dur="12s" begin="8s"  repeatCount="indefinite"/>
+    <animate attributeName="stroke" values="#D1D5DB;#16A34A;#16A34A;#D1D5DB;#D1D5DB" keyTimes="0;0.08;0.16;0.22;1" dur="12s" begin="8s"  repeatCount="indefinite"/>
+  </circle>
+  <text x="782" y="152" text-anchor="middle" font-size="11" font-weight="700" fill="#374151">END</text>
+  <text x="782" y="168" text-anchor="middle" font-size="18" fill="#16A34A" opacity="0">
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.07;0.09;0.15;0.17;1" dur="12s" begin="8s"  repeatCount="indefinite"/>
+    ✓
+  </text>
+
+  <!-- ══════ ROLE LABELS ══════ -->
+  <text x="78"  y="214" text-anchor="middle" font-size="10"   fill="#9CA3AF">Trigger</text>
+  <text x="230" y="214" text-anchor="middle" font-size="10"   fill="#9CA3AF">GitHub Copilot harness</text>
+  <text x="429" y="214" text-anchor="middle" font-size="10"   fill="#9CA3AF">Standard action</text>
+  <text x="627" y="214" text-anchor="middle" font-size="10"   fill="#9CA3AF">Dataverse write</text>
+  <text x="782" y="214" text-anchor="middle" font-size="10"   fill="#9CA3AF">Complete</text>
+
+  <!-- Status pill -->
+  <rect x="250" y="238" width="360" height="30" rx="15" fill="#F3F4F6"/>
+  <text x="430" y="258" text-anchor="middle" font-size="12" fill="#6B7280">Validate each step as you build — not after the whole run</text>
+
+  <!-- Caption -->
+  <text x="430" y="292" text-anchor="middle" font-size="10" fill="#D1D5DB" font-style="italic">Agents drop into workflows as nodes. Node-by-node testing means you validate as you build.</text>
+</svg>
