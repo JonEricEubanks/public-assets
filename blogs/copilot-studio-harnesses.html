@@ -35,9 +35,9 @@
 <p>
   The analogy Lisa Crosbie uses is the best one I have heard: the model is a
   newly hired employee, arriving with knowledge, language, and reasoning
-  ability. The harness is everything you give them afterward &mdash; the laptop,
-  the system access, the team around them, the policies, the tools. You hired
-  the brain. The harness is what lets the brain do your work.
+  ability. The harness is everything you give them afterward: the laptop, the
+  system access, the team around them, the policies, the tools. You hired the
+  brain. The harness is what lets the brain do your work.
 </p>
 <p>
   Before this release that layer was invisible, because it was singular. Now it
@@ -45,33 +45,94 @@
   an agent engineering environment rather than a chatbot builder.
 </p>
 <h3>The three harnesses</h3>
-<table style="width:100%; border-collapse:collapse; margin:1.5em 0;">
+<table style="width: 100%; border-collapse: collapse; margin: 1.5em 0">
   <thead>
     <tr>
-      <th style="text-align:left; padding:10px 14px; border-bottom:2px solid #444; background:#f5f5f5;">Harness</th>
-      <th style="text-align:left; padding:10px 14px; border-bottom:2px solid #444; background:#f5f5f5;">Built for</th>
-      <th style="text-align:left; padding:10px 14px; border-bottom:2px solid #444; background:#f5f5f5;">Authoring model</th>
-      <th style="text-align:left; padding:10px 14px; border-bottom:2px solid #444; background:#f5f5f5;">Billing</th>
+      <th
+        style="
+          text-align: left;
+          padding: 10px 14px;
+          border-bottom: 2px solid #444;
+          background: #f5f5f5;
+        "
+      >
+        Harness
+      </th>
+      <th
+        style="
+          text-align: left;
+          padding: 10px 14px;
+          border-bottom: 2px solid #444;
+          background: #f5f5f5;
+        "
+      >
+        Built for
+      </th>
+      <th
+        style="
+          text-align: left;
+          padding: 10px 14px;
+          border-bottom: 2px solid #444;
+          background: #f5f5f5;
+        "
+      >
+        Authoring model
+      </th>
+      <th
+        style="
+          text-align: left;
+          padding: 10px 14px;
+          border-bottom: 2px solid #444;
+          background: #f5f5f5;
+        "
+      >
+        Billing
+      </th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="padding:10px 14px; border-bottom:1px solid #ddd;"><strong>Copilot Chat</strong></td>
-      <td style="padding:10px 14px; border-bottom:1px solid #ddd;">Customizing the Microsoft 365 Copilot Chat experience</td>
-      <td style="padding:10px 14px; border-bottom:1px solid #ddd;">Same harness as M365 Copilot Chat</td>
-      <td style="padding:10px 14px; border-bottom:1px solid #ddd;">Existing rate card</td>
+      <td style="padding: 10px 14px; border-bottom: 1px solid #ddd">
+        <strong>Copilot Chat</strong>
+      </td>
+      <td style="padding: 10px 14px; border-bottom: 1px solid #ddd">
+        Customizing the Microsoft 365 Copilot Chat experience
+      </td>
+      <td style="padding: 10px 14px; border-bottom: 1px solid #ddd">
+        Same harness as M365 Copilot Chat
+      </td>
+      <td style="padding: 10px 14px; border-bottom: 1px solid #ddd">
+        Existing rate card
+      </td>
     </tr>
     <tr>
-      <td style="padding:10px 14px; border-bottom:1px solid #ddd;"><strong>Standard</strong></td>
-      <td style="padding:10px 14px; border-bottom:1px solid #ddd;">Scripted, predictable conversational agents</td>
-      <td style="padding:10px 14px; border-bottom:1px solid #ddd;">Topics, triggers, branching paths</td>
-      <td style="padding:10px 14px; border-bottom:1px solid #ddd;">Existing rate card; included for licensed users in Teams and M365 Copilot</td>
+      <td style="padding: 10px 14px; border-bottom: 1px solid #ddd">
+        <strong>Standard</strong>
+      </td>
+      <td style="padding: 10px 14px; border-bottom: 1px solid #ddd">
+        Scripted, predictable conversational agents
+      </td>
+      <td style="padding: 10px 14px; border-bottom: 1px solid #ddd">
+        Topics, triggers, branching paths
+      </td>
+      <td style="padding: 10px 14px; border-bottom: 1px solid #ddd">
+        Existing rate card; included for licensed users in Teams and M365
+        Copilot
+      </td>
     </tr>
     <tr>
-      <td style="padding:10px 14px; border-bottom:1px solid #ddd;"><strong>GitHub Copilot</strong></td>
-      <td style="padding:10px 14px; border-bottom:1px solid #ddd;">Agentic, multi-step business processes</td>
-      <td style="padding:10px 14px; border-bottom:1px solid #ddd;">Natural-language instructions and skills</td>
-      <td style="padding:10px 14px; border-bottom:1px solid #ddd;">Copilot Credits, usage-based</td>
+      <td style="padding: 10px 14px; border-bottom: 1px solid #ddd">
+        <strong>GitHub Copilot</strong>
+      </td>
+      <td style="padding: 10px 14px; border-bottom: 1px solid #ddd">
+        Agentic, multi-step business processes
+      </td>
+      <td style="padding: 10px 14px; border-bottom: 1px solid #ddd">
+        Natural-language instructions and skills
+      </td>
+      <td style="padding: 10px 14px; border-bottom: 1px solid #ddd">
+        Copilot Credits, usage-based
+      </td>
     </tr>
   </tbody>
 </table>
@@ -83,11 +144,11 @@
 </p>
 <p>
   This is different from what came before. Previously you could bring a Foundry
-  model into a specific prompt &mdash; useful, but scoped. Now frontier
-  reasoning models like Opus 5, GPT-5.6, and Fable 5 can run the whole agent.
-  Microsoft's own framing, from Ryan Cunningham's launch walkthrough, is that
-  the harness hosts an advanced reasoning model in its own computing environment
-  with a set of tools and skills, and lets it loop over hard problems.
+  model into a specific prompt, useful, but scoped. Now frontier reasoning
+  models like Opus 5, GPT-5.6, and Fable 5 can run the whole agent. Microsoft's
+  own framing, from Ryan Cunningham's launch walkthrough, is that the harness
+  hosts an advanced reasoning model in its own computing environment with a set
+  of tools and skills, and lets it loop over hard problems.
 </p>
 <figure>
   <img
@@ -102,9 +163,9 @@
 <p>
   Two practical notes. Your organization controls which models are enabled, so
   what you see in the picker depends on admin configuration. And model
-  availability varies by region &mdash; some regions cannot use certain
-  providers. Check what is actually available in your tenant before designing
-  around a specific model.
+  availability varies by region, some regions cannot use certain providers.
+  Check what is actually available in your tenant before designing around a
+  specific model.
 </p>
 <p>
   If you have been building agents for a while, this is the change that most
@@ -121,8 +182,8 @@
   It remains fully supported and it is still an excellent fit for real work. A
   service desk agent answering a known set of questions, a scheduling assistant
   routing into a defined flow, an onboarding agent walking a new hire through a
-  fixed sequence &mdash; you want these predictable, and explicit construction
-  gives you that. Some conversational patterns genuinely need a scripted path.
+  fixed sequence, you want these predictable, and explicit construction gives
+  you that. Some conversational patterns genuinely need a scripted path.
 </p>
 <figure>
   <img
@@ -131,8 +192,8 @@
     loading="lazy"
   />
   <figcaption>
-    Explicit construction makes control flow visible &mdash; you can see exactly
-    why the agent did what it did.
+    Explicit construction makes control flow visible, you can see exactly why
+    the agent did what it did.
   </figcaption>
 </figure>
 <p>
@@ -142,7 +203,7 @@
 </p>
 <p>
   Two things to know. Existing Standard harness agents keep running exactly as
-  they are &mdash; nothing breaks. But to edit them, you work in the classic
+  they are, nothing breaks. But to edit them, you work in the classic
   interface. The two experiences are separate surfaces.
 </p>
 <h2>GitHub Copilot harness: goal-directed reasoning</h2>
@@ -153,11 +214,11 @@
 </p>
 <p>
   The shape of the reasoning changed too. The older orchestrator worked in a
-  fairly linear pattern &mdash; take the input, make a plan, collect what it
-  needed, execute. The new one runs a continuous loop: evaluate the goal, plan,
-  call tools, examine results, adjust, continue until the objective is met. That
-  loop is what lets it handle ambiguity, recover from a step that did not work,
-  and stay on track through multi-stage problems.
+  fairly linear pattern, take the input, make a plan, collect what it needed,
+  execute. The new one runs a continuous loop: evaluate the goal, plan, call
+  tools, examine results, adjust, continue until the objective is met. That loop
+  is what lets it handle ambiguity, recover from a step that did not work, and
+  stay on track through multi-stage problems.
 </p>
 <blockquote>
   <p>
@@ -166,25 +227,24 @@
   </p>
 </blockquote>
 <p>
-  Microsoft's published comparison figures show meaningful gains &mdash;
-  multi-tool use improving from 87 percent to 98 percent, with reported
-  improvements in file analysis, code analysis, and knowledge work. Worth
-  verifying in the current documentation, since these are the kind of numbers
-  that get updated.
+  Microsoft's published comparison figures show meaningful gains, multi-tool
+  use improving from 87 percent to 98 percent, with reported improvements in
+  file analysis, code analysis, and knowledge work. Worth verifying in the
+  current documentation, since these are the kind of numbers that get updated.
 </p>
 <p>What comes with it:</p>
 <ul>
   <li>
-    <strong>Skills</strong> &mdash; reusable Markdown instruction sets,
-    attachable across agents, exportable as files. They can bundle artifacts
-    too, including documents and Python.
+    <strong>Skills</strong>: reusable Markdown instruction sets, attachable
+    across agents, exportable as files. They can bundle artifacts too, including
+    documents and Python.
   </li>
   <li>
-    <strong>Memory</strong> &mdash; persistent context across interactions,
-    including user preferences.
+    <strong>Memory</strong>: persistent context across interactions, including
+    user preferences.
   </li>
   <li>
-    <strong>Connected agents</strong> &mdash; a front-door agent routing to
+    <strong>Connected agents</strong>: a front-door agent routing to
     specialists, each owned separately.
   </li>
   <li>
@@ -192,8 +252,8 @@
     Word, Excel, PowerPoint, and PDF generation.
   </li>
   <li>
-    <strong>Build, Preview, Evaluate, Monitor</strong> &mdash; four tabs,
-    consolidated from nine.
+    <strong>Build, Preview, Evaluate, Monitor</strong>: four tabs, consolidated
+    from nine.
   </li>
 </ul>
 <figure>
@@ -220,8 +280,8 @@
 </figure>
 <p>
   That Evaluate tab deserves its own mention. Cunningham's framing is that
-  evaluation matters more than ever &mdash; giving agents a hard set of problems
-  and scoring how they perform as you refine instructions and skills. Evaluation
+  evaluation matters more than ever, giving agents a hard set of problems and
+  scoring how they perform as you refine instructions and skills. Evaluation
   moving into the primary authoring surface rather than a separate tool is a
   real signal about where agent development is heading. If you are a student
   building agents now, getting comfortable with evaluation early will serve you
@@ -233,11 +293,11 @@
   is worth understanding why rather than just noting it.
 </p>
 <p>
-  Topics were a way to script a conversation &mdash; useful when the path must
-  go a certain way, but not how frontier models think. Skills are the
-  replacement, and they work differently: a Markdown file containing a set of
-  instructions the agent can pull in on demand, at the moment it is relevant,
-  rather than one enormous instruction block covering every case.
+  Topics were a way to script a conversation, useful when the path must go a
+  certain way, but not how frontier models think. Skills are the replacement,
+  and they work differently: a Markdown file containing a set of instructions
+  the agent can pull in on demand, at the moment it is relevant, rather than one
+  enormous instruction block covering every case.
 </p>
 <p>
   This solves a problem anyone who has written long agent instructions will
@@ -256,10 +316,10 @@
 </figure>
 <p>
   The reusability is the interesting part. Author a skill once, attach it to
-  several agents, export it, share it. And the format is spreading &mdash;
-  skills are appearing in Cowork, PowerPoint, Word, and across GitHub Copilot.
-  That makes a skill file a portable, human-readable, version-controllable unit
-  of agent behavior.
+  several agents, export it, share it. And the format is spreading, skills are
+  appearing in Cowork, PowerPoint, Word, and across GitHub Copilot. That makes a
+  skill file a portable, human-readable, version-controllable unit of agent
+  behavior.
 </p>
 <p>
   For anyone teaching this material, that is a genuinely good pedagogical
@@ -269,34 +329,83 @@
 </p>
 <h2>Agents and workflows are now two equal pillars</h2>
 <p>This is the structural change people are underrating.</p>
-<table style="width:100%; border-collapse:collapse; margin:1.5em 0;">
+<table style="width: 100%; border-collapse: collapse; margin: 1.5em 0">
   <thead>
     <tr>
-      <th style="text-align:left; padding:10px 14px; border-bottom:2px solid #444; background:#f5f5f5;"></th>
-      <th style="text-align:left; padding:10px 14px; border-bottom:2px solid #444; background:#f5f5f5;">Agent</th>
-      <th style="text-align:left; padding:10px 14px; border-bottom:2px solid #444; background:#f5f5f5;">Workflow</th>
+      <th
+        style="
+          text-align: left;
+          padding: 10px 14px;
+          border-bottom: 2px solid #444;
+          background: #f5f5f5;
+        "
+      ></th>
+      <th
+        style="
+          text-align: left;
+          padding: 10px 14px;
+          border-bottom: 2px solid #444;
+          background: #f5f5f5;
+        "
+      >
+        Agent
+      </th>
+      <th
+        style="
+          text-align: left;
+          padding: 10px 14px;
+          border-bottom: 2px solid #444;
+          background: #f5f5f5;
+        "
+      >
+        Workflow
+      </th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="padding:10px 14px; border-bottom:1px solid #ddd;"><strong>Behavior</strong></td>
-      <td style="padding:10px 14px; border-bottom:1px solid #ddd;">Adaptive, goal-seeking</td>
-      <td style="padding:10px 14px; border-bottom:1px solid #ddd;">Deterministic sequence</td>
+      <td style="padding: 10px 14px; border-bottom: 1px solid #ddd">
+        <strong>Behavior</strong>
+      </td>
+      <td style="padding: 10px 14px; border-bottom: 1px solid #ddd">
+        Adaptive, goal-seeking
+      </td>
+      <td style="padding: 10px 14px; border-bottom: 1px solid #ddd">
+        Deterministic sequence
+      </td>
     </tr>
     <tr>
-      <td style="padding:10px 14px; border-bottom:1px solid #ddd;"><strong>Path</strong></td>
-      <td style="padding:10px 14px; border-bottom:1px solid #ddd;">Reasoned at runtime</td>
-      <td style="padding:10px 14px; border-bottom:1px solid #ddd;">Defined in advance</td>
+      <td style="padding: 10px 14px; border-bottom: 1px solid #ddd">
+        <strong>Path</strong>
+      </td>
+      <td style="padding: 10px 14px; border-bottom: 1px solid #ddd">
+        Reasoned at runtime
+      </td>
+      <td style="padding: 10px 14px; border-bottom: 1px solid #ddd">
+        Defined in advance
+      </td>
     </tr>
     <tr>
-      <td style="padding:10px 14px; border-bottom:1px solid #ddd;"><strong>Best for</strong></td>
-      <td style="padding:10px 14px; border-bottom:1px solid #ddd;">Ambiguity and judgment</td>
-      <td style="padding:10px 14px; border-bottom:1px solid #ddd;">Predictable, repeatable steps</td>
+      <td style="padding: 10px 14px; border-bottom: 1px solid #ddd">
+        <strong>Best for</strong>
+      </td>
+      <td style="padding: 10px 14px; border-bottom: 1px solid #ddd">
+        Ambiguity and judgment
+      </td>
+      <td style="padding: 10px 14px; border-bottom: 1px solid #ddd">
+        Predictable, repeatable steps
+      </td>
     </tr>
     <tr>
-      <td style="padding:10px 14px; border-bottom:1px solid #ddd;"><strong>Credit cost</strong></td>
-      <td style="padding:10px 14px; border-bottom:1px solid #ddd;">Higher &mdash; model reasoning</td>
-      <td style="padding:10px 14px; border-bottom:1px solid #ddd;">Lower &mdash; structured execution</td>
+      <td style="padding: 10px 14px; border-bottom: 1px solid #ddd">
+        <strong>Credit cost</strong>
+      </td>
+      <td style="padding: 10px 14px; border-bottom: 1px solid #ddd">
+        Higher, model reasoning
+      </td>
+      <td style="padding: 10px 14px; border-bottom: 1px solid #ddd">
+        Lower, structured execution
+      </td>
     </tr>
   </tbody>
 </table>
@@ -309,7 +418,7 @@
   value.
 </p>
 <p>
-  The workflow designer was rebuilt for this &mdash; horizontal canvas, agents
+  The workflow designer was rebuilt for this, horizontal canvas, agents
   embeddable as nodes, and node-by-node testing so you validate each step as you
   build rather than running the whole thing and hoping.
 </p>
@@ -335,36 +444,80 @@
 <blockquote>
   <p>Is the hard part of this agent the retrieval, or the reasoning?</p>
 </blockquote>
-<table style="width:100%; border-collapse:collapse; margin:1.5em 0;">
+<table style="width: 100%; border-collapse: collapse; margin: 1.5em 0">
   <thead>
     <tr>
-      <th style="text-align:left; padding:10px 14px; border-bottom:2px solid #444; background:#f5f5f5;">If a knowledgeable person would&hellip;</th>
-      <th style="text-align:left; padding:10px 14px; border-bottom:2px solid #444; background:#f5f5f5;">The hard part is&hellip;</th>
-      <th style="text-align:left; padding:10px 14px; border-bottom:2px solid #444; background:#f5f5f5;">Reach for&hellip;</th>
+      <th
+        style="
+          text-align: left;
+          padding: 10px 14px;
+          border-bottom: 2px solid #444;
+          background: #f5f5f5;
+        "
+      >
+        If a knowledgeable person would&hellip;
+      </th>
+      <th
+        style="
+          text-align: left;
+          padding: 10px 14px;
+          border-bottom: 2px solid #444;
+          background: #f5f5f5;
+        "
+      >
+        The hard part is&hellip;
+      </th>
+      <th
+        style="
+          text-align: left;
+          padding: 10px 14px;
+          border-bottom: 2px solid #444;
+          background: #f5f5f5;
+        "
+      >
+        Reach for&hellip;
+      </th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="padding:10px 14px; border-bottom:1px solid #ddd;">Find the right document and read the answer out of it</td>
-      <td style="padding:10px 14px; border-bottom:1px solid #ddd;">Retrieval</td>
-      <td style="padding:10px 14px; border-bottom:1px solid #ddd;">Standard harness, grounded well</td>
+      <td style="padding: 10px 14px; border-bottom: 1px solid #ddd">
+        Find the right document and read the answer out of it
+      </td>
+      <td style="padding: 10px 14px; border-bottom: 1px solid #ddd">
+        Retrieval
+      </td>
+      <td style="padding: 10px 14px; border-bottom: 1px solid #ddd">
+        Standard harness, grounded well
+      </td>
     </tr>
     <tr>
-      <td style="padding:10px 14px; border-bottom:1px solid #ddd;">Read several sources, apply a rule with exceptions, produce a structured result</td>
-      <td style="padding:10px 14px; border-bottom:1px solid #ddd;">Reasoning</td>
-      <td style="padding:10px 14px; border-bottom:1px solid #ddd;">GitHub Copilot harness</td>
+      <td style="padding: 10px 14px; border-bottom: 1px solid #ddd">
+        Read several sources, apply a rule with exceptions, produce a structured
+        result
+      </td>
+      <td style="padding: 10px 14px; border-bottom: 1px solid #ddd">
+        Reasoning
+      </td>
+      <td style="padding: 10px 14px; border-bottom: 1px solid #ddd">
+        GitHub Copilot harness
+      </td>
     </tr>
     <tr>
-      <td style="padding:10px 14px; border-bottom:1px solid #ddd;">Follow the same steps every time with no judgment involved</td>
-      <td style="padding:10px 14px; border-bottom:1px solid #ddd;">Neither</td>
-      <td style="padding:10px 14px; border-bottom:1px solid #ddd;">A workflow, or no model at all</td>
+      <td style="padding: 10px 14px; border-bottom: 1px solid #ddd">
+        Follow the same steps every time with no judgment involved
+      </td>
+      <td style="padding: 10px 14px; border-bottom: 1px solid #ddd">Neither</td>
+      <td style="padding: 10px 14px; border-bottom: 1px solid #ddd">
+        A workflow, or no model at all
+      </td>
     </tr>
   </tbody>
 </table>
 <p>
   If the hard part is retrieval, ground it well and keep behavior predictable
-  and the maintenance surface small. You are not missing out &mdash; you are
-  matching the tool to the problem.
+  and the maintenance surface small. You are not missing out, you are matching
+  the tool to the problem.
 </p>
 <p>
   I build Power Platform solutions for local government, so my examples come
@@ -377,14 +530,14 @@
 <p>
   Your domain has its own version of that list. The sorting question is the
   same. The documentation includes a comparison table with reasons for and
-  against each harness &mdash; worth reading before your next build.
+  against each harness, worth reading before your next build.
 </p>
 <h2>Two things to know before you start</h2>
 <p>
   <strong>Harness choice is set at creation.</strong> Agents cannot be converted
   between harnesses in either direction. Different architectures, different
   runtimes. Existing agents keep running. Know this up front so you choose
-  consciously &mdash; ask the retrieval-or-reasoning question during design, not
+  consciously, ask the retrieval-or-reasoning question during design, not
   after.
 </p>
 <p>
@@ -396,31 +549,66 @@
   harness agents remain included for licensed users when deployed to Teams or
   Microsoft 365 Copilot.
 </p>
-<table style="width:100%; border-collapse:collapse; margin:1.5em 0;">
+<table style="width: 100%; border-collapse: collapse; margin: 1.5em 0">
   <thead>
     <tr>
-      <th style="text-align:left; padding:10px 14px; border-bottom:2px solid #444; background:#f5f5f5;">Scenario</th>
-      <th style="text-align:left; padding:10px 14px; border-bottom:2px solid #444; background:#f5f5f5;">Approximate credits</th>
-      <th style="text-align:left; padding:10px 14px; border-bottom:2px solid #444; background:#f5f5f5;">Roughly</th>
+      <th
+        style="
+          text-align: left;
+          padding: 10px 14px;
+          border-bottom: 2px solid #444;
+          background: #f5f5f5;
+        "
+      >
+        Scenario
+      </th>
+      <th
+        style="
+          text-align: left;
+          padding: 10px 14px;
+          border-bottom: 2px solid #444;
+          background: #f5f5f5;
+        "
+      >
+        Approximate credits
+      </th>
+      <th
+        style="
+          text-align: left;
+          padding: 10px 14px;
+          border-bottom: 2px solid #444;
+          background: #f5f5f5;
+        "
+      >
+        Roughly
+      </th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="padding:10px 14px; border-bottom:1px solid #ddd;">Lighter conversation</td>
-      <td style="padding:10px 14px; border-bottom:1px solid #ddd;">100&ndash;300</td>
-      <td style="padding:10px 14px; border-bottom:1px solid #ddd;">$1&ndash;$3</td>
+      <td style="padding: 10px 14px; border-bottom: 1px solid #ddd">
+        Lighter conversation
+      </td>
+      <td style="padding: 10px 14px; border-bottom: 1px solid #ddd">
+        100&ndash;300
+      </td>
+      <td style="padding: 10px 14px; border-bottom: 1px solid #ddd">
+        $1&ndash;$3
+      </td>
     </tr>
     <tr>
-      <td style="padding:10px 14px; border-bottom:1px solid #ddd;">Heavier, multi-step work</td>
-      <td style="padding:10px 14px; border-bottom:1px solid #ddd;">500+</td>
-      <td style="padding:10px 14px; border-bottom:1px solid #ddd;">$5+</td>
+      <td style="padding: 10px 14px; border-bottom: 1px solid #ddd">
+        Heavier, multi-step work
+      </td>
+      <td style="padding: 10px 14px; border-bottom: 1px solid #ddd">500+</td>
+      <td style="padding: 10px 14px; border-bottom: 1px solid #ddd">$5+</td>
     </tr>
   </tbody>
 </table>
 <p>
   A credit is roughly one US cent. Those figures come from Microsoft's published
-  examples and are worth confirming against the current credits guide &mdash;
-  but the useful point is that the cost is knowable rather than mysterious.
+  examples and are worth confirming against the current credits guide, but the
+  useful point is that the cost is knowable rather than mysterious.
 </p>
 <figure>
   <img
@@ -446,11 +634,11 @@
 <h2>Getting started</h2>
 <p>
   Create a new agent from the Copilot Studio homepage and you will choose a
-  harness. Build something small and real on the GitHub Copilot harness &mdash;
-  a task from your own work or coursework, scoped to three sentences. Watch the
-  Preview and Evaluate tabs as you iterate. Note what the credit consumption
-  actually looks like on your own tenant. You will learn more in an afternoon
-  than from any writeup, including this one.
+  harness. Build something small and real on the GitHub Copilot harness, a task
+  from your own work or coursework, scoped to three sentences. Watch the Preview
+  and Evaluate tabs as you iterate. Note what the credit consumption actually
+  looks like on your own tenant. You will learn more in an afternoon than from
+  any writeup, including this one.
 </p>
 <p>
   Then revisit something you have already built and ask the
@@ -460,8 +648,8 @@
 <h2>What is still rolling out</h2>
 <p>
   The GitHub Copilot harness reached GA on August 3, 2026, so production
-  experience across the community is still accumulating &mdash; mine included.
-  The knowledge source options in the new experience are currently a somewhat
+  experience across the community is still accumulating, mine included. The
+  knowledge source options in the new experience are currently a somewhat
   reduced set compared to the classic interface and will expand. Parts of the
   wider rebuild remain in preview.
 </p>
@@ -477,7 +665,7 @@
     href="https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/overview"
     target="_blank"
     rel="noopener"
-    >Agents overview &mdash; GitHub Copilot harness</a
+    >Agents overview, GitHub Copilot harness</a
   >
   &middot;
   <a
