@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="340" viewBox="0 0 1200 340" font-family="'Inter','Segoe UI',sans-serif">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="40%" r="90%">
+      <stop offset="0%" stop-color="#0f4a42"/>
+      <stop offset="52%" stop-color="#052d28"/>
+      <stop offset="100%" stop-color="#02100e"/>
+    </radialGradient>
+    <linearGradient id="mango" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ffd08a"/><stop offset="100%" stop-color="#ff7b1c"/>
+    </linearGradient>
+    <linearGradient id="teal" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#8ef0e0"/><stop offset="100%" stop-color="#55d8c7"/>
+    </linearGradient>
+    <clipPath id="frame"><rect width="1200" height="340" rx="20"/></clipPath>
+  </defs>
+  <style>
+    text{fill:#e8fffa}
+    .mono{font-family:'Cascadia Code',Consolas,monospace}
+    .muted{fill:#7fbfb4}
+    .dim{fill:#4f8f84}
+    .bar1{animation:g1 12s linear infinite}
+    @keyframes g1{0%,4%{width:0}14%{width:412px}100%{width:412px}}
+    .bar2{animation:g2 12s linear infinite}
+    @keyframes g2{0%,15%{width:0}28%{width:660px}100%{width:660px}}
+    .bar3{animation:g3 12s linear infinite}
+    @keyframes g3{0%,29%{width:0}40%{width:495px}100%{width:495px}}
+    .v1{animation:v1 12s linear infinite}
+    @keyframes v1{0%,13%{opacity:0}17%{opacity:1}100%{opacity:1}}
+    .v2{animation:v2 12s linear infinite}
+    @keyframes v2{0%,27%{opacity:0}31%{opacity:1}100%{opacity:1}}
+    .v3{animation:v3 12s linear infinite}
+    @keyframes v3{0%,39%{opacity:0}43%{opacity:1}100%{opacity:1}}
+    .coffee{animation:coffee 12s linear infinite}
+    @keyframes coffee{0%,20%{opacity:0;transform:translateY(6px)}25%{opacity:1;transform:translateY(0)}100%{opacity:1;transform:translateY(0)}}
+    .foot{animation:foot 12s linear infinite}
+    @keyframes foot{0%,46%{opacity:0}52%{opacity:1}100%{opacity:1}}
+    .tick{animation:tick 1.2s ease-in-out infinite}
+    @keyframes tick{0%,100%{opacity:1}50%{opacity:.35}}
+  </style>
+
+  <g clip-path="url(#frame)">
+  <rect width="1200" height="340" fill="url(#bg)"/>
+
+  <text x="80" y="62" font-size="26" font-weight="800">Where the 19 minutes actually went</text>
+  <text x="80" y="90" font-size="15" class="muted">One GitHub issue, delegated to Copilot coding agent — wall-clock time</text>
+
+  <!-- grid ticks -->
+  <g stroke="#1d5b52" stroke-width="1" opacity=".5">
+    <line x1="475" y1="112" x2="475" y2="278"/>
+    <line x1="640" y1="112" x2="640" y2="278"/>
+    <line x1="805" y1="112" x2="805" y2="278"/>
+    <line x1="970" y1="112" x2="970" y2="278"/>
+  </g>
+  <g font-size="12" class="mono">
+    <text x="475" y="296" text-anchor="middle" class="dim">2m</text>
+    <text x="640" y="296" text-anchor="middle" class="dim">4m</text>
+    <text x="805" y="296" text-anchor="middle" class="dim">6m</text>
+    <text x="970" y="296" text-anchor="middle" class="dim">8m</text>
+  </g>
+
+  <!-- bar 1: writing the issue -->
+  <text x="292" y="140" font-size="16" text-anchor="end" class="muted">writing the issue</text>
+  <rect x="310" y="120" width="660" height="30" rx="6" fill="#07231f" stroke="#1d5b52"/>
+  <rect class="bar1" x="310" y="120" height="30" rx="6" fill="url(#teal)"/>
+  <text class="v1 mono" x="982" y="141" font-size="16" fill="#8ef0e0">5 min · mine</text>
+
+  <!-- bar 2: agent working -->
+  <text x="292" y="205" font-size="16" text-anchor="end" class="muted">agent working</text>
+  <rect x="310" y="185" width="660" height="30" rx="6" fill="#07231f" stroke="#1d5b52"/>
+  <rect class="bar2" x="310" y="185" height="30" rx="6" fill="#35695f"/>
+  <text class="v2 mono" x="982" y="206" font-size="16" fill="#7fbfb4">8 min · not mine</text>
+  <g class="coffee"><text x="330" y="206" font-size="15" fill="#052d28" font-weight="700">☕ I went and made coffee</text></g>
+
+  <!-- bar 3: reviewing the PR -->
+  <text x="292" y="270" font-size="16" text-anchor="end" class="muted">reviewing the PR</text>
+  <rect x="310" y="250" width="660" height="30" rx="6" fill="#07231f" stroke="#1d5b52"/>
+  <rect class="bar3" x="310" y="250" height="30" rx="6" fill="url(#mango)"/>
+  <text class="v3 mono" x="982" y="271" font-size="16" fill="#ffd08a">6 min · mine</text>
+
+  <!-- footnote -->
+  <g class="foot">
+    <text x="80" y="322" font-size="15" class="mono" fill="#7ee2a8">&gt; 11 minutes of my attention, 19 minutes wall-clock — the agent doesn't bill for the other 8<tspan class="tick">_</tspan></text>
+  </g>
+  </g>
+  <rect x="1" y="1" width="1198" height="338" rx="19" fill="none" stroke="#1d5b52" stroke-width="2"/>
+</svg>

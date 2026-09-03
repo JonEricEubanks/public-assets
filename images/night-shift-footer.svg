@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="260" viewBox="0 0 1200 260" font-family="'Inter','Segoe UI',sans-serif">
+  <defs>
+    <radialGradient id="bg" cx="40%" cy="40%" r="95%">
+      <stop offset="0%" stop-color="#0f4a42"/>
+      <stop offset="52%" stop-color="#052d28"/>
+      <stop offset="100%" stop-color="#02100e"/>
+    </radialGradient>
+    <linearGradient id="mango" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffd08a"/><stop offset="100%" stop-color="#ff7b1c"/>
+    </linearGradient>
+    <filter id="glow" x="-90%" y="-90%" width="280%" height="280%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <mask id="cres"><rect x="-24" y="-24" width="48" height="48" fill="#fff"/><circle cx="9" cy="-5" r="17" fill="#000"/></mask>
+    <path id="gh" d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+    <clipPath id="frame"><rect width="1200" height="260" rx="20"/></clipPath>
+  </defs>
+  <style>
+    text{fill:#e8fffa}
+    .mono{font-family:'Cascadia Code',Consolas,monospace}
+    .muted{fill:#7fbfb4}
+    .dim{fill:#4f8f84}
+    .tw1,.tw2{animation:tw 3.4s ease-in-out infinite}
+    .tw2{animation-delay:-1.6s}
+    @keyframes tw{0%,100%{opacity:.15}50%{opacity:.7}}
+    .trace{stroke-dasharray:.12 .88;animation:trace 4s linear infinite}
+    @keyframes trace{to{stroke-dashoffset:-1}}
+    .m1{animation:mchip 12s linear infinite}
+    .m2{animation:mchip 12s linear infinite;animation-delay:1.4s}
+    .m3{animation:mchip 12s linear infinite;animation-delay:2.8s}
+    @keyframes mchip{0%,8%{opacity:0;transform:translateX(14px)}13%{opacity:1;transform:translateX(0)}100%{opacity:1;transform:translateX(0)}}
+    .yours{transform-box:fill-box;transform-origin:center;animation:yours 12s linear infinite}
+    @keyframes yours{0%,42%{opacity:0;transform:scale(.8)}47%{opacity:1;transform:scale(1.06)}50%{transform:scale(1)}100%{opacity:1;transform:scale(1)}}
+    .yourspulse{animation:yourspulse 2.2s ease-in-out infinite}
+    @keyframes yourspulse{0%,100%{opacity:.75}50%{opacity:1}}
+    .moonpulse{animation:moonpulse 5s ease-in-out infinite}
+    @keyframes moonpulse{0%,100%{opacity:.85}50%{opacity:1}}
+  </style>
+
+  <g clip-path="url(#frame)">
+  <rect width="1200" height="260" fill="url(#bg)"/>
+
+  <g fill="#8ef0e0">
+    <circle class="tw1" cx="700" cy="40" r="1.5"/><circle class="tw2" cx="1010" cy="34" r="1.6"/>
+    <circle class="tw1" cx="1140" cy="120" r="1.4"/><circle class="tw2" cx="620" cy="220" r="1.4"/>
+  </g>
+  <g transform="translate(1120 52)"><g class="moonpulse" filter="url(#glow)"><circle r="20" fill="url(#mango)" mask="url(#cres)"/></g></g>
+
+  <!-- left: CTA -->
+  <text x="80" y="86" font-size="32" font-weight="900">Run the workshop yourself.</text>
+  <text x="80" y="118" font-size="17" class="muted">One evening &#183; five modules &#183; your own Copilot license</text>
+
+  <!-- repo pill with tracing border -->
+  <g transform="translate(80 148)">
+    <rect width="500" height="48" rx="24" fill="#07231f" stroke="#1d5b52" stroke-width="1.5"/>
+    <rect class="trace" width="500" height="48" rx="24" fill="none" stroke="url(#mango)" stroke-width="2" pathLength="1" stroke-linecap="round"/>
+    <use href="#gh" transform="translate(22 12)" fill="#e8fffa"/>
+    <text x="60" y="31" font-size="17" class="mono" fill="#8ef0e0">github.com/JonEricEubanks/ai-teammate-101</text>
+  </g>
+  <text x="80" y="232" font-size="14" class="dim">Star it, fork it, hand your next issue to the night shift.</text>
+
+  <!-- right: module checklist -->
+  <g font-size="13" class="mono">
+    <g class="m1">
+      <rect x="760" y="58" width="330" height="34" rx="17" fill="#07231f" stroke="#1d5b52"/>
+      <text x="778" y="80" fill="#7ee2a8">&#10003;</text><text x="798" y="80" class="muted">modules 01&#8211;02 &#183; delegate an issue</text>
+    </g>
+    <g class="m2">
+      <rect x="760" y="100" width="330" height="34" rx="17" fill="#07231f" stroke="#1d5b52"/>
+      <text x="778" y="122" fill="#7ee2a8">&#10003;</text><text x="798" y="122" class="muted">module 03 &#183; run agents in parallel</text>
+    </g>
+    <g class="m3">
+      <rect x="760" y="142" width="330" height="34" rx="17" fill="#07231f" stroke="#1d5b52"/>
+      <text x="778" y="164" fill="#7ee2a8">&#10003;</text><text x="798" y="164" class="muted">modules 04&#8211;05 &#183; hunt the planted XSS</text>
+    </g>
+    <g class="yours">
+      <g class="yourspulse">
+        <rect x="760" y="186" width="330" height="36" rx="18" fill="url(#mango)"/>
+      </g>
+      <text x="925" y="209" text-anchor="middle" font-size="15" font-weight="800" fill="#02100e">your turn &#8594; start module 01</text>
+    </g>
+  </g>
+  </g>
+  <rect x="1" y="1" width="1198" height="258" rx="19" fill="none" stroke="#1d5b52" stroke-width="2"/>
+</svg>

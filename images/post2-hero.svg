@@ -1,0 +1,191 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" font-family="'Inter','Segoe UI',sans-serif">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#02100e"/>
+      <stop offset="70%" stop-color="#041a17"/>
+      <stop offset="100%" stop-color="#0a3a33"/>
+    </linearGradient>
+    <linearGradient id="mango" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffd08a"/><stop offset="100%" stop-color="#ff7b1c"/>
+    </linearGradient>
+    <filter id="glow" x="-90%" y="-90%" width="280%" height="280%">
+      <feGaussianBlur stdDeviation="5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <mask id="cres"><rect x="-26" y="-26" width="52" height="52" fill="#fff"/><circle cx="10" cy="-6" r="19" fill="#000"/></mask>
+    <path id="gh" d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+    <path id="plane" d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/>
+    <path id="cp" d="M23.922 16.997C23.061 18.492 18.063 22.02 12 22.02 5.937 22.02.939 18.492.078 16.997A.641.641 0 0 1 0 16.741v-2.869a.883.883 0 0 1 .053-.22c.372-.935 1.347-2.292 2.605-2.656.167-.429.414-1.055.644-1.517a10.098 10.098 0 0 1-.052-1.086c0-1.331.282-2.499 1.132-3.368.397-.406.89-.717 1.474-.952C7.255 2.937 9.248 1.98 11.978 1.98c2.731 0 4.767.957 6.166 2.093.584.235 1.077.546 1.474.952.85.869 1.132 2.037 1.132 3.368 0 .368-.014.733-.052 1.086.23.462.477 1.088.644 1.517 1.258.364 2.233 1.721 2.605 2.656a.841.841 0 0 1 .053.22v2.869a.641.641 0 0 1-.078.256Zm-11.75-5.992h-.344a4.359 4.359 0 0 1-.355.508c-.77.947-1.918 1.492-3.508 1.492-1.725 0-2.989-.359-3.782-1.259a2.137 2.137 0 0 1-.085-.104L4 11.746v6.585c1.435.779 4.514 2.179 8 2.179 3.486 0 6.565-1.4 8-2.179v-6.585l-.098-.104s-.033.045-.085.104c-.793.9-2.057 1.259-3.782 1.259-1.59 0-2.738-.545-3.508-1.492a4.359 4.359 0 0 1-.355-.508Zm2.328 3.25c.549 0 1 .451 1 1v2c0 .549-.451 1-1 1-.549 0-1-.451-1-1v-2c0-.549.451-1 1-1Zm-5 0c.549 0 1 .451 1 1v2c0 .549-.451 1-1 1-.549 0-1-.451-1-1v-2c0-.549.451-1 1-1Zm3.313-6.185c.136 1.057.403 1.913.878 2.497.442.544 1.134.938 2.344.938 1.573 0 2.292-.337 2.657-.751.384-.435.558-1.15.558-2.361 0-1.14-.243-1.847-.705-2.319-.477-.488-1.319-.862-2.824-1.025-1.487-.161-2.192.138-2.533.529-.269.307-.437.808-.438 1.578v.021c0 .265.021.562.063.893Zm-1.626 0c.042-.331.063-.628.063-.894v-.02c-.001-.77-.169-1.271-.438-1.578-.341-.391-1.046-.69-2.533-.529-1.505.163-2.347.537-2.824 1.025-.462.472-.705 1.179-.705 2.319 0 1.211.175 1.926.558 2.361.365.414 1.084.751 2.657.751 1.21 0 1.902-.394 2.344-.938.475-.584.742-1.44.878-2.497Z"/>
+    <clipPath id="frame"><rect width="1200" height="630" rx="20"/></clipPath>
+  </defs>
+  <style>
+    text{fill:#e8fffa}
+    .mono{font-family:'Cascadia Code',Consolas,monospace}
+    .muted{fill:#7fbfb4}.dim{fill:#4f8f84}
+    .tw1,.tw2,.tw3{animation-name:tw;animation-duration:3.2s;animation-iteration-count:infinite;animation-timing-function:ease-in-out}
+    .tw2{animation-delay:-1.1s}.tw3{animation-delay:-2.2s}
+    @keyframes tw{0%,100%{opacity:.15}50%{opacity:.7}}
+    .shoot{animation-name:shoot;animation-duration:14s;animation-iteration-count:infinite;animation-timing-function:linear}
+    @keyframes shoot{0%,41%{opacity:0;transform:translate(0,0)}43.5%{opacity:1}48%{opacity:0;transform:translate(-210px,95px)}100%{opacity:0}}
+    .radar{animation:sweep 4s linear infinite}
+    @keyframes sweep{to{transform:rotate(360deg)}}
+    .beacon{animation-name:beacon;animation-duration:1.6s;animation-iteration-count:infinite;animation-timing-function:ease-in-out}
+    @keyframes beacon{0%,100%{opacity:.25}50%{opacity:1}}
+    .wing{animation-name:wing;animation-duration:1.1s;animation-iteration-count:infinite;animation-timing-function:steps(1)}
+    @keyframes wing{0%,55%{opacity:1}56%,100%{opacity:.1}}
+    .edge1,.edge2{animation-name:edge;animation-duration:2s;animation-iteration-count:infinite;animation-timing-function:ease-in-out}
+    .edge2{animation-delay:-1s}
+    @keyframes edge{0%,100%{opacity:.2}50%{opacity:.95}}
+    .cyc{animation-duration:14s;animation-iteration-count:infinite;animation-timing-function:linear}
+    .lander{animation-name:landerVis}
+    @keyframes landerVis{0%,4%{opacity:0}7%{opacity:1}55%{opacity:1}60%,100%{opacity:0}}
+    .merged{animation-name:mergedIn}
+    @keyframes mergedIn{0%,58%{opacity:0;transform:scale(.5)}63%{opacity:1;transform:scale(1.15)}66%{transform:scale(1)}100%{opacity:1;transform:scale(1)}}
+    .lg1{animation-name:lg1}.lg2{animation-name:lg2}.lg3{animation-name:lg3}
+    @keyframes lg1{0%,5%{opacity:0}9%{opacity:1}96%{opacity:1}100%{opacity:0}}
+    @keyframes lg2{0%,24%{opacity:0}28%{opacity:1}96%{opacity:1}100%{opacity:0}}
+    @keyframes lg3{0%,42%{opacity:0}46%{opacity:1}96%{opacity:1}100%{opacity:0}}
+    .thr{animation-name:thr;animation-duration:2.4s;animation-iteration-count:infinite;animation-timing-function:ease-in-out}
+    @keyframes thr{0%,100%{opacity:.65}50%{opacity:1}}
+  </style>
+
+  <g clip-path="url(#frame)">
+  <rect width="1200" height="630" fill="url(#sky)"/>
+
+  <!-- stars + moon -->
+  <g fill="#8ef0e0">
+    <circle class="tw1" cx="120" cy="70" r="1.5"/><circle class="tw2" cx="300" cy="45" r="1.2"/>
+    <circle class="tw3" cx="520" cy="80" r="1.4"/><circle class="tw1" cx="700" cy="50" r="1.2"/>
+    <circle class="tw2" cx="1150" cy="230" r="1.3"/><circle class="tw3" cx="80" cy="300" r="1.2"/>
+    <circle class="tw1" cx="960" cy="330" r="1.2"/><circle class="tw2" cx="620" cy="140" r="1.1"/>
+  </g>
+  <g transform="translate(770 66)">
+    <circle r="32" fill="#ff7b1c" opacity=".08"/>
+    <circle r="22" fill="url(#mango)" mask="url(#cres)" opacity=".92"/>
+  </g>
+  <g transform="translate(600 42)">
+    <g class="shoot">
+      <line x1="0" y1="0" x2="30" y2="-14" stroke="#8ef0e0" stroke-width="2" stroke-linecap="round" opacity=".8"/>
+      <circle r="2.2" fill="#e8fffa"/>
+    </g>
+  </g>
+
+  <text x="60" y="56" font-size="15" letter-spacing="6" class="dim" font-weight="600">THE NIGHT SHIFT · EP 2 — THE BOTTLENECK</text>
+
+  <!-- tower log board -->
+  <g transform="translate(830 84)">
+    <rect width="330" height="150" rx="12" fill="#02100e" stroke="#1d5b52" stroke-width="1.5"/>
+    <text x="20" y="30" font-size="12" letter-spacing="3" class="dim" font-weight="700">TOWER LOG</text>
+    <use href="#gh" transform="translate(288 14)" fill="#4f8f84"/>
+    <g class="mono" font-size="12.5">
+      <text x="20" y="58" class="cyc lg1" fill="#7ee2a8">PR #19 — cleared to land ✓</text>
+      <text x="20" y="82" class="cyc lg2" fill="#ffd08a">PR #21 — hold · reviewing #19</text>
+      <text x="20" y="106" class="cyc lg3" fill="#ffd08a">PR #22 — hold · pattern full</text>
+      <text x="20" y="132" class="thr" fill="#ff9c9c" font-weight="700">throughput: 1 — the human</text>
+    </g>
+  </g>
+
+  <!-- holding pattern orbits (faint) -->
+  <ellipse cx="290" cy="190" rx="185" ry="62" fill="none" stroke="#1d5b52" stroke-width="1" stroke-dasharray="2 8"/>
+  <ellipse cx="360" cy="322" rx="235" ry="72" fill="none" stroke="#1d5b52" stroke-width="1" stroke-dasharray="2 8"/>
+
+  <!-- holding plane 1 -->
+  <g>
+    <animateMotion dur="11s" repeatCount="indefinite" rotate="auto" path="M290,128 A185,62 0 0 1 290,252 A185,62 0 0 1 290,128"/>
+    <g filter="url(#glow)">
+      <use href="#plane" transform="rotate(90) scale(1.4) translate(-11.5 -12)" fill="#8ef0e0"/>
+      <circle class="wing" cx="17" cy="0" r="2.4" fill="#ff6b6b"/>
+    </g>
+  </g>
+  <g>
+    <animateMotion dur="11s" repeatCount="indefinite" path="M290,128 A185,62 0 0 1 290,252 A185,62 0 0 1 290,128"/>
+    <g transform="translate(0 -32)">
+      <rect x="-74" y="-12" width="150" height="22" rx="11" fill="#07231f" stroke="#55d8c7"/>
+      <use href="#cp" transform="translate(-66 -7) scale(0.58)" fill="#8ef0e0"/>
+      <text x="12" y="4" text-anchor="middle" font-size="12" class="mono" fill="#8ef0e0">PR #21 · filters</text>
+    </g>
+  </g>
+  <!-- holding plane 2 -->
+  <g>
+    <animateMotion dur="14s" begin="-6s" repeatCount="indefinite" rotate="auto" path="M360,250 A235,72 0 0 1 360,394 A235,72 0 0 1 360,250"/>
+    <g filter="url(#glow)">
+      <use href="#plane" transform="rotate(90) scale(1.4) translate(-11.5 -12)" fill="#ffd08a"/>
+      <circle class="wing" cx="17" cy="0" r="2.4" fill="#ff6b6b"/>
+    </g>
+  </g>
+  <g>
+    <animateMotion dur="14s" begin="-6s" repeatCount="indefinite" path="M360,250 A235,72 0 0 1 360,394 A235,72 0 0 1 360,250"/>
+    <g transform="translate(0 -32)">
+      <rect x="-74" y="-12" width="150" height="22" rx="11" fill="#07231f" stroke="#ffd08a"/>
+      <use href="#cp" transform="translate(-66 -7) scale(0.58)" fill="#ffd08a"/>
+      <text x="12" y="4" text-anchor="middle" font-size="12" class="mono" fill="#ffd08a">PR #22 · sorting</text>
+    </g>
+  </g>
+
+  <!-- landing plane -->
+  <g class="cyc lander">
+    <animateMotion dur="14s" repeatCount="indefinite" calcMode="linear" rotate="auto"
+      keyPoints="0;0;0.72;1;1" keyTimes="0;0.05;0.4;0.55;1"
+      path="M150,120 C 320,180 480,420 640,540 L 900,540"/>
+    <g filter="url(#glow)">
+      <use href="#plane" transform="rotate(90) scale(1.55) translate(-11.5 -12)" fill="#7ee2a8"/>
+      <circle class="wing" cx="19" cy="0" r="2.4" fill="#ff6b6b"/>
+    </g>
+  </g>
+  <g class="cyc lander">
+    <animateMotion dur="14s" repeatCount="indefinite" calcMode="linear"
+      keyPoints="0;0;0.72;1;1" keyTimes="0;0.05;0.4;0.55;1"
+      path="M150,120 C 320,180 480,420 640,540 L 900,540"/>
+    <g transform="translate(0 -34)">
+      <rect x="-70" y="-12" width="140" height="22" rx="11" fill="#07231f" stroke="#57ab5a"/>
+      <use href="#cp" transform="translate(-62 -7) scale(0.58)" fill="#7ee2a8"/>
+      <text x="12" y="4" text-anchor="middle" font-size="12" class="mono" fill="#7ee2a8">PR #19 · fix</text>
+    </g>
+  </g>
+  <!-- merged marker where it stops -->
+  <g transform="translate(900 505)">
+    <g class="cyc merged">
+      <rect x="-74" y="-16" width="148" height="30" rx="15" fill="#123b1e" stroke="#57ab5a" stroke-width="2"/>
+      <use href="#gh" transform="translate(-64 -9) scale(0.75)" fill="#7ee2a8"/>
+      <text x="10" y="5" text-anchor="middle" font-size="13" fill="#7ee2a8" font-weight="800">✓ MERGED</text>
+    </g>
+  </g>
+
+  <!-- headline -->
+  <text x="600" y="452" text-anchor="middle" font-size="31" font-weight="800">My agents were fine. <tspan fill="url(#mango)">I was the airspace.</tspan></text>
+  <text x="600" y="486" text-anchor="middle" font-size="15" class="muted">Three PRs in the pattern. One human on approach control.</text>
+
+  <!-- ground -->
+  <rect y="558" width="1200" height="72" fill="#02100e"/>
+  <line x1="0" y1="558" x2="1200" y2="558" stroke="#0f4a42" stroke-width="2"/>
+
+  <!-- runway -->
+  <g>
+    <rect x="560" y="546" width="580" height="24" rx="4" fill="#071d19" stroke="#1d5b52"/>
+    <g stroke="#7fbfb4" stroke-width="3" stroke-dasharray="22 18" opacity=".6">
+      <line x1="580" y1="558" x2="1120" y2="558"/>
+    </g>
+    <g fill="#ffd08a">
+      <circle class="edge1" cx="590" cy="544" r="3"/><circle class="edge2" cx="700" cy="544" r="3"/>
+      <circle class="edge1" cx="810" cy="544" r="3"/><circle class="edge2" cx="920" cy="544" r="3"/>
+      <circle class="edge1" cx="1030" cy="544" r="3"/><circle class="edge2" cx="1130" cy="544" r="3"/>
+    </g>
+    <text x="850" y="592" text-anchor="middle" font-size="12" letter-spacing="4" class="dim">RUNWAY 01 · MAIN BRANCH</text>
+  </g>
+
+  <!-- control tower -->
+  <g transform="translate(185 0)">
+    <polygon points="-22,558 22,558 14,420 -14,420" fill="#07231f" stroke="#1d5b52" stroke-width="1.5"/>
+    <rect x="-40" y="376" width="80" height="46" rx="10" fill="#0f4a42" stroke="#55d8c7" stroke-width="1.5"/>
+    <rect x="-30" y="388" width="60" height="20" rx="4" fill="#8ef0e0" opacity=".25"/>
+    <line x1="0" y1="376" x2="0" y2="346" stroke="#55d8c7" stroke-width="2.5"/>
+    <circle class="beacon" cx="0" cy="342" r="5" fill="#ff6b6b" filter="url(#glow)"/>
+    <g transform="translate(0 360)">
+      <g class="radar"><line x1="0" y1="0" x2="34" y2="-8" stroke="#8ef0e0" stroke-width="2" opacity=".8"/></g>
+      <circle r="3" fill="#8ef0e0"/>
+    </g>
+    <text y="596" text-anchor="middle" font-size="12.5" font-weight="700" fill="#ffd08a">YOU — one reviewer, all the airspace</text>
+  </g>
+  </g>
+  <rect x="1" y="1" width="1198" height="628" rx="19" fill="none" stroke="#1d5b52" stroke-width="2"/>
+</svg>

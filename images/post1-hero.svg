@@ -1,0 +1,190 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" font-family="'Inter','Segoe UI',sans-serif">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="45%" r="80%">
+      <stop offset="0%" stop-color="#0f4a42"/>
+      <stop offset="52%" stop-color="#052d28"/>
+      <stop offset="100%" stop-color="#02100e"/>
+    </radialGradient>
+    <linearGradient id="mango" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffd08a"/><stop offset="100%" stop-color="#ff7b1c"/>
+    </linearGradient>
+    <linearGradient id="teal" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#8ef0e0"/><stop offset="100%" stop-color="#55d8c7"/>
+    </linearGradient>
+    <filter id="glow" x="-90%" y="-90%" width="280%" height="280%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="soft" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="2.5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <mask id="cres"><rect x="-26" y="-26" width="52" height="52" fill="#fff"/><circle cx="10" cy="-6" r="19" fill="#000"/></mask>
+    <path id="gh" d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+    <path id="cp" d="M23.922 16.997C23.061 18.492 18.063 22.02 12 22.02 5.937 22.02.939 18.492.078 16.997A.641.641 0 0 1 0 16.741v-2.869a.883.883 0 0 1 .053-.22c.372-.935 1.347-2.292 2.605-2.656.167-.429.414-1.055.644-1.517a10.098 10.098 0 0 1-.052-1.086c0-1.331.282-2.499 1.132-3.368.397-.406.89-.717 1.474-.952C7.255 2.937 9.248 1.98 11.978 1.98c2.731 0 4.767.957 6.166 2.093.584.235 1.077.546 1.474.952.85.869 1.132 2.037 1.132 3.368 0 .368-.014.733-.052 1.086.23.462.477 1.088.644 1.517 1.258.364 2.233 1.721 2.605 2.656a.841.841 0 0 1 .053.22v2.869a.641.641 0 0 1-.078.256Zm-11.75-5.992h-.344a4.359 4.359 0 0 1-.355.508c-.77.947-1.918 1.492-3.508 1.492-1.725 0-2.989-.359-3.782-1.259a2.137 2.137 0 0 1-.085-.104L4 11.746v6.585c1.435.779 4.514 2.179 8 2.179 3.486 0 6.565-1.4 8-2.179v-6.585l-.098-.104s-.033.045-.085.104c-.793.9-2.057 1.259-3.782 1.259-1.59 0-2.738-.545-3.508-1.492a4.359 4.359 0 0 1-.355-.508Zm2.328 3.25c.549 0 1 .451 1 1v2c0 .549-.451 1-1 1-.549 0-1-.451-1-1v-2c0-.549.451-1 1-1Zm-5 0c.549 0 1 .451 1 1v2c0 .549-.451 1-1 1-.549 0-1-.451-1-1v-2c0-.549.451-1 1-1Zm3.313-6.185c.136 1.057.403 1.913.878 2.497.442.544 1.134.938 2.344.938 1.573 0 2.292-.337 2.657-.751.384-.435.558-1.15.558-2.361 0-1.14-.243-1.847-.705-2.319-.477-.488-1.319-.862-2.824-1.025-1.487-.161-2.192.138-2.533.529-.269.307-.437.808-.438 1.578v.021c0 .265.021.562.063.893Zm-1.626 0c.042-.331.063-.628.063-.894v-.02c-.001-.77-.169-1.271-.438-1.578-.341-.391-1.046-.69-2.533-.529-1.505.163-2.347.537-2.824 1.025-.462.472-.705 1.179-.705 2.319 0 1.211.175 1.926.558 2.361.365.414 1.084.751 2.657.751 1.21 0 1.902-.394 2.344-.938.475-.584.742-1.44.878-2.497Z"/>
+    <clipPath id="frame"><rect width="1200" height="630" rx="20"/></clipPath>
+  </defs>
+  <style>
+    text{fill:#e8fffa}
+    .mono{font-family:'Cascadia Code',Consolas,monospace}
+    .muted{fill:#7fbfb4}
+    .dim{fill:#4f8f84}
+    .tw1,.tw2,.tw3{animation-name:tw;animation-duration:3.4s;animation-iteration-count:infinite;animation-timing-function:ease-in-out}
+    .tw2{animation-delay:-1.2s}.tw3{animation-delay:-2.3s}
+    @keyframes tw{0%,100%{opacity:.15}50%{opacity:.7}}
+    .shoot{animation-name:shoot;animation-duration:12s;animation-iteration-count:infinite;animation-timing-function:linear}
+    @keyframes shoot{0%,41%{opacity:0;transform:translate(0,0)}43.5%{opacity:1}48%{opacity:0;transform:translate(-210px,95px)}100%{opacity:0}}
+    .r1{animation:spin1 16s linear infinite}
+    .r2{animation:spin2 11s linear infinite}
+    .r3{animation:spin1 7.5s linear infinite}
+    @keyframes spin1{to{transform:rotate(360deg)}}
+    @keyframes spin2{to{transform:rotate(-360deg)}}
+    .core{animation-name:corePulse;animation-duration:3s;animation-iteration-count:infinite;animation-timing-function:ease-in-out}
+    @keyframes corePulse{0%,100%{transform:scale(1);opacity:.85}50%{transform:scale(1.22);opacity:1}}
+    .cycle{animation-duration:12s;animation-iteration-count:infinite;animation-timing-function:linear}
+    .clickRing{animation-name:clickRing}
+    @keyframes clickRing{0%,7%{opacity:0;transform:scale(.2)}9%{opacity:.9;transform:scale(.6)}14%{opacity:0;transform:scale(1.8)}15%,100%{opacity:0}}
+    .eyes{animation-name:eyes}
+    @keyframes eyes{0%,13%{opacity:0;transform:scale(.4)}16%{opacity:1;transform:scale(1.25)}18%{transform:scale(1)}100%{opacity:1;transform:scale(1)}}
+    .orbVis{animation-name:orbVis}
+    @keyframes orbVis{0%,19%{opacity:0}22%{opacity:1}41%{opacity:1}44%,100%{opacity:0}}
+    .flash{animation-name:flash}
+    @keyframes flash{0%,29%{opacity:0;transform:scale(.4)}32%{opacity:.55;transform:scale(1)}38%{opacity:0;transform:scale(1.7)}39%,100%{opacity:0}}
+    .frameDraw{stroke-dasharray:1;animation-name:frameDraw}
+    @keyframes frameDraw{0%,43%{stroke-dashoffset:1;opacity:1}58%{stroke-dashoffset:0;opacity:1}100%{stroke-dashoffset:0;opacity:1}}
+    .row1{animation-name:fadeUp1}.row2{animation-name:fadeUp2}.row3{animation-name:fadeUp3}
+    .chk1{animation-name:fadeUp4}.chk2{animation-name:fadeUp5}
+    @keyframes fadeUp1{0%,56%{opacity:0;transform:translateY(8px)}61%{opacity:1;transform:translateY(0)}100%{opacity:1}}
+    @keyframes fadeUp2{0%,61%{opacity:0;transform:translateY(8px)}66%{opacity:1;transform:translateY(0)}100%{opacity:1}}
+    @keyframes fadeUp3{0%,66%{opacity:0;transform:translateY(8px)}71%{opacity:1;transform:translateY(0)}100%{opacity:1}}
+    @keyframes fadeUp4{0%,72%{opacity:0;transform:translateY(8px)}77%{opacity:1;transform:translateY(0)}100%{opacity:1}}
+    @keyframes fadeUp5{0%,77%{opacity:0;transform:translateY(8px)}82%{opacity:1;transform:translateY(0)}100%{opacity:1}}
+    .draft{animation-name:draftOut}
+    @keyframes draftOut{0%,43%{opacity:0}50%{opacity:1}84%{opacity:1}87%,100%{opacity:0}}
+    .ready{animation-name:readyIn}
+    @keyframes readyIn{0%,85%{opacity:0;transform:scale(.6)}89%{opacity:1;transform:scale(1.12)}92%{transform:scale(1)}100%{opacity:1;transform:scale(1)}}
+    .beam{animation-name:beamOn}
+    @keyframes beamOn{0%,20%{opacity:0}25%{opacity:.5}42%{opacity:.5}46%,100%{opacity:0}}
+  </style>
+
+  <g clip-path="url(#frame)">
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- perspective grid floor -->
+  <g stroke="#55d8c7" stroke-width="1" opacity=".07">
+    <path d="M0 630 L600 330 L1200 630"/>
+    <path d="M150 630 L600 330 L1050 630"/>
+    <path d="M330 630 L600 330 L870 630"/>
+    <path d="M-80 520 Q600 400 1280 520" fill="none"/>
+    <path d="M-80 580 Q600 470 1280 580" fill="none"/>
+  </g>
+
+  <!-- stars -->
+  <g fill="#8ef0e0">
+    <circle class="tw1" cx="90" cy="80" r="1.6"/><circle class="tw2" cx="240" cy="55" r="1.2"/>
+    <circle class="tw3" cx="410" cy="95" r="1.5"/><circle class="tw1" cx="705" cy="60" r="1.3"/>
+    <circle class="tw2" cx="880" cy="90" r="1.7"/><circle class="tw3" cx="1060" cy="65" r="1.2"/>
+    <circle class="tw1" cx="1140" cy="150" r="1.4"/><circle class="tw3" cx="60" cy="200" r="1.2"/>
+    <circle class="tw2" cx="960" cy="180" r="1.3"/><circle class="tw1" cx="500" cy="70" r="1.1"/>
+  </g>
+
+  <!-- mango moon -->
+  <g transform="translate(1085 88)">
+    <circle r="32" fill="#ff7b1c" opacity=".08"/>
+    <circle r="22" fill="url(#mango)" mask="url(#cres)" opacity=".92"/>
+  </g>
+  <g transform="translate(950 80)">
+    <g class="shoot">
+      <line x1="0" y1="0" x2="30" y2="-14" stroke="#8ef0e0" stroke-width="2" stroke-linecap="round" opacity=".8"/>
+      <circle r="2.2" fill="#e8fffa"/>
+    </g>
+  </g>
+
+  <text x="600" y="48" text-anchor="middle" font-size="15" letter-spacing="6" class="dim" font-weight="600">THE NIGHT SHIFT · EP 1 — THE HANDOFF</text>
+
+  <!-- ISSUE CARD -->
+  <g transform="translate(70 195)">
+    <rect width="300" height="210" rx="14" fill="#07231f" stroke="#1d5b52" stroke-width="1.5"/>
+    <circle cx="26" cy="30" r="8" fill="none" stroke="#57ab5a" stroke-width="2.5"/>
+    <text x="44" y="35" font-size="15" font-weight="700">Issue #7 — overdue flag</text>
+    <use href="#gh" transform="translate(258 18)" fill="#4f8f84"/>
+    <text x="24" y="68" font-size="12.5" class="muted">As a user, I want overdue tasks</text>
+    <text x="24" y="88" font-size="12.5" class="muted">flagged in red, so I can triage fast.</text>
+    <text x="24" y="115" font-size="12" class="mono" fill="#7ee2a8">✓ acceptance criteria × 3</text>
+    <rect x="22" y="136" width="196" height="36" rx="9" fill="#0f4a42" stroke="#55d8c7"/>
+    <use href="#cp" transform="translate(34 144) scale(0.833)" fill="#8ef0e0"/>
+    <text x="62" y="159" font-size="13.5" fill="#8ef0e0" font-weight="600">Assign to Copilot</text>
+    <!-- cursor + click ring -->
+    <g transform="translate(168 162)">
+      <g class="cycle clickRing"><circle r="16" fill="none" stroke="#ffd08a" stroke-width="2.5"/></g>
+      <path d="M0 0 L5 14 L8 8 L14 6 Z" fill="#e8fffa" stroke="#02100e" stroke-width="1"/>
+    </g>
+    <!-- acknowledgement -->
+    <g transform="translate(258 186)">
+      <g class="cycle eyes">
+        <rect x="-30" y="-16" width="60" height="32" rx="16" fill="#0f4a42" stroke="#55d8c7"/>
+        <text y="6" text-anchor="middle" font-size="16">👀</text>
+      </g>
+    </g>
+    <text x="24" y="196" font-size="12" class="dim">you wrote a spec, not a prompt</text>
+  </g>
+
+  <!-- PORTAL -->
+  <g transform="translate(600 320)">
+    <g class="cycle beam"><path d="M-230 -18 L0 0 L-230 18 Z" fill="url(#teal)" opacity=".5"/></g>
+    <g class="r1"><circle r="66" fill="none" stroke="#55d8c7" stroke-width="2" stroke-dasharray="8 14" opacity=".5"/></g>
+    <g class="r2"><circle r="50" fill="none" stroke="#8ef0e0" stroke-width="2" stroke-dasharray="4 10" opacity=".7"/></g>
+    <g class="r3"><circle r="35" fill="none" stroke="#ffd08a" stroke-width="2.5" stroke-dasharray="10 8" opacity=".8"/></g>
+    <g class="core"><circle r="17" fill="url(#teal)" filter="url(#glow)"/><use href="#cp" transform="translate(-11 -11) scale(0.92)" fill="#02100e"/></g>
+    <g class="cycle flash"><circle r="80" fill="#8ef0e0"/></g>
+    <text y="102" text-anchor="middle" font-size="13" letter-spacing="3" class="muted" font-weight="600">COPILOT CODING AGENT</text>
+    <text y="122" text-anchor="middle" font-size="12" class="dim">reads · plans · codes · tests</text>
+  </g>
+
+  <!-- THE ORB -->
+  <g class="cycle orbVis">
+    <g filter="url(#glow)">
+      <circle r="11" fill="url(#mango)"/>
+      <circle r="4" fill="#fff3df"/>
+      <animateMotion dur="12s" repeatCount="indefinite" calcMode="linear"
+        keyPoints="0;0;1;1" keyTimes="0;0.20;0.43;1"
+        path="M 372 300 C 470 240, 520 320, 600 320 C 690 320, 740 250, 826 240"/>
+    </g>
+  </g>
+
+  <!-- PR CARD -->
+  <g transform="translate(828 175)">
+    <rect class="cycle frameDraw" width="302" height="250" rx="14" fill="#07231f" stroke="#a371f7" stroke-width="2" pathLength="1"/>
+    <g class="cycle row1">
+      <path d="M22 26 v14 m0 0 a8 8 0 1 0 .1 0 M22 26 a8 8 0 1 1 .1 0" fill="none" stroke="#a371f7" stroke-width="2.5"/>
+      <text x="44" y="38" font-size="15" font-weight="700">PR #8 · copilot/fix-7</text>
+      <use href="#gh" transform="translate(254 20)" fill="#4f8f84"/>
+    </g>
+    <g class="cycle row2">
+      <text x="24" y="74" font-size="12.5" class="mono"><tspan fill="#7ee2a8">+42</tspan> <tspan fill="#ff9c9c">−7</tspan> <tspan class="muted">· 3 files changed</tspan></text>
+      <rect x="24" y="86" width="150" height="6" rx="3" fill="#57ab5a"/>
+      <rect x="176" y="86" width="30" height="6" rx="3" fill="#ff6b6b"/>
+    </g>
+    <g class="cycle row3">
+      <text x="24" y="122" font-size="12" class="mono" fill="#7fbfb4">src/App.tsx · storage.ts · App.css</text>
+    </g>
+    <g class="cycle chk1"><text x="24" y="154" font-size="13" class="mono" fill="#7ee2a8">✓ build — passed</text></g>
+    <g class="cycle chk2"><text x="24" y="178" font-size="13" class="mono" fill="#7ee2a8">✓ tests — 12 passed, 0 failed</text></g>
+    <g class="cycle draft">
+      <rect x="22" y="200" width="64" height="26" rx="13" fill="#0f4a42" stroke="#4f8f84"/>
+      <text x="54" y="217" text-anchor="middle" font-size="12" class="muted">Draft</text>
+    </g>
+    <g transform="translate(22 200)">
+      <g class="cycle ready">
+        <rect width="150" height="26" rx="13" fill="#123b1e" stroke="#57ab5a" stroke-width="1.5"/>
+        <text x="75" y="17" text-anchor="middle" font-size="12" fill="#7ee2a8" font-weight="700">Ready for review</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- headline -->
+  <text x="600" y="548" text-anchor="middle" font-size="30" font-weight="800">Three seconds to acknowledge. <tspan fill="url(#mango)">Twenty minutes to a pull request.</tspan></text>
+  <text x="600" y="582" text-anchor="middle" font-size="15" class="muted">Delegation isn't autocomplete — it's a teammate with its own branch.</text>
+  </g>
+  <rect x="1" y="1" width="1198" height="628" rx="19" fill="none" stroke="#1d5b52" stroke-width="2"/>
+</svg>

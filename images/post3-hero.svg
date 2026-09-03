@@ -1,0 +1,185 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" font-family="'Inter','Segoe UI',sans-serif">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#02100e"/>
+      <stop offset="75%" stop-color="#041a17"/>
+      <stop offset="100%" stop-color="#073029"/>
+    </linearGradient>
+    <linearGradient id="mango" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffd08a"/><stop offset="100%" stop-color="#ff7b1c"/>
+    </linearGradient>
+    <filter id="glow" x="-90%" y="-90%" width="280%" height="280%">
+      <feGaussianBlur stdDeviation="5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <path id="gh" d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+    <path id="cp" d="M23.922 16.997C23.061 18.492 18.063 22.02 12 22.02 5.937 22.02.939 18.492.078 16.997A.641.641 0 0 1 0 16.741v-2.869a.883.883 0 0 1 .053-.22c.372-.935 1.347-2.292 2.605-2.656.167-.429.414-1.055.644-1.517a10.098 10.098 0 0 1-.052-1.086c0-1.331.282-2.499 1.132-3.368.397-.406.89-.717 1.474-.952C7.255 2.937 9.248 1.98 11.978 1.98c2.731 0 4.767.957 6.166 2.093.584.235 1.077.546 1.474.952.85.869 1.132 2.037 1.132 3.368 0 .368-.014.733-.052 1.086.23.462.477 1.088.644 1.517 1.258.364 2.233 1.721 2.605 2.656a.841.841 0 0 1 .053.22v2.869a.641.641 0 0 1-.078.256Zm-11.75-5.992h-.344a4.359 4.359 0 0 1-.355.508c-.77.947-1.918 1.492-3.508 1.492-1.725 0-2.989-.359-3.782-1.259a2.137 2.137 0 0 1-.085-.104L4 11.746v6.585c1.435.779 4.514 2.179 8 2.179 3.486 0 6.565-1.4 8-2.179v-6.585l-.098-.104s-.033.045-.085.104c-.793.9-2.057 1.259-3.782 1.259-1.59 0-2.738-.545-3.508-1.492a4.359 4.359 0 0 1-.355-.508Zm2.328 3.25c.549 0 1 .451 1 1v2c0 .549-.451 1-1 1-.549 0-1-.451-1-1v-2c0-.549.451-1 1-1Zm-5 0c.549 0 1 .451 1 1v2c0 .549-.451 1-1 1-.549 0-1-.451-1-1v-2c0-.549.451-1 1-1Zm3.313-6.185c.136 1.057.403 1.913.878 2.497.442.544 1.134.938 2.344.938 1.573 0 2.292-.337 2.657-.751.384-.435.558-1.15.558-2.361 0-1.14-.243-1.847-.705-2.319-.477-.488-1.319-.862-2.824-1.025-1.487-.161-2.192.138-2.533.529-.269.307-.437.808-.438 1.578v.021c0 .265.021.562.063.893Zm-1.626 0c.042-.331.063-.628.063-.894v-.02c-.001-.77-.169-1.271-.438-1.578-.341-.391-1.046-.69-2.533-.529-1.505.163-2.347.537-2.824 1.025-.462.472-.705 1.179-.705 2.319 0 1.211.175 1.926.558 2.361.365.414 1.084.751 2.657.751 1.21 0 1.902-.394 2.344-.938.475-.584.742-1.44.878-2.497Z"/>
+    <pattern id="win" width="26" height="34" patternUnits="userSpaceOnUse">
+      <rect x="7" y="9" width="12" height="16" rx="2" fill="#0d3b34" opacity=".8"/>
+    </pattern>
+    <mask id="cres"><rect x="-26" y="-26" width="52" height="52" fill="#fff"/><circle cx="10" cy="-6" r="19" fill="#000"/></mask>
+    <clipPath id="frame"><rect width="1200" height="630" rx="20"/></clipPath>
+  </defs>
+  <style>
+    text{fill:#e8fffa}
+    .mono{font-family:'Cascadia Code',Consolas,monospace}
+    .muted{fill:#7fbfb4}.dim{fill:#4f8f84}
+    .rn1,.rn2,.rn3{animation-name:rain;animation-duration:1.4s;animation-iteration-count:infinite;animation-timing-function:linear}
+    .rn2{animation-delay:-.5s}.rn3{animation-delay:-.95s}
+    @keyframes rain{0%{transform:translateY(-30px);opacity:0}25%{opacity:.35}90%{opacity:.28}100%{transform:translateY(150px);opacity:0}}
+    .w1,.w2{animation-name:winFlick;animation-duration:5s;animation-iteration-count:infinite;animation-timing-function:steps(1)}
+    .w2{animation-delay:-2.6s}
+    @keyframes winFlick{0%,64%{opacity:.5}65%,72%{opacity:.12}73%,100%{opacity:.5}}
+    .cyc{animation-duration:12s;animation-iteration-count:infinite;animation-timing-function:linear}
+    .sweep{animation-name:sweep;animation-duration:12s;animation-iteration-count:infinite;animation-timing-function:ease-in-out}
+    @keyframes sweep{0%{transform:rotate(38deg)}28%{transform:rotate(-10.6deg)}78%{transform:rotate(-10.6deg)}90%{transform:rotate(-38deg)}100%{transform:rotate(38deg)}}
+    .bug{animation-name:bugCatch}
+    @keyframes bugCatch{0%,28%{opacity:.18}31%{opacity:1}60%{opacity:1}64%,100%{opacity:0}}
+    .ring{animation-name:ring}
+    @keyframes ring{0%,29%{opacity:0;transform:scale(.2)}33%{opacity:.9;transform:scale(1)}40%{opacity:0;transform:scale(2.4)}41%,100%{opacity:0}}
+    .card{animation-name:cardIn}
+    @keyframes cardIn{0%,31%{opacity:0;transform:translateX(36px)}36%{opacity:1;transform:translateX(0)}100%{opacity:1;transform:translateX(0)}}
+    .fixrow{animation-name:fixIn}
+    @keyframes fixIn{0%,60%{opacity:0}65%{opacity:1}100%{opacity:1}}
+    .patch{animation-name:patchIn}
+    @keyframes patchIn{0%,62%{opacity:0;transform:scale(.3)}67%{opacity:1;transform:scale(1.2)}70%{transform:scale(1)}100%{opacity:1;transform:scale(1)}}
+    .stamp{animation-name:stampIn}
+    @keyframes stampIn{0%,71%{opacity:0;transform:scale(2.2) rotate(-14deg)}76%{opacity:1;transform:scale(1) rotate(-14deg)}100%{opacity:1;transform:scale(1) rotate(-14deg)}}
+    .beacon{animation-name:beacon;animation-duration:1.8s;animation-iteration-count:infinite;animation-timing-function:ease-in-out}
+    @keyframes beacon{0%,100%{opacity:.25}50%{opacity:1}}
+    .tw1,.tw2,.tw3{animation-name:tw;animation-duration:2.6s;animation-iteration-count:infinite;animation-timing-function:ease-in-out}
+    .tw2{animation-delay:-0.9s}.tw3{animation-delay:-1.8s}
+    @keyframes tw{0%,100%{opacity:.2}50%{opacity:.9}}
+    .shoot{animation-name:shoot;animation-duration:12s;animation-iteration-count:infinite;animation-timing-function:linear}
+    @keyframes shoot{0%,41%{opacity:0;transform:translate(0,0)}43.5%{opacity:1}48%{opacity:0;transform:translate(-210px,95px)}100%{opacity:0}}
+  </style>
+
+  <g clip-path="url(#frame)">
+  <rect width="1200" height="630" fill="url(#sky)"/>
+
+  <!-- mango moon -->
+  <g transform="translate(1080 84)">
+    <circle r="32" fill="#ff7b1c" opacity=".08"/>
+    <circle r="22" fill="url(#mango)" mask="url(#cres)" opacity=".92"/>
+  </g>
+  <g transform="translate(330 95)">
+    <g class="shoot">
+      <line x1="0" y1="0" x2="30" y2="-14" stroke="#8ef0e0" stroke-width="2" stroke-linecap="round" opacity=".8"/>
+      <circle r="2.2" fill="#e8fffa"/>
+    </g>
+  </g>
+
+  <text x="60" y="56" font-size="15" letter-spacing="6" class="dim" font-weight="600">THE NIGHT SHIFT · EP 3</text>
+  <text x="60" y="80" font-size="13" class="muted">the planted bug</text>
+
+  <!-- rain -->
+  <g stroke="#8ef0e0" stroke-width="1.2">
+    <line class="rn1" x1="150" y1="120" x2="146" y2="138"/><line class="rn2" x1="260" y1="90" x2="256" y2="108"/>
+    <line class="rn3" x1="370" y1="140" x2="366" y2="158"/><line class="rn1" x1="480" y1="100" x2="476" y2="118"/>
+    <line class="rn2" x1="760" y1="130" x2="756" y2="148"/><line class="rn3" x1="880" y1="95" x2="876" y2="113"/>
+    <line class="rn1" x1="980" y1="150" x2="976" y2="168"/><line class="rn2" x1="90" y1="220" x2="86" y2="238"/>
+    <line class="rn3" x1="1140" y1="200" x2="1136" y2="218"/><line class="rn1" x1="700" y1="200" x2="696" y2="218"/>
+  </g>
+
+  <!-- skyline -->
+  <g stroke="#1d5b52" stroke-width="1.5">
+    <rect x="60" y="340" width="120" height="220" fill="#051f1b"/>
+    <rect x="210" y="240" width="150" height="320" fill="#051f1b"/>
+    <rect x="400" y="300" width="130" height="260" fill="#051f1b"/>
+    <rect x="570" y="180" width="170" height="380" fill="#051f1b"/>
+    <rect x="780" y="280" width="140" height="280" fill="#051f1b"/>
+    <rect x="950" y="360" width="120" height="200" fill="#051f1b"/>
+  </g>
+  <g>
+    <rect x="66" y="348" width="108" height="206" fill="url(#win)"/>
+    <rect x="217" y="248" width="136" height="306" fill="url(#win)"/>
+    <rect x="407" y="308" width="116" height="246" fill="url(#win)"/>
+    <rect x="577" y="188" width="156" height="366" fill="url(#win)"/>
+    <rect x="787" y="288" width="126" height="266" fill="url(#win)"/>
+    <rect x="957" y="368" width="106" height="186" fill="url(#win)"/>
+  </g>
+  <!-- lit windows -->
+  <g fill="#55d8c7">
+    <rect class="w1" x="241" y="281" width="12" height="16" rx="2"/><rect class="w2" x="293" y="383" width="12" height="16" rx="2"/>
+    <rect class="w1" x="423" y="349" width="12" height="16" rx="2"/><rect class="w2" x="631" y="213" width="12" height="16" rx="2"/>
+    <rect class="w1" x="683" y="417" width="12" height="16" rx="2"/><rect class="w2" x="813" y="315" width="12" height="16" rx="2"/>
+    <rect class="w1" x="995" y="417" width="12" height="16" rx="2"/><rect class="w2" x="85" y="383" width="12" height="16" rx="2"/>
+  </g>
+
+  <!-- rooftop easter egg -->
+  <g transform="translate(338 240) scale(2)" opacity=".95">
+    <path d="M-9.5,0 L-6.5,-7.2 L-4.4,-4.4 L-3.1,-8.4 L-1.8,-8.4 L-1.8,-11.6 L-0.9,-9.9 L0.9,-9.9 L1.8,-11.6 L1.8,-8.4 L3.1,-8.4 L4.4,-4.4 L6.5,-7.2 L9.5,0 Z" fill="#0d3b34" stroke="#134a41" stroke-width=".5"/>
+  </g>
+
+  <!-- searchlight beam (under blimp, over city) -->
+  <g transform="translate(600 86)">
+    <g class="sweep">
+      <polygon points="0,0 -85,560 85,560" fill="#8ef0e0" opacity=".09"/>
+      <polygon points="0,0 -30,560 30,560" fill="#8ef0e0" opacity=".10"/>
+    </g>
+  </g>
+
+  <!-- the CodeQL signal (bat-signal homage) -->
+  <g transform="translate(600 52)">
+    <circle r="36" fill="#8ef0e0" opacity=".14" filter="url(#glow)"/>
+    <circle r="27" fill="#8ef0e0" stroke="#55d8c7" stroke-width="2"/>
+    <use href="#gh" transform="translate(-16.5 -16.5) scale(1.375)" fill="#02100e"/>
+    <g stroke="#8ef0e0" stroke-width="2" opacity=".7" stroke-linecap="round">
+      <line class="tw1" x1="-38" y1="-14" x2="-48" y2="-18"/><line class="tw2" x1="38" y1="-14" x2="48" y2="-18"/>
+      <line class="tw3" x1="-32" y1="-30" x2="-40" y2="-38"/><line class="tw1" x1="32" y1="-30" x2="40" y2="-38"/>
+      <line class="tw2" x1="0" y1="-42" x2="0" y2="-52"/>
+    </g>
+  </g>
+  <text x="600" y="122" text-anchor="middle" font-size="11.5" letter-spacing="2" class="dim">THE CODEQL SIGNAL · LIT ON EVERY PUSH</text>
+
+  <!-- the bug window -->
+  <g transform="translate(637 289)">
+    <rect x="-10" y="-12" width="20" height="24" rx="2" fill="#210a08" stroke="#3b1210"/>
+    <g class="cyc bug">
+      <circle r="6" fill="#ff6b6b"/>
+      <line x1="0" y1="-6" x2="0" y2="6" stroke="#210a08" stroke-width="1.4"/>
+      <circle cx="-2.5" cy="-2" r="1.1" fill="#210a08"/><circle cx="2.5" cy="1.5" r="1.1" fill="#210a08"/>
+      <line x1="-3" y1="-7" x2="-5" y2="-10" stroke="#ff6b6b" stroke-width="1.2"/>
+      <line x1="3" y1="-7" x2="5" y2="-10" stroke="#ff6b6b" stroke-width="1.2"/>
+    </g>
+    <g class="cyc ring"><circle r="24" fill="none" stroke="#ff6b6b" stroke-width="3"/></g>
+    <g class="cyc patch">
+      <rect x="-11" y="-13" width="22" height="26" rx="3" fill="#123b1e" stroke="#57ab5a" stroke-width="2"/>
+      <text y="5" text-anchor="middle" font-size="13" fill="#7ee2a8" font-weight="800">✓</text>
+    </g>
+  </g>
+
+  <!-- alert card -->
+  <g transform="translate(820 150)">
+    <g class="cyc card">
+      <rect width="340" height="168" rx="14" fill="#07231f" stroke="#ff6b6b" stroke-width="2"/>
+      <text x="22" y="32" font-size="13.5" class="mono" font-weight="700" fill="#ff9c9c">⚠ code scanning alert #1</text>
+      <use href="#gh" transform="translate(296 16)" fill="#4f8f84"/>
+      <text x="22" y="58" font-size="13" font-weight="700">Stored XSS · CWE-79 · <tspan fill="#ff6b6b">High</tspan></text>
+      <text x="22" y="82" font-size="12" class="mono muted">task.title → dangerouslySetInnerHTML</text>
+      <line x1="22" y1="98" x2="318" y2="98" stroke="#1d5b52"/>
+      <g class="cyc fixrow">
+        <use href="#cp" transform="translate(22 111) scale(0.58)" fill="#7ee2a8"/>
+        <text x="42" y="122" font-size="12.5" class="mono" fill="#7ee2a8">Copilot Autofix — suggested patch:</text>
+        <text x="22" y="146" font-size="12" class="mono" fill="#7ee2a8">render as text · React escapes</text>
+      </g>
+    </g>
+    <g transform="translate(304 154)">
+      <g class="cyc stamp">
+        <rect x="-58" y="-16" width="116" height="32" rx="6" fill="none" stroke="#57ab5a" stroke-width="3"/>
+        <text y="6" text-anchor="middle" font-size="15" font-weight="900" fill="#7ee2a8" letter-spacing="2">PATCHED</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- pointer from card to window -->
+  <path class="cyc card" d="M818 232 C 760 246, 700 270, 659 285" fill="none" stroke="#ff6b6b" stroke-width="1.5" stroke-dasharray="5 5" opacity=".7"/>
+
+  <!-- ground + headline -->
+  <rect y="560" width="1200" height="70" fill="#02100e"/>
+  <line x1="0" y1="560" x2="1200" y2="560" stroke="#0f4a42" stroke-width="2"/>
+  <text x="600" y="598" text-anchor="middle" font-size="28" font-weight="800">Gotham has the Bat-Signal. <tspan fill="url(#mango)">My repo has CodeQL.</tspan></text>
+  <text x="600" y="620" text-anchor="middle" font-size="13.5" class="muted">I hid a bug downtown — one sweep found it · Autofix drafts the patch · you approve the merge</text>
+  </g>
+  <rect x="1" y="1" width="1198" height="628" rx="19" fill="none" stroke="#1d5b52" stroke-width="2"/>
+</svg>
