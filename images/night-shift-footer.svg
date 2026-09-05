@@ -26,11 +26,11 @@
     @keyframes tw{0%,100%{opacity:.15}50%{opacity:.7}}
     .trace{stroke-dasharray:.12 .88;animation:trace 4s linear infinite}
     @keyframes trace{to{stroke-dashoffset:-1}}
-    .m1{animation:mchip 12s linear infinite}
-    .m2{animation:mchip 12s linear infinite;animation-delay:1.4s}
-    .m3{animation:mchip 12s linear infinite;animation-delay:2.8s}
+    .m1{animation:mchip 12s linear 1 both}
+    .m2{animation:mchip 12s linear 1 both;animation-delay:1.4s}
+    .m3{animation:mchip 12s linear 1 both;animation-delay:2.8s}
     @keyframes mchip{0%,8%{opacity:0;transform:translateX(14px)}13%{opacity:1;transform:translateX(0)}100%{opacity:1;transform:translateX(0)}}
-    .yours{transform-box:fill-box;transform-origin:center;animation:yours 12s linear infinite}
+    .yours{transform-box:fill-box;transform-origin:center;animation:yours 12s linear 1 both}
     @keyframes yours{0%,42%{opacity:0;transform:scale(.8)}47%{opacity:1;transform:scale(1.06)}50%{transform:scale(1)}100%{opacity:1;transform:scale(1)}}
     .yourspulse{animation:yourspulse 2.2s ease-in-out infinite}
     @keyframes yourspulse{0%,100%{opacity:.75}50%{opacity:1}}

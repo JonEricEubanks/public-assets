@@ -1,0 +1,178 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" font-family="'Inter','Segoe UI',sans-serif">
+  <defs>
+    <radialGradient id="bg" cx="35%" cy="45%" r="95%">
+      <stop offset="0%" stop-color="#0f4a42"/><stop offset="52%" stop-color="#052d28"/><stop offset="100%" stop-color="#02100e"/>
+    </radialGradient>
+    <radialGradient id="vig" cx="50%" cy="50%" r="72%">
+      <stop offset="55%" stop-color="#000" stop-opacity="0"/><stop offset="100%" stop-color="#000" stop-opacity=".6"/>
+    </radialGradient>
+    <radialGradient id="spot" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ff9a3c" stop-opacity=".26"/><stop offset="100%" stop-color="#ff9a3c" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="flashG" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffd08a" stop-opacity=".55"/><stop offset="100%" stop-color="#ffd08a" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="auT" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#2fd0b8" stop-opacity=".2"/><stop offset="100%" stop-color="#2fd0b8" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="auM" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ff7b1c" stop-opacity=".14"/><stop offset="100%" stop-color="#ff7b1c" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="mango" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffd08a"/><stop offset="100%" stop-color="#ff7b1c"/>
+    </linearGradient>
+    <linearGradient id="tail" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ffd08a" stop-opacity="0"/><stop offset="100%" stop-color="#ffd08a"/>
+    </linearGradient>
+    <linearGradient id="shineG" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ffb35c" stop-opacity="0"/><stop offset="50%" stop-color="#ffb35c" stop-opacity=".95"/><stop offset="100%" stop-color="#ffb35c" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="glow" x="-90%" y="-90%" width="280%" height="280%">
+      <feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="1" seed="7" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/>
+    </filter>
+    <mask id="cres"><rect x="-24" y="-24" width="48" height="48" fill="#fff"/><circle cx="9" cy="-5" r="17" fill="#000"/></mask>
+    <clipPath id="odo"><rect x="90" y="215" width="440" height="270"/></clipPath>
+    <clipPath id="wipe"><rect class="wipe" x="575" y="225" width="610" height="250"/></clipPath>
+    <clipPath id="tclip">
+      <text x="590" y="342" font-size="56" font-weight="900" letter-spacing="-1">Meet Your</text>
+      <text x="590" y="406" font-size="56" font-weight="900" letter-spacing="-1">AI Teammate</text>
+    </clipPath>
+    <clipPath id="typeclip"><rect class="typer" x="588" y="430" width="600" height="26"/></clipPath>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="#8ef0e0" opacity=".08"/></pattern>
+  </defs>
+  <style>
+    text{fill:#e8fffa}
+    .mono{font-family:'Cascadia Code',Consolas,monospace}
+    .muted{fill:#7fbfb4}.dim{fill:#4f8f84}
+    .tw1,.tw2{animation:tw 3.4s ease-in-out infinite}.tw2{animation-delay:-1.6s}
+    @keyframes tw{0%,100%{opacity:.15}50%{opacity:.7}}
+    .au1{animation:drift1 16s ease-in-out infinite alternate}
+    .au2{animation:drift2 21s ease-in-out infinite alternate}
+    @keyframes drift1{from{transform:translate(0,0)}to{transform:translate(90px,40px)}}
+    @keyframes drift2{from{transform:translate(0,0)}to{transform:translate(-80px,-50px)}}
+    .scene{animation:shake .32s linear .8s both}
+    @keyframes shake{0%,100%{transform:translate(0,0)}20%{transform:translate(-5px,3px)}40%{transform:translate(4px,-3px)}60%{transform:translate(-3px,2px)}80%{transform:translate(2px,-1px)}}
+    .moon{animation:rise .8s cubic-bezier(.2,.8,.2,1) both}
+    @keyframes rise{from{transform:translateY(28px);opacity:0}to{transform:translateY(0);opacity:1}}
+    .moonpulse{animation:moonpulse 5s ease-in-out infinite}
+    @keyframes moonpulse{0%,100%{opacity:.85}50%{opacity:1}}
+    .comet{animation:comet .95s cubic-bezier(.25,.6,.3,1) both}
+    @keyframes comet{0%{transform:translate(-320px,360px);opacity:0}8%{opacity:1}70%{opacity:1}100%{transform:translate(1420px,110px);opacity:0}}
+    .cs{transform-box:fill-box;transform-origin:center;animation:cpop .6s ease-out both}
+    @keyframes cpop{0%{transform:scale(0) rotate(0deg);opacity:0}40%{transform:scale(1.3) rotate(40deg);opacity:1}100%{transform:scale(.4) rotate(90deg);opacity:0}}
+    @keyframes fade{from{opacity:0}to{opacity:1}}
+    .in0{animation:fade .5s ease-out both}
+    .spot{animation:fade .7s ease-out .15s both}
+    .flash{animation:flash .7s ease-out .78s both}
+    @keyframes flash{0%{opacity:0}25%{opacity:1}100%{opacity:0}}
+    .ghost{transform-box:fill-box;transform-origin:center;animation:ghost 1s ease-out .2s both}
+    @keyframes ghost{from{opacity:0;transform:scale(1.08)}to{opacity:.055;transform:scale(1)}}
+    .bar{transform-box:fill-box;transform-origin:center;animation:barIn .4s cubic-bezier(.2,.9,.3,1) .1s both}
+    @keyframes barIn{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+    .prev{animation:odoOut .6s cubic-bezier(.4,0,.2,1) .18s both}
+    .cur{animation:odoIn .65s cubic-bezier(.2,1.15,.3,1) .18s both}
+    .echo1{animation:odoIn .65s cubic-bezier(.2,1.15,.3,1) .25s both}
+    .echo2{animation:odoIn .65s cubic-bezier(.2,1.15,.3,1) .31s both}
+    @keyframes odoOut{from{transform:translateY(0);opacity:.3}to{transform:translateY(-250px);opacity:0}}
+    @keyframes odoIn{from{transform:translateY(250px);opacity:0}30%{opacity:1}to{transform:translateY(0);opacity:1}}
+    .breathe{animation:breathe 4s ease-in-out 1.2s infinite}
+    @keyframes breathe{0%,100%{opacity:1}50%{opacity:.86}}
+    .wave{transform-box:fill-box;transform-origin:center;animation:wave .75s cubic-bezier(.1,.7,.3,1) .8s both}
+    .wave2{animation-delay:.92s}
+    @keyframes wave{from{transform:scale(.25);opacity:.9}to{transform:scale(2.4);opacity:0}}
+    .p{transform-box:fill-box;transform-origin:center;animation:burst .75s cubic-bezier(.1,.8,.3,1) .8s both}
+    @keyframes burst{from{transform:translate(0,0) scale(1);opacity:1}to{transform:translate(var(--dx),var(--dy)) scale(.2);opacity:0}}
+    .wipe{transform-box:fill-box;transform-origin:left;animation:wipe .55s cubic-bezier(.2,.8,.2,1) .32s both}
+    @keyframes wipe{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+    .shine{animation:shine .8s cubic-bezier(.4,0,.2,1) 1s both}
+    @keyframes shine{from{transform:translateX(-220px)}to{transform:translateX(720px)}}
+    .typer{transform-box:fill-box;transform-origin:left;animation:typer .9s steps(44,end) .6s both}
+    @keyframes typer{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+    .blink{animation:blink 1s linear 1.5s infinite}
+    @keyframes blink{0%,49%{fill-opacity:1}50%,100%{fill-opacity:0}}
+    .in5{animation:fadeUp .45s ease-out .65s both}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+    .seg{fill:#123f39}.done{fill:#2c8b7c}
+    .now{fill:url(#mango);transform-box:fill-box;transform-origin:left;animation:segIn .5s cubic-bezier(.2,.9,.3,1) .75s both}
+    @keyframes segIn{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+    .spark{animation:spark .5s cubic-bezier(.2,.9,.3,1) .75s both}
+    @keyframes spark{0%{transform:translateX(0);opacity:1}75%{opacity:1}100%{transform:translateX(118px);opacity:0}}
+    .lbl{fill:#3f7a70}.lbl.done{fill:#7fbfb4}.lbl.now{fill:#ffb35c;animation:nowpulse 1.8s ease-in-out 1.3s infinite}
+    @keyframes nowpulse{0%,100%{opacity:1}50%{opacity:.55}}
+  </style>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <ellipse class="au1" cx="820" cy="560" rx="440" ry="210" fill="url(#auT)"/>
+  <ellipse class="au2" cx="260" cy="150" rx="400" ry="190" fill="url(#auM)"/>
+  <rect width="1200" height="675" fill="url(#grid)"/>
+  <g fill="#8ef0e0">
+    <circle class="tw1" cx="160" cy="90" r="1.6"/><circle class="tw2" cx="340" cy="150" r="1.4"/>
+    <circle class="tw1" cx="880" cy="70" r="1.5"/><circle class="tw2" cx="1040" cy="180" r="1.4"/>
+    <circle class="tw1" cx="100" cy="520" r="1.4"/><circle class="tw2" cx="1130" cy="500" r="1.6"/>
+    <circle class="tw1" cx="640" cy="120" r="1.3"/><circle class="tw2" cx="720" cy="60" r="1.3"/>
+  </g>
+  <rect width="1200" height="675" fill="url(#vig)"/>
+
+  <g class="scene">
+    <ellipse class="spot" cx="310" cy="360" rx="270" ry="210" fill="url(#spot)"/>
+    <ellipse class="flash" cx="310" cy="360" rx="330" ry="260" fill="url(#flashG)"/>
+    <text class="ghost" x="330" y="600" text-anchor="middle" font-size="620" font-weight="900" style="fill:none" stroke="#8ef0e0" stroke-width="2">01</text>
+    <g class="comet"><g transform="rotate(-8.2)" filter="url(#glow)"><line x1="-260" y1="0" x2="0" y2="0" stroke="url(#tail)" stroke-width="2.5" stroke-linecap="round"/><circle r="3.2" fill="#fff4dc"/></g></g>
+    <g fill="#ffe2b8">
+      <g transform="translate(550 235)"><path class="cs" style="animation-delay:.4s" d="M0,-7 L1.6,-1.6 L7,0 L1.6,1.6 L0,7 L-1.6,1.6 L-7,0 L-1.6,-1.6Z"/></g>
+      <g transform="translate(760 205)"><path class="cs" style="animation-delay:.5s" d="M0,-6 L1.4,-1.4 L6,0 L1.4,1.4 L0,6 L-1.4,1.4 L-6,0 L-1.4,-1.4Z"/></g>
+      <g transform="translate(985 172)"><path class="cs" style="animation-delay:.6s" d="M0,-7 L1.6,-1.6 L7,0 L1.6,1.6 L0,7 L-1.6,1.6 L-7,0 L-1.6,-1.6Z"/></g>
+    </g>
+    <circle class="wave" cx="310" cy="360" r="130" fill="none" stroke="#ffd08a" stroke-width="3"/>
+    <circle class="wave wave2" cx="310" cy="360" r="130" fill="none" stroke="#8ef0e0" stroke-width="1.5"/>
+
+    <g clip-path="url(#odo)">
+      <text class="prev" x="310" y="452" text-anchor="middle" font-size="270" font-weight="900" style="fill:#7fbfb4">00</text>
+      <g opacity=".14"><text class="echo2" x="310" y="452" text-anchor="middle" font-size="270" font-weight="900" style="fill:#8ef0e0">01</text></g>
+      <g opacity=".28"><text class="echo1" x="310" y="452" text-anchor="middle" font-size="270" font-weight="900" style="fill:#8ef0e0">01</text></g>
+      <g class="cur"><text class="breathe" x="310" y="452" text-anchor="middle" font-size="270" font-weight="900" style="fill:url(#mango)" filter="url(#glow)">01</text></g>
+    </g>
+    <g fill="#ffd08a">
+      <circle class="p" cx="310" cy="360" r="3.5" style="--dx:150px;--dy:-95px"/><circle class="p" cx="310" cy="360" r="3" style="--dx:195px;--dy:25px"/>
+      <circle class="p" cx="310" cy="360" r="2.5" style="--dx:120px;--dy:125px"/><circle class="p" cx="310" cy="360" r="3.5" style="--dx:-145px;--dy:-115px"/>
+      <circle class="p" cx="310" cy="360" r="3" style="--dx:-185px;--dy:30px"/><circle class="p" cx="310" cy="360" r="2.5" style="--dx:-110px;--dy:135px"/>
+      <circle class="p" cx="310" cy="360" r="3" fill="#8ef0e0" style="--dx:30px;--dy:-175px"/><circle class="p" cx="310" cy="360" r="2.5" fill="#8ef0e0" style="--dx:-40px;--dy:175px"/>
+      <circle class="p" cx="310" cy="360" r="2.5" style="--dx:205px;--dy:-45px"/><circle class="p" cx="310" cy="360" r="3" fill="#8ef0e0" style="--dx:-205px;--dy:-25px"/>
+    </g>
+
+    <rect class="bar" x="560" y="240" width="5" height="220" rx="2.5" fill="url(#mango)"/>
+    <g clip-path="url(#wipe)">
+      <text class="dim" x="592" y="268" font-size="17" letter-spacing="5" font-weight="700">MODULE 01 &#8212; OF 05</text>
+      <text x="590" y="342" font-size="56" font-weight="900" letter-spacing="-1">Meet Your</text>
+      <text x="590" y="406" font-size="56" font-weight="900" letter-spacing="-1">AI Teammate</text>
+    </g>
+    <g clip-path="url(#tclip)"><g class="shine"><rect x="700" y="280" width="120" height="150" fill="url(#shineG)" transform="skewX(-20)"/></g></g>
+    <g clip-path="url(#typeclip)">
+      <text class="mono muted" x="592" y="448" font-size="17"><tspan style="fill:#ff9a3c">&#8250; </tspan>The autonomy spectrum &#183; where the coding agent fits<tspan class="blink" style="fill:#ffb35c">&#9612;</tspan></text>
+    </g>
+
+    <g class="in5">
+      <rect class="seg now" x="211" y="575" width="118" height="4" rx="2"/>
+      <rect class="seg" x="343" y="575" width="118" height="4" rx="2"/>
+      <rect class="seg" x="475" y="575" width="118" height="4" rx="2"/>
+      <rect class="seg" x="607" y="575" width="118" height="4" rx="2"/>
+      <rect class="seg" x="739" y="575" width="118" height="4" rx="2"/>
+      <rect class="seg" x="871" y="575" width="118" height="4" rx="2"/>
+      <circle class="spark" cx="211" cy="577" r="3.5" fill="#fff4dc" filter="url(#glow)"/>
+      <g class="mono" font-size="12" text-anchor="middle" letter-spacing="1.5">
+        <text class="lbl now" x="270" y="602">01</text><text class="lbl" x="402" y="602">02</text><text class="lbl" x="534" y="602">03</text>
+        <text class="lbl" x="666" y="602">04</text><text class="lbl" x="798" y="602">05</text><text class="lbl" x="930" y="602">CAPSTONE</text>
+      </g>
+      <text class="dim mono" x="600" y="648" text-anchor="middle" font-size="14">github.com/JonEricEubanks/ai-teammate-101</text>
+    </g>
+
+    <g class="in0">
+      <circle cx="72" cy="62" r="5" fill="url(#mango)"/>
+      <text class="dim" x="88" y="68" font-size="15" letter-spacing="5" font-weight="700">AI TEAMMATE 101</text>
+    </g>
+    <g transform="translate(1116 70)"><g class="moon"><g class="moonpulse" filter="url(#glow)"><circle r="24" fill="url(#mango)" mask="url(#cres)"/></g></g></g>
+  </g>
+  <rect width="1200" height="675" filter="url(#grain)" opacity=".06"/>
+</svg>

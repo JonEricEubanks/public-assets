@@ -1,0 +1,187 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" font-family="'Inter','Segoe UI',sans-serif">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="38%" r="95%">
+      <stop offset="0%" stop-color="#0f4a42"/><stop offset="52%" stop-color="#052d28"/><stop offset="100%" stop-color="#02100e"/>
+    </radialGradient>
+    <radialGradient id="vig" cx="50%" cy="50%" r="75%">
+      <stop offset="55%" stop-color="#000" stop-opacity="0"/><stop offset="100%" stop-color="#000" stop-opacity=".62"/>
+    </radialGradient>
+    <radialGradient id="spot" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ff9a3c" stop-opacity=".32"/><stop offset="100%" stop-color="#ff9a3c" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="flashG" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffd08a" stop-opacity=".8"/><stop offset="100%" stop-color="#ffd08a" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="auT" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#2fd0b8" stop-opacity=".2"/><stop offset="100%" stop-color="#2fd0b8" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="auM" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ff7b1c" stop-opacity=".16"/><stop offset="100%" stop-color="#ff7b1c" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="mango" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffd08a"/><stop offset="100%" stop-color="#ff7b1c"/>
+    </linearGradient>
+    <linearGradient id="shineG" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ffb35c" stop-opacity="0"/><stop offset="50%" stop-color="#ffb35c" stop-opacity=".95"/><stop offset="100%" stop-color="#ffb35c" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="glow" x="-90%" y="-90%" width="280%" height="280%">
+      <feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glowBig" x="-120%" y="-120%" width="340%" height="340%">
+      <feGaussianBlur stdDeviation="10" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="1" seed="11" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/>
+    </filter>
+    <mask id="cres"><rect x="-24" y="-24" width="48" height="48" fill="#fff"/><circle cx="9" cy="-5" r="17" fill="#000"/></mask>
+    <clipPath id="tclip"><text x="600" y="330" text-anchor="middle" font-size="66" font-weight="900" letter-spacing="-1">You Did It.</text></clipPath>
+    <clipPath id="typeclip"><rect class="typer" x="286" y="352" width="628" height="30"/></clipPath>
+    <clipPath id="wipe"><rect class="wipe" x="330" y="280" width="540" height="70"/></clipPath>
+  </defs>
+  <style>
+    text{fill:#e8fffa}
+    .mono{font-family:'Cascadia Code',Consolas,monospace}
+    .muted{fill:#7fbfb4}.dim{fill:#4f8f84}
+    .tw1,.tw2{animation:tw 3.4s ease-in-out infinite}.tw2{animation-delay:-1.6s}
+    @keyframes tw{0%,100%{opacity:.15}50%{opacity:.7}}
+    .au1{animation:drift1 16s ease-in-out infinite alternate}
+    .au2{animation:drift2 21s ease-in-out infinite alternate}
+    @keyframes drift1{from{transform:translate(0,0)}to{transform:translate(90px,40px)}}
+    @keyframes drift2{from{transform:translate(0,0)}to{transform:translate(-80px,-50px)}}
+    .scene{animation:shake .4s linear .82s both}
+    @keyframes shake{0%,100%{transform:translate(0,0)}20%{transform:translate(-7px,4px)}40%{transform:translate(6px,-4px)}60%{transform:translate(-4px,3px)}80%{transform:translate(2px,-2px)}}
+    .moon{animation:rise .8s cubic-bezier(.2,.8,.2,1) both}
+    @keyframes rise{from{transform:translateY(28px);opacity:0}to{transform:translateY(0);opacity:1}}
+    .moonpulse{animation:moonpulse 5s ease-in-out infinite}
+    @keyframes moonpulse{0%,100%{opacity:.85}50%{opacity:1}}
+    @keyframes fade{from{opacity:0}to{opacity:1}}
+    .in0{animation:fade .5s ease-out both}
+    .spot{animation:fade .8s ease-out .15s both}
+    .flash{animation:flash .85s ease-out .8s both}
+    @keyframes flash{0%{opacity:0}22%{opacity:1}100%{opacity:0}}
+    .badgeIn{transform-box:fill-box;transform-origin:center;animation:badgeIn .7s cubic-bezier(.2,1.4,.35,1) .18s both}
+    @keyframes badgeIn{from{opacity:0;transform:scale(.3) rotate(-30deg)}to{opacity:1;transform:scale(1) rotate(0deg)}}
+    .ring{transform-box:fill-box;transform-origin:center;animation:ringDraw 1s cubic-bezier(.2,.8,.2,1) .18s both}
+    @keyframes ringDraw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+    .checkDraw{stroke-dasharray:1;stroke-dashoffset:1;animation:checkDraw .4s ease-out .68s both}
+    @keyframes checkDraw{to{stroke-dashoffset:0}}
+    .breathe{transform-box:fill-box;transform-origin:center;animation:breathe 3.4s ease-in-out .9s infinite}
+    @keyframes breathe{0%,100%{transform:scale(1)}50%{transform:scale(1.035)}}
+    .wave{transform-box:fill-box;transform-origin:center;animation:wave .85s cubic-bezier(.1,.7,.3,1) .8s both}
+    .wave2{animation-delay:.94s}.wave3{animation-delay:1.08s}
+    @keyframes wave{from{transform:scale(.2);opacity:.9}to{transform:scale(3.1);opacity:0}}
+    .fw{transform-box:fill-box;transform-origin:center}
+    .fwburst circle{animation:fwp .8s cubic-bezier(.1,.8,.3,1) both}
+    @keyframes fwp{from{transform:translate(0,0) scale(1);opacity:1}to{transform:translate(var(--dx),var(--dy)) scale(.15);opacity:0}}
+    .wipe{transform-box:fill-box;transform-origin:left;animation:wipe .55s cubic-bezier(.2,.8,.2,1) .34s both}
+    @keyframes wipe{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+    .shine{animation:shine .85s cubic-bezier(.4,0,.2,1) 1.05s both}
+    @keyframes shine{from{transform:translateX(-240px)}to{transform:translateX(760px)}}
+    .typer{transform-box:fill-box;transform-origin:left;animation:typer .95s steps(46,end) .64s both}
+    @keyframes typer{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+    .blink{animation:blink 1s linear 1.6s infinite}
+    @keyframes blink{0%,49%{fill-opacity:1}50%,100%{fill-opacity:0}}
+    .in5{animation:fadeUp .5s ease-out .78s both}
+    .in6{animation:fadeUp .5s ease-out .95s both}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+    .seg{fill:#2c8b7c}
+    .segLast{fill:url(#mango);transform-box:fill-box;transform-origin:left;animation:segIn .4s cubic-bezier(.2,.9,.3,1) .95s both}
+    @keyframes segIn{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+    .lbl{fill:#7fbfb4}.lbl.now{fill:#ffb35c;animation:nowpulse 1.8s ease-in-out 1.4s infinite}
+    @keyframes nowpulse{0%,100%{opacity:1}50%{opacity:.55}}
+    .cta{animation:ctaIn .55s cubic-bezier(.2,1.2,.35,1) 1.15s both}
+    @keyframes ctaIn{from{opacity:0;transform:translateY(18px) scale(.96)}to{opacity:1;transform:translateY(0) scale(1)}}
+    .ctaGlow{animation:ctaGlow 2.6s ease-in-out 1.7s infinite}
+    @keyframes ctaGlow{0%,100%{stroke-opacity:.55}50%{stroke-opacity:1}}
+  </style>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <ellipse class="au1" cx="880" cy="580" rx="460" ry="220" fill="url(#auT)"/>
+  <ellipse class="au2" cx="220" cy="120" rx="420" ry="200" fill="url(#auM)"/>
+  <g fill="#8ef0e0">
+    <circle class="tw1" cx="120" cy="90" r="1.6"/><circle class="tw2" cx="260" cy="160" r="1.4"/>
+    <circle class="tw1" cx="960" cy="80" r="1.5"/><circle class="tw2" cx="1090" cy="170" r="1.4"/>
+    <circle class="tw1" cx="80" cy="470" r="1.4"/><circle class="tw2" cx="1140" cy="440" r="1.6"/>
+    <circle class="tw1" cx="500" cy="70" r="1.3"/><circle class="tw2" cx="720" cy="55" r="1.3"/>
+    <circle class="tw1" cx="60" cy="260" r="1.3"/><circle class="tw2" cx="1150" cy="260" r="1.4"/>
+  </g>
+  <rect width="1200" height="675" fill="url(#vig)"/>
+
+  <g class="scene">
+    <ellipse class="spot" cx="600" cy="270" rx="360" ry="240" fill="url(#spot)"/>
+    <ellipse class="flash" cx="600" cy="230" rx="420" ry="300" fill="url(#flashG)"/>
+
+    <!-- firework bursts scattered across the sky, staggered after the main impact -->
+    <g class="fwburst" transform="translate(230 150)" fill="#ffd08a">
+      <circle cx="0" cy="0" r="3" style="--dx:48px;--dy:-32px;animation-delay:1.05s"/><circle cx="0" cy="0" r="2.6" style="--dx:54px;--dy:16px;animation-delay:1.08s"/>
+      <circle cx="0" cy="0" r="2.4" style="--dx:24px;--dy:46px;animation-delay:1.11s"/><circle cx="0" cy="0" r="3" fill="#8ef0e0" style="--dx:-42px;--dy:-34px;animation-delay:1.05s"/>
+      <circle cx="0" cy="0" r="2.6" style="--dx:-52px;--dy:14px;animation-delay:1.08s"/><circle cx="0" cy="0" r="2.4" fill="#8ef0e0" style="--dx:-22px;--dy:48px;animation-delay:1.11s"/>
+      <circle cx="0" cy="0" r="2.6" style="--dx:6px;--dy:-56px;animation-delay:1.05s"/><circle cx="0" cy="0" r="2.4" style="--dx:-6px;--dy:54px;animation-delay:1.08s"/>
+    </g>
+    <g class="fwburst" transform="translate(955 190)" fill="#ffd08a">
+      <circle cx="0" cy="0" r="3" style="--dx:44px;--dy:-28px;animation-delay:1.16s"/><circle cx="0" cy="0" r="2.6" style="--dx:50px;--dy:18px;animation-delay:1.19s"/>
+      <circle cx="0" cy="0" r="2.4" style="--dx:20px;--dy:44px;animation-delay:1.22s"/><circle cx="0" cy="0" r="3" fill="#8ef0e0" style="--dx:-40px;--dy:-30px;animation-delay:1.16s"/>
+      <circle cx="0" cy="0" r="2.6" style="--dx:-48px;--dy:16px;animation-delay:1.19s"/><circle cx="0" cy="0" r="2.4" fill="#8ef0e0" style="--dx:-18px;--dy:46px;animation-delay:1.22s"/>
+      <circle cx="0" cy="0" r="2.6" style="--dx:4px;--dy:-50px;animation-delay:1.16s"/><circle cx="0" cy="0" r="2.4" style="--dx:-4px;--dy:50px;animation-delay:1.19s"/>
+    </g>
+    <g class="fwburst" transform="translate(120 330)" fill="#8ef0e0">
+      <circle cx="0" cy="0" r="2.6" style="--dx:38px;--dy:-24px;animation-delay:1.3s"/><circle cx="0" cy="0" r="2.2" style="--dx:42px;--dy:14px;animation-delay:1.33s"/>
+      <circle cx="0" cy="0" r="2" style="--dx:-36px;--dy:-22px;animation-delay:1.3s"/><circle cx="0" cy="0" r="2.4" fill="#ffd08a" style="--dx:-40px;--dy:16px;animation-delay:1.33s"/>
+      <circle cx="0" cy="0" r="2.2" style="--dx:2px;--dy:-42px;animation-delay:1.3s"/>
+    </g>
+    <g class="fwburst" transform="translate(1075 350)" fill="#8ef0e0">
+      <circle cx="0" cy="0" r="2.6" style="--dx:36px;--dy:-22px;animation-delay:1.38s"/><circle cx="0" cy="0" r="2.2" style="--dx:40px;--dy:16px;animation-delay:1.41s"/>
+      <circle cx="0" cy="0" r="2" style="--dx:-34px;--dy:-20px;animation-delay:1.38s"/><circle cx="0" cy="0" r="2.4" fill="#ffd08a" style="--dx:-38px;--dy:14px;animation-delay:1.41s"/>
+      <circle cx="0" cy="0" r="2.2" style="--dx:0px;--dy:-40px;animation-delay:1.38s"/>
+    </g>
+
+    <circle class="wave" cx="600" cy="230" r="90" fill="none" stroke="#ffd08a" stroke-width="3"/>
+    <circle class="wave wave2" cx="600" cy="230" r="90" fill="none" stroke="#8ef0e0" stroke-width="1.6"/>
+    <circle class="wave wave3" cx="600" cy="230" r="90" fill="none" stroke="#ffd08a" stroke-width="1.4"/>
+
+    <!-- centerpiece: checkmark badge -->
+    <g transform="translate(600 230)">
+      <g class="badgeIn">
+        <g class="breathe">
+          <circle class="ring" r="74" fill="none" stroke="url(#mango)" stroke-width="5" stroke-linecap="round" stroke-dasharray="1" pathLength="1" filter="url(#glowBig)"/>
+          <circle r="60" fill="#052d28" stroke="#1d5b52" stroke-width="2"/>
+          <path class="checkDraw" d="M-26,2 L-8,22 L30,-24" fill="none" stroke="url(#mango)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1" pathLength="1" filter="url(#glow)"/>
+        </g>
+      </g>
+    </g>
+
+    <g class="in0">
+      <text class="dim" x="600" y="118" text-anchor="middle" font-size="18" letter-spacing="7" font-weight="600">AI TEAMMATE 101 &#183; WORKSHOP COMPLETE</text>
+    </g>
+
+    <g clip-path="url(#wipe)">
+      <text x="600" y="330" text-anchor="middle" font-size="66" font-weight="900" letter-spacing="-1">You Did It.</text>
+    </g>
+    <g clip-path="url(#tclip)"><g class="shine"><rect x="440" y="270" width="130" height="90" fill="url(#shineG)" transform="skewX(-20)"/></g></g>
+
+    <g clip-path="url(#typeclip)">
+      <text class="mono muted" x="600" y="374" text-anchor="middle" font-size="18"><tspan style="fill:#ff9a3c">&#8250; </tspan>six modules delegated &#183; zero lines hand-typed<tspan class="blink" style="fill:#ffb35c">&#9612;</tspan></text>
+    </g>
+
+    <g class="in5">
+      <rect class="seg" x="245" y="452" width="118" height="4" rx="2"/>
+      <rect class="seg" x="377" y="452" width="118" height="4" rx="2"/>
+      <rect class="seg" x="509" y="452" width="118" height="4" rx="2"/>
+      <rect class="seg" x="641" y="452" width="118" height="4" rx="2"/>
+      <rect class="seg" x="773" y="452" width="118" height="4" rx="2"/>
+      <rect class="segLast" x="905" y="452" width="118" height="4" rx="2"/>
+      <g class="mono" font-size="12" text-anchor="middle" letter-spacing="1.5">
+        <text class="lbl" x="304" y="479">01</text><text class="lbl" x="436" y="479">02</text><text class="lbl" x="568" y="479">03</text>
+        <text class="lbl" x="700" y="479">04</text><text class="lbl" x="832" y="479">05</text><text class="lbl now" x="964" y="479">CAPSTONE</text>
+      </g>
+    </g>
+
+    <g class="in6">
+      <rect class="cta" x="330" y="520" width="540" height="72" rx="36" fill="#052d28" stroke="url(#mango)" stroke-width="2" style="animation:ctaGlow 2.6s ease-in-out 1.7s infinite"/>
+      <text class="cta mono" x="600" y="564" text-anchor="middle" font-size="17" font-weight="700" style="fill:#e8fffa">github.com/JonEricEubanks/ai-teammate-101</text>
+      <text class="cta dim" x="600" y="584" text-anchor="middle" font-size="13">Free &#183; MIT-licensed &#183; run it solo or with your community</text>
+    </g>
+
+    <g transform="translate(1120 68)"><g class="moon"><g class="moonpulse" filter="url(#glow)"><circle r="24" fill="url(#mango)" mask="url(#cres)"/></g></g></g>
+  </g>
+  <rect width="1200" height="675" filter="url(#grain)" opacity=".06"/>
+</svg>
