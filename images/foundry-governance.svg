@@ -1,0 +1,139 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520" font-family="'Inter','Segoe UI',system-ui,sans-serif">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="30%" r="100%"><stop offset="0%" stop-color="#ffffff"/><stop offset="60%" stop-color="#f2fbf8"/><stop offset="100%" stop-color="#dcf1eb"/></radialGradient>
+    <linearGradient id="mango" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#ffc466"/><stop offset="100%" stop-color="#ff7b1c"/></linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#0b2a25" flood-opacity=".10"/></filter>
+    <filter id="glow" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <g id="agent">
+      <circle r="17" fill="#ffffff" stroke="#0e8f7e" stroke-width="2"/>
+      <rect x="-7.5" y="-5.5" width="15" height="11" rx="3" fill="none" stroke="#0e8f7e" stroke-width="1.8"/>
+      <circle cx="-3.2" cy="0.3" r="1.4" fill="#0e8f7e"/><circle cx="3.2" cy="0.3" r="1.4" fill="#0e8f7e"/>
+      <line x1="0" y1="-5.5" x2="0" y2="-9" stroke="#0e8f7e" stroke-width="1.8"/><circle cy="-10.5" r="1.6" fill="#ff7b1c"/>
+    </g>
+    <clipPath id="frame"><rect width="1200" height="520" rx="22"/></clipPath>
+  </defs>
+  <style>
+    text{fill:#0b2a25}
+    .mono{font-family:'Cascadia Code',Consolas,'Courier New',monospace}
+    .muted{fill:#3f7d73}.dim{fill:#6fa79c}
+    .spin{animation:spin 40s linear infinite;transform-box:fill-box;transform-origin:center}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    .card{animation:card 12s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+    .c2{animation-delay:-3s}.c3{animation-delay:-6s}.c4{animation-delay:-9s}
+    @keyframes card{0%,100%{transform:translateY(0)}5%{transform:translateY(-5px)}10%{transform:translateY(0)}}
+    .lock{animation:lock 4s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+    @keyframes lock{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
+    .prune{animation:prune 5s ease-in-out infinite}.prune2{animation-delay:-2.5s}
+    @keyframes prune{0%,100%{opacity:1}50%{opacity:.15}}
+    .breaker{animation:breaker 5s steps(1) infinite;transform-box:fill-box;transform-origin:0 0}
+    @keyframes breaker{0%,70%{transform:rotate(0deg)}75%,95%{transform:rotate(-35deg)}100%{transform:rotate(0deg)}}
+    .pulse{animation:pulse 3s ease-in-out infinite}
+    @keyframes pulse{0%,100%{opacity:.3}50%{opacity:1}}
+    .trace{stroke-dasharray:1;animation:trace 6s linear infinite}
+    @keyframes trace{0%{stroke-dashoffset:1;opacity:1}70%{stroke-dashoffset:0;opacity:1}90%{opacity:1}100%{stroke-dashoffset:0;opacity:0}}
+  </style>
+
+  <g clip-path="url(#frame)">
+  <rect width="1200" height="520" fill="url(#bg)"/>
+  <g transform="translate(1118 60)"><g class="spin"><circle r="28" fill="none" stroke="#ff9a3d" stroke-width="2" stroke-dasharray="2 9" opacity=".7"/></g><circle r="17" fill="url(#mango)" filter="url(#glow)"/></g>
+
+  <text x="64" y="52" font-size="13" letter-spacing="4" class="dim mono">GOVERNANCE · DESIGNED IN, NOT BOLTED ON</text>
+  <text x="64" y="86" font-size="25" font-weight="900">Every added agent multiplies calls, transfers, and failure points. <tspan fill="#0e8f7e">Cover four areas.</tspan></text>
+
+  <!-- cards: x = 64, 335, 606, 877 ; w = 259 ; h = 330 -->
+  <g transform="translate(64 120)"><g class="card">
+    <rect width="259" height="330" rx="16" fill="#ffffff" stroke="#b8e3da" stroke-width="1.5" filter="url(#shadow)"/>
+    <path d="M0 16 a16 16 0 0 1 16 -16 h227 a16 16 0 0 1 16 16 v0 h-259 z" fill="#0e8f7e"/><rect y="4" width="259" height="4" fill="#0e8f7e"/>
+    <text x="20" y="40" font-size="9.5" letter-spacing="2" font-weight="800" fill="#0e6f62">01 · IDENTITY &amp; AUTHORIZATION</text>
+    <g transform="translate(129.5 110)">
+      <use href="#agent" transform="translate(-62 0)"/><use href="#agent"/><use href="#agent" transform="translate(62 0)"/>
+      <g transform="translate(-62 30)"><rect x="-24" width="48" height="15" rx="7.5" fill="#e9f8f4" stroke="#0e8f7e"/><text y="11" text-anchor="middle" font-size="7.5" class="mono" fill="#0e6f62">2 tools</text></g>
+      <g transform="translate(0 30)"><rect x="-24" width="48" height="15" rx="7.5" fill="#e9f8f4" stroke="#0e8f7e"/><text y="11" text-anchor="middle" font-size="7.5" class="mono" fill="#0e6f62">1 index</text></g>
+      <g transform="translate(62 30)"><rect x="-24" width="48" height="15" rx="7.5" fill="#e9f8f4" stroke="#0e8f7e"/><text y="11" text-anchor="middle" font-size="7.5" class="mono" fill="#0e6f62">read-only</text></g>
+      <g class="lock" transform="translate(0 -46)"><rect x="-10" y="-5" width="20" height="16" rx="3" fill="#ff7b1c"/><path d="M-6 -5 v-5 a6 6 0 0 1 12 0 v5" fill="none" stroke="#ff7b1c" stroke-width="2.5"/></g>
+    </g>
+    <g font-size="10.5">
+      <text x="20" y="196"><tspan fill="#0e8f7e">▸</tspan> Scope each agent to its own models,</text><text x="32" y="211">knowledge, and tools</text>
+      <text x="20" y="234"><tspan fill="#0e8f7e">▸</tspan> Entra identity + RBAC per responsibility</text>
+      <text x="20" y="257"><tspan fill="#0e8f7e">▸</tspan> Security-trimmed retrieval for the user</text>
+    </g>
+    <line x1="20" y1="276" x2="239" y2="276" stroke="#e5f2ee"/>
+    <text x="20" y="298" font-size="10.5" font-weight="700" fill="#9a3412">An agent must never become a path</text>
+    <text x="20" y="314" font-size="10.5" font-weight="700" fill="#9a3412">around the user's authorization boundary.</text>
+  </g></g>
+
+  <g transform="translate(335 120)"><g class="card c2">
+    <rect width="259" height="330" rx="16" fill="#ffffff" stroke="#b8e3da" stroke-width="1.5" filter="url(#shadow)"/>
+    <path d="M0 16 a16 16 0 0 1 16 -16 h227 a16 16 0 0 1 16 16 v0 h-259 z" fill="#7c3aed"/><rect y="4" width="259" height="4" fill="#7c3aed"/>
+    <text x="20" y="40" font-size="9.5" letter-spacing="2" font-weight="800" fill="#6b21a8">02 · STATE &amp; CONTEXT</text>
+    <g transform="translate(20 64)">
+      <rect width="219" height="94" rx="10" fill="#f6f1ff" stroke="#c4b5fd"/>
+      <text x="12" y="18" font-size="8.5" class="mono" fill="#6b21a8">conversation → next agent</text>
+      <rect x="12" y="30" width="195" height="8" rx="4" fill="#7c3aed"/>
+      <rect class="prune" x="12" y="44" width="160" height="8" rx="4" fill="#c4b5fd"/>
+      <rect class="prune prune2" x="12" y="58" width="128" height="8" rx="4" fill="#c4b5fd"/>
+      <rect x="12" y="72" width="64" height="8" rx="4" fill="#7c3aed"/>
+      <text x="207" y="80" text-anchor="end" font-size="8" class="mono" fill="#6b21a8">minimum context only</text>
+    </g>
+    <g font-size="10.5">
+      <text x="20" y="196"><tspan fill="#7c3aed">▸</tspan> Don't forward full history by default</text>
+      <text x="20" y="219"><tspan fill="#7c3aed">▸</tspan> Pass only what the next step needs</text>
+      <text x="20" y="242"><tspan fill="#7c3aed">▸</tspan> Externalize long-running state so</text><text x="32" y="257">execution resumes, not replays</text>
+    </g>
+    <line x1="20" y1="276" x2="239" y2="276" stroke="#e5f2ee"/>
+    <text x="20" y="298" font-size="10.5" font-weight="700" fill="#5b3f8f">Compact and prune context as</text>
+    <text x="20" y="314" font-size="10.5" font-weight="700" fill="#5b3f8f">agent transitions accumulate.</text>
+  </g></g>
+
+  <g transform="translate(606 120)"><g class="card c3">
+    <rect width="259" height="330" rx="16" fill="#ffffff" stroke="#b8e3da" stroke-width="1.5" filter="url(#shadow)"/>
+    <path d="M0 16 a16 16 0 0 1 16 -16 h227 a16 16 0 0 1 16 16 v0 h-259 z" fill="#e8730f"/><rect y="4" width="259" height="4" fill="#e8730f"/>
+    <text x="20" y="40" font-size="9.5" letter-spacing="2" font-weight="800" fill="#b45309">03 · RELIABILITY</text>
+    <g transform="translate(129.5 110)">
+      <use href="#agent" transform="translate(-92 0)"/>
+      <line x1="-74" y1="0" x2="-44" y2="0" stroke="#0e8f7e" stroke-width="2"/>
+      <circle cx="-44" r="3" fill="#e8730f"/>
+      <g transform="translate(-44 0)"><g class="breaker"><line x1="0" y1="0" x2="32" y2="0" stroke="#e8730f" stroke-width="3" stroke-linecap="round"/></g></g>
+      <circle cx="-12" r="3" fill="#e8730f"/>
+      <g transform="translate(20 0)"><rect x="-13" y="-13" width="26" height="26" rx="6" fill="#fff7ed" stroke="#e8730f" stroke-width="1.5"/><text y="4.5" text-anchor="middle" font-size="12" fill="#b45309">✓</text></g>
+      <line x1="34" y1="0" x2="74" y2="0" stroke="#0e8f7e" stroke-width="2"/>
+      <use href="#agent" transform="translate(92 0)"/>
+      <text x="-28" y="-24" text-anchor="middle" font-size="7.5" class="mono" fill="#b45309">breaker</text>
+      <text x="20" y="-24" text-anchor="middle" font-size="7.5" class="mono" fill="#b45309">validate</text>
+      <text y="40" text-anchor="middle" font-size="8.5" class="mono dim">timeout · retry · checkpoint</text>
+    </g>
+    <g font-size="10.5">
+      <text x="20" y="196"><tspan fill="#e8730f">▸</tspan> Timeouts, retries, and checkpoints</text><text x="32" y="211">on every transition</text>
+      <text x="20" y="234"><tspan fill="#e8730f">▸</tspan> Circuit breakers · graceful degradation</text>
+      <text x="20" y="257"><tspan fill="#e8730f">▸</tspan> Validate outputs before they're inputs</text>
+    </g>
+    <line x1="20" y1="276" x2="239" y2="276" stroke="#e5f2ee"/>
+    <text x="20" y="298" font-size="10.5" font-weight="700" fill="#9a3412">A malformed result from one agent must</text>
+    <text x="20" y="314" font-size="10.5" font-weight="700" fill="#9a3412">not become trusted input for another.</text>
+  </g></g>
+
+  <g transform="translate(877 120)"><g class="card c4">
+    <rect width="259" height="330" rx="16" fill="#ffffff" stroke="#b8e3da" stroke-width="1.5" filter="url(#shadow)"/>
+    <path d="M0 16 a16 16 0 0 1 16 -16 h227 a16 16 0 0 1 16 16 v0 h-259 z" fill="#2fc9b3"/><rect y="4" width="259" height="4" fill="#2fc9b3"/>
+    <text x="20" y="40" font-size="9.5" letter-spacing="2" font-weight="800" fill="#0e6f62">04 · OBSERVABILITY &amp; EVALUATION</text>
+    <g transform="translate(20 64)">
+      <rect width="219" height="94" rx="10" fill="#e9f8f4" stroke="#b8e3da"/>
+      <path d="M14 72 L44 54 L70 62 L100 30 L128 46 L158 22 L186 38 L206 14" fill="none" stroke="#0e8f7e" stroke-width="2" stroke-linecap="round" opacity=".2"/>
+      <path class="trace" d="M14 72 L44 54 L70 62 L100 30 L128 46 L158 22 L186 38 L206 14" fill="none" stroke="#0e8f7e" stroke-width="2" pathLength="1" stroke-linecap="round"/>
+      <g class="pulse"><circle cx="100" cy="30" r="4" fill="#ff7b1c"/><circle cx="186" cy="38" r="4" fill="#ff7b1c"/></g>
+      <text x="12" y="86" font-size="7.5" class="mono" fill="#0e6f62">req → agent → model → tool → approval → outcome</text>
+    </g>
+    <g font-size="10.5">
+      <text x="20" y="196"><tspan fill="#0e8f7e">▸</tspan> Tracing, metrics, evals built into Foundry</text>
+      <text x="20" y="219"><tspan fill="#0e8f7e">▸</tspan> Application Insights end to end</text>
+      <text x="20" y="242"><tspan fill="#0e8f7e">▸</tspan> Evaluate each agent independently</text>
+    </g>
+    <line x1="20" y1="276" x2="239" y2="276" stroke="#e5f2ee"/>
+    <text x="20" y="298" font-size="10.5" font-weight="700" fill="#0e6f62">One trace should connect the request to</text>
+    <text x="20" y="314" font-size="10.5" font-weight="700" fill="#0e6f62">the approval checkpoint and the outcome.</text>
+  </g></g>
+
+  <text x="600" y="490" text-anchor="middle" font-size="14" class="muted">Least privilege · durable state · validated outputs · complete traces — the four controls a production agent team needs.</text>
+  </g>
+  <rect x="1" y="1" width="1198" height="518" rx="21" fill="none" stroke="#b8e3da" stroke-width="2"/>
+</svg>

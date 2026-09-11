@@ -1,0 +1,153 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="580" viewBox="0 0 1200 580" font-family="'Inter','Segoe UI',system-ui,sans-serif">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="30%" r="100%"><stop offset="0%" stop-color="#ffffff"/><stop offset="60%" stop-color="#f2fbf8"/><stop offset="100%" stop-color="#dcf1eb"/></radialGradient>
+    <linearGradient id="mango" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#ffc466"/><stop offset="100%" stop-color="#ff7b1c"/></linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#0b2a25" flood-opacity=".10"/></filter>
+    <marker id="arrT" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" viewBox="0 0 12 12" refX="10" refY="6" orient="auto"><path d="M0 1 L10 6 L0 11z" fill="#0e8f7e"/></marker>
+    <marker id="arrV" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" viewBox="0 0 12 12" refX="10" refY="6" orient="auto"><path d="M0 1 L10 6 L0 11z" fill="#6b21a8"/></marker>
+    <g id="agent">
+      <circle r="22" fill="#ffffff" stroke="#0e8f7e" stroke-width="2"/>
+      <rect x="-9" y="-6.5" width="18" height="13" rx="4" fill="none" stroke="#0e8f7e" stroke-width="2"/>
+      <circle cx="-4" cy="0.5" r="1.7" fill="#0e8f7e"/><circle cx="4" cy="0.5" r="1.7" fill="#0e8f7e"/>
+      <line x1="0" y1="-6.5" x2="0" y2="-11" stroke="#0e8f7e" stroke-width="2"/><circle cy="-12.5" r="1.9" fill="#ff7b1c"/>
+    </g>
+    <clipPath id="frame"><rect width="1200" height="580" rx="22"/></clipPath>
+  </defs>
+  <style>
+    text{fill:#0b2a25}
+    .mono{font-family:'Cascadia Code',Consolas,'Courier New',monospace}
+    .muted{fill:#3f7d73}.dim{fill:#6fa79c}
+    .flow{stroke-dasharray:6 8;animation:dash 1.6s linear infinite}
+    @keyframes dash{to{stroke-dashoffset:-14}}
+    .loop{stroke-dasharray:7 7;animation:dashslow 2.2s linear infinite}
+    @keyframes dashslow{to{stroke-dashoffset:-14}}
+    .cyc{animation-duration:16s;animation-iteration-count:infinite;animation-timing-function:ease-in-out}
+    .sp1{animation-name:sp1}.sp2{animation-name:sp2}.sp4{animation-name:sp4}
+    @keyframes sp1{0%,10%{opacity:.5}14%,30%{opacity:1}34%,100%{opacity:.5}}
+    @keyframes sp2{0%,34%{opacity:.5}38%,54%{opacity:1}58%,100%{opacity:.5}}
+    @keyframes sp4{0%,66%{opacity:.5}70%,88%{opacity:1}92%,100%{opacity:.5}}
+    .c1{animation-name:c1}.c2{animation-name:c2}.c4{animation-name:c4}
+    @keyframes c1{0%,10%{opacity:0}14%,30%{opacity:1}34%,100%{opacity:0}}
+    @keyframes c2{0%,34%{opacity:0}38%,54%{opacity:1}58%,100%{opacity:0}}
+    @keyframes c4{0%,66%{opacity:0}70%,88%{opacity:1}92%,100%{opacity:0}}
+    .stall{animation-name:stall}
+    @keyframes stall{0%,54%{opacity:0}58%,68%{opacity:1}72%,100%{opacity:0}}
+    .pl1{animation-name:pl1}.pl3{animation-name:pl3}
+    @keyframes pl1{0%,4%{opacity:0}8%,100%{opacity:1}}
+    @keyframes pl3{0%,60%{opacity:0}66%,100%{opacity:1}}
+    .st1{animation-name:st1}.st2{animation-name:st2}.st3{animation-name:st3}
+    @keyframes st1{0%,12%{opacity:0}16%,100%{opacity:1}}
+    @keyframes st2{0%,36%{opacity:0}40%,100%{opacity:1}}
+    @keyframes st3{0%,68%{opacity:0}72%,100%{opacity:1}}
+    .think{animation:think 2s ease-in-out infinite}
+    @keyframes think{0%,100%{opacity:.3}50%{opacity:1}}
+  </style>
+
+  <g clip-path="url(#frame)">
+  <rect width="1200" height="580" fill="url(#bg)"/>
+
+  <text x="64" y="52" font-size="13" letter-spacing="4" class="dim mono">PATTERN 05 · MAGENTIC</text>
+  <text x="64" y="86" font-size="25" font-weight="900">Open-ended tasks. <tspan fill="#0e8f7e">Plan, act, observe, replan.</tspan></text>
+  <text x="1136" y="52" text-anchor="end" font-size="11.5" class="mono dim">a.k.a. dynamic · adaptive planning · task-ledger orchestration</text>
+
+  <!-- goal -->
+  <g transform="translate(64 124)">
+    <rect width="172" height="76" rx="14" fill="#ffffff" stroke="#b8e3da" stroke-width="1.5" filter="url(#shadow)"/>
+    <text x="86" y="26" text-anchor="middle" font-size="9.5" letter-spacing="2" font-weight="800" fill="#0e6f62">GOAL</text>
+    <text x="86" y="46" text-anchor="middle" font-size="11.5" font-weight="700">“Reconcile these three</text>
+    <text x="86" y="62" text-anchor="middle" font-size="11.5" font-weight="700">grant reports”</text>
+  </g>
+  <path class="flow" d="M150 202 L150 246" stroke="#0e8f7e" stroke-width="2.5" fill="none" marker-end="url(#arrT)"/>
+
+  <!-- manager (150, 330) -->
+  <g transform="translate(150 330)">
+    <circle r="76" fill="#f6f1ff" stroke="#7c3aed" stroke-width="2.5" filter="url(#shadow)"/>
+    <g transform="translate(0 -20)"><use href="#agent"/></g>
+    <text y="22" text-anchor="middle" font-size="12" font-weight="800" fill="#6b21a8">MANAGER</text>
+    <text y="37" text-anchor="middle" font-size="9" fill="#8b6bc4">plans · assigns · monitors</text>
+    <circle class="think" cy="54" r="3" fill="#7c3aed"/>
+  </g>
+
+  <!-- loop arrows between manager and ledgers -->
+  <path class="loop" d="M212 292 C 250 270, 270 240, 300 224" stroke="#7c3aed" stroke-width="2.5" fill="none" marker-end="url(#arrV)"/>
+  <text x="240" y="240" text-anchor="middle" font-size="9.5" class="mono" fill="#6b21a8">update</text>
+  <path class="loop" d="M300 428 C 270 420, 250 400, 214 372" stroke="#7c3aed" stroke-width="2.5" fill="none" marker-end="url(#arrV)"/>
+  <text x="248" y="432" text-anchor="middle" font-size="9.5" class="mono" fill="#6b21a8">observe</text>
+
+  <!-- task ledger -->
+  <g transform="translate(304 124)">
+    <rect width="270" height="190" rx="14" fill="#ffffff" stroke="#7c3aed" stroke-width="1.5" filter="url(#shadow)"/>
+    <path d="M0 14 a14 14 0 0 1 14 -14 h242 a14 14 0 0 1 14 14 v20 h-270 z" fill="#f6f1ff"/>
+    <text x="16" y="23" font-size="10.5" letter-spacing="2" font-weight="800" fill="#6b21a8">TASK LEDGER</text>
+    <text x="254" y="23" text-anchor="end" font-size="9" class="mono" fill="#8b6bc4">facts · guesses · plan</text>
+    <g class="mono" font-size="10.5">
+      <text class="cyc pl1" x="16" y="58">facts:  3 reports · FY25 · 2 funders</text>
+      <text class="cyc pl1" x="16" y="76">guess:  totals differ by indirect rate</text>
+      <text x="16" y="102" fill="#6b21a8" font-weight="700">plan</text>
+      <text class="cyc pl1" x="16" y="120" fill="#3f7d73">1. read all three reports</text>
+      <text class="cyc pl1" x="16" y="138" fill="#3f7d73">2. extract line items → table</text>
+      <text class="cyc pl3" x="16" y="156" fill="#b45309">3. ✎ replan: fetch funder rate sheet</text>
+      <text class="cyc pl3" x="16" y="174" fill="#3f7d73">4. reconcile · draft variance memo</text>
+    </g>
+  </g>
+
+  <!-- progress ledger -->
+  <g transform="translate(304 334)">
+    <rect width="270" height="150" rx="14" fill="#ffffff" stroke="#7c3aed" stroke-width="1.5" filter="url(#shadow)"/>
+    <path d="M0 14 a14 14 0 0 1 14 -14 h242 a14 14 0 0 1 14 14 v20 h-270 z" fill="#f6f1ff"/>
+    <text x="16" y="23" font-size="10.5" letter-spacing="2" font-weight="800" fill="#6b21a8">PROGRESS LEDGER</text>
+    <text x="254" y="23" text-anchor="end" font-size="9" class="mono" fill="#8b6bc4">who · status · stalls</text>
+    <g class="mono" font-size="10.5">
+      <text class="cyc st1" x="16" y="58"><tspan fill="#15803d">✓</tspan> file reader  — 3/3 parsed</text>
+      <text class="cyc st2" x="16" y="76"><tspan fill="#15803d">✓</tspan> data agent   — table built</text>
+      <text class="cyc stall" x="16" y="94" fill="#b45309">⚠ stall: rate missing → replan</text>
+      <text class="cyc st3" x="16" y="112"><tspan fill="#0e8f7e">▸</tspan> web agent    — fetching sheet</text>
+      <text x="16" y="136" class="dim">loop 3 / max 8   ·   budget 41%</text>
+    </g>
+  </g>
+
+  <!-- specialist pool -->
+  <rect x="616" y="124" width="520" height="360" rx="18" fill="none" stroke="#b8e3da" stroke-width="1.5" stroke-dasharray="7 6"/>
+  <text x="640" y="150" font-size="9.5" letter-spacing="2" font-weight="800" fill="#0e6f62">SPECIALIST POOL — PULLED IN ONLY WHEN THE PLAN CALLS</text>
+
+  <g class="cyc sp1" transform="translate(640 172)">
+    <rect width="232" height="76" rx="14" fill="#ffffff" stroke="#0e8f7e" stroke-width="1.5"/>
+    <g transform="translate(36 38)"><use href="#agent"/></g>
+    <text x="70" y="34" font-size="12.5" font-weight="700">File reader</text><text x="70" y="52" font-size="10" class="muted">parses PDFs · spreadsheets</text>
+  </g>
+  <g class="cyc sp2" transform="translate(888 172)">
+    <rect width="224" height="76" rx="14" fill="#ffffff" stroke="#0e8f7e" stroke-width="1.5"/>
+    <g transform="translate(36 38)"><use href="#agent"/></g>
+    <text x="70" y="34" font-size="12.5" font-weight="700">Data agent</text><text x="70" y="52" font-size="10" class="muted">builds tables · runs code</text>
+  </g>
+  <g transform="translate(640 268)" opacity=".5">
+    <rect width="232" height="76" rx="14" fill="#ffffff" stroke="#0e8f7e" stroke-width="1.5"/>
+    <g transform="translate(36 38)"><use href="#agent"/></g>
+    <text x="70" y="34" font-size="12.5" font-weight="700">Policy agent</text><text x="70" y="52" font-size="10" class="muted">idle this run</text>
+  </g>
+  <g class="cyc sp4" transform="translate(888 268)">
+    <rect width="224" height="76" rx="14" fill="#ffffff" stroke="#0e8f7e" stroke-width="1.5"/>
+    <g transform="translate(36 38)"><use href="#agent"/></g>
+    <text x="70" y="34" font-size="12.5" font-weight="700">Web agent</text><text x="70" y="52" font-size="10" class="muted">fetches funder rate sheet</text>
+  </g>
+
+  <!-- assignment edges from task ledger right edge (x=574) -->
+  <path class="cyc c1 flow" d="M576 210 L636 210" stroke="#0e8f7e" stroke-width="2.5" fill="none" marker-end="url(#arrT)"/>
+  <path class="cyc c2 flow" d="M576 226 C 700 226, 760 210, 884 210" stroke="#0e8f7e" stroke-width="2.5" fill="none" marker-end="url(#arrT)"/>
+  <path class="cyc c4 flow" d="M576 300 C 700 300, 760 306, 884 306" stroke="#0e8f7e" stroke-width="2.5" fill="none" marker-end="url(#arrT)"/>
+
+  <!-- guardrails -->
+  <g transform="translate(640 368)">
+    <rect width="472" height="96" rx="12" fill="#fff7ed" stroke="#fdba74"/>
+    <text x="18" y="26" font-size="9.5" letter-spacing="2" font-weight="800" fill="#b45309">USE WITH CARE</text>
+    <g font-size="10.5" fill="#9a3412">
+      <text x="18" y="48">Not for low-complexity, time-sensitive, or already-known-stage work.</text>
+      <text x="18" y="66">Dynamic planning makes cost and behavior harder to predict — cap loops and budget.</text>
+      <text x="18" y="84">Every ledger write is a trace point; keep them observable.</text>
+    </g>
+  </g>
+
+  <text x="600" y="552" text-anchor="middle" font-size="14.5" class="muted">Two ledgers, one replanning loop, specialists pulled in only when the plan calls for them.</text>
+  </g>
+  <rect x="1" y="1" width="1198" height="578" rx="21" fill="none" stroke="#b8e3da" stroke-width="2"/>
+</svg>

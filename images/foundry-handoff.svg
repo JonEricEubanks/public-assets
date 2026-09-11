@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620" font-family="'Inter','Segoe UI',system-ui,sans-serif">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="30%" r="100%"><stop offset="0%" stop-color="#ffffff"/><stop offset="60%" stop-color="#f2fbf8"/><stop offset="100%" stop-color="#dcf1eb"/></radialGradient>
+    <linearGradient id="mango" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#ffc466"/><stop offset="100%" stop-color="#ff7b1c"/></linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#0b2a25" flood-opacity=".10"/></filter>
+    <filter id="glow" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <marker id="arrT" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" viewBox="0 0 12 12" refX="10" refY="6" orient="auto"><path d="M0 1 L10 6 L0 11z" fill="#0e8f7e"/></marker>
+    <marker id="arrTd" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" viewBox="0 0 12 12" refX="10" refY="6" orient="auto"><path d="M0 1 L10 6 L0 11z" fill="#9fcdc3"/></marker>
+    <marker id="arrA" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" viewBox="0 0 12 12" refX="10" refY="6" orient="auto"><path d="M0 1 L10 6 L0 11z" fill="#e8730f"/></marker>
+    <marker id="arrAd" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" viewBox="0 0 12 12" refX="10" refY="6" orient="auto"><path d="M0 1 L10 6 L0 11z" fill="#f5c9a3"/></marker>
+    <g id="agent">
+      <circle r="24" fill="#ffffff" stroke="#0e8f7e" stroke-width="2"/>
+      <rect x="-10" y="-7" width="20" height="14" rx="4" fill="none" stroke="#0e8f7e" stroke-width="2"/>
+      <circle cx="-4.5" cy="0.5" r="1.8" fill="#0e8f7e"/><circle cx="4.5" cy="0.5" r="1.8" fill="#0e8f7e"/>
+      <line x1="0" y1="-7" x2="0" y2="-12" stroke="#0e8f7e" stroke-width="2"/><circle cy="-13.5" r="2" fill="#ff7b1c"/>
+    </g>
+    <clipPath id="frame"><rect width="1200" height="620" rx="22"/></clipPath>
+  </defs>
+  <style>
+    text{fill:#0b2a25}
+    .mono{font-family:'Cascadia Code',Consolas,'Courier New',monospace}
+    .muted{fill:#3f7d73}.dim{fill:#6fa79c}
+    .flow{stroke-dasharray:6 8;animation:dash 1.6s linear infinite}
+    @keyframes dash{to{stroke-dashoffset:-14}}
+    .cyc{animation-duration:14s;animation-iteration-count:infinite;animation-timing-function:ease-in-out}
+    .triage{animation-name:triage}
+    @keyframes triage{0%,3%{opacity:.55}7%,22%{opacity:1}28%,100%{opacity:.55}}
+    .own{animation-name:own}
+    @keyframes own{0%,26%{opacity:.5}32%,56%{opacity:1}62%,100%{opacity:.5}}
+    .e1{animation-name:e1}
+    @keyframes e1{0%,24%{opacity:.25}30%,56%{opacity:1}62%,100%{opacity:.25}}
+    .esc{animation-name:esc}
+    @keyframes esc{0%,58%{opacity:.25}64%,90%{opacity:1}96%,100%{opacity:.25}}
+    .staff{animation:staff 14s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+    @keyframes staff{0%,64%{transform:scale(1)}70%{transform:scale(1.12)}76%,100%{transform:scale(1)}}
+    .badge{animation-name:badge}
+    @keyframes badge{0%,30%{opacity:0}34%,58%{opacity:1}62%,100%{opacity:0}}
+  </style>
+
+  <g clip-path="url(#frame)">
+  <rect width="1200" height="620" fill="url(#bg)"/>
+
+  <text x="64" y="52" font-size="13" letter-spacing="4" class="dim mono">PATTERN 03 · HANDOFF</text>
+  <text x="64" y="86" font-size="25" font-weight="900">Dynamic routing. <tspan fill="#0e8f7e">One owner at a time.</tspan></text>
+  <text x="1136" y="52" text-anchor="end" font-size="11.5" class="mono dim">a.k.a. routing · triage · transfer · dispatch · delegation</text>
+
+  <!-- resident -->
+  <g transform="translate(64 228)">
+    <rect width="128" height="100" rx="14" fill="#ffffff" stroke="#b8e3da" stroke-width="1.5" filter="url(#shadow)"/>
+    <text x="64" y="40" text-anchor="middle" font-size="22">💬</text>
+    <text x="64" y="66" text-anchor="middle" font-size="12" font-weight="700">Resident</text>
+    <text x="64" y="82" text-anchor="middle" font-size="10" class="dim mono">“my water bill…”</text>
+  </g>
+  <path class="flow" d="M194 278 L240 278" stroke="#0e8f7e" stroke-width="2.5" fill="none" marker-end="url(#arrT)"/>
+
+  <!-- triage -->
+  <g class="cyc triage" transform="translate(310 278)">
+    <circle r="58" fill="#e9f8f4" stroke="#0e8f7e" stroke-width="2" filter="url(#shadow)"/>
+    <g transform="translate(0 -8)"><use href="#agent"/></g>
+    <text y="36" text-anchor="middle" font-size="12.5" font-weight="800" fill="#0e6f62">TRIAGE</text>
+    <text y="82" text-anchor="middle" font-size="10.5" class="dim">discovers the domain</text>
+  </g>
+
+  <!-- routes to specialists (card left edge x=560, centers 166/278/390) -->
+  <path class="cyc e1 flow" d="M366 258 C 440 200, 470 166, 552 166" stroke="#0e8f7e" stroke-width="2.5" fill="none" marker-end="url(#arrT)"/>
+  <path d="M370 278 L552 278" stroke="#9fcdc3" stroke-width="2" fill="none" stroke-dasharray="6 8" marker-end="url(#arrTd)"/>
+  <path d="M366 298 C 440 356, 470 390, 552 390" stroke="#9fcdc3" stroke-width="2" fill="none" stroke-dasharray="6 8" marker-end="url(#arrTd)"/>
+
+  <!-- specialists x=560 w=300 h=84 -->
+  <g class="cyc own" transform="translate(560 124)">
+    <rect width="300" height="84" rx="14" fill="#ffffff" stroke="#0e8f7e" stroke-width="2" filter="url(#shadow)"/>
+    <g transform="translate(42 42)"><use href="#agent"/></g>
+    <text x="80" y="32" font-size="13.5" font-weight="700">Utility billing specialist</text>
+    <text x="80" y="50" font-size="10.5" class="muted">tools: billing API · payment plans</text>
+    <text x="80" y="67" font-size="9.5" class="mono dim">owns · answers · may escalate</text>
+    <g class="cyc badge" transform="translate(236 -10)"><rect width="58" height="20" rx="10" fill="url(#mango)" filter="url(#shadow)"/><text x="29" y="14" text-anchor="middle" font-size="9" font-weight="900" fill="#3a1c00">OWNER</text></g>
+  </g>
+  <g transform="translate(560 236)" opacity=".5">
+    <rect width="300" height="84" rx="14" fill="#ffffff" stroke="#0e8f7e" stroke-width="2"/>
+    <g transform="translate(42 42)"><use href="#agent"/></g>
+    <text x="80" y="32" font-size="13.5" font-weight="700">Permits specialist</text>
+    <text x="80" y="50" font-size="10.5" class="muted">tools: permit lookup · fee schedule</text>
+    <text x="80" y="67" font-size="9.5" class="mono dim">idle — not in this request</text>
+  </g>
+  <g transform="translate(560 348)" opacity=".5">
+    <rect width="300" height="84" rx="14" fill="#ffffff" stroke="#0e8f7e" stroke-width="2"/>
+    <g transform="translate(42 42)"><use href="#agent"/></g>
+    <text x="80" y="32" font-size="13.5" font-weight="700">Public records specialist</text>
+    <text x="80" y="50" font-size="10.5" class="muted">tools: records index · redaction</text>
+    <text x="80" y="67" font-size="9.5" class="mono dim">idle — not in this request</text>
+  </g>
+
+  <!-- escalation exits (staff center 1060,278 r=44 → left edge 1016) -->
+  <path class="cyc esc" d="M862 166 C 940 166, 960 250, 1008 268" stroke="#e8730f" stroke-width="2.5" fill="none" stroke-dasharray="5 7" marker-end="url(#arrA)"/>
+  <path d="M862 278 L1008 278" stroke="#f5c9a3" stroke-width="2" fill="none" stroke-dasharray="5 7" marker-end="url(#arrAd)"/>
+  <path d="M862 390 C 940 390, 960 306, 1008 288" stroke="#f5c9a3" stroke-width="2" fill="none" stroke-dasharray="5 7" marker-end="url(#arrAd)"/>
+  <text x="936" y="150" text-anchor="middle" font-size="10" class="mono" fill="#b45309">escalate → staff</text>
+
+  <!-- staff -->
+  <g transform="translate(1060 278)">
+    <g class="staff">
+      <circle r="44" fill="url(#mango)" filter="url(#glow)"/>
+      <circle r="36" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-dasharray="3 3" opacity=".85"/>
+      <circle cy="-9" r="8.5" fill="#3a1c00"/><path d="M-15 15 a15 15 0 0 1 30 0 z" fill="#3a1c00"/>
+    </g>
+    <text y="68" text-anchor="middle" font-size="11.5" font-weight="800" fill="#b45309">STAFF</text>
+    <text y="83" text-anchor="middle" font-size="9.5" class="dim">designed exit, not failure</text>
+  </g>
+
+  <!-- handoff contract (full width, clear of all edges) -->
+  <g transform="translate(64 464)">
+    <rect width="1072" height="92" rx="14" fill="#ffffff" stroke="#b8e3da" stroke-width="1.5" filter="url(#shadow)"/>
+    <text x="24" y="28" font-size="10" letter-spacing="2" font-weight="800" fill="#0e6f62">HANDOFF CONTRACT — DEFINE, DON'T ASSUME</text>
+    <g font-size="11" class="mono">
+      <text x="24" y="54"><tspan fill="#0e8f7e">▸</tspan> why the transfer occurred</text>
+      <text x="24" y="74"><tspan fill="#0e8f7e">▸</tspan> what context is authorized to move</text>
+      <text x="400" y="54"><tspan fill="#0e8f7e">▸</tspan> who owns the next step</text>
+      <text x="400" y="74"><tspan fill="#0e8f7e">▸</tspan> who communicates the final response</text>
+      <text x="740" y="54"><tspan fill="#e8730f">▸</tspan> what happens if no specialist accepts</text>
+      <text x="740" y="74"><tspan fill="#e8730f">▸</tspan> when the system escalates to a person</text>
+    </g>
+  </g>
+
+  <text x="600" y="594" text-anchor="middle" font-size="14.5" class="muted">Only one specialist owns the request at a time. The dashed path to staff is a designed exit, not a failure.</text>
+  </g>
+  <rect x="1" y="1" width="1198" height="618" rx="21" fill="none" stroke="#b8e3da" stroke-width="2"/>
+</svg>

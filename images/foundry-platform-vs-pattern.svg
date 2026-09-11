@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="540" viewBox="0 0 1200 540" font-family="'Inter','Segoe UI',system-ui,sans-serif">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="30%" r="100%"><stop offset="0%" stop-color="#ffffff"/><stop offset="60%" stop-color="#f2fbf8"/><stop offset="100%" stop-color="#dcf1eb"/></radialGradient>
+    <linearGradient id="mango" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#ffc466"/><stop offset="100%" stop-color="#ff7b1c"/></linearGradient>
+    <linearGradient id="violet" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#f6f1ff"/><stop offset="100%" stop-color="#ebe2fb"/></linearGradient>
+    <linearGradient id="tealp" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#eefaf6"/><stop offset="100%" stop-color="#dff2ec"/></linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#0b2a25" flood-opacity=".10"/></filter>
+    <filter id="glow" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <marker id="arrV" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="14" viewBox="0 0 12 12" refX="10" refY="6" orient="auto"><path d="M0 1 L10 6 L0 11z" fill="#6b21a8"/></marker>
+    <clipPath id="frame"><rect width="1200" height="540" rx="22"/></clipPath>
+  </defs>
+  <style>
+    text{fill:#0b2a25}
+    .mono{font-family:'Cascadia Code',Consolas,'Courier New',monospace}
+    .muted{fill:#3f7d73}.dim{fill:#6fa79c}
+    .spin{animation:spin 40s linear infinite;transform-box:fill-box;transform-origin:center}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    .lift{animation:lift 10s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+    .d1{animation-delay:-2s}.d2{animation-delay:-4s}.d3{animation-delay:-6s}.d4{animation-delay:-8s}
+    @keyframes lift{0%,100%{transform:translateY(0)}6%{transform:translateY(-6px)}12%{transform:translateY(0)}}
+    .flow{stroke-dasharray:5 7;animation:dash 1.4s linear infinite}
+    @keyframes dash{to{stroke-dashoffset:-12}}
+    .tile{animation:tile 6s ease-in-out infinite}
+    .t1{animation-delay:-.8s}.t2{animation-delay:-1.6s}.t3{animation-delay:-2.4s}.t4{animation-delay:-3.2s}.t5{animation-delay:-4s}.t6{animation-delay:-4.8s}
+    @keyframes tile{0%,100%{opacity:.8}50%{opacity:1}}
+  </style>
+
+  <g clip-path="url(#frame)">
+  <rect width="1200" height="540" fill="url(#bg)"/>
+  <g transform="translate(1118 60)"><g class="spin"><circle r="28" fill="none" stroke="#ff9a3d" stroke-width="2" stroke-dasharray="2 9" opacity=".7"/></g><circle r="17" fill="url(#mango)" filter="url(#glow)"/></g>
+
+  <text x="64" y="52" font-size="13" letter-spacing="4" class="dim mono">PLATFORM VS. PATTERN</text>
+  <text x="64" y="86" font-size="25" font-weight="900">Foundry is the foundation. <tspan fill="#6b21a8">Agent Framework is the pattern that runs on it.</tspan></text>
+
+  <!-- PATTERN LAYER -->
+  <g transform="translate(64 120)">
+    <rect width="1072" height="150" rx="18" fill="url(#violet)" stroke="#7c3aed" stroke-width="2" filter="url(#shadow)"/>
+    <text x="28" y="34" font-size="11" letter-spacing="3" font-weight="800" fill="#6b21a8">ORCHESTRATION PATTERN · MICROSOFT AGENT FRAMEWORK</text>
+    <text x="28" y="54" font-size="12.5" fill="#5b3f8f">How agents divide, route, review, and complete the work</text>
+
+    <g font-size="13.5" font-weight="700" text-anchor="middle">
+      <g transform="translate(28 76)"><g class="lift">
+        <rect width="168" height="52" rx="14" fill="#ffffff" stroke="#7c3aed" stroke-width="1.5"/>
+        <text x="84" y="24" fill="#6b21a8">→  Sequential</text><text x="84" y="41" font-size="10" font-weight="500" fill="#8b6bc4" class="mono">pipeline · chaining</text>
+      </g></g>
+      <g transform="translate(208 76)"><g class="lift d1">
+        <rect width="168" height="52" rx="14" fill="#ffffff" stroke="#7c3aed" stroke-width="1.5"/>
+        <text x="84" y="24" fill="#6b21a8">⇉  Concurrent</text><text x="84" y="41" font-size="10" font-weight="500" fill="#8b6bc4" class="mono">fan-out / fan-in</text>
+      </g></g>
+      <g transform="translate(388 76)"><g class="lift d2">
+        <rect width="168" height="52" rx="14" fill="#ffffff" stroke="#7c3aed" stroke-width="1.5"/>
+        <text x="84" y="24" fill="#6b21a8">↪  Handoff</text><text x="84" y="41" font-size="10" font-weight="500" fill="#8b6bc4" class="mono">routing · triage</text>
+      </g></g>
+      <g transform="translate(568 76)"><g class="lift d3">
+        <rect width="168" height="52" rx="14" fill="#ffffff" stroke="#7c3aed" stroke-width="1.5"/>
+        <text x="84" y="24" fill="#6b21a8">◎  Group chat</text><text x="84" y="41" font-size="10" font-weight="500" fill="#8b6bc4" class="mono">maker · checker</text>
+      </g></g>
+      <g transform="translate(748 76)"><g class="lift d4">
+        <rect width="168" height="52" rx="14" fill="#ffffff" stroke="#7c3aed" stroke-width="1.5"/>
+        <text x="84" y="24" fill="#6b21a8">✦  Magentic</text><text x="84" y="41" font-size="10" font-weight="500" fill="#8b6bc4" class="mono">adaptive planning</text>
+      </g></g>
+      <g transform="translate(928 76)">
+        <rect width="116" height="52" rx="14" fill="none" stroke="#7c3aed" stroke-width="1.5" stroke-dasharray="5 4"/>
+        <text x="58" y="24" font-size="12.5" fill="#6b21a8">+ custom</text><text x="58" y="41" font-size="10" font-weight="500" fill="#8b6bc4" class="mono">your workflow</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- runs on -->
+  <path class="flow" d="M600 274 V312" stroke="#6b21a8" stroke-width="2.5" fill="none" marker-end="url(#arrV)"/>
+  <text x="614" y="298" font-size="11.5" class="mono" fill="#6b21a8">runs on</text>
+
+  <!-- PLATFORM LAYER -->
+  <g transform="translate(64 322)">
+    <rect width="1072" height="164" rx="18" fill="url(#tealp)" stroke="#0e8f7e" stroke-width="2" filter="url(#shadow)"/>
+    <text x="28" y="34" font-size="11" letter-spacing="3" font-weight="800" fill="#0e6f62">MANAGED PLATFORM · MICROSOFT FOUNDRY AGENT SERVICE</text>
+    <text x="28" y="54" font-size="12.5" class="muted">The operational foundation: build, deploy, secure, observe, and scale</text>
+
+    <g font-size="12" text-anchor="middle">
+      <g class="tile" transform="translate(28 72)"><rect width="136" height="72" rx="12" fill="#ffffff" stroke="#b8e3da"/><text x="68" y="28" font-size="20">🧠</text><text x="68" y="50" font-weight="700">Model catalog</text><text x="68" y="64" font-size="10" class="dim mono">foundry models</text></g>
+      <g class="tile t1" transform="translate(176 72)"><rect width="136" height="72" rx="12" fill="#ffffff" stroke="#b8e3da"/><text x="68" y="28" font-size="20">🤖</text><text x="68" y="50" font-weight="700">Agents</text><text x="68" y="64" font-size="10" class="dim mono">prompt · hosted</text></g>
+      <g class="tile t2" transform="translate(324 72)"><rect width="136" height="72" rx="12" fill="#ffffff" stroke="#b8e3da"/><text x="68" y="28" font-size="20">⚙️</text><text x="68" y="50" font-weight="700">Runtime</text><text x="68" y="64" font-size="10" class="dim mono">managed · scaled</text></g>
+      <g class="tile t3" transform="translate(472 72)"><rect width="136" height="72" rx="12" fill="#ffffff" stroke="#b8e3da"/><text x="68" y="28" font-size="20">🔌</text><text x="68" y="50" font-weight="700">Tools</text><text x="68" y="64" font-size="10" class="dim mono">MCP · functions</text></g>
+      <g class="tile t4" transform="translate(620 72)"><rect width="136" height="72" rx="12" fill="#ffffff" stroke="#b8e3da"/><text x="68" y="28" font-size="20">🪪</text><text x="68" y="50" font-weight="700">Identity</text><text x="68" y="64" font-size="10" class="dim mono">Entra · RBAC</text></g>
+      <g class="tile t5" transform="translate(768 72)"><rect width="136" height="72" rx="12" fill="#ffffff" stroke="#b8e3da"/><text x="68" y="28" font-size="20">📈</text><text x="68" y="50" font-weight="700">Observability</text><text x="68" y="64" font-size="10" class="dim mono">tracing · evals</text></g>
+      <g class="tile t6" transform="translate(916 72)"><rect width="128" height="72" rx="12" fill="#ffffff" stroke="#b8e3da"/><text x="64" y="28" font-size="20">🚀</text><text x="64" y="50" font-weight="700">Publishing</text><text x="64" y="64" font-size="10" class="dim mono">versions · publish</text></g>
+    </g>
+  </g>
+
+  <text x="600" y="516" text-anchor="middle" font-size="13.5" class="muted">The <tspan fill="#0e6f62" font-weight="700">platform</tspan> supplies models, identity, tools, and telemetry. The <tspan fill="#6b21a8" font-weight="700">pattern</tspan> decides how agents collaborate.</text>
+  </g>
+  <rect x="1" y="1" width="1198" height="538" rx="21" fill="none" stroke="#b8e3da" stroke-width="2"/>
+</svg>

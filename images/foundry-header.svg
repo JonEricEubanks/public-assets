@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300" font-family="'Inter','Segoe UI',system-ui,sans-serif">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="20%" r="110%">
+      <stop offset="0%" stop-color="#ffffff"/><stop offset="55%" stop-color="#f2fbf8"/><stop offset="100%" stop-color="#d6efe8"/>
+    </radialGradient>
+    <linearGradient id="mango" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#ffc466"/><stop offset="100%" stop-color="#ff7b1c"/></linearGradient>
+    <radialGradient id="spot" cx="50%" cy="100%" r="70%"><stop offset="0%" stop-color="#ffd8a8" stop-opacity=".55"/><stop offset="100%" stop-color="#ffd8a8" stop-opacity="0"/></radialGradient>
+    <filter id="glow" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <g id="mus">
+      <circle r="8" fill="#ffffff" stroke="#0e8f7e" stroke-width="1.6"/>
+      <circle cx="-2.6" cy="0" r="1.1" fill="#0e8f7e"/><circle cx="2.6" cy="0" r="1.1" fill="#0e8f7e"/>
+      <circle cy="-10.5" r="1.4" fill="#ff7b1c"/>
+    </g>
+    <path id="ms" d="M0 0h11.4v11.4H0zm12.6 0H24v11.4H12.6zM0 12.6h11.4V24H0zm12.6 0H24V24H12.6z"/>
+    <clipPath id="frame"><rect width="1200" height="300" rx="22"/></clipPath>
+  </defs>
+  <style>
+    text{fill:#0b2a25}
+    .mono{font-family:'Cascadia Code',Consolas,'Courier New',monospace}
+    .muted{fill:#3f7d73}.dim{fill:#6fa79c}
+    .under{stroke-dasharray:1;animation:under 12s linear infinite}
+    @keyframes under{0%{stroke-dashoffset:1;opacity:0}4%{opacity:1}18%{stroke-dashoffset:0}96%{opacity:1;stroke-dashoffset:0}100%{opacity:0;stroke-dashoffset:0}}
+    .baton{animation:baton 4s ease-in-out infinite;transform-box:fill-box;transform-origin:0 100%}
+    @keyframes baton{0%,100%{transform:rotate(-22deg)}50%{transform:rotate(22deg)}}
+    .breath{animation:breath 4s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+    @keyframes breath{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
+    .sec{animation:sec 10s ease-in-out infinite}
+    .s2{animation-delay:-2s}.s3{animation-delay:-4s}.s4{animation-delay:-6s}.s5{animation-delay:-8s}
+    @keyframes sec{0%,100%{opacity:.55}8%,20%{opacity:1}30%{opacity:.55}}
+    .note{animation:note 10s linear infinite}
+    .n2{animation-delay:-2s}.n3{animation-delay:-4s}.n4{animation-delay:-6s}.n5{animation-delay:-8s}
+    @keyframes note{0%{opacity:0;transform:translateY(0)}6%{opacity:.9}22%{opacity:0;transform:translateY(-34px)}100%{opacity:0}}
+  </style>
+
+  <g clip-path="url(#frame)">
+  <rect width="1200" height="300" fill="url(#bg)"/>
+
+  <!-- score: faint staff lines behind everything -->
+  <g stroke="#0e8f7e" stroke-width="1" opacity=".13">
+    <path d="M0 236 H1200 M0 246 H1200 M0 256 H1200 M0 266 H1200 M0 276 H1200"/>
+  </g>
+  <g stroke="#0e8f7e" stroke-width="1.5" opacity=".25"><path d="M70 231 V281 M74 231 V281"/></g>
+
+  <!-- marks + eyebrow -->
+  <use href="#ms" transform="translate(80 50) scale(.8)" fill="#3f7d73"/>
+  <text x="112" y="66" font-size="13" letter-spacing="4" class="dim mono">A MICROSOFT FOUNDRY ARCHITECTURE NOTE</text>
+
+  <!-- title -->
+  <text x="78" y="140" font-size="58" font-weight="900" letter-spacing="1">THE <tspan fill="url(#mango)">GOVERNED TEAM</tspan></text>
+  <line class="under" x1="80" y1="160" x2="570" y2="160" stroke="#ff9a3d" stroke-width="3" pathLength="1" stroke-linecap="round"/>
+  <text x="80" y="194" font-size="18" class="muted">Orchestrating agents on Microsoft Foundry — and who holds the baton</text>
+
+  <!-- ORCHESTRA · center (940,250) -->
+  <rect x="740" y="60" width="400" height="200" fill="url(#spot)"/>
+
+  <!-- seating arcs -->
+  <g fill="none" stroke="#b8e3da" stroke-width="1.5">
+    <path d="M999 240 A60 60 0 0 0 881 240"/>
+    <path d="M1038 233 A100 100 0 0 0 842 233"/>
+    <path d="M1078 226 A140 140 0 0 0 802 226"/>
+  </g>
+
+  <!-- sections (five, radial) -->
+  <g class="sec">
+    <use href="#mus" transform="translate(808 202)"/><use href="#mus" transform="translate(849 208)"/><use href="#mus" transform="translate(894 211)"/>
+    <text x="758" y="218" text-anchor="middle" font-size="10.5" class="mono" fill="#0e6f62">01 sequential</text>
+  </g>
+  <g class="sec s2">
+    <use href="#mus" transform="translate(846 146)"/><use href="#mus" transform="translate(886 166)"/>
+    <text x="834" y="102" text-anchor="middle" font-size="10.5" class="mono" fill="#0e6f62">02 concurrent</text>
+  </g>
+  <g class="sec s3">
+    <use href="#mus" transform="translate(906 114)"/><use href="#mus" transform="translate(974 114)"/><use href="#mus" transform="translate(940 150)"/><use href="#mus" transform="translate(940 190)"/>
+    <text x="940" y="86" text-anchor="middle" font-size="10.5" class="mono" fill="#0e6f62">03 handoff</text>
+  </g>
+  <g class="sec s4">
+    <use href="#mus" transform="translate(1034 146)"/><use href="#mus" transform="translate(994 166)"/>
+    <text x="1046" y="102" text-anchor="middle" font-size="10.5" class="mono" fill="#6b21a8">04 group chat</text>
+  </g>
+  <g class="sec s5">
+    <use href="#mus" transform="translate(1072 202)"/><use href="#mus" transform="translate(1031 208)"/><use href="#mus" transform="translate(986 211)"/>
+    <text x="1122" y="218" text-anchor="middle" font-size="10.5" class="mono" fill="#6b21a8">05 magentic</text>
+  </g>
+
+  <!-- rising notes from the sections -->
+  <g fill="#0e8f7e" font-size="14">
+    <text class="note" x="820" y="192">♪</text><text class="note n2" x="858" y="136">♩</text>
+    <text class="note n3" x="948" y="104">♪</text><text class="note n4" x="1010" y="136">♫</text><text class="note n5" x="1058" y="192">♪</text>
+  </g>
+
+  <!-- podium + conductor (amber seal) -->
+  <path d="M918 262 L962 262 L956 250 L924 250 Z" fill="#3f7d73"/>
+  <g transform="translate(940 226)">
+    <g class="breath">
+      <circle r="18" fill="url(#mango)" filter="url(#glow)"/>
+      <circle r="13.5" fill="none" stroke="#ffffff" stroke-width="1.2" stroke-dasharray="2.5 2.5" opacity=".85"/>
+      <circle cy="-4" r="4.5" fill="#3a1c00"/><path d="M-8 8 a8 8 0 0 1 16 0 z" fill="#3a1c00"/>
+    </g>
+    <g transform="translate(12 -6)"><path class="baton" d="M0 0 L26 -24" stroke="#3a1c00" stroke-width="2" stroke-linecap="round"/></g>
+  </g>
+  <text x="940" y="284" text-anchor="middle" font-size="9.5" letter-spacing="2" font-weight="800" fill="#b45309">CONDUCTOR · A PERSON</text>
+  </g>
+  <rect x="1" y="1" width="1198" height="298" rx="21" fill="none" stroke="#b8e3da" stroke-width="2"/>
+</svg>

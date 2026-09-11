@@ -1,0 +1,173 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620" font-family="'Inter','Segoe UI',system-ui,sans-serif">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="30%" r="100%"><stop offset="0%" stop-color="#ffffff"/><stop offset="60%" stop-color="#f2fbf8"/><stop offset="100%" stop-color="#dcf1eb"/></radialGradient>
+    <linearGradient id="mango" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#ffc466"/><stop offset="100%" stop-color="#ff7b1c"/></linearGradient>
+    <linearGradient id="lz" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#eefaf6"/><stop offset="100%" stop-color="#e2f4ee"/></linearGradient>
+    <linearGradient id="rz" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#fff9f2"/><stop offset="100%" stop-color="#fff0df"/></linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#0b2a25" flood-opacity=".10"/></filter>
+    <filter id="glow" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <marker id="arrA" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" viewBox="0 0 12 12" refX="10" refY="6" orient="auto"><path d="M0 1 L10 6 L0 11z" fill="#e8730f"/></marker>
+    <marker id="arrV" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" viewBox="0 0 12 12" refX="10" refY="6" orient="auto"><path d="M0 1 L10 6 L0 11z" fill="#7c3aed"/></marker>
+    <g id="agent">
+      <circle r="21" fill="#ffffff" stroke="#0e8f7e" stroke-width="2"/>
+      <rect x="-9" y="-6.5" width="18" height="13" rx="4" fill="none" stroke="#0e8f7e" stroke-width="2"/>
+      <circle cx="-4" cy="0.5" r="1.7" fill="#0e8f7e"/><circle cx="4" cy="0.5" r="1.7" fill="#0e8f7e"/>
+      <line x1="0" y1="-6.5" x2="0" y2="-11" stroke="#0e8f7e" stroke-width="2"/><circle cy="-12.5" r="1.9" fill="#ff7b1c"/>
+    </g>
+    <clipPath id="frame"><rect width="1200" height="620" rx="22"/></clipPath>
+  </defs>
+  <style>
+    text{fill:#0b2a25}
+    .mono{font-family:'Cascadia Code',Consolas,'Courier New',monospace}
+    .muted{fill:#3f7d73}.dim{fill:#6fa79c}
+    .flow{stroke-dasharray:6 8;animation:dash 1.6s linear infinite}
+    @keyframes dash{to{stroke-dashoffset:-14}}
+    .boundary{stroke-dasharray:10 8;animation:bdash 3s linear infinite}
+    @keyframes bdash{to{stroke-dashoffset:-36}}
+    .cyc{animation-duration:12s;animation-iteration-count:infinite;animation-timing-function:ease-in-out}
+    .a1{animation-name:a1}.a2{animation-name:a2}.a3{animation-name:a3}
+    @keyframes a1{0%,2%{opacity:.55}6%,16%{opacity:1}20%,100%{opacity:.55}}
+    @keyframes a2{0%,16%{opacity:.55}20%,30%{opacity:1}34%,100%{opacity:.55}}
+    @keyframes a3{0%,30%{opacity:.55}34%,44%{opacity:1}48%,100%{opacity:.55}}
+    .stamp{animation:stamp 12s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+    @keyframes stamp{0%,66%{transform:scale(1)}70%{transform:scale(1.12)}74%,100%{transform:scale(1)}}
+    .d1{animation-name:d1}.d2{animation-name:d2}.d3{animation-name:d3}
+    @keyframes d1{0%,74%{opacity:.6}78%,100%{opacity:1}}
+    @keyframes d2{0%,82%{opacity:.6}86%,100%{opacity:1}}
+    @keyframes d3{0%,90%{opacity:.6}94%,100%{opacity:1}}
+    .tr{animation:tr 3s ease-in-out infinite}
+    .tr2{animation-delay:-1s}.tr3{animation-delay:-2s}
+    @keyframes tr{0%,100%{opacity:.35}50%{opacity:1}}
+  </style>
+
+  <g clip-path="url(#frame)">
+  <rect width="1200" height="620" fill="url(#bg)"/>
+
+  <text x="64" y="52" font-size="13" letter-spacing="4" class="dim mono">HYBRID ARCHITECTURE</text>
+  <text x="64" y="86" font-size="25" font-weight="900">Agents reason on the left. <tspan fill="#b45309">Deterministic controls act on the right.</tspan></text>
+
+  <!-- zones -->
+  <rect x="64" y="110" width="508" height="380" rx="18" fill="url(#lz)" stroke="#0e8f7e" stroke-width="2"/>
+  <rect x="628" y="110" width="508" height="380" rx="18" fill="url(#rz)" stroke="#e8730f" stroke-width="2"/>
+  <text x="84" y="136" font-size="10.5" letter-spacing="3" font-weight="800" fill="#0e6f62">NONDETERMINISTIC · INTERPRET &amp; RECOMMEND</text>
+  <text x="648" y="136" font-size="10.5" letter-spacing="3" font-weight="800" fill="#b45309">DETERMINISTIC · DECIDE &amp; RECORD</text>
+
+  <!-- boundary -->
+  <line class="boundary" x1="600" y1="110" x2="600" y2="490" stroke="#7c3aed" stroke-width="3"/>
+  <rect x="556" y="150" width="88" height="22" rx="11" fill="#7c3aed"/>
+  <text x="600" y="165" text-anchor="middle" font-size="9.5" font-weight="800" fill="#ffffff" letter-spacing="1.5">BOUNDARY</text>
+
+  <!-- LEFT: agents -->
+  <g transform="translate(84 156)">
+    <rect width="232" height="132" rx="12" fill="#ffffff" stroke="#b8e3da" stroke-width="1.5" filter="url(#shadow)"/>
+    <text x="16" y="24" font-size="9.5" letter-spacing="2" font-weight="800" fill="#0e6f62">FOUNDRY AGENTS</text>
+    <g class="cyc a1" transform="translate(44 70)"><use href="#agent"/><text y="42" text-anchor="middle" font-size="10" font-weight="700">Interpret</text></g>
+    <g class="cyc a2" transform="translate(116 70)"><use href="#agent"/><text y="42" text-anchor="middle" font-size="10" font-weight="700">Research</text></g>
+    <g class="cyc a3" transform="translate(188 70)"><use href="#agent"/><text y="42" text-anchor="middle" font-size="10" font-weight="700">Recommend</text></g>
+  </g>
+
+  <!-- LEFT: tools -->
+  <g transform="translate(332 156)">
+    <rect width="220" height="132" rx="12" fill="#ffffff" stroke="#b8e3da" stroke-width="1.5" filter="url(#shadow)"/>
+    <text x="16" y="24" font-size="9.5" letter-spacing="2" font-weight="800" fill="#0e6f62">BOUNDED TOOLS · MCP</text>
+    <g font-size="10.5" class="mono">
+      <text x="16" y="50"><tspan fill="#0e8f7e">▸</tspan> read policy index</text>
+      <text x="16" y="68"><tspan fill="#0e8f7e">▸</tspan> search prior cases</text>
+      <text x="16" y="86"><tspan fill="#0e8f7e">▸</tspan> extract document fields</text>
+      <text x="16" y="104" fill="#9a3412">✗ write to system of record</text>
+    </g>
+    <text x="16" y="122" font-size="9" class="dim">least privilege · security-trimmed</text>
+  </g>
+
+  <!-- LEFT: finding -->
+  <g transform="translate(84 308)">
+    <rect width="468" height="160" rx="12" fill="#ffffff" stroke="#0e8f7e" stroke-width="1.5" filter="url(#shadow)"/>
+    <text x="16" y="24" font-size="9.5" letter-spacing="2" font-weight="800" fill="#0e6f62">OUTPUT · A STRUCTURED FINDING</text>
+    <g font-size="10.5" class="mono">
+      <text x="16" y="50" fill="#6b21a8">{</text>
+      <text x="30" y="68">"classification": <tspan fill="#0e8f7e">"variance-request"</tspan>,</text>
+      <text x="30" y="86">"policy_conflicts": <tspan fill="#0e8f7e">["§12.4", "§7.1"]</tspan>,</text>
+      <text x="30" y="104">"recommendation": <tspan fill="#0e8f7e">"approve-with-conditions"</tspan>,</text>
+      <text x="30" y="122">"confidence": <tspan fill="#0e8f7e">0.82</tspan>, "evidence": <tspan fill="#0e8f7e">[ … ]</tspan></text>
+      <text x="16" y="140" fill="#6b21a8">}</text>
+    </g>
+    <text x="452" y="142" text-anchor="end" font-size="9" class="dim">validated before it is trusted</text>
+  </g>
+
+  <!-- crossing (y=388) -->
+  <path class="flow" d="M554 388 L668 388" stroke="#7c3aed" stroke-width="2.5" fill="none" marker-end="url(#arrV)"/>
+  <g><animateMotion dur="12s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.5;0.66;1" calcMode="linear" path="M560,388 L660,388"/>
+    <rect x="-17" y="-11" width="34" height="22" rx="5" fill="#ffffff" stroke="#7c3aed" stroke-width="1.5"/>
+    <text y="4" text-anchor="middle" font-size="9.5" class="mono" fill="#6b21a8">data</text>
+  </g>
+  <rect x="548" y="404" width="104" height="18" rx="9" fill="#ffffff" stroke="#c4b5fd"/>
+  <text x="600" y="416.5" text-anchor="middle" font-size="9" class="mono" fill="#6b21a8">not authority</text>
+
+  <!-- RIGHT top row -->
+  <g transform="translate(648 156)">
+    <rect width="150" height="112" rx="12" fill="#ffffff" stroke="#fdba74" stroke-width="1.5" filter="url(#shadow)"/>
+    <text x="16" y="24" font-size="9.5" letter-spacing="2" font-weight="800" fill="#b45309">MANDATED</text>
+    <g font-size="10.5" fill="#9a3412"><text x="16" y="48">review stages</text><text x="16" y="66">approval authority</text><text x="16" y="84">notifications</text><text x="16" y="102">records retention</text></g>
+  </g>
+  <g class="cyc d2" transform="translate(816 156)">
+    <rect width="140" height="112" rx="12" fill="#ffffff" stroke="#fdba74" stroke-width="1.5" filter="url(#shadow)"/>
+    <g transform="translate(70 38)" fill="none" stroke="#e8730f" stroke-width="2"><ellipse rx="17" ry="6"/><path d="M-17 0 v16 a17 6 0 0 0 34 0 v-16"/></g>
+    <text x="70" y="80" text-anchor="middle" font-size="11.5" font-weight="700">Dataverse</text>
+    <text x="70" y="96" text-anchor="middle" font-size="9.5" class="dim mono">authoritative state</text>
+  </g>
+  <path class="flow" d="M958 212 L972 212" stroke="#e8730f" stroke-width="2" fill="none" marker-end="url(#arrA)"/>
+  <g class="cyc d3" transform="translate(976 156)">
+    <rect width="140" height="112" rx="12" fill="#ffffff" stroke="#fdba74" stroke-width="1.5" filter="url(#shadow)"/>
+    <text x="70" y="46" text-anchor="middle" font-size="22">⚡</text>
+    <text x="70" y="80" text-anchor="middle" font-size="11.5" font-weight="700">Automation</text>
+    <text x="70" y="96" text-anchor="middle" font-size="9.5" class="dim mono">Power Automate · Logic Apps</text>
+  </g>
+
+  <!-- RIGHT: human reviewer (722, 388) -->
+  <g transform="translate(722 388)">
+    <g class="stamp">
+      <circle r="42" fill="url(#mango)" filter="url(#glow)"/>
+      <circle r="34" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-dasharray="3 3" opacity=".85"/>
+      <circle cy="-8" r="8" fill="#3a1c00"/><path d="M-14 14 a14 14 0 0 1 28 0 z" fill="#3a1c00"/>
+    </g>
+    <text y="64" text-anchor="middle" font-size="10.5" font-weight="800" fill="#b45309">HUMAN REVIEWER</text>
+    <text y="79" text-anchor="middle" font-size="9" class="dim">approves consequential decisions</text>
+  </g>
+
+  <!-- decision path: reviewer → steps → up to Dataverse -->
+  <path class="flow" d="M768 388 L796 388" stroke="#e8730f" stroke-width="2.5" fill="none" marker-end="url(#arrA)"/>
+  <path class="cyc d1 flow" d="M886 322 L886 278" stroke="#e8730f" stroke-width="2.5" fill="none" marker-end="url(#arrA)"/>
+  <text x="900" y="304" font-size="9.5" class="mono" fill="#b45309">commit</text>
+
+  <!-- deterministic steps -->
+  <g class="cyc d1" transform="translate(800 326)">
+    <rect width="316" height="124" rx="12" fill="#ffffff" stroke="#fdba74" stroke-width="1.5" filter="url(#shadow)"/>
+    <text x="16" y="24" font-size="9.5" letter-spacing="2" font-weight="800" fill="#b45309">DETERMINISTIC STEPS</text>
+    <g font-size="10.5" class="mono">
+      <text x="16" y="52"><tspan fill="#e8730f" font-weight="700">1</tspan>  commit outcome to record</text>
+      <text x="16" y="72"><tspan fill="#e8730f" font-weight="700">2</tspan>  notify applicant · route next stage</text>
+      <text x="16" y="92"><tspan fill="#e8730f" font-weight="700">3</tspan>  retain evidence · write audit entry</text>
+    </g>
+    <text x="16" y="112" font-size="9" class="dim">same input → same result, every time</text>
+  </g>
+
+  <!-- trace bar -->
+  <g transform="translate(64 508)">
+    <rect width="1072" height="46" rx="12" fill="#ffffff" stroke="#b8e3da" stroke-width="1.5"/>
+    <text x="20" y="28" font-size="10" letter-spacing="2" font-weight="800" fill="#0e6f62">END-TO-END TRACE</text>
+    <g font-size="10.5" class="mono muted">
+      <text x="196" y="28">request</text><text class="tr" x="262" y="28" fill="#0e8f7e">→</text>
+      <text x="284" y="28">agent</text><text class="tr tr2" x="332" y="28" fill="#0e8f7e">→</text>
+      <text x="354" y="28">model call</text><text class="tr tr3" x="440" y="28" fill="#0e8f7e">→</text>
+      <text x="462" y="28">tool call</text><text class="tr" x="534" y="28" fill="#7c3aed">→</text>
+      <text x="556" y="28" fill="#6b21a8">finding</text><text class="tr tr2" x="616" y="28" fill="#e8730f">→</text>
+      <text x="638" y="28" fill="#b45309">approval checkpoint</text><text class="tr tr3" x="800" y="28" fill="#e8730f">→</text>
+      <text x="822" y="28">outcome</text>
+    </g>
+    <text x="1052" y="28" text-anchor="end" font-size="9.5" class="dim">App Insights · Foundry evals</text>
+  </g>
+
+  <text x="600" y="592" text-anchor="middle" font-size="14.5" class="muted">The finding crosses the boundary as data, not as authority.</text>
+  </g>
+  <rect x="1" y="1" width="1198" height="618" rx="21" fill="none" stroke="#b8e3da" stroke-width="2"/>
+</svg>

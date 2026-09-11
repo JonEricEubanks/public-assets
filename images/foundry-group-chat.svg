@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="580" viewBox="0 0 1200 580" font-family="'Inter','Segoe UI',system-ui,sans-serif">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="30%" r="100%"><stop offset="0%" stop-color="#ffffff"/><stop offset="60%" stop-color="#f2fbf8"/><stop offset="100%" stop-color="#dcf1eb"/></radialGradient>
+    <linearGradient id="mango" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#ffc466"/><stop offset="100%" stop-color="#ff7b1c"/></linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#0b2a25" flood-opacity=".10"/></filter>
+    <filter id="glow" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <marker id="arrT" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" viewBox="0 0 12 12" refX="10" refY="6" orient="auto"><path d="M0 1 L10 6 L0 11z" fill="#0e8f7e"/></marker>
+    <marker id="arrA" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" viewBox="0 0 12 12" refX="10" refY="6" orient="auto"><path d="M0 1 L10 6 L0 11z" fill="#e8730f"/></marker>
+    <g id="agent">
+      <circle r="26" fill="#ffffff" stroke="#0e8f7e" stroke-width="2"/>
+      <rect x="-11" y="-7.5" width="22" height="16" rx="5" fill="none" stroke="#0e8f7e" stroke-width="2"/>
+      <circle cx="-4.5" cy="0.5" r="2" fill="#0e8f7e"/><circle cx="4.5" cy="0.5" r="2" fill="#0e8f7e"/>
+      <line x1="0" y1="-7.5" x2="0" y2="-13" stroke="#0e8f7e" stroke-width="2"/><circle cy="-15" r="2.2" fill="#ff7b1c"/>
+    </g>
+    <clipPath id="frame"><rect width="1200" height="580" rx="22"/></clipPath>
+  </defs>
+  <style>
+    text{fill:#0b2a25}
+    .mono{font-family:'Cascadia Code',Consolas,'Courier New',monospace}
+    .muted{fill:#3f7d73}.dim{fill:#6fa79c}
+    .cyc{animation-duration:15s;animation-iteration-count:infinite;animation-timing-function:ease-in-out}
+    .spk1{animation-name:spk1}.spk2{animation-name:spk2}.spk3{animation-name:spk3}
+    @keyframes spk1{0%,2%{opacity:.5}5%,17%{opacity:1}20%,42%{opacity:.5}45%,57%{opacity:1}60%,100%{opacity:.5}}
+    @keyframes spk2{0%,20%{opacity:.5}23%,30%{opacity:1}33%,60%{opacity:.5}63%,70%{opacity:1}73%,100%{opacity:.5}}
+    @keyframes spk3{0%,31%{opacity:.5}34%,41%{opacity:1}44%,71%{opacity:.5}74%,81%{opacity:1}84%,100%{opacity:.5}}
+    .l1{animation-name:ln1}.l2{animation-name:ln2}.l3{animation-name:ln3}.l4{animation-name:ln4}.l5{animation-name:ln5}.l6{animation-name:ln6}.l7{animation-name:ln7}
+    @keyframes ln1{0%,4%{opacity:0}7%,96%{opacity:1}100%{opacity:0}}
+    @keyframes ln2{0%,22%{opacity:0}25%,96%{opacity:1}100%{opacity:0}}
+    @keyframes ln3{0%,33%{opacity:0}36%,96%{opacity:1}100%{opacity:0}}
+    @keyframes ln4{0%,45%{opacity:0}48%,96%{opacity:1}100%{opacity:0}}
+    @keyframes ln5{0%,62%{opacity:0}65%,96%{opacity:1}100%{opacity:0}}
+    @keyframes ln6{0%,73%{opacity:0}76%,96%{opacity:1}100%{opacity:0}}
+    @keyframes ln7{0%,84%{opacity:0}87%,96%{opacity:1}100%{opacity:0}}
+    .it1{animation-name:it1}.it2{animation-name:it2}
+    @keyframes it1{0%,4%{opacity:.2}7%,100%{opacity:1}}
+    @keyframes it2{0%,44%{opacity:.2}47%,100%{opacity:1}}
+    .pointer{animation:pointer 15s ease-in-out infinite;transform-box:view-box;transform-origin:300px 320px}
+    @keyframes pointer{0%,18%{transform:rotate(-90deg)}22%,30%{transform:rotate(30deg)}33%,41%{transform:rotate(150deg)}45%,57%{transform:rotate(270deg)}63%,70%{transform:rotate(390deg)}74%,81%{transform:rotate(510deg)}87%,100%{transform:rotate(630deg)}}
+    .done{animation-name:done}
+    @keyframes done{0%,86%{opacity:0}90%,97%{opacity:1}100%{opacity:0}}
+  </style>
+
+  <g clip-path="url(#frame)">
+  <rect width="1200" height="580" fill="url(#bg)"/>
+
+  <text x="64" y="52" font-size="13" letter-spacing="4" class="dim mono">PATTERN 04 · GROUP CHAT</text>
+  <text x="64" y="86" font-size="25" font-weight="900">Collaborative review. <tspan fill="#0e8f7e">Bounded by criteria and a limit.</tspan></text>
+  <text x="1136" y="52" text-anchor="end" font-size="11.5" class="mono dim">a.k.a. roundtable · council · maker-checker · debate</text>
+
+  <!-- roundtable (center 300,320 ring r=140) -->
+  <circle cx="300" cy="320" r="140" fill="none" stroke="#b8e3da" stroke-width="1.5" stroke-dasharray="3 7"/>
+
+  <!-- manager -->
+  <circle cx="300" cy="320" r="54" fill="#e9f8f4" stroke="#0e8f7e" stroke-width="2" filter="url(#shadow)"/>
+  <text x="300" y="316" text-anchor="middle" font-size="11" font-weight="800" fill="#0e6f62">CHAT</text>
+  <text x="300" y="331" text-anchor="middle" font-size="11" font-weight="800" fill="#0e6f62">MANAGER</text>
+  <text x="300" y="396" text-anchor="middle" font-size="10" class="dim">picks the next speaker</text>
+  <g class="pointer"><line x1="360" y1="320" x2="386" y2="320" stroke="#ff7b1c" stroke-width="3" stroke-linecap="round"/><circle cx="386" cy="320" r="5" fill="#ff7b1c"/></g>
+
+  <!-- maker (top, 300,180) -->
+  <g class="cyc spk1" transform="translate(300 180)">
+    <use href="#agent"/>
+    <rect x="-40" y="32" width="80" height="20" rx="10" fill="#ffffff" stroke="#0e8f7e"/><text y="46" text-anchor="middle" font-size="10" font-weight="800" fill="#0e6f62">MAKER</text>
+    <text y="-38" text-anchor="middle" font-size="10.5" class="muted">drafts · revises the artifact</text>
+  </g>
+  <!-- checker A (lower right, 421,390) -->
+  <g class="cyc spk2" transform="translate(421 390)">
+    <use href="#agent"/>
+    <rect x="-44" y="32" width="88" height="20" rx="10" fill="#ffffff" stroke="#0e8f7e"/><text y="46" text-anchor="middle" font-size="10" font-weight="800" fill="#0e6f62">CHECKER A</text>
+    <text x="56" y="-24" font-size="10.5" class="muted">policy conflicts</text>
+  </g>
+  <!-- checker B (lower left, 179,390) -->
+  <g class="cyc spk3" transform="translate(179 390)">
+    <use href="#agent"/>
+    <rect x="-44" y="32" width="88" height="20" rx="10" fill="#ffffff" stroke="#0e8f7e"/><text y="46" text-anchor="middle" font-size="10" font-weight="800" fill="#0e6f62">CHECKER B</text>
+    <text x="-56" y="-24" text-anchor="end" font-size="10.5" class="muted">accessibility · evidence</text>
+  </g>
+  <text x="300" y="500" text-anchor="middle" font-size="10.5" class="mono dim">≤ 3 agents recommended — coordination cost climbs fast</text>
+
+  <!-- transcript -->
+  <g transform="translate(560 124)">
+    <rect width="380" height="326" rx="14" fill="#ffffff" stroke="#b8e3da" stroke-width="1.5" filter="url(#shadow)"/>
+    <circle cx="20" cy="20" r="4" fill="#fb7185"/><circle cx="34" cy="20" r="4" fill="#fbbf24"/><circle cx="48" cy="20" r="4" fill="#34d399"/>
+    <text x="64" y="24" font-size="11" class="mono dim">accumulating transcript</text>
+    <line x1="0" y1="38" x2="380" y2="38" stroke="#e5f2ee"/>
+    <g class="mono" font-size="11.5">
+      <g class="cyc l1"><text x="20" y="68" fill="#0e8f7e" font-weight="700">maker</text><text x="92" y="68">drafted notice v1</text></g>
+      <g class="cyc l2"><text x="20" y="92" fill="#b45309" font-weight="700">check-a</text><text x="92" y="92">✗ cites retired ordinance §4.2</text></g>
+      <g class="cyc l3"><text x="20" y="116" fill="#b45309" font-weight="700">check-b</text><text x="92" y="116">✗ reading level too high</text></g>
+      <g class="cyc l4"><text x="20" y="140" fill="#0e8f7e" font-weight="700">maker</text><text x="92" y="140">revised → v2</text></g>
+      <g class="cyc l5"><text x="20" y="164" fill="#15803d" font-weight="700">check-a</text><text x="92" y="164">✓ policy criteria met</text></g>
+      <g class="cyc l6"><text x="20" y="188" fill="#15803d" font-weight="700">check-b</text><text x="92" y="188">✓ plain-language pass</text></g>
+      <g class="cyc l7"><text x="20" y="212" fill="#6b21a8" font-weight="700">manager</text><text x="92" y="212">approved → escalate to human</text></g>
+    </g>
+    <line x1="20" y1="236" x2="360" y2="236" stroke="#e5f2ee"/>
+    <text x="20" y="262" font-size="10" letter-spacing="2" font-weight="800" fill="#0e6f62">ITERATION LIMIT</text>
+    <g transform="translate(160 252)">
+      <rect class="cyc it1" width="56" height="14" rx="7" fill="url(#mango)"/>
+      <rect class="cyc it2" x="64" width="56" height="14" rx="7" fill="url(#mango)"/>
+      <rect x="128" width="56" height="14" rx="7" fill="none" stroke="#fdba74" stroke-dasharray="3 3"/>
+    </g>
+    <text x="360" y="263" text-anchor="end" font-size="10.5" class="mono" fill="#b45309">max 3</text>
+    <text x="20" y="298" font-size="10.5" class="muted">stop on: approval · limit reached · unresolved → person</text>
+  </g>
+
+  <!-- exits -->
+  <path d="M944 220 L1008 220" stroke="#0e8f7e" stroke-width="2.5" fill="none" marker-end="url(#arrT)"/>
+  <path d="M944 380 L1010 380" stroke="#e8730f" stroke-width="2.5" fill="none" stroke-dasharray="5 7" marker-end="url(#arrA)"/>
+
+  <g transform="translate(1072 220)">
+    <g class="cyc done"><rect x="-48" y="-92" width="96" height="22" rx="11" fill="#dcfce7" stroke="#22c55e"/><text y="-77" text-anchor="middle" font-size="10" font-weight="800" fill="#15803d">APPROVED</text></g>
+    <circle r="40" fill="url(#mango)" filter="url(#glow)"/>
+    <circle r="32" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-dasharray="3 3" opacity=".85"/>
+    <circle cy="-8" r="8" fill="#3a1c00"/><path d="M-14 14 a14 14 0 0 1 28 0 z" fill="#3a1c00"/>
+    <text y="64" text-anchor="middle" font-size="11" font-weight="800" fill="#b45309">HUMAN DECIDES</text>
+    <text y="79" text-anchor="middle" font-size="9.5" class="dim">agents advise only</text>
+  </g>
+  <g transform="translate(1072 380)">
+    <rect x="-56" y="-26" width="112" height="52" rx="12" fill="#fff7ed" stroke="#fdba74"/>
+    <text y="-5" text-anchor="middle" font-size="10" font-weight="800" fill="#b45309">LIMIT HIT</text>
+    <text y="12" text-anchor="middle" font-size="9.5" fill="#9a3412">escalate unresolved</text>
+  </g>
+
+  <text x="600" y="552" text-anchor="middle" font-size="14.5" class="muted">Maker, checker, checker. The iteration limit keeps the transcript from accumulating forever.</text>
+  </g>
+  <rect x="1" y="1" width="1198" height="578" rx="21" fill="none" stroke="#b8e3da" stroke-width="2"/>
+</svg>
