@@ -129,9 +129,10 @@
       <circle r="42" fill="url(#mango)" filter="url(#glow)"/>
       <circle r="34" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-dasharray="3 3" opacity=".85"/>
       <circle cy="-8" r="8" fill="#3a1c00"/><path d="M-14 14 a14 14 0 0 1 28 0 z" fill="#3a1c00"/>
+      <path d="M12 4 L29 -15" stroke="#3a1c00" stroke-width="2.2" stroke-linecap="round"/>
     </g>
-    <text y="64" text-anchor="middle" font-size="10.5" font-weight="800" fill="#b45309">HUMAN REVIEWER</text>
-    <text y="79" text-anchor="middle" font-size="9" class="dim">approves consequential decisions</text>
+    <text y="64" text-anchor="middle" font-size="10.5" font-weight="800" fill="#b45309">THE CONDUCTOR</text>
+    <text y="79" text-anchor="middle" font-size="9" class="dim">a human reviewer approves consequential decisions</text>
   </g>
 
   <!-- decision path: reviewer → steps → up to Dataverse -->
