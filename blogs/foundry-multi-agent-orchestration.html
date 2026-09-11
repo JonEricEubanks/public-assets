@@ -1,0 +1,436 @@
+<figure>
+  <img
+    style="width: 100%; max-width: 1200px; height: auto"
+    src="https://raw.githubusercontent.com/JonEricEubanks/public-assets/main/images/foundry-header.svg"
+    alt="The Governed Team: five agent sections arranged like an orchestra around a conductor marked with an amber seal"
+    loading="lazy"
+  />
+</figure>
+
+<p>
+  Building an AI agent is getting easier. Building an agent system that knows
+  <strong
+    >which agent should act, what context to share, when the work is done, and
+    where a person must approve</strong
+  >
+  is the harder architectural problem.
+</p>
+<p>
+  That is what multi-agent orchestration is for, and the word is borrowed from
+  music on purpose. An orchestra is not the most instruments you can fit on a
+  stage. It is a set of sections, each playing only its own part, following one
+  score, under one conductor who never picks up an instrument but decides when
+  the piece is finished. Hold that picture; every figure in this post uses it.
+  The agents are the sections. The workflow is the score. The amber seal is the
+  conductor.
+</p>
+<p>
+  Microsoft Foundry Agent Service is the managed platform: models, tools,
+  identity, runtime, observability, evaluations, publishing. Microsoft Agent
+  Framework supplies the orchestration patterns that decide how specialized
+  agents collaborate on that platform.
+</p>
+<p>
+  The goal is not the most agents. It is the least complex architecture that
+  completes the work reliably, securely, and economically.
+</p>
+
+<figure>
+  <img
+    src="https://raw.githubusercontent.com/JonEricEubanks/public-assets/main/images/foundry-orchestration-hero.svg"
+    alt="Four specialized agents coordinated by an Agent Framework workflow pass a finding to a human marked by an amber seal, who records the decision in a system of record"
+    loading="lazy"
+  />
+  <figcaption>
+    Specialized agents do the reasoning. The amber seal marks where a person,
+    not an agent, holds the authority. That person is the conductor.
+  </figcaption>
+</figure>
+
+<h2>Foundry is the platform, not the pattern</h2>
+<p>Keep the two separate. Foundry supplies the operational foundation:</p>
+<ul>
+  <li>Models from the Foundry catalog</li>
+  <li>Prompt agents and hosted agents on a managed runtime</li>
+  <li>Tool access, including MCP servers and custom functions</li>
+  <li>Microsoft Entra identity and role-based access control</li>
+  <li>Tracing, metrics, evaluations, and Application Insights</li>
+  <li>Agent versioning and publishing</li>
+</ul>
+
+<figure>
+  <img
+    src="https://raw.githubusercontent.com/JonEricEubanks/public-assets/main/gifs/foundry-portal-tour.gif"
+    alt="Animated tour of the Microsoft Foundry portal left navigation: Model catalog, Playgrounds, Agents, Templates, Fine-tuning, Monitoring, Guardrails and controls, and Governance"
+    loading="lazy"
+  />
+  <figcaption>
+    The hall, not the score. Models, agents, monitoring, guardrails, and
+    governance all live in one Foundry project; none of these screens decides
+    how agents work together.
+  </figcaption>
+</figure>
+
+<p>
+  The orchestration pattern decides how agents divide, route, review, and finish
+  the work. Agent Framework ships five: sequential, concurrent, handoff, group
+  chat, and Magentic. You can also define custom workflows from executors,
+  edges, routing rules, and events.
+</p>
+
+<h2>Start with one agent</h2>
+<p>
+  Multi-agent is not the default. Microsoft recommends the lowest level of
+  complexity that reliably meets the requirement. A direct model call may cover
+  a focused transformation. A single agent with tools is the usual enterprise
+  default for work inside one domain. Orchestration earns its place when work
+  crosses domains, needs parallel specialization, benefits from separate
+  security boundaries, or one agent has collapsed under too many instructions,
+  tools, and knowledge sources.
+</p>
+<p>A separate agent is easier to justify when the capability:</p>
+<ul>
+  <li>Has a distinct set of tools or knowledge</li>
+  <li>Requires a different security boundary</li>
+  <li>Has a reusable responsibility</li>
+  <li>Needs to be evaluated independently</li>
+  <li>Is maintained by a separate team</li>
+</ul>
+<p>If none of those apply, another agent adds coordination cost, not value.</p>
+
+<figure>
+  <img
+    src="https://raw.githubusercontent.com/JonEricEubanks/public-assets/main/screenshots/foundry-agent-tools.png"
+    alt="Foundry agent builder showing one agent's instructions with a small set of attached tools and knowledge sources"
+    loading="lazy"
+  />
+  <figcaption>
+    A single agent with a bounded set of tools and knowledge. This is the
+    enterprise default; everything below is what you add only when it earns its
+    place.
+  </figcaption>
+</figure>
+
+<h2>1. Sequential orchestration</h2>
+<p>
+  Work passes through agents in a fixed order; each processes the previous
+  agent's output. Microsoft also calls this a pipeline, prompt chaining, or
+  linear delegation. The route is deterministic, not chosen by the agents.
+</p>
+
+<figure>
+  <img
+    src="https://raw.githubusercontent.com/JonEricEubanks/public-assets/main/images/foundry-sequential.svg"
+    alt="Four dashed stage frames in a row, each containing one agent, ending at an amber human approval gate"
+    loading="lazy"
+  />
+  <figcaption>
+    The workflow enforces the stages. Agents reason only inside them.
+  </figcaption>
+</figure>
+
+<p>Use it when:</p>
+<ul>
+  <li>Stages have clear dependencies and must run in order</li>
+  <li>Each stage progressively improves the last one's output</li>
+  <li>Routing must be predictable</li>
+  <li>A human approval gate belongs at a defined point</li>
+</ul>
+<p>
+  For a municipal records request: one agent classifies, one extracts search
+  criteria, one checks policy requirements, and a final agent drafts the
+  response for human review. The workflow enforces the stages; agents perform
+  bounded reasoning inside them.
+</p>
+
+<figure>
+  <img
+    src="https://raw.githubusercontent.com/JonEricEubanks/public-assets/main/screenshots/foundry-workflow-sequential.png"
+    alt="Foundry workflow visualizer showing agent nodes chained in sequence with the run chat panel open"
+    loading="lazy"
+  />
+  <figcaption>
+    The same pipeline in Foundry's workflow visualizer (preview). Microsoft is
+    retiring this designer on December 1, 2026; the same sequence is expressed
+    in Agent Framework code or declarative YAML, which is where new work should
+    go.
+  </figcaption>
+</figure>
+
+<h2>2. Concurrent orchestration</h2>
+<p>
+  The same request goes to several agents at once. Each works independently;
+  results are collected, compared, or synthesized afterward. Also known as
+  fan-out/fan-in, scatter-gather, or map-reduce. The merge can be rules, voting,
+  weighted combination, or model-based synthesis.
+</p>
+
+<figure>
+  <img
+    src="https://raw.githubusercontent.com/JonEricEubanks/public-assets/main/images/foundry-concurrent.svg"
+    alt="One permit request fans out to four specialist lanes whose structured findings fan back in to a single merge node and one write to the record"
+    loading="lazy"
+  />
+  <figcaption>Four perspectives, one merge point, one write.</figcaption>
+</figure>
+
+<p>Use it when:</p>
+<ul>
+  <li>Work can be done independently and in parallel</li>
+  <li>Multiple professional perspectives are needed</li>
+  <li>There is a clear conflict-resolution strategy</li>
+  <li>Agents do not need to update the same mutable state</li>
+</ul>
+<p>
+  In the public sector, concurrent agents should return structured findings
+  rather than each writing to the authoritative record. A coordinating workflow
+  validates and combines them before committing to Dataverse or another system
+  of record.
+</p>
+
+<h2>3. Handoff orchestration</h2>
+<p>
+  One active agent transfers control to a specialist, often only after the
+  request reveals which domain it belongs to. Also called routing, triage,
+  transfer, dispatch, or delegation. Only one specialist owns the request at a
+  time, and a path back to staff is a designed exit, not a failure.
+</p>
+
+<p>
+  A reliable handoff needs more than an agent description. Define why the
+  transfer happened, what context is authorized to move, who owns the next step,
+  who delivers the final response, what happens if no specialist accepts, and
+  when the system escalates to a person.
+</p>
+<p>
+  Connected agents were the classic Foundry way to do this. Microsoft has marked
+  classic agents deprecated with retirement on March 31, 2027; new work should
+  use the generally available Agent Service and current workflow capabilities.
+</p>
+
+<h2>4. Group chat orchestration</h2>
+<p>
+  Several agents share an accumulating conversation while a chat manager picks
+  who speaks next and steers toward a result. Also a roundtable, council, or
+  debate pattern, and the natural fit for maker-checker review.
+</p>
+
+<p>
+  The loop is simple: a maker produces an artifact, checkers evaluate it against
+  defined criteria, the maker revises, and the loop stops on approval or an
+  iteration limit that keeps the transcript from accumulating forever. Anything
+  unresolved goes to a person. Microsoft recommends clear acceptance criteria,
+  iteration limits, and fallback behavior, and notes coordination gets hard
+  fast; three agents or fewer is the guidance.
+</p>
+<p>
+  In government scenarios, position group chat as review and advice. Agents flag
+  policy conflicts, accessibility issues, or missing evidence; an authorized
+  employee stays accountable for the decision.
+</p>
+
+<h2>5. Magentic orchestration</h2>
+<p>
+  For open-ended tasks where the path cannot be known up front. A manager agent
+  builds a plan, assigns specialists, watches progress, detects stalls, and
+  replans as it learns. Also called dynamic, adaptive, or task-ledger
+  orchestration.
+</p>
+
+<figure>
+  <img
+    src="https://raw.githubusercontent.com/JonEricEubanks/public-assets/main/images/foundry-magentic.svg"
+    alt="A manager agent maintains a task ledger and a progress ledger in a replanning loop, assigning work to a pool of specialists only when the plan requires them"
+    loading="lazy"
+  />
+  <figcaption>
+    Two ledgers, one replanning loop, specialists pulled in only when the plan
+    calls for them.
+  </figcaption>
+</figure>
+
+<p>
+  Microsoft Research's Magentic-One keeps a Task Ledger for facts and plans and
+  a Progress Ledger for assignments and status, revising the plan when progress
+  stalls. Do not reach for it because it is the most autonomous. It is the wrong
+  tool for low-complexity, time-sensitive, or already-well-defined work, and its
+  dynamic planning makes cost and behavior harder to predict.
+</p>
+
+<h2>Why hybrid usually wins</h2>
+<p>
+  Most government processes mix deterministic and nondeterministic work. A
+  permit review needs agents to interpret documents, extract conditions, search
+  policy, and explain findings. It also has mandatory review stages, approval
+  authorities, notification requirements, and retention obligations that should
+  never depend on agent discretion.
+</p>
+
+<figure>
+  <img
+    src="https://raw.githubusercontent.com/JonEricEubanks/public-assets/main/images/foundry-hybrid-boundary.svg"
+    alt="A boundary line separates nondeterministic agents and bounded tools on the left from a human reviewer, Dataverse, and deterministic automation steps on the right; a structured finding crosses as data"
+    loading="lazy"
+  />
+  <figcaption>
+    The finding crosses the boundary as data, not as authority.
+  </figcaption>
+</figure>
+
+<ul>
+  <li>Foundry agents interpret, classify, research, and recommend</li>
+  <li>Agent Framework coordinates the reasoning</li>
+  <li>MCP or controlled tools expose bounded data and actions</li>
+  <li>Dataverse holds authoritative process state</li>
+  <li>Power Automate or Logic Apps runs deterministic integration steps</li>
+  <li>Human reviewers approve consequential decisions</li>
+  <li>Application Insights and Foundry evaluations watch the whole thing</li>
+</ul>
+<p>
+  This is an architectural recommendation, but it lines up with Microsoft's
+  guidance on least privilege, durable state, human participation, security
+  trimming, output validation, and end-to-end observability.
+</p>
+
+<h2>Governance is designed in, not bolted on</h2>
+<p>
+  Every added agent multiplies model calls, tool interactions, context
+  transfers, and failure points. A production Foundry architecture covers four
+  areas.
+</p>
+
+<h3>Identity and authorization</h3>
+<p>
+  Each agent gets only the models, knowledge, and tools its responsibility
+  requires. No connected or hosted agent may become a path around the requesting
+  user's authorization boundary.
+</p>
+<h3>State and context</h3>
+<p>
+  Do not forward full conversation history by default; pass the minimum the next
+  step needs. Externalize long-running state so execution resumes instead of
+  replaying. Compact and prune as transitions accumulate.
+</p>
+<h3>Reliability</h3>
+<p>
+  Transitions need timeouts, retries, output validation, checkpoints, circuit
+  breakers, and graceful degradation. A malformed result from one agent must not
+  become trusted input for another.
+</p>
+<h3>Observability and evaluation</h3>
+<p>
+  One trace should connect the user request, parent agent, child agent, model
+  call, tool call, approval checkpoint, and final outcome. Cost belongs in the
+  same view: every added agent is another set of model calls to pay for.
+</p>
+
+<figure>
+  <img
+    src="https://raw.githubusercontent.com/JonEricEubanks/public-assets/main/gifs/foundry-model-monitor.gif"
+    alt="Foundry Monitor tab for a model deployment showing total requests, token counts, and estimated cost over time"
+    loading="lazy"
+  />
+  <figcaption>
+    Foundry's Monitor tab on a single deployment: requests, tokens, and
+    estimated cost. Multiply this by every agent in the team before you add the
+    next one.
+  </figcaption>
+</figure>
+
+<figure>
+  <img
+    src="https://raw.githubusercontent.com/JonEricEubanks/public-assets/main/screenshots/foundry-trace-waterfall.png"
+    alt="Foundry Traces waterfall view showing an invoke_agent span with nested child agent, model call, and tool call spans and the input and output pane"
+    loading="lazy"
+  />
+  <figcaption>
+    A single trace in Foundry: the request, the agents it touched, every model
+    and tool call underneath, and the outcome. This is the recording of the
+    performance.
+  </figcaption>
+</figure>
+
+<h2>Final takeaway</h2>
+<p>
+  The right Foundry architecture is rarely the one with the most agents. It uses
+  the fewest agents necessary, gives each a distinct responsibility and limited
+  authority, matches the pattern to the work, and wraps deterministic controls
+  around anything that touches people, records, money, or public services.
+</p>
+<p>
+  Each pattern is a different way to arrange the sections. Sequential plays them
+  one after another. Concurrent has them play at once and resolves the chord.
+  Handoff passes the melody to whichever section the piece calls for. Group chat
+  lets sections rehearse a passage until it meets the score. Magentic lets the
+  manager rewrite the score mid-performance. Foundry is the hall: the stage, the
+  acoustics, the lights, the recording that proves what was played.
+</p>
+<p>
+  The future is not one agent that does everything. It is a governed team of
+  specialists that knows
+  <strong
+    >how to work together, when to ask for help, and where its authority
+    ends</strong
+  >. The sections play. The conductor decides.
+</p>
+
+<figure>
+  <img
+    style="width: 100%; max-width: 1200px; height: auto"
+    src="https://raw.githubusercontent.com/JonEricEubanks/public-assets/main/images/foundry-footer.svg"
+    alt="Start with one agent: a five-note score for the five patterns, ending in a conductor pill that reads the conductor decides, a person, not an agent"
+    loading="lazy"
+  />
+</figure>
+
+<h2>Microsoft resources</h2>
+<ul>
+  <li>
+    <a
+      href="https://learn.microsoft.com/en-us/azure/foundry/agents/overview"
+      target="_blank"
+      rel="noopener"
+      >Foundry Agent Service overview</a
+    >
+  </li>
+  <li>
+    <a
+      href="https://learn.microsoft.com/en-us/agent-framework/workflows/orchestrations/"
+      target="_blank"
+      rel="noopener"
+      >Agent Framework orchestration patterns</a
+    >
+  </li>
+  <li>
+    <a
+      href="https://learn.microsoft.com/en-us/azure/architecture/ai-ml/guide/ai-agent-design-patterns"
+      target="_blank"
+      rel="noopener"
+      >AI agent design patterns (Azure Architecture Center)</a
+    >
+  </li>
+  <li>
+    <a
+      href="https://learn.microsoft.com/en-us/agent-framework/workflows/agents-in-workflows"
+      target="_blank"
+      rel="noopener"
+      >Agents in workflows</a
+    >
+  </li>
+  <li>
+    <a
+      href="https://learn.microsoft.com/en-us/agents/architecture/multi-agent-patterns"
+      target="_blank"
+      rel="noopener"
+      >Multi-agent patterns</a
+    >
+  </li>
+  <li>
+    <a
+      href="https://www.microsoft.com/en-us/research/articles/magentic-one-a-generalist-multi-agent-system-for-solving-complex-tasks/"
+      target="_blank"
+      rel="noopener"
+      >Magentic-One (Microsoft Research)</a
+    >
+  </li>
+</ul>
