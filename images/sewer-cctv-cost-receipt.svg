@@ -96,21 +96,21 @@
       <text x="456" y="360" font-weight="700" font-size="15" xml:space="preserve">TOTAL</text>
       <text x="744" y="360" text-anchor="end" font-weight="700" font-size="15">$0.20</text>
       <text x="600" y="380" text-anchor="middle" xml:space="preserve">- - - - - - - - - - - - - - - - -</text>
-      <text x="456" y="400" font-weight="700" xml:space="preserve">BILLED TO</text>
-      <text x="744" y="400" text-anchor="end" font-weight="700">sponsorship</text>
-      <text x="456" y="420" xml:space="preserve">MONTH-TO-DATE ACCRUED</text>
-      <text x="744" y="420" text-anchor="end">$0.00</text>
+      <text x="456" y="400" font-weight="700" xml:space="preserve">PRICING</text>
+      <text x="744" y="400" text-anchor="end" font-weight="700">pay-as-you-go</text>
+      <text x="456" y="420" xml:space="preserve">RATE PER MIN OF VIDEO</text>
+      <text x="744" y="420" text-anchor="end">$0.064</text>
       <rect x="520" y="428" width="1.5" height="16" fill="#0b1a2e"/><rect x="523.5" y="428" width="1.5" height="16" fill="#0b1a2e"/><rect x="526.5" y="428" width="3" height="16" fill="#0b1a2e"/><rect x="531.5" y="428" width="1" height="16" fill="#0b1a2e"/><rect x="534.5" y="428" width="1" height="16" fill="#0b1a2e"/><rect x="537.0" y="428" width="2" height="16" fill="#0b1a2e"/><rect x="541.0" y="428" width="1.5" height="16" fill="#0b1a2e"/><rect x="543.5" y="428" width="3" height="16" fill="#0b1a2e"/><rect x="548.5" y="428" width="3" height="16" fill="#0b1a2e"/><rect x="553.0" y="428" width="1.5" height="16" fill="#0b1a2e"/><rect x="555.5" y="428" width="1.5" height="16" fill="#0b1a2e"/><rect x="559.0" y="428" width="3" height="16" fill="#0b1a2e"/><rect x="564.0" y="428" width="1" height="16" fill="#0b1a2e"/><rect x="567.0" y="428" width="1" height="16" fill="#0b1a2e"/><rect x="569.0" y="428" width="1" height="16" fill="#0b1a2e"/><rect x="571.5" y="428" width="1" height="16" fill="#0b1a2e"/><rect x="574.0" y="428" width="3" height="16" fill="#0b1a2e"/><rect x="579.0" y="428" width="3" height="16" fill="#0b1a2e"/><rect x="584.0" y="428" width="3" height="16" fill="#0b1a2e"/><rect x="588.5" y="428" width="3" height="16" fill="#0b1a2e"/><rect x="592.5" y="428" width="2" height="16" fill="#0b1a2e"/><rect x="595.5" y="428" width="1" height="16" fill="#0b1a2e"/><rect x="597.5" y="428" width="3" height="16" fill="#0b1a2e"/><rect x="601.5" y="428" width="2" height="16" fill="#0b1a2e"/><rect x="605.5" y="428" width="3" height="16" fill="#0b1a2e"/><rect x="610.5" y="428" width="2" height="16" fill="#0b1a2e"/><rect x="614.0" y="428" width="3" height="16" fill="#0b1a2e"/><rect x="619.0" y="428" width="2" height="16" fill="#0b1a2e"/><rect x="623.0" y="428" width="3" height="16" fill="#0b1a2e"/><rect x="628.0" y="428" width="1.5" height="16" fill="#0b1a2e"/><rect x="631.0" y="428" width="1" height="16" fill="#0b1a2e"/><rect x="633.5" y="428" width="1.5" height="16" fill="#0b1a2e"/><rect x="637.0" y="428" width="2" height="16" fill="#0b1a2e"/><rect x="641.0" y="428" width="1" height="16" fill="#0b1a2e"/><rect x="644.0" y="428" width="1.5" height="16" fill="#0b1a2e"/><rect x="647.5" y="428" width="2" height="16" fill="#0b1a2e"/><rect x="651.0" y="428" width="1" height="16" fill="#0b1a2e"/><rect x="653.0" y="428" width="3" height="16" fill="#0b1a2e"/><rect x="658.0" y="428" width="3" height="16" fill="#0b1a2e"/><rect x="662.0" y="428" width="2" height="16" fill="#0b1a2e"/><rect x="665.0" y="428" width="3" height="16" fill="#0b1a2e"/><rect x="669.0" y="428" width="1" height="16" fill="#0b1a2e"/><rect x="671.5" y="428" width="3" height="16" fill="#0b1a2e"/><rect x="676.0" y="428" width="1" height="16" fill="#0b1a2e"/><rect x="678.0" y="428" width="1" height="16" fill="#0b1a2e"/>
       <text x="600" y="460" text-anchor="middle" xml:space="preserve">AI PROPOSES · A PERSON DISPOSES</text>
     </g>
   </g>
 
   <rect x="820" y="120" width="330" height="150" rx="12" fill="#030a14" stroke="#16324f"/>
-  <text x="840" y="146" font-size="10" letter-spacing="2" class="mono dim">BILLED TO</text>
-  <text x="840" y="170" font-size="16" font-weight="800">Azure sponsorship credits</text>
-  <text x="840" y="190" font-size="10.5" class="mono dim">resource group accrued · Sep month-to-date</text>
-  <text x="840" y="240" font-size="44" font-weight="900" fill="#8fd6ff">$0.00</text>
-  <text x="840" y="260" font-size="10" class="mono dim">cost data lags 24–72 h</text>
+  <text x="840" y="146" font-size="10" letter-spacing="2" class="mono dim">WHERE THE MONEY GOES</text>
+  <text x="840" y="170" font-size="16" font-weight="800">Content Understanding</text>
+  <text x="840" y="190" font-size="10.5" class="mono dim">video analysis + field extraction</text>
+  <text x="840" y="240" font-size="44" font-weight="900" fill="#8fd6ff">≈ 95%</text>
+  <text x="840" y="260" font-size="10" class="mono dim">$0.19 of $0.20 · everything else ≈ $0.01</text>
   <rect x="820" y="290" width="330" height="120" rx="12" fill="#030a14" stroke="url(#gViolet)"/>
   <text x="840" y="316" font-size="10" letter-spacing="2" class="mono" fill="#d9ccff">THE REAL LINE ITEM</text>
   <text x="840" y="340" font-size="14" font-weight="700">Power Apps Premium · per reviewer</text>
