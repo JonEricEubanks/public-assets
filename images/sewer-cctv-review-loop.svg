@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 520" font-family="'Segoe UI', system-ui, -apple-system, sans-serif">
+  <defs>
+    <marker id="rarr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#475569"/>
+    </marker>
+    <style>
+      .rflow { stroke-dasharray: 8 5; animation: rdash 1.4s linear infinite; }
+      @keyframes rdash { to { stroke-dashoffset: -13; } }
+      .rnode { filter: drop-shadow(0 2px 4px rgba(15, 23, 42, 0.12)); }
+    </style>
+  </defs>
+  <rect width="960" height="520" fill="#F8FAFC" rx="16"/>
+  <text x="480" y="40" text-anchor="middle" font-size="20" font-weight="700" fill="#0F172A" letter-spacing="-0.3">The Review Loop: AI Proposes, Humans Dispose</text>
+  <g class="rnode">
+    <rect x="48" y="84" width="400" height="252" rx="12" fill="#FFFFFF" stroke="#E0A85C" stroke-width="2"/>
+  </g>
+  <text x="248" y="112" text-anchor="middle" font-size="12" font-weight="700" fill="#8A5A1E" letter-spacing="2">AI CLASSIFICATION</text>
+  <line x1="72" y1="122" x2="424" y2="122" stroke="#FDE8D0" stroke-width="1"/>
+  <rect x="72" y="138" width="160" height="108" rx="8" fill="#293B4A"/>
+  <circle cx="152" cy="192" r="26" fill="none" stroke="#5E9E96" stroke-width="2"/>
+  <path d="M 146 182 L 164 192 L 146 202 Z" fill="#5E9E96"/>
+  <text x="152" y="258" text-anchor="middle" font-size="10" fill="#6B7A82">keyframe thumbnail</text>
+  <text x="248" y="156" font-size="13" font-weight="600" fill="#232A31">Fracture · 12 o'clock</text>
+  <text x="248" y="178" font-size="11.5" fill="#6B7A82">00:12:34 → 00:12:41</text>
+  <text x="248" y="198" font-size="11.5" fill="#6B7A82">Footage: 127.5 ft</text>
+  <rect x="248" y="210" width="120" height="20" rx="10" fill="#FEF3C7"/>
+  <text x="308" y="224" text-anchor="middle" font-size="10.5" font-weight="600" fill="#8A5A1E">confidence 91%</text>
+  <text x="248" y="262" font-size="10.5" fill="#94A3B8" font-style="italic">"Longitudinal fracture visible at</text>
+  <text x="248" y="277" font-size="10.5" fill="#94A3B8" font-style="italic">crown, approximately 2 feet long…"</text>
+  <rect x="72" y="296" width="352" height="24" rx="12" fill="#F1F5F9"/>
+  <text x="248" y="312" text-anchor="middle" font-size="10.5" fill="#64748B">original AI extraction — read only</text>
+  <path class="rflow" d="M 448 210 L 512 210" stroke="#475569" stroke-width="2.5" fill="none" marker-end="url(#rarr)"/>
+  <text x="480" y="196" text-anchor="middle" font-size="10.5" font-weight="600" fill="#475569">review</text>
+  <g class="rnode">
+    <rect x="516" y="84" width="400" height="252" rx="12" fill="#FFFFFF" stroke="#5E9E96" stroke-width="2"/>
+  </g>
+  <text x="716" y="112" text-anchor="middle" font-size="12" font-weight="700" fill="#2F6B64" letter-spacing="2">HUMAN REVIEW</text>
+  <line x1="540" y1="122" x2="892" y2="122" stroke="#D5E8E5" stroke-width="1"/>
+  <text x="716" y="146" text-anchor="middle" font-size="11" fill="#6B7A82">video cued to 00:12:34</text>
+  <g>
+    <rect x="548" y="164" width="108" height="30" rx="15" fill="#6BA87A"/>
+    <text x="602" y="183" text-anchor="middle" font-size="11.5" font-weight="600" fill="#FFFFFF">Confirmed</text>
+    <rect x="664" y="164" width="108" height="30" rx="15" fill="#6C8EBF"/>
+    <text x="718" y="183" text-anchor="middle" font-size="11.5" font-weight="600" fill="#FFFFFF">Corrected</text>
+    <rect x="780" y="164" width="108" height="30" rx="15" fill="#D4766C"/>
+    <text x="834" y="183" text-anchor="middle" font-size="11.5" font-weight="600" fill="#FFFFFF">Rejected</text>
+  </g>
+  <g>
+    <rect x="606" y="202" width="108" height="30" rx="15" fill="#969EA5"/>
+    <text x="660" y="221" text-anchor="middle" font-size="11.5" font-weight="600" fill="#FFFFFF">Duplicate</text>
+    <rect x="722" y="202" width="140" height="30" rx="15" fill="#969EA5"/>
+    <text x="792" y="221" text-anchor="middle" font-size="11.5" font-weight="600" fill="#FFFFFF">Unable to Verify</text>
+  </g>
+  <text x="716" y="262" text-anchor="middle" font-size="11" fill="#6B7A82">reviewer notes · correction fields</text>
+  <rect x="596" y="278" width="240" height="22" rx="11" fill="#EAF3F0"/>
+  <text x="716" y="293" text-anchor="middle" font-size="10.5" fill="#2F6B64">disposition + reviewer + timestamp written back</text>
+  <path class="rflow" d="M 120 396 L 240 396" stroke="#475569" stroke-width="2" fill="none" marker-end="url(#rarr)"/>
+  <g class="rnode">
+    <rect x="40" y="372" width="80" height="48" rx="10" fill="#EFF6FF" stroke="#3B82F6" stroke-width="1.5"/>
+  </g>
+  <text x="80" y="401" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1D4ED8">AI pass</text>
+  <g class="rnode">
+    <rect x="248" y="372" width="140" height="48" rx="10" fill="#FFFBEB" stroke="#F59E0B" stroke-width="1.5"/>
+  </g>
+  <text x="318" y="401" text-anchor="middle" font-size="11.5" font-weight="700" fill="#78350F">Human dispositions</text>
+  <path class="rflow" d="M 388 396 L 508 396" stroke="#475569" stroke-width="2" fill="none" marker-end="url(#rarr)"/>
+  <g class="rnode">
+    <rect x="516" y="372" width="170" height="48" rx="10" fill="#FDF4FF" stroke="#A855F7" stroke-width="1.5"/>
+  </g>
+  <text x="601" y="393" text-anchor="middle" font-size="11.5" font-weight="700" fill="#6B21A8">Audit trail</text>
+  <text x="601" y="410" text-anchor="middle" font-size="10" fill="#7E22CE">every decision on record</text>
+  <path class="rflow" d="M 686 396 L 806 396" stroke="#475569" stroke-width="2" fill="none" marker-end="url(#rarr)"/>
+  <g class="rnode">
+    <rect x="814" y="372" width="106" height="48" rx="10" fill="#F0FDF4" stroke="#22C55E" stroke-width="1.5"/>
+  </g>
+  <text x="867" y="393" text-anchor="middle" font-size="11.5" font-weight="700" fill="#14532D">Calibration</text>
+  <text x="867" y="410" text-anchor="middle" font-size="10" fill="#166534">corrections feed back</text>
+  <text x="480" y="472" text-anchor="middle" font-size="12" fill="#64748B" font-style="italic">The model does the watching. The inspector does the judging.</text>
+</svg>
