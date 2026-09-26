@@ -1,64 +1,134 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 520" font-family="'Segoe UI', system-ui, -apple-system, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="460" viewBox="0 0 1200 460" font-family="'Inter','Segoe UI',system-ui,sans-serif">
   <defs>
-    <marker id="parr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-      <path d="M 0 1 L 9 5 L 0 9 z" fill="#475569"/>
-    </marker>
-    <style>
-      .pflow { stroke-dasharray: 8 5; animation: pdash 1.2s linear infinite; }
-      .pflow-slow { stroke-dasharray: 6 4; animation: pdash 2s linear infinite; }
-      @keyframes pdash { to { stroke-dashoffset: -13; } }
-      .pnode { filter: drop-shadow(0 2px 4px rgba(15, 23, 42, 0.12)); }
-    </style>
+    <radialGradient id="bg" cx="50%" cy="30%" r="100%"><stop offset="0%" stop-color="#16283d"/><stop offset="55%" stop-color="#0b1726"/><stop offset="100%" stop-color="#050b13"/></radialGradient>
+    <linearGradient id="mango" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#b8d8f5"/><stop offset="100%" stop-color="#3f7fcf"/></linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity=".35"/></filter>
+    <filter id="glow" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <marker id="arrT" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" viewBox="0 0 12 12" refX="10" refY="6" orient="auto"><path d="M0 1 L10 6 L0 11z" fill="#5b9bd5"/></marker>
+    <marker id="arrA" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" viewBox="0 0 12 12" refX="10" refY="6" orient="auto"><path d="M0 1 L10 6 L0 11z" fill="#6aa9ec"/></marker>
+    <g id="disc"><circle r="26" fill="#081424" stroke="#5b9bd5" stroke-width="2"/></g>
+    <clipPath id="frame"><rect width="1200" height="460" rx="22"/></clipPath>
   </defs>
-  <rect width="960" height="520" fill="#F8FAFC" rx="16"/>
-  <text x="480" y="40" text-anchor="middle" font-size="20" font-weight="700" fill="#0F172A" letter-spacing="-0.3">The Pipeline, End to End</text>
-  <g class="pnode">
-    <rect x="40" y="80" width="180" height="96" rx="10" fill="#EFF6FF" stroke="#3B82F6" stroke-width="2"/>
+  <style>
+    .mono{font-family:'Cascadia Code',Consolas,'Courier New',monospace}
+    .muted{fill:#93a9c2}.dim{fill:#5b7390}
+    .cyc{animation-duration:12s;animation-iteration-count:infinite;animation-timing-function:ease-in-out}
+    .s1{animation-name:s1}.s2{animation-name:s2}.s3{animation-name:s3}.s4{animation-name:s4}
+    @keyframes s1{0%,3%{opacity:.5}7%,21%{opacity:1}26%,100%{opacity:.5}}
+    @keyframes s2{0%,25%{opacity:.5}29%,43%{opacity:1}48%,100%{opacity:.5}}
+    @keyframes s3{0%,47%{opacity:.5}51%,65%{opacity:1}70%,100%{opacity:.5}}
+    @keyframes s4{0%,69%{opacity:.5}73%,87%{opacity:1}92%,100%{opacity:.5}}
+    .stamp{animation:stamp 12s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+    @keyframes stamp{0%,89%{transform:scale(1)}93%{transform:scale(1.14)}97%,100%{transform:scale(1)}}
+    [class]{animation-fill-mode:both}
+  </style>
+
+  <g clip-path="url(#frame)" fill="#eaf1f8">
+  <rect width="1200" height="460" fill="url(#bg)"/>
+
+  <text x="64" y="52" font-size="13" letter-spacing="4" class="dim mono">THE PIPELINE · END TO END</text>
+  <text x="64" y="86" font-size="25" font-weight="900">One custom function. <tspan fill="#5b9bd5">Everything else is configuration.</tspan></text>
+  <text x="1136" y="52" text-anchor="end" font-size="11.5" class="mono dim">SharePoint · Power Automate · Azure Functions · Content Understanding</text>
+
+  <!-- source: CCTV video -->
+  <g transform="translate(64 176)">
+    <rect width="104" height="96" rx="14" fill="#0c1a2b" stroke="#22384f" stroke-width="1.5" filter="url(#shadow)"/>
+    <rect x="30" y="22" width="30" height="20" rx="4" fill="none" stroke="#5b9bd5" stroke-width="2"/>
+    <path d="M60 28 L72 22 L72 42 L60 36 Z" fill="none" stroke="#5b9bd5" stroke-width="2" stroke-linejoin="round"/>
+    <circle cx="37" cy="29" r="2.2" fill="#ec6a5e"/>
+    <text x="52" y="64" text-anchor="middle" font-size="12" font-weight="700">CCTV video</text>
+    <text x="52" y="80" text-anchor="middle" font-size="10" class="dim mono">SharePoint upload</text>
   </g>
-  <text x="130" y="112" text-anchor="middle" font-size="14" font-weight="700" fill="#1D4ED8">CCTV Video</text>
-  <text x="130" y="133" text-anchor="middle" font-size="11.5" fill="#3B82F6">Crew uploads MP4</text>
-  <text x="130" y="150" text-anchor="middle" font-size="11.5" fill="#3B82F6">to SharePoint</text>
-  <path class="pflow" d="M 220 128 L 258 128" stroke="#475569" stroke-width="2" fill="none" marker-end="url(#parr)"/>
-  <g class="pnode">
-    <rect x="262" y="80" width="196" height="96" rx="10" fill="#FFFBEB" stroke="#F59E0B" stroke-width="2"/>
+
+  <!-- stages: x = 200, 416, 632, 848 ; width 176 -->
+  <g class="cyc s1" transform="translate(200 124)">
+    <rect width="176" height="200" rx="16" fill="#0d1d30" stroke="#3d6fa3" stroke-width="2" stroke-dasharray="8 5"/>
+    <text x="16" y="26" font-size="10" letter-spacing="2" font-weight="800" fill="#5b9bd5">STAGE 1</text>
+    <g transform="translate(88 92)">
+      <use href="#disc"/>
+      <g fill="none" stroke="#5b9bd5" stroke-width="2">
+        <ellipse cx="0" cy="-8" rx="10" ry="4"/><path d="M-10 -8 V8 A10 4 0 0 0 10 8 V-8"/><path d="M-10 0 A10 4 0 0 0 10 0"/>
+      </g>
+    </g>
+    <text x="88" y="146" text-anchor="middle" font-size="13.5" font-weight="700">Stage + sign</text>
+    <text x="88" y="166" text-anchor="middle" font-size="10.5" class="muted">Blob Storage</text>
+    <text x="88" y="182" text-anchor="middle" font-size="10.5" class="muted">SAS via managed identity</text>
   </g>
-  <text x="360" y="106" text-anchor="middle" font-size="14" font-weight="700" fill="#78350F">Flow + Function App</text>
-  <text x="360" y="126" text-anchor="middle" font-size="11.5" fill="#92400E">Stages blob, mints SAS</text>
-  <text x="360" y="142" text-anchor="middle" font-size="11.5" fill="#92400E">via managed identity</text>
-  <rect x="282" y="152" width="156" height="18" rx="9" fill="#FEF3C7"/>
-  <text x="360" y="165" text-anchor="middle" font-size="9.5" fill="#92400E">no secrets in code</text>
-  <path class="pflow" d="M 458 128 L 496 128" stroke="#475569" stroke-width="2" fill="none" marker-end="url(#parr)"/>
-  <g class="pnode">
-    <rect x="500" y="80" width="200" height="96" rx="10" fill="#F0FDF4" stroke="#22C55E" stroke-width="2"/>
+  <g class="cyc s2" transform="translate(416 124)">
+    <rect width="176" height="200" rx="16" fill="#0d1d30" stroke="#3d6fa3" stroke-width="2" stroke-dasharray="8 5"/>
+    <text x="16" y="26" font-size="10" letter-spacing="2" font-weight="800" fill="#5b9bd5">STAGE 2</text>
+    <g transform="translate(88 92)">
+      <use href="#disc"/>
+      <path d="M-14 0 Q0 -12 14 0 Q0 12 -14 0 Z" fill="none" stroke="#5b9bd5" stroke-width="2"/>
+      <circle r="4.5" fill="#5b9bd5"/><circle cx="0" cy="-15" r="2.2" fill="#3f7fcf"/>
+    </g>
+    <text x="88" y="146" text-anchor="middle" font-size="13.5" font-weight="700">Analyze</text>
+    <text x="88" y="166" text-anchor="middle" font-size="10.5" class="muted mono">clv.sewer.cctv.v1</text>
+    <text x="88" y="182" text-anchor="middle" font-size="10.5" class="muted">≈ $3.83 per video-hour</text>
   </g>
-  <text x="600" y="106" text-anchor="middle" font-size="14" font-weight="700" fill="#14532D">Content Understanding</text>
-  <text x="600" y="126" text-anchor="middle" font-size="11.5" fill="#166534">clv.sewer.cctv.v1 analyzer</text>
-  <text x="600" y="142" text-anchor="middle" font-size="11.5" fill="#166534">defects · quadrants · timestamps</text>
-  <rect x="520" y="152" width="160" height="18" rx="9" fill="#DCFCE7"/>
-  <text x="600" y="165" text-anchor="middle" font-size="9.5" fill="#14532D">~$3.83 per hour of video</text>
-  <path class="pflow" d="M 700 128 L 738 128" stroke="#475569" stroke-width="2" fill="none" marker-end="url(#parr)"/>
-  <g class="pnode">
-    <rect x="742" y="80" width="178" height="96" rx="10" fill="#FDF4FF" stroke="#A855F7" stroke-width="2"/>
+  <g class="cyc s3" transform="translate(632 124)">
+    <rect width="176" height="200" rx="16" fill="#0d1d30" stroke="#3d6fa3" stroke-width="2" stroke-dasharray="8 5"/>
+    <text x="16" y="26" font-size="10" letter-spacing="2" font-weight="800" fill="#5b9bd5">STAGE 3</text>
+    <g transform="translate(88 92)">
+      <use href="#disc"/>
+      <g fill="none" stroke="#5b9bd5" stroke-width="1.8">
+        <rect x="-15" y="-8" width="9" height="16" rx="1.5"/><rect x="-4.5" y="-8" width="9" height="16" rx="1.5"/><rect x="6" y="-8" width="9" height="16" rx="1.5"/>
+      </g>
+      <rect x="-4.5" y="-8" width="9" height="16" rx="1.5" fill="#b8d8f5" opacity=".6"/>
+    </g>
+    <text x="88" y="146" text-anchor="middle" font-size="13.5" font-weight="700">Normalize</text>
+    <text x="88" y="166" text-anchor="middle" font-size="10.5" class="muted">findings + keyframe thumbs</text>
+    <text x="88" y="182" text-anchor="middle" font-size="10.5" class="muted">enrichment never fails a run</text>
   </g>
-  <text x="831" y="112" text-anchor="middle" font-size="14" font-weight="700" fill="#6B21A8">SharePoint</text>
-  <text x="831" y="133" text-anchor="middle" font-size="11.5" fill="#7E22CE">Inspection + Findings lists</text>
-  <text x="831" y="150" text-anchor="middle" font-size="11.5" fill="#7E22CE">one row per observation</text>
-  <path class="pflow-slow" d="M 600 176 C 600 220 480 236 420 248" stroke="#94A3B8" stroke-width="2" fill="none" marker-end="url(#parr)"/>
-  <g class="pnode">
-    <rect x="208" y="222" width="212" height="74" rx="10" fill="#FFFFFF" stroke="#5E9E96" stroke-width="2"/>
+  <g class="cyc s4" transform="translate(848 124)">
+    <rect width="176" height="200" rx="16" fill="#0d1d30" stroke="#3d6fa3" stroke-width="2" stroke-dasharray="8 5"/>
+    <text x="16" y="26" font-size="10" letter-spacing="2" font-weight="800" fill="#5b9bd5">STAGE 4</text>
+    <g transform="translate(88 92)">
+      <use href="#disc"/>
+      <g fill="none" stroke="#5b9bd5" stroke-width="1.8">
+        <rect x="-13" y="-10" width="26" height="20" rx="2.5"/><path d="M-13 -3 H13 M-13 4 H13 M-4 -10 V10"/>
+      </g>
+    </g>
+    <text x="88" y="146" text-anchor="middle" font-size="13.5" font-weight="700">Record</text>
+    <text x="88" y="166" text-anchor="middle" font-size="10.5" class="muted">SharePoint lists</text>
+    <text x="88" y="182" text-anchor="middle" font-size="10.5" class="muted">one row per observation</text>
   </g>
-  <text x="314" y="250" text-anchor="middle" font-size="13" font-weight="700" fill="#2F6B64">Keyframe Thumbnails</text>
-  <text x="314" y="270" text-anchor="middle" font-size="11" fill="#5E9E96">nearest frame per finding</text>
-  <text x="314" y="286" text-anchor="middle" font-size="11" fill="#5E9E96">failures never fail the run</text>
-  <path class="pflow" d="M 831 176 C 831 240 700 300 620 330" stroke="#475569" stroke-width="2" fill="none" marker-end="url(#parr)"/>
-  <g class="pnode">
-    <rect x="330" y="336" width="300" height="120" rx="10" fill="#293B4A" stroke="#5E9E96" stroke-width="2"/>
+
+  <!-- connectors, y = 224 -->
+  <g stroke="#5b9bd5" stroke-width="2.5" fill="none" marker-end="url(#arrT)">
+    <path d="M170 224 L196 224"/><path d="M378 224 L412 224"/><path d="M594 224 L628 224"/><path d="M810 224 L844 224"/>
   </g>
-  <text x="480" y="366" text-anchor="middle" font-size="15" font-weight="700" fill="#EEF2F5">Canvas App Review</text>
-  <line x1="352" y1="376" x2="608" y2="376" stroke="#3A4F63" stroke-width="1"/>
-  <text x="480" y="397" text-anchor="middle" font-size="11.5" fill="#B8C6CE">Intake Queue → Inspection Review</text>
-  <text x="480" y="415" text-anchor="middle" font-size="11.5" fill="#B8C6CE">Finding Review → GIS Match</text>
-  <rect x="360" y="428" width="240" height="20" rx="10" fill="#5E9E96"/>
-  <text x="480" y="442" text-anchor="middle" font-size="10.5" font-weight="600" fill="#FFFFFF">human confirms · corrects · rejects</text>
-  <text x="480" y="492" text-anchor="middle" font-size="11.5" fill="#94A3B8" font-style="italic">The Function App is the only custom code. Everything else is configuration.</text>
+  <path d="M1026 224 L1058 224" stroke="#6aa9ec" stroke-width="2.5" fill="none" marker-end="url(#arrA)"/>
+
+  <!-- human gate: the inspector -->
+  <g transform="translate(1100 224)">
+    <g class="stamp">
+      <circle r="34" fill="url(#mango)" filter="url(#glow)"/>
+      <circle r="27" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-dasharray="3 3" opacity=".85"/>
+      <circle cy="-5" r="6.5" fill="#081628"/>
+      <path d="M-9.5 -8 A9.5 8.5 0 0 1 9.5 -8 Z" fill="#081628"/><rect x="-12" y="-9" width="24" height="2.6" rx="1.3" fill="#081628"/>
+      <path d="M-12 14 a12 12 0 0 1 24 0 z" fill="#081628"/>
+    </g>
+    <text y="58" text-anchor="middle" font-size="11" font-weight="800" fill="#b8d8f5">INSPECTOR</text>
+    <text y="73" text-anchor="middle" font-size="9.5" class="dim">confirms every finding</text>
+  </g>
+
+  <!-- travelling artifact: a film frame -->
+  <g>
+    <animateMotion dur="12s" repeatCount="indefinite" calcMode="linear"
+      keyPoints="0;0.03;0.03;0.25;0.25;0.47;0.47;0.69;0.69;0.91;0.91;1;1"
+      keyTimes="0;0.03;0.07;0.25;0.29;0.47;0.51;0.69;0.73;0.91;0.95;1;1"
+      path="M116,110 L288,110 L504,110 L720,110 L936,110 L1100,110 L1100,110"/>
+    <rect x="-13" y="-10" width="26" height="20" rx="3" fill="#0c1a2b" stroke="#6aa9ec" stroke-width="1.5"/>
+    <g fill="#6aa9ec"><rect x="-10" y="-8" width="3" height="3" rx=".6"/><rect x="-10" y="5" width="3" height="3" rx=".6"/><rect x="7" y="-8" width="3" height="3" rx=".6"/><rect x="7" y="5" width="3" height="3" rx=".6"/></g>
+    <path d="M-3 -4 L4 0 L-3 4 Z" fill="#6aa9ec"/>
+  </g>
+
+  <!-- workflow rail -->
+  <rect x="200" y="346" width="824" height="36" rx="18" fill="#0c1a2b" stroke="#22384f" stroke-width="1.5"/>
+  <text x="612" y="369" text-anchor="middle" font-size="12" class="mono" fill="#8cbcea">Power Automate flow — owns the order · follows 202 + Location · catch scope marks failures</text>
+
+  <text x="600" y="424" text-anchor="middle" font-size="14.5" class="muted">The flow owns the order. The analyzer only watches. A person makes the call.</text>
+  </g>
+  <rect x="1" y="1" width="1198" height="458" rx="21" fill="none" stroke="#22384f" stroke-width="2"/>
 </svg>

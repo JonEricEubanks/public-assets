@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="370" viewBox="0 0 1200 370" font-family="'Inter','Segoe UI',sans-serif">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="40%" r="90%">
+      <stop offset="0%" stop-color="#16283d"/><stop offset="52%" stop-color="#0b1726"/><stop offset="100%" stop-color="#050b13"/>
+    </radialGradient>
+    <linearGradient id="mango" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#b8d8f5"/><stop offset="100%" stop-color="#3f7fcf"/></linearGradient>
+    <linearGradient id="teal" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#8cbcea"/><stop offset="100%" stop-color="#4a86c5"/></linearGradient>
+    <linearGradient id="coral" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#b8584d"/><stop offset="100%" stop-color="#ec8c80"/></linearGradient>
+    <pattern id="ticks" width="10.2" height="28" patternUnits="userSpaceOnUse" x="330">
+      <line x1="0.5" y1="4" x2="0.5" y2="24" stroke="#06111f" stroke-width="1" opacity=".45"/>
+    </pattern>
+    <marker id="aM" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" viewBox="0 0 12 12" refX="10" refY="6" orient="auto"><path d="M0 1 L10 6 L0 11z" fill="#6aa9ec"/></marker>
+    <clipPath id="frame"><rect width="1200" height="370" rx="20"/></clipPath>
+  </defs>
+  <style>
+    .mono{font-family:'Cascadia Code',Consolas,monospace}
+    .muted{fill:#93a9c2}.dim{fill:#5b7390}
+    .bar1{animation:g1 12s linear infinite}
+    @keyframes g1{0%,4%{width:0}10%{width:122px}100%{width:122px}}
+    .bar2{animation:g2 12s linear infinite}
+    @keyframes g2{0%,10%{width:0}17%{width:152px}100%{width:152px}}
+    .bar3{animation:g3 12s linear infinite}
+    @keyframes g3{0%,17%{width:0}25%{width:194px}100%{width:194px}}
+    .bar4{animation:g4 12s linear infinite}
+    @keyframes g4{0%,25%{width:0}52%{width:583px}100%{width:583px}}
+    .v1{animation:v1 12s linear infinite}@keyframes v1{0%,10%{opacity:0}13%{opacity:1}100%{opacity:1}}
+    .v2{animation:v2 12s linear infinite}@keyframes v2{0%,17%{opacity:0}20%{opacity:1}100%{opacity:1}}
+    .v3{animation:v3 12s linear infinite}@keyframes v3{0%,25%{opacity:0}28%{opacity:1}100%{opacity:1}}
+    .v4{animation:v4 12s linear infinite}@keyframes v4{0%,52%{opacity:0}56%{opacity:1}100%{opacity:1}}
+    .wall{animation:wall 2.4s ease-in-out infinite}
+    @keyframes wall{0%,100%{opacity:.6}50%{opacity:1}}
+    .foot{animation:foot 12s linear infinite}
+    @keyframes foot{0%,58%{opacity:0}64%{opacity:1}100%{opacity:1}}
+    .tick{animation:tick 1.2s ease-in-out infinite}
+    @keyframes tick{0%,100%{opacity:1}50%{opacity:.35}}
+    [class]{animation-fill-mode:both}
+  </style>
+
+  <g clip-path="url(#frame)" fill="#eaf1f8">
+  <rect width="1200" height="370" fill="url(#bg)"/>
+
+  <text x="80" y="58" font-size="26" font-weight="800">How long the analyzer actually takes</text>
+  <text x="80" y="86" font-size="15" class="muted">Submit → result, from Application Insights · every tick is one ~10-second status poll</text>
+
+  <!-- grid: 0–12 min, 58.33 px/min from x=330 -->
+  <g stroke="#22384f" stroke-width="1" opacity=".7">
+    <line x1="446.7" y1="110" x2="446.7" y2="296"/><line x1="563.3" y1="110" x2="563.3" y2="296"/>
+    <line x1="680" y1="110" x2="680" y2="296"/><line x1="796.7" y1="110" x2="796.7" y2="296"/>
+    <line x1="1030" y1="110" x2="1030" y2="296"/>
+  </g>
+  <g font-size="12" class="mono dim" text-anchor="middle">
+    <text x="446.7" y="314">2m</text><text x="563.3" y="314">4m</text><text x="680" y="314">6m</text>
+    <text x="796.7" y="314">8m</text><text x="913.3" y="314">10m</text><text x="1030" y="314">12m</text>
+  </g>
+
+  <!-- timeout wall -->
+  <g class="wall">
+    <line x1="913.3" y1="110" x2="913.3" y2="296" stroke="#ec8c80" stroke-width="2.2" stroke-dasharray="6 4"/>
+    <text x="913.3" y="104" text-anchor="middle" font-size="12" class="mono" fill="#ec8c80">PT10M · old timeout</text>
+  </g>
+  <line x1="1036" y1="118" x2="1150" y2="118" stroke="#6aa9ec" stroke-width="2" marker-end="url(#aM)"/>
+  <text x="1160" y="104" text-anchor="end" font-size="12" class="mono" fill="#b8d8f5">PT1H · waits to 60m</text>
+
+  <!-- row 1 -->
+  <text x="312" y="142" font-size="15" text-anchor="end" class="muted">Sep 26 · 4:14 AM</text>
+  <rect x="330" y="122" width="700" height="28" rx="6" fill="#0c1a2b" stroke="#22384f"/>
+  <rect class="bar1" x="330" y="122" width="122" height="28" rx="6" fill="url(#teal)"/>
+  <rect class="bar1" x="330" y="122" width="122" height="28" rx="6" fill="url(#ticks)"/>
+  <text class="v1 mono" x="466" y="142" font-size="14" fill="#8cbcea">2.1 min ✓</text>
+
+  <!-- row 2 -->
+  <text x="312" y="188" font-size="15" text-anchor="end" class="muted">Sep 26 · 3:02 AM</text>
+  <rect x="330" y="168" width="700" height="28" rx="6" fill="#0c1a2b" stroke="#22384f"/>
+  <rect class="bar2" x="330" y="168" width="152" height="28" rx="6" fill="url(#teal)"/>
+  <rect class="bar2" x="330" y="168" width="152" height="28" rx="6" fill="url(#ticks)"/>
+  <text class="v2 mono" x="496" y="188" font-size="14" fill="#8cbcea">2.6 min ✓</text>
+
+  <!-- row 3 -->
+  <text x="312" y="234" font-size="15" text-anchor="end" class="muted">Sep 20 · 5:22 PM</text>
+  <rect x="330" y="214" width="700" height="28" rx="6" fill="#0c1a2b" stroke="#22384f"/>
+  <rect class="bar3" x="330" y="214" width="194" height="28" rx="6" fill="url(#teal)"/>
+  <rect class="bar3" x="330" y="214" width="194" height="28" rx="6" fill="url(#ticks)"/>
+  <text class="v3 mono" x="538" y="234" font-size="14" fill="#8cbcea">3.3 min ✓</text>
+
+  <!-- row 4: the one that hit the wall -->
+  <text x="312" y="280" font-size="15" text-anchor="end" class="muted">Sep 25 · 12:50 AM</text>
+  <rect x="330" y="260" width="700" height="28" rx="6" fill="#0c1a2b" stroke="#22384f"/>
+  <rect class="bar4" x="330" y="260" width="583" height="28" rx="6" fill="url(#coral)"/>
+  <rect class="bar4" x="330" y="260" width="583" height="28" rx="6" fill="url(#ticks)"/>
+  <g class="v4">
+    <rect x="915" y="262" width="113" height="24" rx="5" fill="none" stroke="#ec8c80" stroke-width="1.4" stroke-dasharray="4 4" opacity=".7"/>
+    <text x="971" y="279" text-anchor="middle" font-size="11" class="mono" fill="#ec8c80">still running…</text>
+    <text x="350" y="279" font-size="12.5" font-weight="700" class="mono" fill="#2a0e0a">56 polls · flow gave up at 10:00 ✗</text>
+  </g>
+
+  <!-- footnote -->
+  <g class="foot">
+    <text x="80" y="348" font-size="15" class="mono" fill="#6aa9ec">&gt; 12 successful analyses · typical run 2–3 min · one outlier outlasted the 10-minute timeout<tspan class="tick">_</tspan></text>
+  </g>
+  </g>
+  <rect x="1" y="1" width="1198" height="368" rx="19" fill="none" stroke="#22384f" stroke-width="2"/>
+</svg>

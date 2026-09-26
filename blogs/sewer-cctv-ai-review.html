@@ -1,7 +1,8 @@
 <figure>
   <img
-    src="https://raw.githubusercontent.com/JonEricEubanks/public-assets/main/images/sewer-cctv-hero.svg"
-    alt="Sewer CCTV AI Review hero graphic showing a pipe cross-section with detected defects highlighted"
+    style="width: 100%; max-width: 960px; height: auto"
+    src="https://raw.githubusercontent.com/JonEricEubanks/public-assets/main/images/sewer-cctv-header.svg"
+    alt="The Second Look: AI watches the sewer footage first, an inspector makes the call"
     loading="lazy"
   />
 </figure>
@@ -28,6 +29,15 @@
   that is the point. This post walks through how it is put together and the
   two design decisions that made it work.
 </p>
+
+<figure>
+  <img
+    style="width: 100%; max-width: 960px; height: auto"
+    src="https://raw.githubusercontent.com/JonEricEubanks/public-assets/main/images/sewer-cctv-divider.svg"
+    alt=""
+    loading="lazy"
+  />
+</figure>
 
 <h2>The pipeline, end to end</h2>
 
@@ -95,12 +105,26 @@
   One honest lesson from running this in production: the polling pattern is
   free, but the patience is not. The HTTP action has a timeout, and the
   first version of the flow gave up after ten minutes. A short two-minute
-  clip finishes in two or three minutes, comfortably inside that window. A
-  real forty-five-minute inspection does not. The fix was a one-line change,
+  clip finishes in two or three minutes, comfortably inside that window.
+  Longer footage does not: one run was still processing when the flow gave up
+  at exactly the ten-minute mark. The fix was a one-line change,
   raising the action timeout to an hour. If your footage regularly runs past
   that, move the polling into an explicit Do Until loop and remove the
   ceiling entirely.
 </p>
+
+<figure>
+  <img
+    style="width: 100%; max-width: 960px; height: auto"
+    src="https://raw.githubusercontent.com/JonEricEubanks/public-assets/main/images/sewer-cctv-runtime-stats.svg"
+    alt="Bar chart of analyzer run times from Application Insights: three runs finished in 2.1, 2.6 and 3.3 minutes; one ran into the 10-minute timeout"
+    loading="lazy"
+  />
+  <figcaption>
+    Real run times from Application Insights. Most runs finish in two to three
+    minutes; the outlier is the reason the timeout matters.
+  </figcaption>
+</figure>
 
 <h2>Decision two: thumbnails make the review real</h2>
 
@@ -180,6 +204,15 @@
   asks why a repair was prioritized.
 </p>
 
+<figure>
+  <img
+    style="width: 100%; max-width: 960px; height: auto"
+    src="https://raw.githubusercontent.com/JonEricEubanks/public-assets/main/images/sewer-cctv-divider.svg"
+    alt=""
+    loading="lazy"
+  />
+</figure>
+
 <h2>What it costs</h2>
 
 <p>
@@ -189,7 +222,7 @@
   inspection under three dollars. The Function App sits comfortably inside
   the Consumption plan's free grant at this volume. Everything runs on an
   Azure sponsorship subscription, and after a month of testing, the
-  resource group's accrued cost was still reading zero.
+  resource group's accrued cost this month was still reading zero.
 </p>
 
 <h2>Where this goes next</h2>
@@ -211,3 +244,12 @@
   the watching. The inspector does the judging. That is the right division
   of labor.
 </p>
+
+<figure>
+  <img
+    style="width: 100%; max-width: 960px; height: auto"
+    src="https://raw.githubusercontent.com/JonEricEubanks/public-assets/main/images/sewer-cctv-footer.svg"
+    alt="AI proposes, a person disposes: four takeaways from the sewer CCTV review pipeline"
+    loading="lazy"
+  />
+</figure>

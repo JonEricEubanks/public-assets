@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="260" viewBox="0 0 1200 260" font-family="'Inter','Segoe UI',sans-serif">
+  <defs>
+    <radialGradient id="bg" cx="40%" cy="40%" r="95%">
+      <stop offset="0%" stop-color="#16283d"/><stop offset="52%" stop-color="#0b1726"/><stop offset="100%" stop-color="#050b13"/>
+    </radialGradient>
+    <linearGradient id="mango" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#b8d8f5"/><stop offset="100%" stop-color="#3f7fcf"/></linearGradient>
+    <radialGradient id="tube" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#01040a"/><stop offset="35%" stop-color="#07121f"/><stop offset="100%" stop-color="#1f3e63"/></radialGradient>
+    <filter id="glow" x="-90%" y="-90%" width="280%" height="280%"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <clipPath id="frame"><rect width="1200" height="260" rx="20"/></clipPath>
+  </defs>
+  <style>
+    .mono{font-family:'Cascadia Code',Consolas,monospace}
+    .muted{fill:#93a9c2}.dim{fill:#5b7390}
+    .trace{stroke-dasharray:.12 .88;animation:trace 4s linear infinite}
+    @keyframes trace{to{stroke-dashoffset:-1}}
+    .m1{animation:mchip 12s linear 1 both}
+    .m2{animation:mchip 12s linear 1 both;animation-delay:1.2s}
+    .m3{animation:mchip 12s linear 1 both;animation-delay:2.4s}
+    .m4{animation:mchip 12s linear 1 both;animation-delay:3.6s}
+    @keyframes mchip{0%,8%{opacity:0;transform:translateX(14px)}13%{opacity:1;transform:translateX(0)}100%{opacity:1;transform:translateX(0)}}
+    .yours{transform-box:fill-box;transform-origin:center;animation:yours 12s linear 1 both}
+    @keyframes yours{0%,52%{opacity:0;transform:scale(.8)}57%{opacity:1;transform:scale(1.06)}60%{transform:scale(1)}100%{opacity:1;transform:scale(1)}}
+    .yourspulse{animation:yourspulse 2.2s ease-in-out infinite}
+    @keyframes yourspulse{0%,100%{opacity:.75}50%{opacity:1}}
+    .scan{animation:scan 3.2s ease-out infinite;transform-box:fill-box;transform-origin:center}
+    @keyframes scan{0%{transform:scale(.2);opacity:.9}100%{transform:scale(1);opacity:0}}
+    [class]{animation-fill-mode:both}
+  </style>
+
+  <g clip-path="url(#frame)" fill="#eaf1f8">
+  <rect width="1200" height="260" fill="url(#bg)"/>
+
+  <!-- mini tunnel mark -->
+  <g transform="translate(1150 214)">
+    <circle r="26" fill="url(#tube)" stroke="#22384f" stroke-width="3"/>
+    <g fill="none" stroke="#3a5f8a"><circle r="18" opacity=".6"/><circle r="11" opacity=".4"/><circle r="6" opacity=".25"/></g>
+    <circle class="scan" r="24" fill="none" stroke="#5b9bd5" stroke-width="1.6"/>
+  </g>
+
+  <!-- left: CTA -->
+  <text x="80" y="86" font-size="32" font-weight="900">AI proposes. <tspan fill="url(#mango)">A person disposes.</tspan></text>
+  <text x="80" y="118" font-size="17" class="muted">Every finding gets a disposition &#183; every disposition leaves a record</text>
+
+  <g transform="translate(80 148)">
+    <rect width="520" height="48" rx="24" fill="#0c1a2b" stroke="#22384f" stroke-width="1.5"/>
+    <rect class="trace" width="520" height="48" rx="24" fill="none" stroke="url(#mango)" stroke-width="2" pathLength="1" stroke-linecap="round"/>
+    <g transform="translate(34 24)">
+      <circle r="12" fill="none" stroke="#5b9bd5" stroke-width="2"/><circle r="6.5" fill="none" stroke="#5b9bd5" stroke-width="1.5" opacity=".6"/><circle r="2.2" fill="#3f7fcf"/>
+    </g>
+    <text x="60" y="31" font-size="17" class="mono" fill="#8cbcea">watch &#8594; propose &#8594; confirm &#8594; record</text>
+  </g>
+  <text x="80" y="232" font-size="14" class="dim">Azure AI Content Understanding &#183; Azure Functions &#183; Power Automate &#183; Power Apps</text>
+
+  <!-- right: takeaways -->
+  <g font-size="13" class="mono">
+    <g class="m1">
+      <rect x="700" y="34" width="380" height="34" rx="17" fill="#0c1a2b" stroke="#22384f"/>
+      <text x="718" y="56" fill="#6aa9ec">&#10003;</text><text x="738" y="56" class="muted">return 202 + Location &#8212; never block</text>
+    </g>
+    <g class="m2">
+      <rect x="700" y="76" width="380" height="34" rx="17" fill="#0c1a2b" stroke="#22384f"/>
+      <text x="718" y="98" fill="#6aa9ec">&#10003;</text><text x="738" y="98" class="muted">give the HTTP action a PT1H timeout</text>
+    </g>
+    <g class="m3">
+      <rect x="700" y="118" width="380" height="34" rx="17" fill="#0c1a2b" stroke="#22384f"/>
+      <text x="718" y="140" fill="#6aa9ec">&#10003;</text><text x="738" y="140" class="muted">keyframe thumbnail beside every finding</text>
+    </g>
+    <g class="m4">
+      <rect x="700" y="160" width="380" height="34" rx="17" fill="#0c1a2b" stroke="#22384f"/>
+      <text x="718" y="182" fill="#6aa9ec">&#10003;</text><text x="738" y="182" class="muted">SAS via managed identity &#8212; no keys</text>
+    </g>
+    <g class="yours">
+      <g class="yourspulse">
+        <rect x="700" y="204" width="380" height="36" rx="18" fill="url(#mango)"/>
+      </g>
+      <text x="890" y="227" text-anchor="middle" font-size="15" font-weight="800" fill="#06111f">your turn &#8594; find your unwatched footage</text>
+    </g>
+  </g>
+  </g>
+  <rect x="1" y="1" width="1198" height="258" rx="19" fill="none" stroke="#22384f" stroke-width="2"/>
+</svg>
