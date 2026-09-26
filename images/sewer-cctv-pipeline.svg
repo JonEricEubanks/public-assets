@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 520" font-family="'Segoe UI', system-ui, -apple-system, sans-serif">
+  <defs>
+    <marker id="parr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#475569"/>
+    </marker>
+    <style>
+      .pflow { stroke-dasharray: 8 5; animation: pdash 1.2s linear infinite; }
+      .pflow-slow { stroke-dasharray: 6 4; animation: pdash 2s linear infinite; }
+      @keyframes pdash { to { stroke-dashoffset: -13; } }
+      .pnode { filter: drop-shadow(0 2px 4px rgba(15, 23, 42, 0.12)); }
+    </style>
+  </defs>
+  <rect width="960" height="520" fill="#F8FAFC" rx="16"/>
+  <text x="480" y="40" text-anchor="middle" font-size="20" font-weight="700" fill="#0F172A" letter-spacing="-0.3">The Pipeline, End to End</text>
+  <g class="pnode">
+    <rect x="40" y="80" width="180" height="96" rx="10" fill="#EFF6FF" stroke="#3B82F6" stroke-width="2"/>
+  </g>
+  <text x="130" y="112" text-anchor="middle" font-size="14" font-weight="700" fill="#1D4ED8">CCTV Video</text>
+  <text x="130" y="133" text-anchor="middle" font-size="11.5" fill="#3B82F6">Crew uploads MP4</text>
+  <text x="130" y="150" text-anchor="middle" font-size="11.5" fill="#3B82F6">to SharePoint</text>
+  <path class="pflow" d="M 220 128 L 258 128" stroke="#475569" stroke-width="2" fill="none" marker-end="url(#parr)"/>
+  <g class="pnode">
+    <rect x="262" y="80" width="196" height="96" rx="10" fill="#FFFBEB" stroke="#F59E0B" stroke-width="2"/>
+  </g>
+  <text x="360" y="106" text-anchor="middle" font-size="14" font-weight="700" fill="#78350F">Flow + Function App</text>
+  <text x="360" y="126" text-anchor="middle" font-size="11.5" fill="#92400E">Stages blob, mints SAS</text>
+  <text x="360" y="142" text-anchor="middle" font-size="11.5" fill="#92400E">via managed identity</text>
+  <rect x="282" y="152" width="156" height="18" rx="9" fill="#FEF3C7"/>
+  <text x="360" y="165" text-anchor="middle" font-size="9.5" fill="#92400E">no secrets in code</text>
+  <path class="pflow" d="M 458 128 L 496 128" stroke="#475569" stroke-width="2" fill="none" marker-end="url(#parr)"/>
+  <g class="pnode">
+    <rect x="500" y="80" width="200" height="96" rx="10" fill="#F0FDF4" stroke="#22C55E" stroke-width="2"/>
+  </g>
+  <text x="600" y="106" text-anchor="middle" font-size="14" font-weight="700" fill="#14532D">Content Understanding</text>
+  <text x="600" y="126" text-anchor="middle" font-size="11.5" fill="#166534">clv.sewer.cctv.v1 analyzer</text>
+  <text x="600" y="142" text-anchor="middle" font-size="11.5" fill="#166534">defects · quadrants · timestamps</text>
+  <rect x="520" y="152" width="160" height="18" rx="9" fill="#DCFCE7"/>
+  <text x="600" y="165" text-anchor="middle" font-size="9.5" fill="#14532D">~$3.83 per hour of video</text>
+  <path class="pflow" d="M 700 128 L 738 128" stroke="#475569" stroke-width="2" fill="none" marker-end="url(#parr)"/>
+  <g class="pnode">
+    <rect x="742" y="80" width="178" height="96" rx="10" fill="#FDF4FF" stroke="#A855F7" stroke-width="2"/>
+  </g>
+  <text x="831" y="112" text-anchor="middle" font-size="14" font-weight="700" fill="#6B21A8">SharePoint</text>
+  <text x="831" y="133" text-anchor="middle" font-size="11.5" fill="#7E22CE">Inspection + Findings lists</text>
+  <text x="831" y="150" text-anchor="middle" font-size="11.5" fill="#7E22CE">one row per observation</text>
+  <path class="pflow-slow" d="M 600 176 C 600 220 480 236 420 248" stroke="#94A3B8" stroke-width="2" fill="none" marker-end="url(#parr)"/>
+  <g class="pnode">
+    <rect x="208" y="222" width="212" height="74" rx="10" fill="#FFFFFF" stroke="#5E9E96" stroke-width="2"/>
+  </g>
+  <text x="314" y="250" text-anchor="middle" font-size="13" font-weight="700" fill="#2F6B64">Keyframe Thumbnails</text>
+  <text x="314" y="270" text-anchor="middle" font-size="11" fill="#5E9E96">nearest frame per finding</text>
+  <text x="314" y="286" text-anchor="middle" font-size="11" fill="#5E9E96">failures never fail the run</text>
+  <path class="pflow" d="M 831 176 C 831 240 700 300 620 330" stroke="#475569" stroke-width="2" fill="none" marker-end="url(#parr)"/>
+  <g class="pnode">
+    <rect x="330" y="336" width="300" height="120" rx="10" fill="#293B4A" stroke="#5E9E96" stroke-width="2"/>
+  </g>
+  <text x="480" y="366" text-anchor="middle" font-size="15" font-weight="700" fill="#EEF2F5">Canvas App Review</text>
+  <line x1="352" y1="376" x2="608" y2="376" stroke="#3A4F63" stroke-width="1"/>
+  <text x="480" y="397" text-anchor="middle" font-size="11.5" fill="#B8C6CE">Intake Queue → Inspection Review</text>
+  <text x="480" y="415" text-anchor="middle" font-size="11.5" fill="#B8C6CE">Finding Review → GIS Match</text>
+  <rect x="360" y="428" width="240" height="20" rx="10" fill="#5E9E96"/>
+  <text x="480" y="442" text-anchor="middle" font-size="10.5" font-weight="600" fill="#FFFFFF">human confirms · corrects · rejects</text>
+  <text x="480" y="492" text-anchor="middle" font-size="11.5" fill="#94A3B8" font-style="italic">The Function App is the only custom code. Everything else is configuration.</text>
+</svg>

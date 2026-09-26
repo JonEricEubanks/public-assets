@@ -1,0 +1,213 @@
+<figure>
+  <img
+    src="https://raw.githubusercontent.com/JonEricEubanks/public-assets/main/images/sewer-cctv-hero.svg"
+    alt="Sewer CCTV AI Review hero graphic showing a pipe cross-section with detected defects highlighted"
+    loading="lazy"
+  />
+</figure>
+
+<p>
+  A city crew drives a camera through a sewer pipe and records everything.
+  The footage lands in SharePoint, and then someone has to watch it, every
+  minute of it, pausing to log each crack, root intrusion, and joint offset
+  against the right footage counter. It is skilled, necessary work, and it is
+  also exactly the kind of work that burns out good people.
+</p>
+
+<p>
+  I built a proof of concept that keeps the skilled part and removes the
+  burnout part. An AI model watches the video first and proposes findings. A
+  human reviewer then confirms, corrects, or rejects each one, with the video
+  cued up to the exact timestamp of the observation. The reviewer stops being
+  a stenographer and goes back to being an inspector.
+</p>
+
+<p>
+  The whole thing is Azure AI Content Understanding, one Python Function App,
+  a Power Automate flow, SharePoint, and a canvas app. Nothing exotic, and
+  that is the point. This post walks through how it is put together and the
+  two design decisions that made it work.
+</p>
+
+<h2>The pipeline, end to end</h2>
+
+<p>
+  The shape of the system is a straight line with a loop at the end. A video
+  is staged into Blob Storage, submitted to Content Understanding with a
+  custom analyzer, normalized into findings, written to SharePoint, and then
+  reviewed by a person in the canvas app.
+</p>
+
+<figure>
+  <img
+    style="width: 100%; max-width: 960px; height: auto"
+    src="https://raw.githubusercontent.com/JonEricEubanks/public-assets/main/images/sewer-cctv-pipeline.svg"
+    alt="Architecture diagram: video upload flows through the analyzer function to Content Understanding, findings land in SharePoint, and a reviewer dispositions them in a canvas app"
+    loading="lazy"
+  />
+  <figcaption>
+    The analyzer Function App is the only custom code in the pipeline.
+    Everything else is configuration.
+  </figcaption>
+</figure>
+
+<p>
+  The analyzer is a custom Content Understanding model,
+  <code>clv.sewer.cctv.v1</code>. It was trained on what a sewer inspector
+  actually looks for: condition type, the pipe quadrant where the defect
+  appears, the footage counter reading, start and end timestamps, and a
+  confidence score. The output is not a chat response. It is a structured
+  list of observations with timestamps into the video.
+</p>
+
+<h2>Decision one: the analysis is asynchronous, and Power Automate already knows how to wait</h2>
+
+<p>
+  Analyzing a full inspection video takes minutes, sometimes tens of
+  minutes. A synchronous HTTP call will not survive that, and Power
+  Automate's HTTP action will not either.
+</p>
+
+<p>
+  The function's answer is the standard async HTTP pattern. When analysis
+  will take a while, it returns <code>202 Accepted</code> with a
+  <code>Location</code> header pointing at its own status endpoint and a
+  <code>Retry-After</code> of ten seconds. Here is the part that matters:
+  the Power Automate HTTP action already understands this pattern. It
+  follows the Location header, waits the requested interval, and polls
+  again, with no loop to build and no state to manage.
+</p>
+
+<figure>
+  <img
+    style="width: 100%; max-width: 960px; height: auto"
+    src="https://raw.githubusercontent.com/JonEricEubanks/public-assets/main/images/sewer-cctv-async-pattern.svg"
+    alt="Sequence diagram of the 202 Accepted and Location polling loop between Power Automate and the Function App"
+    loading="lazy"
+  />
+  <figcaption>
+    The flow polls the status endpoint roughly every ten seconds until the
+    analyzer reports success, then receives the full normalized result.
+  </figcaption>
+</figure>
+
+<p>
+  One honest lesson from running this in production: the polling pattern is
+  free, but the patience is not. The HTTP action has a timeout, and the
+  first version of the flow gave up after ten minutes. A short two-minute
+  clip finishes in two or three minutes, comfortably inside that window. A
+  real forty-five-minute inspection does not. The fix was a one-line change,
+  raising the action timeout to an hour. If your footage regularly runs past
+  that, move the polling into an explicit Do Until loop and remove the
+  ceiling entirely.
+</p>
+
+<h2>Decision two: thumbnails make the review real</h2>
+
+<p>
+  A finding that says "root intrusion at 00:12:34" is a claim. A reviewer
+  cannot confirm a claim quickly; they can only go watch the video and
+  check. That round trip is where review queues go to die.
+</p>
+
+<p>
+  Content Understanding samples keyframes from the video as part of
+  analysis, and those keyframes are downloadable. So when the function
+  normalizes the result, it also pulls the keyframe nearest each finding's
+  start timestamp and publishes it as a review thumbnail. The reviewer sees
+  the actual frame the model was looking at, right next to the finding.
+  Confirming or rejecting becomes a glance, and the video player is there
+  for the cases that genuinely need motion.
+</p>
+
+<figure>
+  <img
+    style="width: 100%; max-width: 960px; height: auto"
+    src="https://raw.githubusercontent.com/JonEricEubanks/public-assets/main/images/sewer-cctv-review-loop.svg"
+    alt="Diagram of the human-in-the-loop review: AI proposes a finding, the reviewer sees the keyframe thumbnail and video, and chooses Confirmed, Corrected, Rejected, Duplicate, or Unable to Verify"
+    loading="lazy"
+  />
+  <figcaption>
+    Every AI proposal gets a human disposition. The disposition, reviewer,
+    and timestamp are all written back to SharePoint.
+  </figcaption>
+</figure>
+
+<p>
+  Two implementation details worth stealing. First, thumbnails are uploaded
+  to a public-read container, so the canvas app renders them with plain URLs
+  and no token dance. Second, thumbnail generation is deliberately not on
+  the critical path: if a frame download fails, the analysis still succeeds
+  and the finding simply shows no thumbnail. Enrichment should never be able
+  to take down the pipeline.
+</p>
+
+<h2>The SAS question</h2>
+
+<p>
+  Two parts of the system need to hand out access to blobs: Content
+  Understanding needs to fetch the video, and the canvas app needs to stream
+  it during review. The easy answer is an account key. I did not want a
+  storage account key living anywhere near a flow definition or app
+  configuration.
+</p>
+
+<p>
+  The function runs with a managed identity and mints short-lived,
+  read-only SAS URLs using a user delegation key, which it requests from
+  Blob Storage as its own identity. No secret is stored, rotated, or
+  pasted anywhere. The delegation key is scoped to an hour and read-only,
+  so even a leaked URL has a short, boring life.
+</p>
+
+<h2>What the review app looks like</h2>
+
+<p>
+  The canvas app has four screens that mirror how an inspector thinks. The
+  Intake Queue shows every video with a processing status. Inspection
+  Review shows the AI's summary of the whole run, detected pipe material,
+  diameter, visibility, and the list of proposed observations. Finding
+  Review is where decisions happen: video on the left, the AI's
+  classification and the human's disposition side by side. GIS Match is
+  read-only reference, showing the asset record the footage belongs to.
+</p>
+
+<p>
+  Every finding ends in one of five dispositions: Confirmed, Corrected,
+  Rejected, Duplicate, or Unable to Verify. Those are not just labels. They
+  are the feedback signal that tells you whether the analyzer is calibrated,
+  and they are the audit trail a public works department needs when someone
+  asks why a repair was prioritized.
+</p>
+
+<h2>What it costs</h2>
+
+<p>
+  I checked the bill because everyone asks. Content Understanding video
+  analysis with field extraction runs about $3.83 per hour of video, which
+  puts a three-minute clip at roughly twenty cents and a forty-five-minute
+  inspection under three dollars. The Function App sits comfortably inside
+  the Consumption plan's free grant at this volume. Everything runs on an
+  Azure sponsorship subscription, and after a month of testing, the
+  resource group's accrued cost was still reading zero.
+</p>
+
+<h2>Where this goes next</h2>
+
+<p>
+  The POC answers the question it was built to answer: AI can do the first
+  pass on sewer CCTV footage, and a human can review its work faster than
+  they could ever watch the raw video. The next steps are the unglamorous
+  ones that turn a demo into a system: batch intake, NASSCO PACP code
+  validation, confidence thresholds that auto-confirm the boring findings,
+  and feeding reviewer corrections back into the analyzer.
+</p>
+
+<p>
+  The pattern is the part worth taking home. AI proposes, a human
+  disposes, and every decision leaves a record. That shape works for sewer
+  inspections, permit reviews, damage assessments, and most of the other
+  places where a municipality has more footage than people. The model does
+  the watching. The inspector does the judging. That is the right division
+  of labor.
+</p>

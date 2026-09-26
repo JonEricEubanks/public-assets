@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" font-family="'Segoe UI', system-ui, -apple-system, sans-serif">
+  <defs>
+    <marker id="sarr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#475569"/>
+    </marker>
+    <style>
+      .sflow { stroke-dasharray: 8 5; animation: sdash 1.2s linear infinite; }
+      .spulse { animation: spulse 2s ease-in-out infinite; }
+      @keyframes sdash { to { stroke-dashoffset: -13; } }
+      @keyframes spulse { 0%,100% { opacity: 0.55; } 50% { opacity: 1; } }
+      .snode { filter: drop-shadow(0 2px 4px rgba(15, 23, 42, 0.12)); }
+    </style>
+  </defs>
+  <rect width="960" height="560" fill="#F8FAFC" rx="16"/>
+  <text x="480" y="40" text-anchor="middle" font-size="20" font-weight="700" fill="#0F172A" letter-spacing="-0.3">The Async Pattern: Power Automate Already Knows How to Wait</text>
+  <g class="snode">
+    <rect x="120" y="66" width="260" height="44" rx="10" fill="#EFF6FF" stroke="#3B82F6" stroke-width="2"/>
+  </g>
+  <text x="250" y="94" text-anchor="middle" font-size="14" font-weight="700" fill="#1D4ED8">Power Automate</text>
+  <g class="snode">
+    <rect x="580" y="66" width="260" height="44" rx="10" fill="#FFFBEB" stroke="#F59E0B" stroke-width="2"/>
+  </g>
+  <text x="710" y="94" text-anchor="middle" font-size="14" font-weight="700" fill="#78350F">Function App</text>
+  <line x1="250" y1="110" x2="250" y2="516" stroke="#CBD5E1" stroke-width="2" stroke-dasharray="2 4"/>
+  <line x1="710" y1="110" x2="710" y2="516" stroke="#CBD5E1" stroke-width="2" stroke-dasharray="2 4"/>
+  <path class="sflow" d="M 250 140 L 700 140" stroke="#475569" stroke-width="2" fill="none" marker-end="url(#sarr)"/>
+  <text x="475" y="132" text-anchor="middle" font-size="12" font-weight="600" fill="#334155">POST /analyze-inspection (blobName)</text>
+  <path d="M 710 176 L 260 176" stroke="#E0A85C" stroke-width="2" fill="none" marker-end="url(#sarr)"/>
+  <text x="485" y="168" text-anchor="middle" font-size="12" font-weight="600" fill="#8A5A1E">202 Accepted + Location: /analysis-status?opLoc=…  ·  Retry-After: 10</text>
+  <g class="spulse">
+    <rect x="200" y="196" width="560" height="176" rx="12" fill="#F1F5F9" stroke="#94A3B8" stroke-width="1.5" stroke-dasharray="6 4"/>
+  </g>
+  <text x="480" y="218" text-anchor="middle" font-size="11" font-weight="700" fill="#64748B" letter-spacing="2">POLL LOOP — AUTOMATIC, NO FLOW LOGIC REQUIRED</text>
+  <path class="sflow" d="M 250 246 L 700 246" stroke="#475569" stroke-width="1.5" fill="none" marker-end="url(#sarr)"/>
+  <text x="475" y="240" text-anchor="middle" font-size="11" fill="#475569">GET /analysis-status</text>
+  <path d="M 710 276 L 260 276" stroke="#94A3B8" stroke-width="1.5" fill="none" marker-end="url(#sarr)"/>
+  <text x="485" y="270" text-anchor="middle" font-size="11" fill="#64748B">202 · still running</text>
+  <path class="sflow" d="M 250 316 L 700 316" stroke="#475569" stroke-width="1.5" fill="none" marker-end="url(#sarr)"/>
+  <text x="475" y="310" text-anchor="middle" font-size="11" fill="#475569">GET /analysis-status  (≈ every 10 seconds)</text>
+  <path d="M 710 346 L 260 346" stroke="#94A3B8" stroke-width="1.5" fill="none" marker-end="url(#sarr)"/>
+  <text x="485" y="340" text-anchor="middle" font-size="11" fill="#64748B">202 · still running · · ·</text>
+  <path d="M 710 404 L 260 404" stroke="#22C55E" stroke-width="2.5" fill="none" marker-end="url(#sarr)"/>
+  <text x="485" y="396" text-anchor="middle" font-size="12.5" font-weight="700" fill="#166534">200 OK · normalized findings + thumbnails + video URL</text>
+  <rect x="180" y="428" width="140" height="34" rx="8" fill="#F0FDF4" stroke="#22C55E" stroke-width="1.5"/>
+  <text x="250" y="449" text-anchor="middle" font-size="11.5" font-weight="600" fill="#14532D">Parse JSON result</text>
+  <g>
+    <rect x="420" y="478" width="500" height="56" rx="10" fill="#FEF3C7" stroke="#E0A85C" stroke-width="1.5"/>
+    <text x="670" y="500" text-anchor="middle" font-size="12" font-weight="700" fill="#8A5A1E">The pattern is free — the patience is not.</text>
+    <text x="670" y="520" text-anchor="middle" font-size="11" fill="#92400E">Set the HTTP action timeout to PT1H, or poll in a Do Until loop for long footage.</text>
+  </g>
+  <text x="40" y="520" font-size="11.5" fill="#94A3B8" font-style="italic">The HTTP action follows 202 + Location natively. No loop to build, no state to manage.</text>
+</svg>
