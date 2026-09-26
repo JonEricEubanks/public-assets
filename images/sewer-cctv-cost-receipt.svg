@@ -18,7 +18,7 @@
     <marker id="aD" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" viewBox="0 0 12 12" refX="10" refY="6" orient="auto"><path d="M0 1 L10 6 L0 11z" fill="#4f7699"/></marker>
     <path id="ms" d="M0 0h11.4v11.4H0zm12.6 0H24v11.4H12.6zM0 12.6h11.4V24H0zm12.6 0H24V24H12.6z"/>
     <clipPath id="frame"><rect width="1200" height="480" rx="20"/></clipPath>
-    <clipPath id="paper"><rect x="440" y="94" width="320" height="0"><animate attributeName="height" dur="14s" repeatCount="indefinite" calcMode="discrete" keyTimes="0.0000;0.0606;0.0911;0.1217;0.1522;0.1828;0.2133;0.2439;0.2744;0.3050;0.3356;0.3661;0.3967;0.4272;0.4578;0.4883;0.5189;0.5494;0.5800;0.9600" values="0;34;54;74;94;114;134;154;174;194;214;234;254;274;294;314;334;354;374;0"/></rect></clipPath>
+    <clipPath id="paper"><rect x="440" y="94" width="320" height="0"><animate attributeName="height" dur="14s" repeatCount="indefinite" calcMode="discrete" keyTimes="0.0000;0.0624;0.0947;0.1271;0.1594;0.1918;0.2241;0.2565;0.2888;0.3212;0.3535;0.3859;0.4182;0.4506;0.4829;0.5153;0.5476;0.5800;0.9600" values="0;34;54;74;94;114;134;154;174;194;214;234;254;274;294;314;334;354;0"/></rect></clipPath>
   </defs>
   <style>
     .mono{font-family:'Cascadia Code','Cascadia Mono',Consolas,'Courier New',monospace}
@@ -60,14 +60,15 @@
   <rect width="1200" height="480" fill="url(#grid)" opacity=".5"/>
   <g class="band"><rect width="1200" height="160" fill="url(#gBand)"/><rect y="159" width="1200" height="1.5" fill="#8fd6ff" opacity=".35"/></g>
 
-  <text x="48" y="64" font-size="12" letter-spacing="4" class="mono dim">WHAT IT COSTS</text>
-  <text x="48" y="98" font-size="26" font-weight="900">Twenty cents <tspan fill="url(#gBlue)">a clip.</tspan></text>
-  <text x="48" y="186" font-size="64" font-weight="900" fill="#cfeeff">$0.064</text>
-  <text x="50" y="210" font-size="12" class="mono muted">per minute of footage · $3.83 per video-hour</text>
-  <g class="sc0"><rect x="48" y="240" width="330" height="32" rx="8" fill="#030a14" stroke="#16324f"/><text x="62" y="261" font-size="14" class="muted">3-min clip</text><text x="364" y="261" text-anchor="end" font-size="15" font-weight="700" class="mono" fill="#8fd6ff">$0.19</text></g>
-  <g class="sc1"><rect x="48" y="280" width="330" height="32" rx="8" fill="#030a14" stroke="#16324f"/><text x="62" y="301" font-size="14" class="muted">45-min inspection</text><text x="364" y="301" text-anchor="end" font-size="15" font-weight="700" class="mono" fill="#8fd6ff">$2.87</text></g>
-  <g class="sc2"><rect x="48" y="320" width="330" height="32" rx="8" fill="#030a14" stroke="#16324f"/><text x="62" y="341" font-size="14" class="muted">100 inspections / month</text><text x="364" y="341" text-anchor="end" font-size="15" font-weight="700" class="mono" fill="#8fd6ff">≈ $287</text></g>
-  <text x="48" y="400" font-size="10.5" class="mono dim">2025 list price · verify in the Azure pricing calculator</text>
+  <text x="48" y="64" font-size="12" letter-spacing="4" class="mono dim">WHAT IT COSTS · ESTIMATED</text>
+  <text x="48" y="98" font-size="26" font-weight="900">About 18 cents <tspan fill="url(#gBlue)">a clip.</tspan></text>
+  <text x="48" y="186" font-size="64" font-weight="900" fill="#cfeeff">$0.059</text>
+  <text x="50" y="210" font-size="12" class="mono muted">per minute of footage · ≈ $3.54 per video-hour</text>
+  <g class="sc0"><rect x="48" y="240" width="330" height="32" rx="8" fill="#030a14" stroke="#16324f"/><text x="62" y="261" font-size="14" class="muted">3-min clip</text><text x="364" y="261" text-anchor="end" font-size="15" font-weight="700" class="mono" fill="#8fd6ff">$0.18</text></g>
+  <g class="sc1"><rect x="48" y="280" width="330" height="32" rx="8" fill="#030a14" stroke="#16324f"/><text x="62" y="301" font-size="14" class="muted">45-min inspection</text><text x="364" y="301" text-anchor="end" font-size="15" font-weight="700" class="mono" fill="#8fd6ff">$2.65</text></g>
+  <g class="sc2"><rect x="48" y="320" width="330" height="32" rx="8" fill="#030a14" stroke="#16324f"/><text x="62" y="341" font-size="14" class="muted">100 inspections / month</text><text x="364" y="341" text-anchor="end" font-size="15" font-weight="700" class="mono" fill="#8fd6ff">≈ $265</text></g>
+  <text x="48" y="392" font-size="10.5" class="mono dim">tokens measured on a real 2.1-min run · linear estimate</text>
+  <text x="48" y="410" font-size="10.5" class="mono dim">Azure retail prices · East US · GPT-5 global</text>
 
   <rect x="400" y="40" width="400" height="58" rx="14" fill="#0a1d38" stroke="#38b6ff" stroke-width="1.5" filter="url(#shadow)"/>
   <text x="422" y="64" font-size="9.5" letter-spacing="2" class="mono dim">AZURE BILLING · THERMAL</text>
@@ -78,39 +79,40 @@
     <path d="M440 466 L445 474 L450 466 L455 474 L460 466 L465 474 L470 466 L475 474 L480 466 L485 474 L490 466 L495 474 L500 466 L505 474 L510 466 L515 474 L520 466 L525 474 L530 466 L535 474 L540 466 L545 474 L550 466 L555 474 L560 466 L565 474 L570 466 L575 474 L580 466 L585 474 L590 466 L595 474 L600 466 L605 474 L610 466 L615 474 L620 466 L625 474 L630 466 L635 474 L640 466 L645 474 L650 466 L655 474 L660 466 L665 474 L670 466 L675 474 L680 466 L685 474 L690 466 L695 474 L700 466 L705 474 L710 466 L715 474 L720 466 L725 474 L730 466 L735 474 L740 466 L745 474 L750 466 L755 474 L760 466" fill="#eaf2f9"/>
     <g font-size="12" class="mono" fill="#0b1a2e">
       <text x="600" y="120" text-anchor="middle" font-weight="700" xml:space="preserve">AZURE · SEWER CCTV AI</text>
-      <text x="600" y="140" text-anchor="middle" xml:space="preserve">RECEIPT · INSP-1042 · 2026-09-26</text>
+      <text x="600" y="140" text-anchor="middle" xml:space="preserve">ESTIMATE · ONE 3-MIN CLIP</text>
       <text x="600" y="160" text-anchor="middle" xml:space="preserve">- - - - - - - - - - - - - - - - -</text>
       <text x="456" y="180" font-weight="700" xml:space="preserve">Content Understanding</text>
-      <text x="456" y="200" xml:space="preserve">  video + field extraction</text>
-      <text x="456" y="220" xml:space="preserve">  3.0 min × $3.83 / hr</text>
-      <text x="744" y="220" text-anchor="end">$0.19</text>
-      <text x="456" y="240" font-weight="700" xml:space="preserve">Azure Functions · Consumption</text>
-      <text x="456" y="260" xml:space="preserve">  12 polls · free grant</text>
-      <text x="744" y="260" text-anchor="end">$0.00</text>
-      <text x="456" y="280" font-weight="700" xml:space="preserve">Blob Storage</text>
-      <text x="456" y="300" xml:space="preserve">  video + 3 thumbnails</text>
-      <text x="744" y="300" text-anchor="end">&lt;$0.01</text>
-      <text x="456" y="320" font-weight="700" xml:space="preserve">Application Insights</text>
-      <text x="744" y="320" text-anchor="end" font-weight="700">&lt;$0.01</text>
-      <text x="600" y="340" text-anchor="middle" xml:space="preserve">- - - - - - - - - - - - - - - - -</text>
-      <text x="456" y="360" font-weight="700" font-size="15" xml:space="preserve">TOTAL</text>
-      <text x="744" y="360" text-anchor="end" font-weight="700" font-size="15">$0.20</text>
-      <text x="600" y="380" text-anchor="middle" xml:space="preserve">- - - - - - - - - - - - - - - - -</text>
-      <text x="456" y="400" font-weight="700" xml:space="preserve">PRICING</text>
-      <text x="744" y="400" text-anchor="end" font-weight="700">pay-as-you-go</text>
-      <text x="456" y="420" xml:space="preserve">RATE PER MIN OF VIDEO</text>
-      <text x="744" y="420" text-anchor="end">$0.064</text>
-      <rect x="520" y="428" width="1.5" height="16" fill="#0b1a2e"/><rect x="523.5" y="428" width="1.5" height="16" fill="#0b1a2e"/><rect x="526.5" y="428" width="3" height="16" fill="#0b1a2e"/><rect x="531.5" y="428" width="1" height="16" fill="#0b1a2e"/><rect x="534.5" y="428" width="1" height="16" fill="#0b1a2e"/><rect x="537.0" y="428" width="2" height="16" fill="#0b1a2e"/><rect x="541.0" y="428" width="1.5" height="16" fill="#0b1a2e"/><rect x="543.5" y="428" width="3" height="16" fill="#0b1a2e"/><rect x="548.5" y="428" width="3" height="16" fill="#0b1a2e"/><rect x="553.0" y="428" width="1.5" height="16" fill="#0b1a2e"/><rect x="555.5" y="428" width="1.5" height="16" fill="#0b1a2e"/><rect x="559.0" y="428" width="3" height="16" fill="#0b1a2e"/><rect x="564.0" y="428" width="1" height="16" fill="#0b1a2e"/><rect x="567.0" y="428" width="1" height="16" fill="#0b1a2e"/><rect x="569.0" y="428" width="1" height="16" fill="#0b1a2e"/><rect x="571.5" y="428" width="1" height="16" fill="#0b1a2e"/><rect x="574.0" y="428" width="3" height="16" fill="#0b1a2e"/><rect x="579.0" y="428" width="3" height="16" fill="#0b1a2e"/><rect x="584.0" y="428" width="3" height="16" fill="#0b1a2e"/><rect x="588.5" y="428" width="3" height="16" fill="#0b1a2e"/><rect x="592.5" y="428" width="2" height="16" fill="#0b1a2e"/><rect x="595.5" y="428" width="1" height="16" fill="#0b1a2e"/><rect x="597.5" y="428" width="3" height="16" fill="#0b1a2e"/><rect x="601.5" y="428" width="2" height="16" fill="#0b1a2e"/><rect x="605.5" y="428" width="3" height="16" fill="#0b1a2e"/><rect x="610.5" y="428" width="2" height="16" fill="#0b1a2e"/><rect x="614.0" y="428" width="3" height="16" fill="#0b1a2e"/><rect x="619.0" y="428" width="2" height="16" fill="#0b1a2e"/><rect x="623.0" y="428" width="3" height="16" fill="#0b1a2e"/><rect x="628.0" y="428" width="1.5" height="16" fill="#0b1a2e"/><rect x="631.0" y="428" width="1" height="16" fill="#0b1a2e"/><rect x="633.5" y="428" width="1.5" height="16" fill="#0b1a2e"/><rect x="637.0" y="428" width="2" height="16" fill="#0b1a2e"/><rect x="641.0" y="428" width="1" height="16" fill="#0b1a2e"/><rect x="644.0" y="428" width="1.5" height="16" fill="#0b1a2e"/><rect x="647.5" y="428" width="2" height="16" fill="#0b1a2e"/><rect x="651.0" y="428" width="1" height="16" fill="#0b1a2e"/><rect x="653.0" y="428" width="3" height="16" fill="#0b1a2e"/><rect x="658.0" y="428" width="3" height="16" fill="#0b1a2e"/><rect x="662.0" y="428" width="2" height="16" fill="#0b1a2e"/><rect x="665.0" y="428" width="3" height="16" fill="#0b1a2e"/><rect x="669.0" y="428" width="1" height="16" fill="#0b1a2e"/><rect x="671.5" y="428" width="3" height="16" fill="#0b1a2e"/><rect x="676.0" y="428" width="1" height="16" fill="#0b1a2e"/><rect x="678.0" y="428" width="1" height="16" fill="#0b1a2e"/>
-      <text x="600" y="460" text-anchor="middle" xml:space="preserve">AI PROPOSES · A PERSON DISPOSES</text>
+      <text x="456" y="200" xml:space="preserve">  video extraction · 3.0 min</text>
+      <text x="744" y="200" text-anchor="end">$0.050</text>
+      <text x="456" y="220" xml:space="preserve">  contextualization · 50K tok</text>
+      <text x="744" y="220" text-anchor="end">$0.050</text>
+      <text x="456" y="240" xml:space="preserve">  GPT-5 in · 23.2K tok</text>
+      <text x="744" y="240" text-anchor="end">$0.029</text>
+      <text x="456" y="260" xml:space="preserve">  GPT-5 out · 4.8K tok</text>
+      <text x="744" y="260" text-anchor="end">$0.048</text>
+      <text x="456" y="280" font-weight="700" xml:space="preserve">Azure Functions · Consumption</text>
+      <text x="744" y="280" text-anchor="end" font-weight="700">$0.000</text>
+      <text x="456" y="300" font-weight="700" xml:space="preserve">Blob Storage + App Insights</text>
+      <text x="744" y="300" text-anchor="end" font-weight="700">&lt;$0.01</text>
+      <text x="600" y="320" text-anchor="middle" xml:space="preserve">- - - - - - - - - - - - - - - - -</text>
+      <text x="456" y="340" font-weight="700" font-size="15" xml:space="preserve">TOTAL</text>
+      <text x="744" y="340" text-anchor="end" font-weight="700" font-size="15">≈ $0.18</text>
+      <text x="600" y="360" text-anchor="middle" xml:space="preserve">- - - - - - - - - - - - - - - - -</text>
+      <text x="456" y="380" font-weight="700" xml:space="preserve">PRICING</text>
+      <text x="744" y="380" text-anchor="end" font-weight="700">pay-as-you-go</text>
+      <text x="456" y="400" xml:space="preserve">RATE PER MIN OF VIDEO</text>
+      <text x="744" y="400" text-anchor="end">$0.059</text>
+      <rect x="520" y="408" width="1.5" height="16" fill="#0b1a2e"/><rect x="523.5" y="408" width="1.5" height="16" fill="#0b1a2e"/><rect x="526.5" y="408" width="3" height="16" fill="#0b1a2e"/><rect x="531.5" y="408" width="1" height="16" fill="#0b1a2e"/><rect x="534.5" y="408" width="1" height="16" fill="#0b1a2e"/><rect x="537.0" y="408" width="2" height="16" fill="#0b1a2e"/><rect x="541.0" y="408" width="1.5" height="16" fill="#0b1a2e"/><rect x="543.5" y="408" width="3" height="16" fill="#0b1a2e"/><rect x="548.5" y="408" width="3" height="16" fill="#0b1a2e"/><rect x="553.0" y="408" width="1.5" height="16" fill="#0b1a2e"/><rect x="555.5" y="408" width="1.5" height="16" fill="#0b1a2e"/><rect x="559.0" y="408" width="3" height="16" fill="#0b1a2e"/><rect x="564.0" y="408" width="1" height="16" fill="#0b1a2e"/><rect x="567.0" y="408" width="1" height="16" fill="#0b1a2e"/><rect x="569.0" y="408" width="1" height="16" fill="#0b1a2e"/><rect x="571.5" y="408" width="1" height="16" fill="#0b1a2e"/><rect x="574.0" y="408" width="3" height="16" fill="#0b1a2e"/><rect x="579.0" y="408" width="3" height="16" fill="#0b1a2e"/><rect x="584.0" y="408" width="3" height="16" fill="#0b1a2e"/><rect x="588.5" y="408" width="3" height="16" fill="#0b1a2e"/><rect x="592.5" y="408" width="2" height="16" fill="#0b1a2e"/><rect x="595.5" y="408" width="1" height="16" fill="#0b1a2e"/><rect x="597.5" y="408" width="3" height="16" fill="#0b1a2e"/><rect x="601.5" y="408" width="2" height="16" fill="#0b1a2e"/><rect x="605.5" y="408" width="3" height="16" fill="#0b1a2e"/><rect x="610.5" y="408" width="2" height="16" fill="#0b1a2e"/><rect x="614.0" y="408" width="3" height="16" fill="#0b1a2e"/><rect x="619.0" y="408" width="2" height="16" fill="#0b1a2e"/><rect x="623.0" y="408" width="3" height="16" fill="#0b1a2e"/><rect x="628.0" y="408" width="1.5" height="16" fill="#0b1a2e"/><rect x="631.0" y="408" width="1" height="16" fill="#0b1a2e"/><rect x="633.5" y="408" width="1.5" height="16" fill="#0b1a2e"/><rect x="637.0" y="408" width="2" height="16" fill="#0b1a2e"/><rect x="641.0" y="408" width="1" height="16" fill="#0b1a2e"/><rect x="644.0" y="408" width="1.5" height="16" fill="#0b1a2e"/><rect x="647.5" y="408" width="2" height="16" fill="#0b1a2e"/><rect x="651.0" y="408" width="1" height="16" fill="#0b1a2e"/><rect x="653.0" y="408" width="3" height="16" fill="#0b1a2e"/><rect x="658.0" y="408" width="3" height="16" fill="#0b1a2e"/><rect x="662.0" y="408" width="2" height="16" fill="#0b1a2e"/><rect x="665.0" y="408" width="3" height="16" fill="#0b1a2e"/><rect x="669.0" y="408" width="1" height="16" fill="#0b1a2e"/><rect x="671.5" y="408" width="3" height="16" fill="#0b1a2e"/><rect x="676.0" y="408" width="1" height="16" fill="#0b1a2e"/><rect x="678.0" y="408" width="1" height="16" fill="#0b1a2e"/>
+      <text x="600" y="440" text-anchor="middle" xml:space="preserve">AI PROPOSES · A PERSON DISPOSES</text>
     </g>
   </g>
 
   <rect x="820" y="120" width="330" height="150" rx="12" fill="#030a14" stroke="#16324f"/>
   <text x="840" y="146" font-size="10" letter-spacing="2" class="mono dim">WHERE THE MONEY GOES</text>
-  <text x="840" y="170" font-size="16" font-weight="800">Content Understanding</text>
-  <text x="840" y="190" font-size="10.5" class="mono dim">video analysis + field extraction</text>
-  <text x="840" y="240" font-size="44" font-weight="900" fill="#8fd6ff">≈ 95%</text>
-  <text x="840" y="260" font-size="10" class="mono dim">$0.19 of $0.20 · everything else ≈ $0.01</text>
+  <text x="840" y="170" font-size="16" font-weight="800">GPT-5 field extraction</text>
+  <text x="840" y="190" font-size="10.5" class="mono dim">reading frames into structured findings</text>
+  <text x="840" y="240" font-size="44" font-weight="900" fill="#8fd6ff">≈ 43%</text>
+  <text x="840" y="260" font-size="10" class="mono dim">video extraction 28% · contextualization 28%</text>
   <rect x="820" y="290" width="330" height="120" rx="12" fill="#030a14" stroke="url(#gViolet)"/>
   <text x="840" y="316" font-size="10" letter-spacing="2" class="mono" fill="#d9ccff">THE REAL LINE ITEM</text>
   <text x="840" y="340" font-size="14" font-weight="700">Power Apps Premium · per reviewer</text>
