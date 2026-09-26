@@ -1,0 +1,198 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="460" viewBox="0 0 1200 460" font-family="'Segoe UI Variable Display','Segoe UI',Inter,system-ui,sans-serif">
+  <defs>
+    <radialGradient id="bg" cx="68%" cy="32%" r="105%"><stop offset="0%" stop-color="#0b1f3a"/><stop offset="45%" stop-color="#06122a"/><stop offset="100%" stop-color="#02060d"/></radialGradient>
+    <linearGradient id="gBlue" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#cfeeff"/><stop offset="55%" stop-color="#38b6ff"/><stop offset="100%" stop-color="#1f6fd1"/></linearGradient>
+    <linearGradient id="gViolet" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#e9e0ff"/><stop offset="55%" stop-color="#a78bfa"/><stop offset="100%" stop-color="#7c5cf0"/></linearGradient>
+    <linearGradient id="gBand" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#38b6ff" stop-opacity="0"/><stop offset="85%" stop-color="#38b6ff" stop-opacity=".09"/><stop offset="100%" stop-color="#8fd6ff" stop-opacity=".22"/></linearGradient>
+    <linearGradient id="gLaser" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#38b6ff" stop-opacity="0"/><stop offset="100%" stop-color="#8fd6ff" stop-opacity=".35"/></linearGradient>
+    <radialGradient id="tube" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#01030a"/><stop offset="40%" stop-color="#041026"/><stop offset="100%" stop-color="#0d2a50"/></radialGradient>
+    <linearGradient id="water" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#04162c"/><stop offset="100%" stop-color="#0b3563"/></linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#0f2744" stroke-width="1"/></pattern>
+    <pattern id="scan" width="4" height="4" patternUnits="userSpaceOnUse"><rect width="4" height="1" fill="#000"/></pattern>
+    <filter id="glow" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <filter id="glowS" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#000" flood-opacity=".5"/></filter>
+    <marker id="aB" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" viewBox="0 0 12 12" refX="10" refY="6" orient="auto"><path d="M0 1 L10 6 L0 11z" fill="#38b6ff"/></marker>
+    <marker id="aV" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" viewBox="0 0 12 12" refX="10" refY="6" orient="auto"><path d="M0 1 L10 6 L0 11z" fill="#a78bfa"/></marker>
+    <marker id="aR" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" viewBox="0 0 12 12" refX="10" refY="6" orient="auto"><path d="M0 1 L10 6 L0 11z" fill="#ff5c7a"/></marker>
+    <marker id="aD" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" viewBox="0 0 12 12" refX="10" refY="6" orient="auto"><path d="M0 1 L10 6 L0 11z" fill="#4f7699"/></marker>
+    <path id="ms" d="M0 0h11.4v11.4H0zm12.6 0H24v11.4H12.6zM0 12.6h11.4V24H0zm12.6 0H24V24H12.6z"/>
+    <clipPath id="frame"><rect width="1200" height="460" rx="20"/></clipPath>
+  </defs>
+  <style>
+    .mono{font-family:'Cascadia Code','Cascadia Mono',Consolas,'Courier New',monospace}
+    .muted{fill:#8bb4d6}.dim{fill:#4f7699}
+    .band{animation:band 7s linear infinite}
+    @keyframes band{0%{transform:translateY(-160px)}100%{transform:translateY(480px)}}
+    .corner{animation:corner 2.4s ease-in-out infinite}
+    @keyframes corner{0%,100%{opacity:.35}50%{opacity:1}}
+    .blink{animation:blink 1.1s steps(1) infinite}
+    @keyframes blink{0%{opacity:1}50%{opacity:.12}}
+    .spin{animation:spin 4s linear infinite;transform-origin:0 0}
+    .spin2{animation:spin 2.4s linear infinite;transform-origin:0 0}
+    .spinr{animation:spin 9s linear infinite reverse;transform-origin:0 0}
+    .spinslow{animation:spin 60s linear infinite;transform-origin:0 0}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    .flow{stroke-dasharray:6 6;animation:flow .8s linear infinite}
+    @keyframes flow{to{stroke-dashoffset:-12}}
+    .under{stroke-dasharray:1;animation:under 12s linear infinite}
+    @keyframes under{0%{stroke-dashoffset:1;opacity:0}4%{opacity:1}18%{stroke-dashoffset:0}94%{opacity:1;stroke-dashoffset:0}100%{opacity:0;stroke-dashoffset:0}}
+    .ping{animation:ping 4s ease-out infinite;transform-box:fill-box;transform-origin:center}
+    @keyframes ping{0%{transform:scale(.2);opacity:1}35%{transform:scale(2.2);opacity:0}100%{transform:scale(2.2);opacity:0}}
+    .lock{animation:lock 4s ease-out infinite;transform-box:fill-box;transform-origin:center}
+    @keyframes lock{0%{transform:scale(1.9);opacity:0}9%{transform:scale(1);opacity:1}70%{transform:scale(1);opacity:1}88%,100%{transform:scale(1);opacity:.28}}
+    .lbl{animation:lbl 4s linear infinite}
+    @keyframes lbl{0%{opacity:.3}7%{opacity:1}70%{opacity:1}88%,100%{opacity:.3}}
+    .gA{animation:gA 10s linear infinite}
+    @keyframes gA{0.00%{opacity:1}19.50%{opacity:1}21.00%{opacity:0}100.00%{opacity:0}}
+    .cA{animation:cA 10s linear infinite}
+    @keyframes cA{0.00%{opacity:1}19.50%{opacity:1}21.00%{opacity:0.45}100.00%{opacity:0.45}}
+    .gB{animation:gB 10s linear infinite}
+    @keyframes gB{0.00%{opacity:0}18.50%{opacity:0}20.00%{opacity:1}39.50%{opacity:1}41.00%{opacity:0}100.00%{opacity:0}}
+    .cB{animation:cB 10s linear infinite}
+    @keyframes cB{0.00%{opacity:0.45}18.50%{opacity:0.45}20.00%{opacity:1}39.50%{opacity:1}41.00%{opacity:0.45}100.00%{opacity:0.45}}
+    .gC{animation:gC 10s linear infinite}
+    @keyframes gC{0.00%{opacity:0}38.50%{opacity:0}40.00%{opacity:1}59.50%{opacity:1}61.00%{opacity:0}100.00%{opacity:0}}
+    .cC{animation:cC 10s linear infinite}
+    @keyframes cC{0.00%{opacity:0.45}38.50%{opacity:0.45}40.00%{opacity:1}59.50%{opacity:1}61.00%{opacity:0.45}100.00%{opacity:0.45}}
+    .gD{animation:gD 10s linear infinite}
+    @keyframes gD{0.00%{opacity:0}58.50%{opacity:0}60.00%{opacity:1}79.50%{opacity:1}81.00%{opacity:0}100.00%{opacity:0}}
+    .cD{animation:cD 10s linear infinite}
+    @keyframes cD{0.00%{opacity:0.45}58.50%{opacity:0.45}60.00%{opacity:1}79.50%{opacity:1}81.00%{opacity:0.45}100.00%{opacity:0.45}}
+    .gE{animation:gE 10s linear infinite}
+    @keyframes gE{0.00%{opacity:0}78.50%{opacity:0}80.00%{opacity:1}99.50%{opacity:1}100.00%{opacity:0}}
+    .cE{animation:cE 10s linear infinite}
+    @keyframes cE{0.00%{opacity:0.45}78.50%{opacity:0.45}80.00%{opacity:1}99.50%{opacity:1}100.00%{opacity:0.45}}
+    .cd0{animation:cd0 5s linear infinite}
+    @keyframes cd0{0.00%{opacity:1}19.99%{opacity:1}20.00%{opacity:0}100.00%{opacity:0}}
+    .cd1{animation:cd1 5s linear infinite}
+    @keyframes cd1{0.00%{opacity:0}19.99%{opacity:0}20.00%{opacity:1}39.99%{opacity:1}40.00%{opacity:0}100.00%{opacity:0}}
+    .cd2{animation:cd2 5s linear infinite}
+    @keyframes cd2{0.00%{opacity:0}39.99%{opacity:0}40.00%{opacity:1}59.99%{opacity:1}60.00%{opacity:0}100.00%{opacity:0}}
+    .cd3{animation:cd3 5s linear infinite}
+    @keyframes cd3{0.00%{opacity:0}59.99%{opacity:0}60.00%{opacity:1}79.99%{opacity:1}80.00%{opacity:0}100.00%{opacity:0}}
+    .cd4{animation:cd4 5s linear infinite}
+    @keyframes cd4{0.00%{opacity:0}79.99%{opacity:0}80.00%{opacity:1}99.99%{opacity:1}100.00%{opacity:0}}
+    .ttl{stroke-dasharray:1 1;animation:ttl 20s linear infinite}
+    @keyframes ttl{from{stroke-dashoffset:0}to{stroke-dashoffset:1}}
+    .flowp{stroke-dasharray:4 8;animation:flowp .8s linear infinite}
+    @keyframes flowp{to{stroke-dashoffset:-12}}
+    [class]{animation-fill-mode:both}
+  </style>
+
+  <g clip-path="url(#frame)" fill="#e6f4ff">
+  <rect width="1200" height="460" fill="url(#bg)"/>
+  <rect width="1200" height="460" fill="url(#grid)" opacity=".5"/>
+  <g class="band"><rect width="1200" height="160" fill="url(#gBand)"/><rect y="159" width="1200" height="1.5" fill="#8fd6ff" opacity=".35"/></g>
+
+  <text x="40" y="48" font-size="12" letter-spacing="4" class="mono dim">ANATOMY OF A SAS URL</text>
+  <text x="40" y="80" font-size="24" font-weight="900">No keys. <tspan fill="url(#gBlue)">Just a URL that expires.</tspan></text>
+  <text x="1160" y="48" text-anchor="end" font-size="11" class="mono dim">DefaultAzureCredential → user-delegation SAS</text>
+  <rect x="40" y="98" width="1120" height="38" rx="19" fill="#030a14" stroke="#16324f"/>
+  <g transform="translate(62 117)"><rect x="-6" y="-2" width="12" height="9" rx="2" fill="#8fd6ff"/><path d="M-4 -2 V-5 A4 4 0 0 1 4 -5 V-2" fill="none" stroke="#8fd6ff" stroke-width="1.6"/></g>
+  <text x="82" y="122" font-size="12.5" class="mono" fill="#cfeeff">https://&lt;account&gt;.blob.core.windows.net/content-understanding/INSP-1042.mp4</text>
+  <rect x="60" y="150" width="87" height="28" rx="6" fill="#38b6ff" fill-opacity=".08" stroke="#38b6ff" stroke-opacity=".5"/>
+  <rect class="gA" x="60" y="150" width="87" height="28" rx="6" fill="#38b6ff" fill-opacity=".22" stroke="#38b6ff" stroke-width="1.6" filter="url(#glowS)"/>
+  <text x="103.5" y="168" text-anchor="middle" font-size="12" class="mono" fill="#38b6ff">?skoid=•••</text>
+  <rect x="153" y="150" width="87" height="28" rx="6" fill="#38b6ff" fill-opacity=".08" stroke="#38b6ff" stroke-opacity=".5"/>
+  <rect class="gA" x="153" y="150" width="87" height="28" rx="6" fill="#38b6ff" fill-opacity=".22" stroke="#38b6ff" stroke-width="1.6" filter="url(#glowS)"/>
+  <text x="196.5" y="168" text-anchor="middle" font-size="12" class="mono" fill="#38b6ff">&amp;sktid=•••</text>
+  <rect x="246" y="150" width="94.3" height="28" rx="6" fill="#38b6ff" fill-opacity=".08" stroke="#38b6ff" stroke-opacity=".5"/>
+  <rect class="gA" x="246" y="150" width="94.3" height="28" rx="6" fill="#38b6ff" fill-opacity=".22" stroke="#38b6ff" stroke-width="1.6" filter="url(#glowS)"/>
+  <text x="293.1" y="168" text-anchor="middle" font-size="12" class="mono" fill="#38b6ff">&amp;skt=04:10Z</text>
+  <rect x="346.3" y="150" width="94.3" height="28" rx="6" fill="#38b6ff" fill-opacity=".08" stroke="#38b6ff" stroke-opacity=".5"/>
+  <rect class="gA" x="346.3" y="150" width="94.3" height="28" rx="6" fill="#38b6ff" fill-opacity=".22" stroke="#38b6ff" stroke-width="1.6" filter="url(#glowS)"/>
+  <text x="393.4" y="168" text-anchor="middle" font-size="12" class="mono" fill="#38b6ff">&amp;ske=05:10Z</text>
+  <rect x="446.6" y="150" width="57.8" height="28" rx="6" fill="#38b6ff" fill-opacity=".08" stroke="#38b6ff" stroke-opacity=".5"/>
+  <rect class="gA" x="446.6" y="150" width="57.8" height="28" rx="6" fill="#38b6ff" fill-opacity=".22" stroke="#38b6ff" stroke-width="1.6" filter="url(#glowS)"/>
+  <text x="475.5" y="168" text-anchor="middle" font-size="12" class="mono" fill="#38b6ff">&amp;sks=b</text>
+  <rect x="510.4" y="150" width="123.5" height="28" rx="6" fill="#38b6ff" fill-opacity=".08" stroke="#38b6ff" stroke-opacity=".5"/>
+  <rect class="gA" x="510.4" y="150" width="123.5" height="28" rx="6" fill="#38b6ff" fill-opacity=".22" stroke="#38b6ff" stroke-width="1.6" filter="url(#glowS)"/>
+  <text x="572.2" y="168" text-anchor="middle" font-size="12" class="mono" fill="#38b6ff">&amp;skv=2025-01-05</text>
+  <rect x="639.9" y="150" width="116.2" height="28" rx="6" fill="#38b6ff" fill-opacity=".08" stroke="#38b6ff" stroke-opacity=".5"/>
+  <rect class="gA" x="639.9" y="150" width="116.2" height="28" rx="6" fill="#38b6ff" fill-opacity=".22" stroke="#38b6ff" stroke-width="1.6" filter="url(#glowS)"/>
+  <text x="698" y="168" text-anchor="middle" font-size="12" class="mono" fill="#38b6ff">&amp;sv=2025-01-05</text>
+  <rect x="762.1" y="150" width="50.5" height="28" rx="6" fill="#8fd6ff" fill-opacity=".08" stroke="#8fd6ff" stroke-opacity=".5"/>
+  <rect class="gB" x="762.1" y="150" width="50.5" height="28" rx="6" fill="#8fd6ff" fill-opacity=".22" stroke="#8fd6ff" stroke-width="1.6" filter="url(#glowS)"/>
+  <text x="787.4" y="168" text-anchor="middle" font-size="12" class="mono" fill="#8fd6ff">&amp;sp=r</text>
+  <rect x="818.6" y="150" width="50.5" height="28" rx="6" fill="#cfeeff" fill-opacity=".08" stroke="#cfeeff" stroke-opacity=".5"/>
+  <rect class="gC" x="818.6" y="150" width="50.5" height="28" rx="6" fill="#cfeeff" fill-opacity=".22" stroke="#cfeeff" stroke-width="1.6" filter="url(#glowS)"/>
+  <text x="843.9" y="168" text-anchor="middle" font-size="12" class="mono" fill="#cfeeff">&amp;sr=b</text>
+  <rect x="875.1" y="150" width="87" height="28" rx="6" fill="#ff9aae" fill-opacity=".08" stroke="#ff9aae" stroke-opacity=".5"/>
+  <rect class="gD" x="875.1" y="150" width="87" height="28" rx="6" fill="#ff9aae" fill-opacity=".22" stroke="#ff9aae" stroke-width="1.6" filter="url(#glowS)"/>
+  <text x="918.6" y="168" text-anchor="middle" font-size="12" class="mono" fill="#ff9aae">&amp;se=05:10Z</text>
+  <rect x="968.1" y="150" width="94.3" height="28" rx="6" fill="#d9ccff" fill-opacity=".08" stroke="#d9ccff" stroke-opacity=".5"/>
+  <rect class="gE" x="968.1" y="150" width="94.3" height="28" rx="6" fill="#d9ccff" fill-opacity=".22" stroke="#d9ccff" stroke-width="1.6" filter="url(#glowS)"/>
+  <text x="1015.3" y="168" text-anchor="middle" font-size="12" class="mono" fill="#d9ccff">&amp;sig=••••••</text>
+  <path d="M408.1 178 V188 H160 V222" fill="none" stroke="#38b6ff" stroke-opacity=".35" stroke-width="1.2"/>
+  <path class="gA" d="M408.1 178 V188 H160 V222" fill="none" stroke="#38b6ff" stroke-width="2" filter="url(#glowS)"/>
+  <g class="cA"><rect x="56" y="222" width="208" height="100" rx="10" fill="#030a14" stroke="#38b6ff" stroke-width="1.4"/>
+    <text x="70" y="244" font-size="10.5" letter-spacing="2" font-weight="800" fill="#38b6ff">USER-DELEGATION KEY</text>
+    <text x="70" y="260" font-size="10" class="mono dim">skoid · sktid · skt · ske</text>
+    <text x="70" y="280" font-size="11.5" class="muted">Minted with the Function’s</text>
+    <text x="70" y="295" font-size="11.5" class="muted">managed identity. No account</text>
+    <text x="70" y="310" font-size="11.5" class="muted">key exists in code or config.</text>
+  </g>
+  <path d="M787.4 178 V194 H380 V222" fill="none" stroke="#8fd6ff" stroke-opacity=".35" stroke-width="1.2"/>
+  <path class="gB" d="M787.4 178 V194 H380 V222" fill="none" stroke="#8fd6ff" stroke-width="2" filter="url(#glowS)"/>
+  <g class="cB"><rect x="276" y="222" width="208" height="100" rx="10" fill="#030a14" stroke="#8fd6ff" stroke-width="1.4"/>
+    <text x="290" y="244" font-size="10.5" letter-spacing="2" font-weight="800" fill="#8fd6ff">READ ONLY</text>
+    <text x="290" y="260" font-size="10" class="mono dim">sp=r</text>
+    <text x="290" y="280" font-size="11.5" class="muted">Content Understanding and</text>
+    <text x="290" y="295" font-size="11.5" class="muted">the app can fetch the video.</text>
+    <text x="290" y="310" font-size="11.5" class="muted">Nothing can write to it.</text>
+  </g>
+  <path d="M843.9 178 V200 H600 V222" fill="none" stroke="#cfeeff" stroke-opacity=".35" stroke-width="1.2"/>
+  <path class="gC" d="M843.9 178 V200 H600 V222" fill="none" stroke="#cfeeff" stroke-width="2" filter="url(#glowS)"/>
+  <g class="cC"><rect x="496" y="222" width="208" height="100" rx="10" fill="#030a14" stroke="#cfeeff" stroke-width="1.4"/>
+    <text x="510" y="244" font-size="10.5" letter-spacing="2" font-weight="800" fill="#cfeeff">ONE BLOB</text>
+    <text x="510" y="260" font-size="10" class="mono dim">sr=b</text>
+    <text x="510" y="280" font-size="11.5" class="muted">Scoped to this video,</text>
+    <text x="510" y="295" font-size="11.5" class="muted">not the container or</text>
+    <text x="510" y="310" font-size="11.5" class="muted">the account.</text>
+  </g>
+  <path d="M918.6 178 V206 H820 V222" fill="none" stroke="#ff9aae" stroke-opacity=".35" stroke-width="1.2"/>
+  <path class="gD" d="M918.6 178 V206 H820 V222" fill="none" stroke="#ff9aae" stroke-width="2" filter="url(#glowS)"/>
+  <g class="cD"><rect x="716" y="222" width="208" height="100" rx="10" fill="#030a14" stroke="#ff9aae" stroke-width="1.4"/>
+    <text x="730" y="244" font-size="10.5" letter-spacing="2" font-weight="800" fill="#ff9aae">EXPIRES</text>
+    <text x="730" y="260" font-size="10" class="mono dim">se</text>
+    <g transform="translate(888 284)"><circle r="22" fill="none" stroke="#1d4b7a" stroke-width="4"/><circle class="ttl" r="22" pathLength="1" fill="none" stroke="#ff9aae" stroke-width="4" transform="rotate(-90)"/></g>
+    <text class="cd0 mono" x="730" y="298" font-size="28" font-weight="700" fill="#ff9aae">59:12</text>
+    <text class="cd1 mono" x="730" y="298" font-size="28" font-weight="700" fill="#ff9aae">59:11</text>
+    <text class="cd2 mono" x="730" y="298" font-size="28" font-weight="700" fill="#ff9aae">59:10</text>
+    <text class="cd3 mono" x="730" y="298" font-size="28" font-weight="700" fill="#ff9aae">59:09</text>
+    <text class="cd4 mono" x="730" y="298" font-size="28" font-weight="700" fill="#ff9aae">59:08</text>
+    <text x="730" y="314" font-size="10.5" class="muted">then the URL is useless</text>
+  </g>
+  <path d="M1015.3 178 V212 H1040 V222" fill="none" stroke="#d9ccff" stroke-opacity=".35" stroke-width="1.2"/>
+  <path class="gE" d="M1015.3 178 V212 H1040 V222" fill="none" stroke="#d9ccff" stroke-width="2" filter="url(#glowS)"/>
+  <g class="cE"><rect x="936" y="222" width="208" height="100" rx="10" fill="#030a14" stroke="#d9ccff" stroke-width="1.4"/>
+    <text x="950" y="244" font-size="10.5" letter-spacing="2" font-weight="800" fill="#d9ccff">SIGNATURE</text>
+    <text x="950" y="260" font-size="10" class="mono dim">sig</text>
+    <text x="950" y="280" font-size="11.5" class="muted">HMAC over every field</text>
+    <text x="950" y="295" font-size="11.5" class="muted">above. Change one</text>
+    <text x="950" y="310" font-size="11.5" class="muted">character → 403.</text>
+  </g>
+  <line class="flowp" x1="140" y1="380" x2="1080" y2="380" stroke="#38b6ff" stroke-width="2"/>
+  <circle cx="140" cy="380" r="20" fill="#041229" stroke="#38b6ff" stroke-width="2"/><circle cx="140" cy="380" r="5" fill="#8fd6ff"/>
+  <text x="140" y="420" text-anchor="middle" font-size="12.5" font-weight="700">Function App</text>
+  <text x="140" y="436" text-anchor="middle" font-size="10" class="mono muted">managed identity</text>
+  <circle cx="380" cy="380" r="20" fill="#041229" stroke="#38b6ff" stroke-width="2"/><circle cx="380" cy="380" r="5" fill="#8fd6ff"/>
+  <text x="380" y="420" text-anchor="middle" font-size="12.5" font-weight="700">Microsoft Entra ID</text>
+  <text x="380" y="436" text-anchor="middle" font-size="10" class="mono muted">token for storage</text>
+  <circle cx="620" cy="380" r="20" fill="#041229" stroke="#38b6ff" stroke-width="2"/><circle cx="620" cy="380" r="5" fill="#8fd6ff"/>
+  <text x="620" y="420" text-anchor="middle" font-size="12.5" font-weight="700">Blob Storage</text>
+  <text x="620" y="436" text-anchor="middle" font-size="10" class="mono muted">getUserDelegationKey</text>
+  <circle cx="860" cy="380" r="20" fill="#041229" stroke="#38b6ff" stroke-width="2"/><circle cx="860" cy="380" r="5" fill="#8fd6ff"/>
+  <text x="860" y="420" text-anchor="middle" font-size="12.5" font-weight="700">SAS minted</text>
+  <text x="860" y="436" text-anchor="middle" font-size="10" class="mono muted">read · 1 blob · 60 min</text>
+  <circle cx="1080" cy="380" r="20" fill="#041229" stroke="#38b6ff" stroke-width="2"/><circle cx="1080" cy="380" r="5" fill="#8fd6ff"/>
+  <text x="1080" y="420" text-anchor="middle" font-size="12.5" font-weight="700">Content Understanding</text>
+  <text x="1080" y="436" text-anchor="middle" font-size="10" class="mono muted">fetches the video</text>
+  <g filter="url(#glowS)"><animateTransform attributeName="transform" type="translate" dur="8s" repeatCount="indefinite" calcMode="spline" keyTimes="0;.12;.25;.37;.5;.62;.75;.87;1" keySplines=".4 0 .2 1;0 0 1 1;.4 0 .2 1;0 0 1 1;.4 0 .2 1;0 0 1 1;.4 0 .2 1;0 0 1 1" values="140 352;140 352;380 352;380 352;620 352;620 352;860 352;860 352;1080 352"/><circle cx="-8" cy="0" r="6" fill="none" stroke="#ff9aae" stroke-width="2.4"/><rect x="-2" y="-1.4" width="16" height="2.8" fill="#ff9aae"/><rect x="8" y="1" width="2.4" height="4" fill="#ff9aae"/><rect x="12" y="1" width="2.4" height="5" fill="#ff9aae"/></g>
+
+  <rect width="1200" height="460" fill="url(#scan)" opacity=".2"/>
+  <g class="corner"><path d="M14 36 V14 H36 M1164 14 H1186 V36 M1186 424 V446 H1164 M36 446 H14 V424" fill="none" stroke="#38b6ff" stroke-width="2"/></g>
+  </g>
+  <rect x="1" y="1" width="1198" height="458" rx="19" fill="none" stroke="#16324f" stroke-width="2"/>
+</svg>

@@ -2,7 +2,7 @@
   <img
     style="width: 100%; max-width: 960px; height: auto"
     src="https://raw.githubusercontent.com/JonEricEubanks/public-assets/main/images/sewer-cctv-header.svg"
-    alt="The Second Look: an AI scanner locks onto a fracture, roots, and deposits inside a sewer pipe while an inspector makes the final call"
+    alt="A live CCTV feed flying through a sewer pipe: an AI target box locks onto a fracture, roots and deposits while the title runs as a broadcast lower third"
     loading="lazy"
   />
 </figure>
@@ -52,12 +52,12 @@
   <img
     style="width: 100%; max-width: 960px; height: auto"
     src="https://raw.githubusercontent.com/JonEricEubanks/public-assets/main/images/sewer-cctv-pipeline.svg"
-    alt="Architecture diagram: video upload flows through the analyzer function to Content Understanding, findings land in SharePoint, and a reviewer dispositions them in a canvas app"
+    alt="An as-built sewer plan of the pipeline: each service is a manhole, each call is a pipe, and one video&#39;s payload flows from SharePoint to the inspector"
     loading="lazy"
   />
   <figcaption>
-    The analyzer Function App is the only custom code in the pipeline.
-    Everything else is configuration.
+    Drawn as an as-built sewer plan: every manhole is a service, every pipe
+    is a call, and one video&#39;s payload flows from upload to the inspector.
   </figcaption>
 </figure>
 
@@ -69,6 +69,19 @@
   confidence score. The output is not a chat response. It is a structured
   list of observations with timestamps into the video.
 </p>
+
+<figure>
+  <img
+    style="width: 100%; max-width: 960px; height: auto"
+    src="https://raw.githubusercontent.com/JonEricEubanks/public-assets/main/images/sewer-cctv-clock-positions.svg"
+    alt="Pipe cross-section with clock positions: a fracture at 12 o&#39;clock, roots at 2, deposits at 6 and a rejected lens glare at 9"
+    loading="lazy"
+  />
+  <figcaption>
+    The analyzer reports <code>pipeQuadrant</code> as a clock position, the same
+    way inspectors already describe where a defect sits on the wall.
+  </figcaption>
+</figure>
 
 <h2>Decision one: the analysis is asynchronous, and Power Automate already knows how to wait</h2>
 
@@ -92,12 +105,12 @@
   <img
     style="width: 100%; max-width: 960px; height: auto"
     src="https://raw.githubusercontent.com/JonEricEubanks/public-assets/main/images/sewer-cctv-async-pattern.svg"
-    alt="Sequence diagram of the 202 Accepted and Location polling loop between Power Automate and the Function App"
+    alt="A heart monitor where every beat is a status poll: a healthy run ends in a 200 spike, last night&#39;s run flatlines at the ten-minute timeout"
     loading="lazy"
   />
   <figcaption>
-    The flow polls the status endpoint roughly every ten seconds until the
-    analyzer reports success, then receives the full normalized result.
+    Every beat is a status poll. A healthy run ends in a 200 spike; last
+    night&#39;s run flatlined when the flow&#39;s ten-minute timeout ran out.
   </figcaption>
 </figure>
 
@@ -117,12 +130,12 @@
   <img
     style="width: 100%; max-width: 960px; height: auto"
     src="https://raw.githubusercontent.com/JonEricEubanks/public-assets/main/images/sewer-cctv-runtime-stats.svg"
-    alt="Bar chart of analyzer run times from Application Insights: three runs finished in 2.1, 2.6 and 3.3 minutes; one ran into the 10-minute timeout"
+    alt="A stopwatch with a 12-minute dial: three runs finish in 2.1, 2.6 and 3.3 minutes; one runs into the red zone at the 10-minute timeout"
     loading="lazy"
   />
   <figcaption>
-    Real run times from Application Insights. Most runs finish in two to three
-    minutes; the outlier is the reason the timeout matters.
+    Real run times from Application Insights, drawn as laps on a 12-minute
+    dial. Most runs finish in two to three minutes; PT1H is five full laps.
   </figcaption>
 </figure>
 
@@ -148,12 +161,12 @@
   <img
     style="width: 100%; max-width: 960px; height: auto"
     src="https://raw.githubusercontent.com/JonEricEubanks/public-assets/main/images/sewer-cctv-review-loop.svg"
-    alt="Diagram of the human-in-the-loop review: AI proposes a finding, the reviewer sees the keyframe thumbnail and video, and chooses Confirmed, Corrected, Rejected, Duplicate, or Unable to Verify"
+    alt="A video-editor timeline with footage, AI findings and inspector tracks: the playhead stops at each finding while the inspector confirms, corrects or rejects it"
     loading="lazy"
   />
   <figcaption>
-    Every AI proposal gets a human disposition. The disposition, reviewer,
-    and timestamp are all written back to SharePoint.
+    The playhead stops at every AI finding. The disposition, reviewer, and
+    timestamp are written back to SharePoint.
   </figcaption>
 </figure>
 
@@ -183,6 +196,19 @@
   pasted anywhere. The delegation key is scoped to an hour and read-only,
   so even a leaked URL has a short, boring life.
 </p>
+
+<figure>
+  <img
+    style="width: 100%; max-width: 960px; height: auto"
+    src="https://raw.githubusercontent.com/JonEricEubanks/public-assets/main/images/sewer-cctv-sas-token.svg"
+    alt="A SAS URL taken apart parameter by parameter: user-delegation key, read-only, one blob, a 60-minute expiry and the signature"
+    loading="lazy"
+  />
+  <figcaption>
+    Every parameter is a constraint: who signed it, what it can do, what it
+    points at, and when it stops working.
+  </figcaption>
+</figure>
 
 <h2>What the review app looks like</h2>
 
@@ -224,6 +250,18 @@
   Azure sponsorship subscription, and after a month of testing, the
   resource group's accrued cost this month was still reading zero.
 </p>
+
+<figure>
+  <img
+    style="width: 100%; max-width: 960px; height: auto"
+    src="https://raw.githubusercontent.com/JonEricEubanks/public-assets/main/images/sewer-cctv-cost-receipt.svg"
+    alt="A thermal receipt printing the cost of one three-minute clip: about twenty cents, billed to sponsorship credits"
+    loading="lazy"
+  />
+  <figcaption>
+    One three-minute clip, itemized.
+  </figcaption>
+</figure>
 
 <h2>Where this goes next</h2>
 
