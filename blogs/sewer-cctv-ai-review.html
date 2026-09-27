@@ -242,24 +242,35 @@
 <h2>What it costs</h2>
 
 <p>
-  I checked the bill because everyone asks. Content Understanding video
-  analysis with field extraction runs about $3.83 per hour of video, which
-  puts a three-minute clip at roughly twenty cents and a forty-five-minute
-  inspection under three dollars. The Function App sits comfortably inside
-  the Consumption plan's free grant at this volume. Everything runs on an
-  Azure sponsorship subscription, and after a month of testing, the
-  resource group's accrued cost this month was still reading zero.
+  I priced it from a real run instead of a rate card. The sample inspection
+  is 2.1 minutes of video, and the analyzer&#39;s own usage report shows 35,000
+  contextualization tokens plus about 16,000 GPT-5 input tokens and 3,300
+  output tokens. At East US pay-as-you-go prices (video extraction at $1 per
+  hour, contextualization at $1 per million tokens, and GPT-5 at $1.25 and
+  $10 per million input and output tokens) that comes to about $0.059 per
+  minute of footage, or roughly $3.54 per video-hour.
+</p>
+
+<p>
+  In practice: a three-minute clip is about 18 cents, a forty-five-minute
+  inspection is about $2.65, and a hundred of those a month is about $265.
+  The Function App fits inside the Consumption plan&#39;s free grant at this
+  volume, and storage and logging add less than a cent per clip. The
+  surprise was the split. GPT-5 field extraction is the biggest line, about
+  43% of each clip, ahead of the video extraction itself. At scale, the
+  schema is the lever: fewer fields means fewer output tokens.
 </p>
 
 <figure>
   <img
     style="width: 100%; max-width: 960px; height: auto"
     src="https://raw.githubusercontent.com/JonEricEubanks/public-assets/main/images/sewer-cctv-cost-receipt.svg"
-    alt="A thermal receipt printing the cost of one three-minute clip: about twenty cents, billed to sponsorship credits"
+    alt="A thermal receipt itemizing one three-minute clip at about 18 cents: video extraction, contextualization, and GPT-5 input and output tokens"
     loading="lazy"
   />
   <figcaption>
-    One three-minute clip, itemized.
+    One three-minute clip, itemized. Token counts are measured on a real run
+    and scaled linearly with footage length; actual invoices will vary.
   </figcaption>
 </figure>
 
