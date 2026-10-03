@@ -38,7 +38,6 @@
     @keyframes blink{0%,100%{opacity:.25}50%{opacity:1}}
     .ghost{stroke-dasharray:180 940;animation:ghost 8s linear infinite}
     @keyframes ghost{from{stroke-dashoffset:180}to{stroke-dashoffset:-940}}
-    @media (prefers-reduced-motion: reduce){*{animation:none!important}.hl{opacity:0}}
   </style>
   <g clip-path="url(#frame)">
     <rect width="1200" height="660" fill="url(#bg)"/>

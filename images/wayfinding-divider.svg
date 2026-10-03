@@ -14,7 +14,6 @@
     @keyframes r{from{stroke-dashoffset:120}to{stroke-dashoffset:-1380}}
     .l{stroke-dasharray:90 1410;animation:l 2.6s linear infinite}
     @keyframes l{from{stroke-dashoffset:-1410}to{stroke-dashoffset:90}}
-    @media (prefers-reduced-motion: reduce){*{animation:none!important}}
   </style>
   <g mask="url(#edges)">
     <rect width="1200" height="64" fill="url(#asphalt)"/>

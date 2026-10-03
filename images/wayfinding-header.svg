@@ -39,7 +39,6 @@
     @keyframes tw{0%,100%{opacity:.12}50%{opacity:.9}}
     .cloud{animation:cloud 90s linear infinite}
     @keyframes cloud{to{transform:translateX(-360px)}}
-    @media (prefers-reduced-motion: reduce){*{animation:none!important}}
   </style>
 
   <g clip-path="url(#frame)">

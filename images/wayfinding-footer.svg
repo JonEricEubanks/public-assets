@@ -22,7 +22,6 @@
     @keyframes sheen{0%{transform:translateX(0)}30%,100%{transform:translateX(1300px)}}
     .tw{animation:tw 4s ease-in-out infinite}
     @keyframes tw{0%,100%{opacity:.15}50%{opacity:.85}}
-    @media (prefers-reduced-motion: reduce){*{animation:none!important}.hl{opacity:0}}
   </style>
   <g clip-path="url(#frame)">
     <rect width="1200" height="340" fill="url(#sky)"/>

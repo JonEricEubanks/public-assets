@@ -38,7 +38,6 @@
     @keyframes tail{from{stroke-dashoffset:70}to{stroke-dashoffset:-1130}}
     .drift{animation:drift 6s ease-in-out infinite}
     @keyframes drift{0%,100%{transform:rotate(-.6deg)}50%{transform:rotate(.6deg)}}
-    @media (prefers-reduced-motion: reduce){*{animation:none!important}.slow{opacity:0}.seq{opacity:1}}
   </style>
   <g clip-path="url(#frame)">
     <rect width="1200" height="560" fill="url(#sky)"/>

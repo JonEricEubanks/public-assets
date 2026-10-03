@@ -43,7 +43,6 @@
     @keyframes tail{from{stroke-dashoffset:70}to{stroke-dashoffset:-1130}}
     .beacon{animation:beacon 1.3s ease-in-out infinite}
     @keyframes beacon{0%,100%{opacity:1}50%{opacity:.06}}
-    @media (prefers-reduced-motion: reduce){*{animation:none!important}.p1,.p2,.p3{opacity:0}#q1 rect,#q2 rect,#q3 rect{width:300px!important}}
   </style>
   <g clip-path="url(#frame)">
     <rect width="1200" height="560" fill="url(#sky)"/>
