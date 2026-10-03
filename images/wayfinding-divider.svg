@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="64" viewBox="0 0 1200 64" font-family="'Segoe UI Variable Display','Segoe UI',system-ui,sans-serif" font-weight="700">
+  <defs>
+    <linearGradient id="asphalt" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2c2533"/><stop offset=".5" stop-color="#1b1720"/><stop offset="1" stop-color="#2c2533"/></linearGradient>
+    <linearGradient id="fade" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".08" stop-color="#fff"/><stop offset=".92" stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+    <linearGradient id="shieldG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3aa0ff"/><stop offset="1" stop-color="#0058a8"/></linearGradient>
+    <mask id="edges"><rect width="1200" height="64" fill="url(#fade)"/></mask>
+    <filter id="glow" x="-20%" y="-200%" width="140%" height="500%"><feGaussianBlur stdDeviation="2.6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <path id="shield" d="M0 4 Q0 0 4 0 H38 Q42 0 42 4 V18 C42 33 33 41 21 47 C9 41 0 33 0 18 Z"/>
+  </defs>
+  <style>
+    .dash{stroke-dasharray:44 30;animation:dash 1.6s linear infinite}
+    @keyframes dash{to{stroke-dashoffset:-74}}
+    .r{stroke-dasharray:120 1380;animation:r 3.2s linear infinite}
+    @keyframes r{from{stroke-dashoffset:120}to{stroke-dashoffset:-1380}}
+    .l{stroke-dasharray:90 1410;animation:l 2.6s linear infinite}
+    @keyframes l{from{stroke-dashoffset:-1410}to{stroke-dashoffset:90}}
+    @media (prefers-reduced-motion: reduce){*{animation:none!important}}
+  </style>
+  <g mask="url(#edges)">
+    <rect width="1200" height="64" fill="url(#asphalt)"/>
+    <path class="dash" d="M0 10 H1200 M0 54 H1200" stroke="#d9d4de" stroke-width="2" opacity=".55"/>
+    <path d="M0 29 H1200 M0 35 H1200" stroke="#ffc72c" stroke-width="2.4" opacity=".9"/>
+    <g fill="none" stroke-linecap="round" filter="url(#glow)">
+      <path class="r" d="M0 46 H1200" stroke="#ff4a4a" stroke-width="3"/>
+      <path class="r" style="animation-delay:-1.7s" d="M0 46 H1200" stroke="#ff6a5a" stroke-width="2.4"/>
+      <path class="l" d="M0 19 H1200" stroke="#fff3cf" stroke-width="3"/>
+      <path class="l" style="animation-delay:-1.3s" d="M0 19 H1200" stroke="#ffe3a0" stroke-width="2.4"/>
+    </g>
+  </g>
+  <rect x="570" y="4" width="60" height="56" rx="10" fill="#1b1720"/>
+  <g transform="translate(579 7)">
+    <use href="#shield" fill="url(#shieldG)" stroke="#fff" stroke-width="2.4"/>
+    <text x="21" y="31" text-anchor="middle" font-size="19" fill="#fff">26</text>
+  </g>
+</svg>

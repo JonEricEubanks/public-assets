@@ -1,0 +1,293 @@
+<figure>
+  <img
+    style="width: 100%; max-width: 1200px; height: auto"
+    src="https://raw.githubusercontent.com/JonEricEubanks/public-assets/main/images/wayfinding-header.svg"
+    alt="An overhead highway gantry with a green guide sign reading Wayfinding, a blue Azure services sign listing Static Web Apps, Azure Functions, Cosmos DB and Application Insights, and a brown sign pointing to the sponsor tables"
+    loading="lazy"
+  />
+</figure>
+
+<p>
+  Every city already knows how to move people. Guide signs tell you where
+  you're going. Warning signs tell you what's ahead. Work zones tell you
+  someone is building and someone else is directing traffic. Traffic
+  engineers call the whole system <em>wayfinding</em>. It's one of the
+  oldest user-experience disciplines local government has.
+</p>
+
+<p>
+  We borrowed it to build a conference app on Azure. A public-sector
+  association asked us for a digital passport for its annual conference.
+  Attendees visit sponsor tables, collect stamps, and earn a spot in the
+  prize drawing. Underneath, it's a wayfinding problem in two directions:
+  getting people to the right conversations, and getting every request to
+  the right Azure service and back. This post walks the route.
+</p>
+
+<figure>
+  <img
+    style="width: 100%; max-width: 1200px; height: auto"
+    src="https://raw.githubusercontent.com/JonEricEubanks/public-assets/main/images/wayfinding-divider.svg"
+    alt=""
+    loading="lazy"
+  />
+</figure>
+
+<h2>The destination: conversations, not stamps</h2>
+
+<p>
+  Sponsors don't come to a conference for a table. They come to talk to
+  people. A paper passport fails at exactly that: walk up, get a stamp, walk
+  off. So before we chose a single service, we set the destination. A stamp
+  has to be earned by a conversation.
+</p>
+
+<p>
+  Each sponsor table has a question, and the sponsor gives the answer while
+  talking with the attendee. Scanning a table's QR code opens that question
+  rather than awarding points, because a scan alone proves nothing. Points
+  roll up to a live leaderboard and the prize drawing. Every Azure decision
+  that followed traces back to that one sentence.
+</p>
+
+<h2>The route a stamp takes</h2>
+
+<p>
+  The architecture is four exits on one road, and each service does one job
+  well.
+</p>
+
+<figure>
+  <img
+    style="width: 100%; max-width: 1200px; height: auto"
+    src="https://raw.githubusercontent.com/JonEricEubanks/public-assets/main/images/wayfinding-route.svg"
+    alt="A highway strip map with four exits: Static Web Apps, Azure Functions, Cosmos DB and Microsoft Graph, each with a blue plaque of configuration details, plus mile markers for Application Insights, Bicep, GitHub Actions, and Copilot with Azure MCP"
+    loading="lazy"
+  />
+  <figcaption>
+    One check-in, end to end. Exits are the request path; mile markers are
+    what keeps the road maintained.
+  </figcaption>
+</figure>
+
+<p>
+  <strong>Exit 1: Azure Static Web Apps.</strong> The React front end is
+  served from the global edge. A navigation fallback means a deep link
+  printed on a table's QR code opens straight into the app. Security headers
+  live in <code>staticwebapp.config.json</code>, next to the code they
+  protect.
+</p>
+
+<p>
+  <strong>Exit 2: Azure Functions.</strong> The API runs on the Node.js v4
+  programming model. HTTP triggers handle sign-in, check-ins, the
+  leaderboard, and the staff portal. A timer trigger keeps the app warm
+  during conference hours. Shared modules hold the rules that matter, such
+  as how points are awarded, so every endpoint follows them the same way.
+</p>
+
+<p>
+  <strong>Exit 3: Azure Cosmos DB.</strong> This is where most of the design
+  thinking went. There are three serverless containers, and each partition
+  key matches how the data is actually read. Attendees are partitioned by
+  email, which is how they sign in. Check-ins are partitioned by attendee,
+  which is how a passport is drawn. The database itself guarantees one stamp
+  per sponsor per attendee:
+</p>
+
+<pre><code>// checkins container: partitioned by attendee
+partitionKey: { paths: ['/attendeeId'], kind: 'Hash', version: 2 }
+// one check-in per sponsor within each attendee's partition
+uniqueKeyPolicy: { uniqueKeys: [ { paths: ['/sponsorId'] } ] }</code></pre>
+
+<p>
+  Point awards use optimistic concurrency. The function reads the attendee,
+  computes the new total, and writes it back only if the document's
+  <code>_etag</code> hasn't changed. If two taps race, or a staff member
+  grants a manual credit at the same moment, the loser gets a 412, re-reads,
+  and tries again. Nobody's points are double-counted or lost.
+</p>
+
+<p>
+  <strong>Exit 4: Microsoft Graph.</strong> Sign-in links are sent through
+  Microsoft 365 mailboxes using an Entra ID app registration with the
+  <code>Mail.Send</code> application permission. Azure Communication Services
+  Email stays configured as a standby route.
+</p>
+
+<h2>Put a sign at every hazard</h2>
+
+<p>
+  Good roads don't assume perfect drivers. They post a sign wherever
+  conditions change. We did the same: we listed what would really happen
+  when a few hundred people use this on their own phones, in a hotel
+  ballroom, all at once. Then we built an Azure answer for each one.
+</p>
+
+<figure>
+  <img
+    style="width: 100%; max-width: 1200px; height: auto"
+    src="https://raw.githubusercontent.com/JonEricEubanks/public-assets/main/images/wayfinding-warnings.svg"
+    alt="Four yellow warning diamonds for link scanners, crowds, typing on phones and simultaneous taps, each paired with a green sign describing the Azure design that handles it"
+    loading="lazy"
+  />
+  <figcaption>
+    Yellow is the real-world condition. Green is the route we built around
+    it.
+  </figcaption>
+</figure>
+
+<p>
+  <strong>No accounts, but every stamp tracked.</strong> The client didn't
+  want attendees creating accounts or remembering passwords. They still
+  needed each person's passport tracked, through phone switches and closed
+  browsers, all the way to the prize drawing. An attendee's email resolves
+  both: it is their passport number. They type it, tap a link, and they're
+  in. Staff can find them at the help desk, and winners can be contacted.
+  Link tokens are stored only as hashes in Cosmos DB.
+</p>
+
+<p>
+  <strong>Link scanners ahead.</strong> Many organizations, government
+  especially, run email security that opens every link before a person
+  does. A single-use link would be spent by the scanner. So a link lasts 60
+  minutes and up to 15 opens. Asking for another link doesn't cancel the
+  first, and signing in patches only the token fields on the attendee
+  document, so it can never overwrite points.
+</p>
+
+<p>
+  <strong>Everyone at once.</strong> Registration is a surge: everyone
+  opens the app and asks for a link in the same few minutes. Six Graph
+  mailboxes take turns sending, and a busy mailbox hands off to the next.
+</p>
+
+<p>
+  <strong>Thumbs on phones.</strong> Answers are graded the way a sponsor
+  would grade them: word by word, typos and word order forgiven, numbers
+  exact. The API and the staff "test an answer" tool share one matching
+  module, and a test fails if the two ever drift apart.
+</p>
+
+<h2>Rehearse the rush, then read the telemetry</h2>
+
+<p>
+  Traffic engineers don't guess at volume; they count it. Before the event,
+  we rehearsed registration at full scale: 200 real sign-ins in three
+  minutes. Then we read the results back from Application Insights rather
+  than trusting the script's console.
+</p>
+
+<figure>
+  <img
+    style="width: 100%; max-width: 1200px; height: auto"
+    src="https://raw.githubusercontent.com/JonEricEubanks/public-assets/main/images/wayfinding-message-board.svg"
+    alt="An amber LED highway message sign cycling through rehearsal results (200 sign-ins in 3 minutes, 200 of 200 delivered, median 226 ms, p95 418 ms, zero failovers, no deploys during event week) beside an Application Insights Logs query that returns zero problems"
+    loading="lazy"
+  />
+  <figcaption>
+    The message board is the rehearsal; the Logs blade is the proof. Every
+    send failure or mailbox failover writes a trace, and the count was zero.
+  </figcaption>
+</figure>
+
+<p>
+  All 200 were delivered, with a median send of 226 ms and a 95th
+  percentile of 418 ms. There were no failovers and no throttling. We
+  load-tested the API the same way, with thousands of simultaneous requests.
+  That run produced the most useful rule of the project: Functions perform
+  best after they've been running for a while, so event week is a no-deploy
+  zone. The timer trigger keeps everything warm.
+</p>
+
+<h2>Agents build. People hold the paddle.</h2>
+
+<p>
+  Here's how the work got done. We built this with GitHub Copilot in agent
+  mode in VS Code, with the Azure MCP Server so the agent could read live
+  Azure state instead of guessing at it. The agent was the work crew. It
+  was fast at scaffolding functions, React pages, Bicep modules, and tests.
+</p>
+
+<figure>
+  <img
+    style="width: 100%; max-width: 1200px; height: auto"
+    src="https://raw.githubusercontent.com/JonEricEubanks/public-assets/main/images/wayfinding-work-zone.svg"
+    alt="A work zone: an orange Agent Work Ahead sign for GitHub Copilot in VS Code, a flagger whose paddle alternates between STOP for human approval and SLOW for the test suite, and a striped barricade labeled Test Gate with 127 API and 77 app tests"
+    loading="lazy"
+  />
+  <figcaption>
+    STOP: a person approves anything irreversible. SLOW: the test suite
+    decides when a change is done.
+  </figcaption>
+</figure>
+
+<p>
+  But a work zone always has a flagger, and that was our job:
+</p>
+
+<ul>
+  <li>
+    <strong>A decision log.</strong> Every significant choice is written
+    down with its reasoning, from the platform to the partition keys. The
+    agent works from it, and next year's team inherits it.
+  </li>
+  <li>
+    <strong>A test gate.</strong> 127 API tests and 77 front-end tests run
+    in GitHub Actions on every push. A change is done when the tests say so.
+  </li>
+  <li>
+    <strong>Infrastructure as code.</strong> Five Bicep modules describe the
+    whole environment, so it can be reviewed, rebuilt, and handed off.
+  </li>
+  <li>
+    <strong>A person approves anything irreversible.</strong> That covers
+    every deploy, data change, and production setting.
+  </li>
+</ul>
+
+<p>
+  These are the same rules we'd hold any contractor to. The agent didn't
+  lower the bar; it gave us the time to apply the bar everywhere.
+</p>
+
+<figure>
+  <img
+    style="width: 100%; max-width: 1200px; height: auto"
+    src="https://raw.githubusercontent.com/JonEricEubanks/public-assets/main/images/wayfinding-divider.svg"
+    alt=""
+    loading="lazy"
+  />
+</figure>
+
+<h2>What this means for local government</h2>
+
+<p>
+  Local government already thinks in systems that move people safely:
+  roads, transit, permit counters, public meetings. Azure gives small public
+  teams the same kind of building blocks. There's a managed front door,
+  event-driven compute, a database that enforces its own rules, identity and
+  mail that fit the Microsoft 365 tenant most of us already run, and
+  telemetry to prove it all works.
+</p>
+
+<p>
+  AI agents make those blocks faster to assemble. The craft is the part
+  that hasn't changed: choosing the destination, signing the hazards,
+  rehearsing the rush, and keeping a person at the paddle. That's the same
+  pattern for a conference passport, a 311 intake, or a permit lookup, and
+  it's work local government developers are well placed to lead.
+</p>
+
+<p>
+  The road is open. Every stamp on it will mean a conversation happened.
+</p>
+
+<figure>
+  <img
+    style="width: 100%; max-width: 1200px; height: auto"
+    src="https://raw.githubusercontent.com/JonEricEubanks/public-assets/main/images/wayfinding-footer.svg"
+    alt="A green guide sign listing four takeaways (start with the outcome, put a sign at every real-world hazard, rehearse the rush and read the telemetry, let agents build while people hold the paddle) beside a brown Eagle Ridge destination sign and an orange End Road Work sign"
+    loading="lazy"
+  />
+</figure>

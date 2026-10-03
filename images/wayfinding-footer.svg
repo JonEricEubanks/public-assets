@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="340" viewBox="0 0 1200 340" font-family="'Segoe UI Variable Display','Segoe UI',system-ui,sans-serif" font-weight="600">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#15112a"/><stop offset=".55" stop-color="#3a2752"/><stop offset=".86" stop-color="#b85a5c"/><stop offset="1" stop-color="#ee9a62"/></linearGradient>
+    <linearGradient id="green" x1="0" y1="0" x2=".3" y2="1"><stop offset="0" stop-color="#16946a"/><stop offset=".55" stop-color="#0a6f4b"/><stop offset="1" stop-color="#044a31"/></linearGradient>
+    <linearGradient id="brown" x1="0" y1="0" x2=".3" y2="1"><stop offset="0" stop-color="#8d5630"/><stop offset="1" stop-color="#4a2913"/></linearGradient>
+    <linearGradient id="orange" x1="0" y1="0" x2=".4" y2="1"><stop offset="0" stop-color="#ffa055"/><stop offset=".5" stop-color="#f26a1b"/><stop offset="1" stop-color="#b9480a"/></linearGradient>
+    <linearGradient id="shieldG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3aa0ff"/><stop offset="1" stop-color="#0058a8"/></linearGradient>
+    <linearGradient id="sheenG" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".3"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+    <linearGradient id="row" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff6dc" stop-opacity="0"/><stop offset=".15" stop-color="#fff6dc" stop-opacity=".16"/><stop offset=".85" stop-color="#fff6dc" stop-opacity=".16"/><stop offset="1" stop-color="#fff6dc" stop-opacity="0"/></linearGradient>
+    <path id="shield" d="M0 6 Q0 0 6 0 H58 Q64 0 64 6 V28 C64 50 50 62 32 72 C14 62 0 50 0 28 Z"/>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="140%"><feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#07050c" flood-opacity=".6"/></filter>
+    <filter id="grain" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" seed="3"/><feColorMatrix values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .06 0"/><feComposite in2="SourceGraphic" operator="in"/></filter>
+    <clipPath id="frame"><rect width="1200" height="340" rx="20"/></clipPath>
+    <clipPath id="cMain"><rect x="36" y="30" width="800" height="280" rx="16"/></clipPath>
+    <clipPath id="cOr"><rect x="866" y="176" width="298" height="134" rx="10"/></clipPath>
+  </defs>
+  <style>
+    .row{font-size:23px;fill:#fff}
+    .hl{opacity:0;animation:hl 10s ease-in-out infinite}
+    @keyframes hl{0%{opacity:0}4%{opacity:1}20%{opacity:1}26%,100%{opacity:0}}
+    .sheen{animation:sheen 8s cubic-bezier(.45,0,.2,1) infinite}
+    @keyframes sheen{0%{transform:translateX(0)}30%,100%{transform:translateX(1300px)}}
+    .tw{animation:tw 4s ease-in-out infinite}
+    @keyframes tw{0%,100%{opacity:.15}50%{opacity:.85}}
+    @media (prefers-reduced-motion: reduce){*{animation:none!important}.hl{opacity:0}}
+  </style>
+  <g clip-path="url(#frame)">
+    <rect width="1200" height="340" fill="url(#sky)"/>
+    <g fill="#fff"><circle class="tw" cx="880" cy="16" r="1.1"/><circle class="tw" style="animation-delay:-1.5s" cx="1040" cy="12" r="1"/><circle class="tw" style="animation-delay:-2.6s" cx="1170" cy="20" r="1.2"/></g>
+
+    <g filter="url(#shadow)"><rect x="36" y="30" width="800" height="280" rx="16" fill="url(#green)"/></g>
+    <rect x="44" y="38" width="784" height="264" rx="11" fill="none" stroke="#eef6f1" stroke-width="2.6"/>
+    <path d="M52 31 H820" stroke="#fff" stroke-opacity=".35" stroke-width="1.2"/>
+    <g transform="translate(66 54) scale(.78)">
+      <use href="#shield" fill="url(#shieldG)" stroke="#fff" stroke-width="3.5"/>
+      <text x="32" y="20" text-anchor="middle" font-size="10" letter-spacing="1.6" fill="#fff">AZURE</text>
+      <text x="32" y="52" text-anchor="middle" font-size="30" font-weight="700" fill="#fff">26</text>
+    </g>
+    <text x="128" y="84" font-size="30" fill="#fff">Wayfinding</text>
+    <text x="304" y="83" font-size="12.5" letter-spacing="3.2" fill="#bfe6d3">WHAT WE TAKE TO THE NEXT PROJECT</text>
+
+    <rect class="hl" style="animation-delay:0s" x="52" y="118" width="768" height="40" fill="url(#row)"/>
+    <rect class="hl" style="animation-delay:2.5s" x="52" y="166" width="768" height="40" fill="url(#row)"/>
+    <rect class="hl" style="animation-delay:5s" x="52" y="214" width="768" height="40" fill="url(#row)"/>
+    <rect class="hl" style="animation-delay:7.5s" x="52" y="258" width="768" height="40" fill="url(#row)"/>
+
+    <text x="72" y="146" class="row">Start with the outcome, not the app</text>
+    <rect x="752" y="124" width="54" height="30" rx="6" fill="#fff"/><text x="779" y="146" text-anchor="middle" font-size="17" font-weight="700" fill="#0a6f4b">1</text>
+    <line x1="66" y1="162" x2="810" y2="162" stroke="#fff" stroke-opacity=".2"/>
+    <text x="72" y="194" class="row">Put a sign at every real-world hazard</text>
+    <rect x="752" y="172" width="54" height="30" rx="6" fill="#fff"/><text x="779" y="194" text-anchor="middle" font-size="17" font-weight="700" fill="#0a6f4b">2</text>
+    <line x1="66" y1="210" x2="810" y2="210" stroke="#fff" stroke-opacity=".2"/>
+    <text x="72" y="242" class="row">Rehearse the rush, then read the telemetry</text>
+    <rect x="752" y="220" width="54" height="30" rx="6" fill="#fff"/><text x="779" y="242" text-anchor="middle" font-size="17" font-weight="700" fill="#0a6f4b">3</text>
+    <line x1="66" y1="256" x2="810" y2="256" stroke="#fff" stroke-opacity=".2"/>
+    <text x="72" y="286" class="row">Let agents build. People hold the paddle.</text>
+    <rect x="752" y="264" width="54" height="30" rx="6" fill="#fff"/><text x="779" y="286" text-anchor="middle" font-size="17" font-weight="700" fill="#0a6f4b">4</text>
+    <g clip-path="url(#cMain)"><g class="sheen"><rect x="-200" y="10" width="160" height="320" fill="url(#sheenG)" transform="skewX(-22)"/></g></g>
+
+    <g filter="url(#shadow)"><rect x="866" y="30" width="298" height="128" rx="12" fill="url(#brown)"/></g>
+    <rect x="873" y="37" width="284" height="114" rx="8" fill="none" stroke="#f6ece3" stroke-width="2.4"/>
+    <text x="892" y="80" font-size="26" fill="#fff">Eagle Ridge</text>
+    <text x="892" y="108" font-size="15.5" font-weight="400" fill="#f1dccb">Galena, Illinois</text>
+    <text x="892" y="132" font-size="15.5" font-weight="400" fill="#f1dccb">October 2026</text>
+
+    <g filter="url(#shadow)"><rect x="866" y="176" width="298" height="134" rx="10" fill="url(#orange)"/></g>
+    <rect x="873" y="183" width="284" height="120" rx="7" fill="none" stroke="#111" stroke-width="3"/>
+    <text x="1015" y="234" text-anchor="middle" font-size="34" font-weight="800" fill="#111">END</text>
+    <text x="1015" y="274" text-anchor="middle" font-size="34" font-weight="800" fill="#111">ROAD WORK</text>
+    <g clip-path="url(#cOr)"><g class="sheen" style="animation-delay:1s"><rect x="700" y="160" width="90" height="160" fill="url(#sheenG)" transform="skewX(-22)"/></g></g>
+    <rect width="1200" height="340" filter="url(#grain)"/>
+  </g>
+  <rect x=".75" y=".75" width="1198.5" height="338.5" rx="19.5" fill="none" stroke="#2a2335" stroke-width="1.5"/>
+</svg>

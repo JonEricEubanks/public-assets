@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600" viewBox="0 0 1200 600" font-family="'Segoe UI Variable Display','Segoe UI',system-ui,sans-serif" font-weight="600">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#17132d"/><stop offset=".45" stop-color="#3b2752"/><stop offset=".68" stop-color="#a5545c"/><stop offset=".72" stop-color="#2a1f35"/><stop offset="1" stop-color="#120e18"/></linearGradient>
+    <radialGradient id="dusk" cx=".5" cy=".7" r=".6"><stop offset="0" stop-color="#f08a5d" stop-opacity=".35"/><stop offset="1" stop-color="#f08a5d" stop-opacity="0"/></radialGradient>
+    <linearGradient id="yellow" x1="0" y1="0" x2=".4" y2="1"><stop offset="0" stop-color="#ffe169"/><stop offset=".5" stop-color="#ffc72c"/><stop offset="1" stop-color="#d99a00"/></linearGradient>
+    <linearGradient id="green" x1="0" y1="0" x2=".3" y2="1"><stop offset="0" stop-color="#16946a"/><stop offset=".55" stop-color="#0a6f4b"/><stop offset="1" stop-color="#044a31"/></linearGradient>
+    <linearGradient id="post" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#3a3642"/><stop offset=".45" stop-color="#8a8594"/><stop offset="1" stop-color="#2e2a35"/></linearGradient>
+    <linearGradient id="sheenG" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".38"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+    <radialGradient id="beacon"><stop offset="0" stop-color="#fff7d6"/><stop offset=".22" stop-color="#ffb000" stop-opacity=".95"/><stop offset="1" stop-color="#ff8a00" stop-opacity="0"/></radialGradient>
+    <radialGradient id="spill" cx=".5" cy="0" r="1"><stop offset="0" stop-color="#ffcf6b" stop-opacity=".5"/><stop offset="1" stop-color="#ffcf6b" stop-opacity="0"/></radialGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="7" stdDeviation="7" flood-color="#07050c" flood-opacity=".6"/></filter>
+    <filter id="grain" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" seed="5"/><feColorMatrix values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .06 0"/><feComposite in2="SourceGraphic" operator="in"/></filter>
+    <clipPath id="dmd"><rect x="-72" y="-72" width="144" height="144" rx="11" transform="rotate(45)"/></clipPath>
+    <g id="diamond">
+      <rect x="-72" y="-72" width="144" height="144" rx="11" fill="url(#yellow)" transform="rotate(45)" filter="url(#shadow)"/>
+      <rect x="-65" y="-65" width="130" height="130" rx="8" fill="none" stroke="#111" stroke-width="3" transform="rotate(45)"/>
+    </g>
+    <clipPath id="frame"><rect width="1200" height="600" rx="20"/></clipPath>
+    <clipPath id="g1"><rect x="40" y="430" width="250" height="122" rx="10"/></clipPath>
+    <clipPath id="g2"><rect x="330" y="430" width="250" height="122" rx="10"/></clipPath>
+    <clipPath id="g3"><rect x="620" y="430" width="250" height="122" rx="10"/></clipPath>
+    <clipPath id="g4"><rect x="910" y="430" width="250" height="122" rx="10"/></clipPath>
+  </defs>
+  <style>
+    .plq{font-size:14.5px;font-weight:700;fill:#111;letter-spacing:.6px}
+    .g1{font-size:15px;fill:#fff}
+    .g2{font-size:12.8px;font-weight:400;fill:#d5efe3}
+    .sway{animation:sway 6s ease-in-out infinite}
+    @keyframes sway{0%,100%{transform:rotate(-.8deg)}50%{transform:rotate(.8deg)}}
+    .beacon{animation:beacon 1.2s ease-in-out infinite}
+    @keyframes beacon{0%,100%{opacity:1}50%{opacity:.05}}
+    .sheen{animation:sheen 6s cubic-bezier(.45,0,.2,1) infinite}
+    @keyframes sheen{0%{transform:translateX(0)}30%,100%{transform:translateX(520px)}}
+    @media (prefers-reduced-motion: reduce){*{animation:none!important}}
+  </style>
+  <g clip-path="url(#frame)">
+    <rect width="1200" height="600" fill="url(#sky)"/>
+    <rect width="1200" height="600" fill="url(#dusk)"/>
+    <path d="M0 412 C 200 396, 380 408, 560 400 S 900 392, 1200 404 V430 H0 Z" fill="#2a1f35"/>
+
+    <rect x="50" y="24" width="156" height="26" rx="4" fill="url(#yellow)"/>
+    <text x="128" y="42" text-anchor="middle" font-size="12" font-weight="700" letter-spacing="2.6" fill="#111">WARNING SIGNS</text>
+    <text x="50" y="80" font-size="28" fill="#fff">Every hazard got a sign, and an Azure answer.</text>
+
+    <!-- sign 1: link scanners -->
+    <g class="sway" style="transform-origin:165px 420px">
+      <rect x="161" y="300" width="8" height="120" fill="url(#post)"/>
+      <g transform="translate(165 222)">
+        <use href="#diamond"/>
+        <g clip-path="url(#dmd)"><circle class="beacon" cy="-110" r="120" fill="url(#spill)"/><g class="sheen"><rect x="-260" y="-110" width="70" height="220" fill="url(#sheenG)" transform="skewX(-22)"/></g></g>
+        <g fill="none" stroke="#111" stroke-width="4.5" stroke-linejoin="round" stroke-linecap="round">
+          <rect x="-36" y="-26" width="52" height="36" rx="3"/><path d="M-36 -26 L-10 -5 L16 -26"/>
+          <circle cx="14" cy="12" r="15" fill="#ffd13d"/><path d="M25 23 L38 36" stroke-width="7"/>
+        </g>
+      </g>
+      <rect x="55" y="336" width="220" height="34" rx="4" fill="url(#yellow)" stroke="#111" stroke-width="2.4"/>
+      <text x="165" y="358" text-anchor="middle" class="plq">LINK SCANNERS AHEAD</text>
+    </g>
+    <!-- sign 2: crowd -->
+    <g class="sway" style="transform-origin:455px 420px;animation-delay:-1.5s">
+      <rect x="451" y="300" width="8" height="120" fill="url(#post)"/>
+      <g transform="translate(455 222)">
+        <use href="#diamond"/>
+        <g clip-path="url(#dmd)"><circle class="beacon" style="animation-delay:-.3s" cy="-110" r="120" fill="url(#spill)"/><g class="sheen" style="animation-delay:.6s"><rect x="-260" y="-110" width="70" height="220" fill="url(#sheenG)" transform="skewX(-22)"/></g></g>
+        <g fill="#111">
+          <circle cx="-30" cy="-16" r="9"/><rect x="-41" y="-4" width="22" height="34" rx="9"/>
+          <circle cx="30" cy="-16" r="9"/><rect x="19" y="-4" width="22" height="34" rx="9"/>
+          <circle cx="0" cy="-26" r="11" stroke="#ffd13d" stroke-width="3"/><rect x="-14" y="-12" width="28" height="44" rx="11" stroke="#ffd13d" stroke-width="3"/>
+        </g>
+      </g>
+      <rect x="345" y="336" width="220" height="34" rx="4" fill="url(#yellow)" stroke="#111" stroke-width="2.4"/>
+      <text x="455" y="358" text-anchor="middle" class="plq">200 PEOPLE AT ONCE</text>
+    </g>
+    <!-- sign 3: typos -->
+    <g class="sway" style="transform-origin:745px 420px;animation-delay:-3s">
+      <rect x="741" y="300" width="8" height="120" fill="url(#post)"/>
+      <g transform="translate(745 222)">
+        <use href="#diamond"/>
+        <g clip-path="url(#dmd)"><circle class="beacon" style="animation-delay:-.6s" cy="-110" r="120" fill="url(#spill)"/><g class="sheen" style="animation-delay:1.2s"><rect x="-260" y="-110" width="70" height="220" fill="url(#sheenG)" transform="skewX(-22)"/></g></g>
+        <text y="8" text-anchor="middle" font-size="36" font-weight="800" fill="#111">teh</text>
+        <path d="M-32 22 q4 -6 8 0 t8 0 t8 0 t8 0 t8 0 t8 0 t8 0 t8 0" fill="none" stroke="#c8102e" stroke-width="3" stroke-linecap="round"/>
+      </g>
+      <rect x="635" y="336" width="220" height="34" rx="4" fill="url(#yellow)" stroke="#111" stroke-width="2.4"/>
+      <text x="745" y="358" text-anchor="middle" class="plq">THUMBS ON PHONES</text>
+    </g>
+    <!-- sign 4: merge -->
+    <g class="sway" style="transform-origin:1035px 420px;animation-delay:-4.5s">
+      <rect x="1031" y="300" width="8" height="120" fill="url(#post)"/>
+      <g transform="translate(1035 222)">
+        <use href="#diamond"/>
+        <g clip-path="url(#dmd)"><circle class="beacon" style="animation-delay:-.9s" cy="-110" r="120" fill="url(#spill)"/><g class="sheen" style="animation-delay:1.8s"><rect x="-260" y="-110" width="70" height="220" fill="url(#sheenG)" transform="skewX(-22)"/></g></g>
+        <g fill="none" stroke="#111" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"><path d="M8 40 V-26"/><path d="M-30 34 C-30 10 8 6 8 -8"/></g>
+        <path d="M8 -46 L-8 -24 H24 Z" fill="#111"/>
+      </g>
+      <rect x="925" y="336" width="220" height="34" rx="4" fill="url(#yellow)" stroke="#111" stroke-width="2.4"/>
+      <text x="1035" y="358" text-anchor="middle" class="plq">TWO TAPS, ONE RECORD</text>
+    </g>
+
+    <!-- beacons -->
+    <g class="beacon"><circle cx="165" cy="114" r="17" fill="url(#beacon)"/></g>
+    <g class="beacon" style="animation-delay:-.3s"><circle cx="455" cy="114" r="17" fill="url(#beacon)"/></g>
+    <g class="beacon" style="animation-delay:-.6s"><circle cx="745" cy="114" r="17" fill="url(#beacon)"/></g>
+    <g class="beacon" style="animation-delay:-.9s"><circle cx="1035" cy="114" r="17" fill="url(#beacon)"/></g>
+
+    <!-- azure answers -->
+    <g filter="url(#shadow)">
+      <rect x="40" y="430" width="250" height="122" rx="10" fill="url(#green)"/><rect x="330" y="430" width="250" height="122" rx="10" fill="url(#green)"/>
+      <rect x="620" y="430" width="250" height="122" rx="10" fill="url(#green)"/><rect x="910" y="430" width="250" height="122" rx="10" fill="url(#green)"/>
+    </g>
+    <g fill="none" stroke="#eef6f1" stroke-width="2.2">
+      <rect x="46" y="436" width="238" height="110" rx="7"/><rect x="336" y="436" width="238" height="110" rx="7"/>
+      <rect x="626" y="436" width="238" height="110" rx="7"/><rect x="916" y="436" width="238" height="110" rx="7"/>
+    </g>
+    <g clip-path="url(#g1)"><g class="sheen" style="animation-delay:2s"><rect x="-60" y="420" width="70" height="140" fill="url(#sheenG)" transform="skewX(-22)"/></g></g>
+    <g clip-path="url(#g2)"><g class="sheen" style="animation-delay:2.4s"><rect x="230" y="420" width="70" height="140" fill="url(#sheenG)" transform="skewX(-22)"/></g></g>
+    <g clip-path="url(#g3)"><g class="sheen" style="animation-delay:2.8s"><rect x="520" y="420" width="70" height="140" fill="url(#sheenG)" transform="skewX(-22)"/></g></g>
+    <g clip-path="url(#g4)"><g class="sheen" style="animation-delay:3.2s"><rect x="810" y="420" width="70" height="140" fill="url(#sheenG)" transform="skewX(-22)"/></g></g>
+    <g text-anchor="middle">
+      <text x="165" y="466" class="g1">Email is the passport number</text>
+      <text x="165" y="490" class="g2">sign-in links: 60 min, 15 opens</text>
+      <text x="165" y="512" class="g2">tokens stored hashed in Cosmos DB</text>
+      <text x="165" y="534" class="g2">no accounts, progress still tracked</text>
+      <text x="455" y="466" class="g1">Graph mailboxes take turns</text>
+      <text x="455" y="490" class="g2">Entra app with Mail.Send</text>
+      <text x="455" y="512" class="g2">six senders, per-mailbox failover</text>
+      <text x="455" y="534" class="g2">rehearsed at full scale</text>
+      <text x="745" y="466" class="g1">Grade like a person would</text>
+      <text x="745" y="490" class="g2">word-by-word, typos forgiven</text>
+      <text x="745" y="512" class="g2">numbers must match exactly</text>
+      <text x="745" y="534" class="g2">one module: API + staff tester</text>
+      <text x="1035" y="466" class="g1">Cosmos DB keeps it honest</text>
+      <text x="1035" y="490" class="g2">ETag If-Match on point awards</text>
+      <text x="1035" y="512" class="g2">unique key: one stamp per sponsor</text>
+      <text x="1035" y="534" class="g2">sign-in patches, never overwrites</text>
+    </g>
+    <text x="600" y="580" text-anchor="middle" font-size="13" font-weight="400" fill="#b9abc9">Yellow is the real-world condition. Green is the route we built around it on Azure.</text>
+    <rect width="1200" height="600" filter="url(#grain)"/>
+  </g>
+  <rect x=".75" y=".75" width="1198.5" height="598.5" rx="19.5" fill="none" stroke="#2a2335" stroke-width="1.5"/>
+</svg>

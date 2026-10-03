@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520" font-family="'Segoe UI Variable Display','Segoe UI',system-ui,sans-serif" font-weight="600">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#15112a"/><stop offset=".55" stop-color="#3a2752"/><stop offset=".8" stop-color="#b05a5c"/><stop offset=".86" stop-color="#2a1f35"/><stop offset="1" stop-color="#120e18"/></linearGradient>
+    <linearGradient id="steel" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8f8a99"/><stop offset=".5" stop-color="#5b5664"/><stop offset="1" stop-color="#2f2b36"/></linearGradient>
+    <linearGradient id="post" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#3a3642"/><stop offset=".45" stop-color="#8a8594"/><stop offset="1" stop-color="#2e2a35"/></linearGradient>
+    <linearGradient id="housing" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a3740"/><stop offset="1" stop-color="#17161b"/></linearGradient>
+    <linearGradient id="green" x1="0" y1="0" x2=".3" y2="1"><stop offset="0" stop-color="#16946a"/><stop offset="1" stop-color="#044a31"/></linearGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff" stop-opacity=".09"/><stop offset=".25" stop-color="#ffffff" stop-opacity="0"/></linearGradient>
+    <linearGradient id="scan" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffb000" stop-opacity="0"/><stop offset=".5" stop-color="#ffb000" stop-opacity=".12"/><stop offset="1" stop-color="#ffb000" stop-opacity="0"/></linearGradient>
+    <pattern id="truss" width="26" height="22" patternUnits="userSpaceOnUse"><path d="M0 0 L13 22 L26 0" fill="none" stroke="#2f2b36" stroke-width="2.2"/></pattern>
+    <pattern id="dots" width="6" height="6" patternUnits="userSpaceOnUse"><circle cx="3" cy="3" r="2.15" fill="#fff"/></pattern>
+    <pattern id="off" width="6" height="6" patternUnits="userSpaceOnUse"><circle cx="3" cy="3" r="2" fill="#2a2621"/></pattern>
+    <mask id="led"><rect x="120" y="84" width="580" height="226" fill="url(#dots)"/></mask>
+    <filter id="bloom" x="-10%" y="-30%" width="120%" height="160%"><feGaussianBlur stdDeviation="4"/></filter>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="140%"><feDropShadow dx="0" dy="8" stdDeviation="9" flood-color="#07050c" flood-opacity=".6"/></filter>
+    <filter id="glow" x="-50%" y="-200%" width="200%" height="500%"><feGaussianBlur stdDeviation="2.6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <filter id="grain" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" seed="2"/><feColorMatrix values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .06 0"/><feComposite in2="SourceGraphic" operator="in"/></filter>
+    <clipPath id="panel"><rect x="120" y="84" width="580" height="226"/></clipPath>
+    <clipPath id="frame"><rect width="1200" height="520" rx="20"/></clipPath>
+    <clipPath id="q1"><rect x="820" y="124" width="0" height="22"><animate attributeName="width" values="0;0;300;300" keyTimes="0;.02;.1;1" dur="12s" repeatCount="indefinite"/></rect></clipPath>
+    <clipPath id="q2"><rect x="820" y="150" width="0" height="48"><animate attributeName="width" values="0;0;300;300" keyTimes="0;.1;.2;1" dur="12s" repeatCount="indefinite"/></rect></clipPath>
+    <clipPath id="q3"><rect x="820" y="202" width="0" height="48"><animate attributeName="width" values="0;0;300;300" keyTimes="0;.2;.3;1" dur="12s" repeatCount="indefinite"/></rect></clipPath>
+  </defs>
+  <style>
+    .msg{font-family:Consolas,'Cascadia Mono','Courier New',monospace;font-weight:700;font-size:44px;fill:#ffb000}
+    .mono{font-family:'Cascadia Code',Consolas,'Courier New',monospace;font-weight:400}
+    .p0{animation:p0 16s steps(1) infinite both}@keyframes p0{0%{opacity:1}25%,100%{opacity:0}}
+    .p1{animation:p1 16s steps(1) infinite both}@keyframes p1{0%{opacity:0}25%{opacity:1}50%,100%{opacity:0}}
+    .p2{animation:p2 16s steps(1) infinite both}@keyframes p2{0%{opacity:0}50%{opacity:1}75%,100%{opacity:0}}
+    .p3{animation:p3 16s steps(1) infinite both}@keyframes p3{0%{opacity:0}75%,100%{opacity:1}}
+    .scan{animation:scan 3s linear infinite}
+    @keyframes scan{from{transform:translateY(-80px)}to{transform:translateY(240px)}}
+    .flick{animation:flick 4s steps(1) infinite}
+    @keyframes flick{0%,100%{opacity:1}48%{opacity:.86}50%{opacity:1}}
+    .result{animation:result 12s ease-out infinite both}
+    @keyframes result{0%,32%{opacity:0;transform:translateY(6px)}38%,96%{opacity:1;transform:translateY(0)}100%{opacity:0}}
+    .caret{animation:caret 1s steps(1) infinite}
+    @keyframes caret{50%{opacity:0}}
+    .head{stroke-dasharray:90 1110;animation:head 3s linear infinite}
+    @keyframes head{from{stroke-dashoffset:-1110}to{stroke-dashoffset:90}}
+    .tail{stroke-dasharray:70 1130;animation:tail 3.8s linear infinite}
+    @keyframes tail{from{stroke-dashoffset:70}to{stroke-dashoffset:-1130}}
+    @media (prefers-reduced-motion: reduce){*{animation:none!important}.p1,.p2,.p3{opacity:0}}
+  </style>
+  <g clip-path="url(#frame)">
+    <rect width="1200" height="520" fill="url(#sky)"/>
+    <path d="M0 440 C 240 426, 480 436, 720 430 S 1050 424, 1200 432 V520 H0 Z" fill="#1c1622"/>
+    <path d="M0 470 H1200" stroke="#ffc72c" stroke-width="2" stroke-dasharray="40 26" opacity=".6"/>
+    <g fill="none" stroke-linecap="round" filter="url(#glow)">
+      <path class="head" d="M0 458 H1200" stroke="#fff3cf" stroke-width="3"/>
+      <path class="head" style="animation-delay:-1.6s" d="M0 458 H1200" stroke="#ffe3a0" stroke-width="2.4"/>
+      <path class="tail" d="M0 486 H1200" stroke="#ff4a4a" stroke-width="3"/>
+      <path class="tail" style="animation-delay:-2.1s" d="M0 486 H1200" stroke="#ff6a5a" stroke-width="2.4"/>
+    </g>
+
+    <!-- gantry -->
+    <rect x="70" y="44" width="18" height="400" fill="url(#post)"/><rect x="732" y="44" width="18" height="400" fill="url(#post)"/>
+    <rect x="60" y="42" width="700" height="24" fill="url(#steel)"/><rect x="60" y="42" width="700" height="24" fill="url(#truss)" opacity=".7"/>
+
+    <!-- message sign -->
+    <g filter="url(#shadow)"><rect x="102" y="72" width="616" height="254" rx="10" fill="url(#housing)"/></g>
+    <rect x="114" y="80" width="592" height="236" rx="4" fill="#0d0c0f"/>
+    <rect x="120" y="84" width="580" height="226" fill="url(#off)"/>
+    <g text-anchor="middle" class="flick">
+      <g class="p0"><g filter="url(#bloom)" opacity=".7"><text class="msg" x="410" y="152">REGISTRATION</text><text class="msg" x="410" y="214">200 SIGN-INS</text><text class="msg" x="410" y="276">IN 3 MINUTES</text></g>
+        <g mask="url(#led)"><text class="msg" x="410" y="152">REGISTRATION</text><text class="msg" x="410" y="214">200 SIGN-INS</text><text class="msg" x="410" y="276">IN 3 MINUTES</text></g></g>
+      <g class="p1"><g filter="url(#bloom)" opacity=".7"><text class="msg" x="410" y="152">200 OF 200</text><text class="msg" x="410" y="214">DELIVERED</text><text class="msg" x="410" y="276">MEDIAN 226 MS</text></g>
+        <g mask="url(#led)"><text class="msg" x="410" y="152">200 OF 200</text><text class="msg" x="410" y="214">DELIVERED</text><text class="msg" x="410" y="276">MEDIAN 226 MS</text></g></g>
+      <g class="p2"><g filter="url(#bloom)" opacity=".7"><text class="msg" x="410" y="152">P95 418 MS</text><text class="msg" x="410" y="214">0 FAILOVERS</text><text class="msg" x="410" y="276">0 THROTTLES</text></g>
+        <g mask="url(#led)"><text class="msg" x="410" y="152">P95 418 MS</text><text class="msg" x="410" y="214">0 FAILOVERS</text><text class="msg" x="410" y="276">0 THROTTLES</text></g></g>
+      <g class="p3"><g filter="url(#bloom)" opacity=".7"><text class="msg" x="410" y="152">EVENT WEEK</text><text class="msg" x="410" y="214">NO DEPLOYS</text><text class="msg" x="410" y="276">STAY WARM</text></g>
+        <g mask="url(#led)"><text class="msg" x="410" y="152">EVENT WEEK</text><text class="msg" x="410" y="214">NO DEPLOYS</text><text class="msg" x="410" y="276">STAY WARM</text></g></g>
+    </g>
+    <g clip-path="url(#panel)"><rect class="scan" x="120" y="84" width="580" height="60" fill="url(#scan)"/></g>
+    <rect x="114" y="80" width="592" height="236" rx="4" fill="url(#glass)"/>
+    <rect x="102" y="336" width="616" height="34" rx="6" fill="url(#green)" stroke="#eef6f1" stroke-width="1.8"/>
+    <text x="410" y="358" text-anchor="middle" font-size="13" letter-spacing="3.4" fill="#fff">TRAFFIC MANAGEMENT · APPLICATION INSIGHTS</text>
+
+    <!-- logs blade -->
+    <g filter="url(#shadow)"><rect x="800" y="72" width="352" height="330" rx="12" fill="#1d1a24" fill-opacity=".92" stroke="#4a4258"/></g>
+    <path d="M812 72 H1140 Q1152 72 1152 84 V108 H800 V84 Q800 72 812 72 Z" fill="#0078d4"/>
+    <text x="818" y="95" font-size="13.5" fill="#fff">Application Insights · Logs</text>
+    <circle cx="1126" cy="90" r="4" fill="#9fd0ff"/><circle cx="1112" cy="90" r="4" fill="#9fd0ff" opacity=".6"/>
+    <g class="mono" font-size="15">
+      <g clip-path="url(#q1)"><text x="820" y="140" fill="#e9e3f3">traces</text></g>
+      <g clip-path="url(#q2)"><text x="820" y="166" fill="#e9e3f3"><tspan fill="#5fb3ff">| where</tspan> message startswith</text><text x="836" y="190" fill="#f0a87a">"[email]"</text></g>
+      <g clip-path="url(#q3)"><text x="820" y="218" fill="#e9e3f3"><tspan fill="#5fb3ff">| summarize</tspan> problems =</text><text x="836" y="242" fill="#e9e3f3">count()</text></g>
+    </g>
+    <rect class="caret" x="902" y="229" width="8" height="16" fill="#5fb3ff"/>
+    <line x1="816" y1="262" x2="1136" y2="262" stroke="#3a3446"/>
+    <g class="result">
+      <rect x="816" y="274" width="320" height="28" rx="3" fill="#2a2633"/>
+      <text x="828" y="293" font-size="12.5" fill="#b9abc9">problems</text>
+      <text x="828" y="334" font-size="28" fill="#5fd6a4">0</text>
+      <path d="M860 322 l7 8 l14 -18" fill="none" stroke="#5fd6a4" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="828" y="374" font-size="12.5" font-weight="400" fill="#b9abc9">no failed sends, no mailbox failovers</text>
+    </g>
+    <text x="800" y="424" font-size="13" font-weight="400" fill="#d9cfe6">Rehearsed, then read back from telemetry.</text>
+    <rect width="1200" height="520" filter="url(#grain)"/>
+  </g>
+  <rect x=".75" y=".75" width="1198.5" height="518.5" rx="19.5" fill="none" stroke="#2a2335" stroke-width="1.5"/>
+</svg>
