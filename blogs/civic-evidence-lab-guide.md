@@ -4,11 +4,11 @@
 
 **Theme:** a city read four ways: memory, listening, meaning, and journey.
 
-**Metaphor:** a lamplit public-works survey desk looking out over a living municipality. The leather register is the city's memory; a brass radar listens for similar reports; a sealed charter and parchment street atlas supply shared meaning; a compass and magenta traveler navigate modeled connections. A house, public-works truck, bubbling puddle, and water tower make the incident tangible.
+**Metaphor:** a lamplit public-works survey desk looking out over a living municipality. The file cabinet is the city's memory; a brass radar listens for similar reports; a sealed charter and parchment street atlas supply shared meaning; a compass and magenta traveler navigate modeled connections. A house, public-works truck, bubbling puddle, and water tower make the incident tangible.
 
 The revision follows the **scene-building method** in the Night Shift and sewer CCTV SVGs: an environmental setting, recognizable physical objects, recurring motifs, and animation that expresses the subject. It does not copy their skyline layout, moon motif, camera tunnel, branded marks, or artwork. The municipal scenes and objects are original. The municipal images referenced in the pasted draft were not present locally.
 
-**Design:** a copper-horizon civic evening, lamplit ink-blue desk, leather binding, stone columns, brass instruments, folded complaint sheets, a river-crossed parchment map, and dimensional public-works landmarks. Technical labels annotate the scene rather than filling interchangeable cards. This is atmospheric dimensional vector illustration, not photorealistic photography.
+**Design:** a copper-horizon civic evening, lamplit ink-blue desk, steel file cabinets, stone columns, brass instruments, folded complaint sheets, a river-crossed parchment map, and dimensional public-works landmarks. Technical labels annotate the scene rather than filling interchangeable cards. This is atmospheric dimensional vector illustration, not photorealistic photography.
 
 **Recurring symbols:** city hall anchors public accountability; the water tower identifies the municipal service domain; the gold seal denotes provenance and governance; the magenta traveling light denotes execution, never fact creation. A charter expresses designed rules, not automatic enforcement. These are explanatory metaphors, not claims that SQL opens a physical drawer or Fabric dispatches a truck.
 
@@ -18,7 +18,7 @@ The revision follows the **scene-building method** in the Night Shift and sewer 
 
 | Responsibility | Symbol | Accent | Meaning |
 |---|---|---|---|
-| Relational records | Leather register / archive drawer | Navy `#94bee8` | The city's memory: exact IDs, constraints, transactions |
+| Relational records | File cabinet / archive drawer | Navy `#94bee8` | The city's memory: exact IDs, constraints, transactions |
 | Vector retrieval | Brass radar / floating report sheets / wave | Purple `#c6a4ff` | The listening signal: nearby in meaning, not an established fact |
 | Knowledge graph | Parchment atlas / labeled connections | Green `#8de4bd` | Shared meaning: typed entities and relationships |
 | Governance | Sealed charter / gold shield | Gold `#f1ca85` | Definitions, provenance, ownership, rules |
@@ -35,7 +35,7 @@ All files are under [images](../images). The [illustrated blog](vector-search-kn
 |---|---|---|
 | [municipal-information-city-hero.svg](../images/municipal-information-city-hero.svg) | Opening | Four instruments, one incident |
 | [municipal-information-city-divider.svg](../images/municipal-information-city-divider.svg) | Introduction | The public record anchors the analysis |
-| [municipal-records-office.svg](../images/municipal-records-office.svg) | Relational section | Controlled register and exact identifiers |
+| [municipal-records-office.svg](../images/municipal-records-office.svg) | Relational section | Controlled records and exact identifiers |
 | [municipal-similarity-radar.svg](../images/municipal-similarity-radar.svg) | Vector section | Related reports without asserted edges |
 | [municipal-knowledge-map.svg](../images/municipal-knowledge-map.svg) | Knowledge section | Typed relationships and a separate legend |
 | [fabric-graph-route-engine.svg](../images/fabric-graph-route-engine.svg) | Fabric Graph section | Execution boundary over OneLake sources |

@@ -1,4 +1,4 @@
-"""Render the original, scene-led Civic Evidence Lab animated SVG collection."""
+﻿"""Render the original, scene-led Civic Evidence Lab animated SVG collection."""
 
 from html import escape
 from math import cos, sin, pi
@@ -41,6 +41,7 @@ DEFS = """
  .needle{animation:needle 8s ease-in-out infinite;transform-origin:0 0}
  .stamp{animation:stamp 7s ease-in-out infinite}
  .drawer{animation:drawer 9s ease-in-out infinite}
+ .pull{animation:pull 9s ease-in-out infinite}
  .draft{stroke-dasharray:18 250;animation:draft 8s linear infinite}
  .flow{stroke-dasharray:10 24;animation:flow 4s linear infinite}
  .traveler{offset-rotate:0deg;animation:travel 14s linear infinite}
@@ -54,6 +55,7 @@ DEFS = """
  @keyframes sweep{to{transform:rotate(360deg)}}
  @keyframes needle{0%,100%{transform:rotate(-12deg)}50%{transform:rotate(16deg)}}
  @keyframes stamp{0%,25%,100%{transform:translateY(-16px)}35%,55%{transform:translateY(0)}}
+ @keyframes pull{0%,20%,100%{transform:translate(0,0)}35%,65%{transform:translate(-5px,9px)}}
  @keyframes drawer{0%,20%,100%{transform:translateX(0)}35%,65%{transform:translateX(18px)}}
  @keyframes draft{to{stroke-dashoffset:-268}}
  @keyframes flow{to{stroke-dashoffset:-68}}
@@ -147,20 +149,20 @@ def stars(height):
     return body
 
 
-def book(x, y, scale=1, title="ASSET REGISTER"):
-    body = """<ellipse cx="125" cy="209" rx="153" ry="19" fill="#07111b" opacity=".5"/>
-<path d="M0 0L246 -17L264 189L18 208Z" fill="#152539" stroke="#778e9e" stroke-width="2"/>
-<path d="M18 208L264 189V177L19 195Z" fill="url(#paper)"/><path d="M30 201L253 183M30 197L253 179" stroke="#a8987c"/>
-<path d="M0 0L19 195L264 177L246 -17Z" fill="url(#cover)" stroke="#7b9bb3" stroke-width="2"/>
-<path d="M17 7L34 175L244 159L228 -2Z" fill="none" stroke="#c5aa78" stroke-width="1.5"/>
-<path d="M12 0L30 189" stroke="#566f89" stroke-width="7"/>
-<path d="M98 159L109 193L121 180L137 190L126 157Z" fill="#b78358"/>"""
-    body += text(53, 47, "MUNICIPAL RECORD", 13, GOLD, 'class="mono"')
-    body += text(51, 87, title, 20, GOLD, 'font-weight="600"')
-    body += text(56, 119, "WM-481 / ACTIVE", 17, NAVY)
-    body += '<path class="draft" d="M51 137L222 125" stroke="#f1ca85" stroke-width="2"/>'
+def book(x, y, scale=1, title="ASSET FILES"):
+    body = """<ellipse cx="135" cy="209" rx="150" ry="17" fill="#07111b" opacity=".5"/>
+<path d="M250 -10L268 -21V181L250 200Z" fill="#0f1b2a" stroke="#5f788d"/>
+<path d="M10 -10L28 -21H268L250 -10Z" fill="#587189" stroke="#7b9bb3"/>
+<rect x="10" y="-10" width="240" height="210" rx="3" fill="url(#cover)" stroke="#7b9bb3" stroke-width="2"/>"""
+    labels = [title, "WM-481 / ACTIVE", "MUNICIPAL RECORD"]
+    for i, name in enumerate(labels):
+        top = -2 + i*67
+        cls = 'class="pull"' if i == 1 else ""
+        body += f'<g {cls}><rect x="20" y="{top}" width="220" height="61" rx="2" fill="#2a3f54" stroke="#7c96a5"/>'
+        body += f'<rect x="52" y="{top+8}" width="156" height="21" rx="2" fill="#e3d3a8" stroke="#a89776"/>'
+        body += text(130, top+23, name, 12, "#2d3d44", 'class="mono" text-anchor="middle"')
+        body += f'<path d="M98 {top+44}H162" stroke="url(#bronze)" stroke-width="7" stroke-linecap="round"/></g>'
     return transformed(x, y, scale, body)
-
 
 def charter(x, y, scale=1):
     body = """<path d="M0 4Q120 -8 234 4L247 217Q120 232 -12 217Z" fill="url(#paper)" stroke="#a89776" filter="url(#shadow)"/>
@@ -253,9 +255,12 @@ def puddle(x,y,scale=1):
     return transformed(x,y,scale,body)
 
 
-def write(name,title,description,body,height=680,subtitle=""):
-    header = text(54,46,"CIVIC EVIDENCE LAB / A CITY READ FOUR WAYS",16,GOLD,'class="mono"')
-    if height>300:
+def write(name,title,description,body,height=680,subtitle="",compact=False):
+    header = text(54,34 if compact else 46,"CIVIC EVIDENCE LAB / A CITY READ FOUR WAYS",16,GOLD,'class="mono"')
+    if compact:
+        header += text(52,84,title,38,extra='font-weight="700"')
+        header += text(54,114,subtitle,20,"#c6d3d5")
+    elif height>300:
         header += text(52,107,title,44,extra='font-weight="700"')
         header += text(54,148,subtitle,23,"#c6d3d5")
     footer = text(54,height-22,"CONCEPTUAL MUNICIPAL SCENE / NOT PRODUCT UI",14,"#b0c2c9",'class="mono"')
@@ -279,12 +284,12 @@ def build():
     body += atlas(458,347,1.07,True) + book(84,420,1.25)
     body += scanner(1123,350,113) + compass(469,589,.85) + charter(480,664,.42)
     body += '<path class="lamp" d="M105 285L18 688H408L174 285Z" fill="url(#beam)"/><path d="M86 475V271Q86 244 136 244H185" stroke="url(#bronze)" stroke-width="12" fill="none"/><path d="M98 278L139 219L196 276Z" fill="#486565" stroke="#c6b794"/><path d="M96 279H199" stroke="#f1ca85" stroke-width="6"/><ellipse cx="89" cy="493" rx="51" ry="11" fill="url(#bronze)"/>'
-    body += label(64,344,"THE MEMORY","The official register",NAVY)
+    body += label(116,344,"THE MEMORY","The official records",NAVY)
     body += label(956,181,"THE LISTENING","Meaning, not identity",PURPLE)
     body += label(458,196,"THE LEGEND","Governed meaning",GREEN)
     body += traveler("M641 553L855 553L1157 553L1157 645L870 645",MAGENTA)
-    body += label(1115,727,"THE JOURNEY","Follow the path",MAGENTA)
-    write("municipal-information-city-hero","One city. Four ways to read it.","A lamplit municipal survey desk overlooks a city hall and water tower. A leather register, floating-report radar, brass compass, charter seal, and parchment city atlas recur throughout the article. A magenta traveler follows a modeled route; it does not create facts.",body,800,"The public record. The listening signal. The governed atlas. The connected journey.")
+    body += label(1115,745,"THE JOURNEY","Follow the path",MAGENTA)
+    write("municipal-information-city-hero","One city. Four ways to read it.","A lamplit municipal survey desk overlooks a city hall and water tower. A steel file cabinet, floating-report radar, brass compass, charter seal, and parchment city atlas recur throughout the article. A magenta traveler follows a modeled route; it does not create facts.",body,800,"The public record. The listening signal. The governed atlas. The connected journey.")
 
     body = skyline(201,.75)
     body += text(54,105,"Every connection needs an anchor.",34,extra='font-weight="600"')
@@ -304,7 +309,7 @@ def build():
     body += book(1027,385,.92)
     body += label(74,580,"THE CITY'S MEMORY","Keys, constraints, transactions.",NAVY)
     body += label(643,580,"THE RECORD IS EXACT","An identifier is not a similarity score.",NAVY)
-    write("municipal-records-office","The memory / Preserve the public record","A stone municipal records office sits beside a brass-handled archive cabinet and a leather asset register. The work-order drawer slowly opens and closes while city-hall windows glow. All displayed IDs are fictional.",body,subtitle="Relational records are the city's memory: exact identifiers and protected transactions.")
+    write("municipal-records-office","The memory / Preserve the public record","A stone municipal records office sits beside a brass-handled archive cabinet and a smaller steel file cabinet. The work-order drawer slowly opens and closes while city-hall windows glow. All displayed IDs are fictional.",body,subtitle="Relational records are the city's memory: exact identifiers and protected transactions.")
 
     body = skyline(568,.9)
     body += scanner(470,378,179)
@@ -348,11 +353,11 @@ def build():
     body += report(54,233,.98,"COMPLAINT / CR-017") + book(492,216,.8) + compass(913,264,.66) + seal(1245,277,.96)
     body += label(54,621,"ONE LEAK / FOUR QUESTIONS",color=GOLD)
     body += text(474,621,"Recorded? Similar? Defined? Connected?",22,"#becbd0")
-    write("water-main-four-views","One incident. Not one universal database.","A dimensional street scene shows a resident's house, a bubbling puddle, a public-works truck, and a water tower. An underground cutaway carries flowing blue water. A complaint sheet, asset register, compass, and charter seal illustrate the four questions about the same incident.",body,subtitle="The report starts the investigation. Every capability answers a different question.")
+    write("water-main-four-views","One incident. Not one universal database.","A dimensional street scene shows a resident's house, a bubbling puddle, a public-works truck, and a water tower. An underground cutaway carries flowing blue water. A complaint sheet, file cabinet, compass, and charter seal illustrate the four questions about the same incident.",body,subtitle="The report starts the investigation. Every capability answers a different question.")
 
     body = '<path d="M0 552H1400V680H0Z" fill="url(#desk)"/>'
     body += book(63,251,.87) + scanner(498,338,88) + charter(707,243,.94) + compass(1138,338,1.16)
-    body += label(62,485,"REGISTER / RECORD",color=NAVY)
+    body += label(62,485,"FILE CABINET / RECORD",color=NAVY)
     body += label(374,485,"RADAR / SIMILARITY",color=PURPLE)
     body += label(708,485,"SEAL / GOVERNANCE",color=GOLD)
     body += label(1050,485,"COMPASS / ROUTE",color=MAGENTA)
@@ -362,24 +367,45 @@ def build():
         body += text(x,591,title,21,GREEN)
     body += '<path class="water" d="M1060 556Q1075 540 1090 556T1120 556T1150 556T1180 556T1210 556T1240 556T1270 556T1300 556" fill="none" stroke="#c6a4ff" stroke-width="3"/>'
     body += text(1060,591,"Similar, not a fact",21,PURPLE)
-    write("municipal-data-symbols","The objects are the legend.","Physical civic evidence objects form an animated still life: a leather register, sweeping radar, charter with a municipal seal, and brass compass. Engraved line samples below distinguish authoritative, inferred, unverified, and similar. Color alone is never the key.",body,subtitle="A recurring visual vocabulary, not a collection of interchangeable glowing nodes.")
+    write("municipal-data-symbols","The objects are the legend.","Physical civic evidence objects form an animated still life: a steel file cabinet, sweeping radar, charter with a municipal seal, and brass compass. Engraved line samples below distinguish authoritative, inferred, unverified, and similar. Color alone is never the key.",body,subtitle="A recurring visual vocabulary, not a collection of interchangeable glowing nodes.")
 
     body = '<path d="M0 511H1400V680H0Z" fill="url(#desk)"/>'
     body += townhall(291,470,1.03) + tower(1133,468,1.2)
     body += atlas(448,321,.69,True) + book(87,405,.73) + scanner(625,295,82) + charter(803,244,.71)
     body += traveler("M577 453L703 453L703 514L901 514",MAGENTA,10)
-    body += label(54,587,"KEEP THE REGISTER","Preserve integrity.",NAVY)
+    body += label(54,587,"KEEP THE RECORDS","Preserve integrity.",NAVY)
     body += label(391,587,"LISTEN FOR EVIDENCE","Retrieve by meaning.",PURPLE)
     body += label(750,587,"READ THE LEGEND","Govern relationships.",GREEN)
     body += label(1065,587,"FOLLOW THE ROUTE","Traverse the graph.",MAGENTA)
-    write("municipal-information-layers","Compose the city. Do not choose a winner.","City hall and a water tower frame one municipal evidence desk. The archive register, radar, sealed charter, and city map share the scene as complementary instruments rather than stacked technology boxes. A route light traverses the atlas.",body,subtitle="These are complementary responsibilities, not a required stack or an execution sequence.")
+    write("municipal-information-layers","Compose the city. Do not choose a winner.","City hall and a water tower frame one municipal evidence desk. The archive file cabinet, radar, sealed charter, and city map share the scene as complementary instruments rather than stacked technology boxes. A route light traverses the atlas.",body,subtitle="These are complementary responsibilities, not a required stack or an execution sequence.")
 
     body = skyline(224,.75) + seal(1290,114,1.2)
     body += text(54,108,"Preserve the record. Understand the evidence.",35,extra='font-weight="600"')
     body += text(54,157,"Listen for meaning. Validate connections. Follow the route. Keep people accountable.",23,"#c6d3d5")
     body += traveler("M54 189L707 189L707 207L1260 207",MAGENTA,13)
     write("municipal-information-city-footer","Preserve the record. Understand the evidence.","The recurring city hall, water tower, charter seal, and traveling magenta light close the municipal story. The destination is accountable understanding, not a universal database.",body,260)
-    print(f"Built 11 animated municipal scenes in {OUT}")
+    build_wide_hero()
+    print(f"Built 12 animated municipal scenes in {OUT}")
+
+
+def build_wide_hero():
+    """2.4:1 header variant of the city hero (1400x583 scales to 1200x500)."""
+    ax, ay, scale = 395, 250, .86
+    route = "".join(
+        f'{"M" if i == 0 else "L"}{ax+scale*lx:.0f} {ay+scale*ly}'
+        for i, (lx, ly) in enumerate([(171, 192), (370, 192), (653, 192), (653, 279), (385, 279)])
+    )
+    body = skyline(215, .8)
+    body += '<path d="M0 262L1400 240V583H0Z" fill="url(#desk)"/><path d="M0 572L1400 556" stroke="#ac8862" stroke-opacity=".6" stroke-width="6"/>'
+    body += atlas(ax, ay, scale, True) + book(100, 318, .8)
+    body += scanner(1165, 310, 78) + compass(1315, 322, .6) + charter(1288, 408, .3)
+    body += '<g transform="translate(3.9 85.1) scale(.72)"><path class="lamp" d="M105 285L18 688H408L174 285Z" fill="url(#beam)"/><path d="M86 475V271Q86 244 136 244H185" stroke="url(#bronze)" stroke-width="12" fill="none"/><path d="M98 278L139 219L196 276Z" fill="#486565" stroke="#c6b794"/><path d="M96 279H199" stroke="#f1ca85" stroke-width="6"/><ellipse cx="89" cy="493" rx="51" ry="11" fill="url(#bronze)"/></g>'
+    body += label(160,258,"THE MEMORY","The official records",NAVY)
+    body += label(910,160,"THE LISTENING","Meaning, not identity",PURPLE)
+    body += label(480,170,"THE LEGEND","Governed meaning",GREEN)
+    body += traveler(route,MAGENTA)
+    body += label(1115,508,"THE JOURNEY","Follow the path",MAGENTA)
+    write("municipal-information-city-hero-wide","One city. Four ways to read it.","A lamplit municipal survey desk overlooks a city hall and water tower. A steel file cabinet, floating-report radar, brass compass, charter seal, and parchment city atlas recur throughout the article. A magenta traveler follows a modeled route; it does not create facts.",body,583,"The public record. The listening signal. The governed atlas. The connected journey.",compact=True)
 
 
 if __name__ == "__main__":

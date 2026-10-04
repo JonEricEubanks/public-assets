@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -48,13 +48,13 @@
     <h1>Vector Search vs. Knowledge Graphs: Where Microsoft Fabric Graph Fits</h1>
     <p class="meta">JonEricEubanks &middot; Draft based on the October 2, 2026 article</p>
     <figure>
-      <img data-civic-art src="../images/municipal-information-city-hero.svg" width="1400" height="800" alt="A lamplit civic survey desk overlooking city hall holds a leather asset register, brass radar, compass, sealed charter, and a parchment street atlas with a traveling route light.">
+      <img data-civic-art src="../images/municipal-information-city-hero.svg" width="1400" height="800" alt="A lamplit civic survey desk overlooking city hall holds a steel file cabinet, brass radar, compass, sealed charter, and a parchment street atlas with a traveling route light.">
       <figcaption>A city read four ways: its memory, its listening signal, its shared legend, and its connected journey. The recurring objects represent complementary responsibilities, not competing replacements.</figcaption>
     </figure>
     <h2>Records, radar, maps, and routes: making sense of AI data architecture</h2>
     <p>One of the most confused topics in AI is the difference between a vector database and a knowledge graph. The terms are often used as if they describe competing versions of the same technology. They do not.</p>
     <p>A vector database finds information that is similar in meaning. A knowledge graph defines what entities mean and how they are connected. A relational database preserves authoritative records and transactions. Microsoft Fabric Graph provides an engine for following complex paths and patterns across connected data in OneLake.</p>
-    <p>For local government, picture a <strong>Civic Evidence Lab</strong>: a lamplit survey desk overlooking city hall, with one water-main incident under examination. A leather register is the city's memory. A brass scanner is its listening signal. A sealed charter and street atlas are its shared legend. A compass and traveling light represent the journey through connected records. These objects recur throughout the illustrations because the instruments work together, but their findings are not interchangeable.</p>
+    <p>For local government, picture a <strong>Civic Evidence Lab</strong>: a lamplit survey desk overlooking city hall, with one water-main incident under examination. A file cabinet is the city's memory. A brass scanner is its listening signal. A sealed charter and street atlas are its shared legend. A compass and traveling light represent the journey through connected records. These objects recur throughout the illustrations because the instruments work together, but their findings are not interchangeable.</p>
     <figure>
       <img data-civic-art src="../images/municipal-information-city-divider.svg" width="1400" height="260" alt="" loading="lazy">
     </figure>
@@ -70,7 +70,7 @@
     <p>A records office is designed around exactness. Every permit has a permit number. Every parcel has a parcel identifier. Every inspection belongs to a known case, property, asset, or application.</p>
     <p>That is the role of a relational database. Information is organized into tables with rows, columns, primary keys, foreign keys, constraints, and transactions. The database protects the integrity of the official record.</p>
     <figure>
-      <img data-civic-art src="../images/municipal-records-office.svg" width="1400" height="680" alt="A stone municipal records office stands beside a brass-handled archive cabinet. A work-order drawer opens slowly beside a leather asset register.">
+      <img data-civic-art src="../images/municipal-records-office.svg" width="1400" height="680" alt="A stone municipal records office stands beside a brass-handled archive cabinet. A work-order drawer opens slowly beside a smaller steel file cabinet.">
       <figcaption>The city's memory: an archive drawer opens, but the official record stays exact. The fictional asset, work-order, and inspection IDs are examples, not real resident data.</figcaption>
     </figure>
     <p>A relational database is the right tool for questions such as:</p>
@@ -176,7 +176,7 @@ Asset ownership came from the municipal asset-management system</code></pre>
     <h2>One water-main incident, four different questions</h2>
     <p>Consider a resident reporting water bubbling through the pavement. Each part of the municipal information city answers a different question.</p>
     <figure>
-      <img data-civic-art src="../images/water-main-four-views.svg" width="1400" height="680" alt="A house, bubbling street puddle, public-works truck, and water tower sit above a flowing water-main cutaway. A complaint sheet, register, compass, and seal frame the investigation." loading="lazy">
+      <img data-civic-art src="../images/water-main-four-views.svg" width="1400" height="680" alt="A house, bubbling street puddle, public-works truck, and water tower sit above a flowing water-main cutaway. A complaint sheet, file cabinet, compass, and seal frame the investigation." loading="lazy">
       <figcaption>One leak, four questions. The street scene keeps the architecture grounded in a municipal service problem; the underground water flow is physical context, not a database pipeline.</figcaption>
     </figure>
     <p><strong>The records office asks:</strong> Which official asset, complaint, inspection, or work-order records match this identifier or location?</p>
@@ -206,11 +206,11 @@ Illustrative application contract, not Fabric Graph API syntax.</code></pre>
     <h2>The visual language matters</h2>
     <p>When diagrams mix similarity and relationships together, they reinforce the same confusion the architecture is supposed to solve. The symbols should make the difference visible.</p>
     <figure>
-      <img data-civic-art src="../images/municipal-data-symbols.svg" width="1400" height="680" alt="A leather register, rotating radar, sealed charter, and moving compass form a physical symbol legend above solid, dashed, dotted, and wavy line samples." loading="lazy">
+      <img data-civic-art src="../images/municipal-data-symbols.svg" width="1400" height="680" alt="A steel file cabinet, rotating radar, sealed charter, and moving compass form a physical symbol legend above solid, dashed, dotted, and wavy line samples." loading="lazy">
       <figcaption>The objects are the legend. Their silhouettes identify the responsibility; line styles identify the status of a connection. Color and movement never carry meaning alone.</figcaption>
     </figure>
     <ul>
-      <li><strong>The navy leather register and archive cabinet</strong> represent authoritative relational records: the city's memory.</li>
+      <li><strong>The archive file cabinet</strong> represent authoritative relational records: the city's memory.</li>
       <li><strong>The purple radar, floating reports, and waves</strong> represent semantic similarity: the city's listening signal.</li>
       <li><strong>The parchment atlas and green labeled connections</strong> represent entities and explicit relationships: the city's shared legend.</li>
       <li><strong>Gold seals and shields</strong> represent definitions, rules, provenance, and governance.</li>
@@ -231,7 +231,7 @@ Complaint ≈≈≈ similar to ≈≈≈ Complaint</code></pre>
     <p>The wrong architectural question is, “Should we use SQL, a vector database, a knowledge graph, or Fabric Graph?”</p>
     <p>The better question is, “Which responsibility does each layer need to perform?”</p>
     <figure>
-      <img data-civic-art src="../images/municipal-information-layers.svg" width="1400" height="680" alt="City hall and a water tower frame an evidence desk where the asset register, radar, charter, and traced city atlas work together without a stack of boxes." loading="lazy">
+      <img data-civic-art src="../images/municipal-information-layers.svg" width="1400" height="680" alt="City hall and a water tower frame an evidence desk where the file cabinet, radar, charter, and traced city atlas work together without a stack of boxes." loading="lazy">
       <figcaption>Compose the city, not a winner. The recurring instruments share one scene because their responsibilities complement each other; they are not a required stack or a linear pipeline.</figcaption>
     </figure>
     <ul>

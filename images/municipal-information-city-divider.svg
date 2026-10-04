@@ -30,6 +30,7 @@
  .needle{animation:needle 8s ease-in-out infinite;transform-origin:0 0}
  .stamp{animation:stamp 7s ease-in-out infinite}
  .drawer{animation:drawer 9s ease-in-out infinite}
+ .pull{animation:pull 9s ease-in-out infinite}
  .draft{stroke-dasharray:18 250;animation:draft 8s linear infinite}
  .flow{stroke-dasharray:10 24;animation:flow 4s linear infinite}
  .traveler{offset-rotate:0deg;animation:travel 14s linear infinite}
@@ -43,6 +44,7 @@
  @keyframes sweep{to{transform:rotate(360deg)}}
  @keyframes needle{0%,100%{transform:rotate(-12deg)}50%{transform:rotate(16deg)}}
  @keyframes stamp{0%,25%,100%{transform:translateY(-16px)}35%,55%{transform:translateY(0)}}
+ @keyframes pull{0%,20%,100%{transform:translate(0,0)}35%,65%{transform:translate(-5px,9px)}}
  @keyframes drawer{0%,20%,100%{transform:translateX(0)}35%,65%{transform:translateX(18px)}}
  @keyframes draft{to{stroke-dashoffset:-268}}
  @keyframes flow{to{stroke-dashoffset:-68}}
