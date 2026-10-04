@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="680" viewBox="0 0 1400 680" role="img" aria-labelledby="title desc"><title id="title">The charter is not the compass.</title><desc id="desc">A sealed charter and a large gently moving brass compass sit beside a miniature municipal atlas with a traveling route light. They distinguish designed meaning from path execution without using comparison cards.</desc>
+<defs>
+ <linearGradient id="sky" x2="0" y2="1"><stop stop-color="#121c30"/><stop offset=".7" stop-color="#253949"/><stop offset="1" stop-color="#815249"/></linearGradient>
+ <linearGradient id="desk" x2="0" y2="1"><stop stop-color="#263843"/><stop offset="1" stop-color="#09151e"/></linearGradient>
+ <linearGradient id="paper" x2=".2" y2="1"><stop stop-color="#f7efdb"/><stop offset=".6" stop-color="#e8d8b4"/><stop offset="1" stop-color="#b69d76"/></linearGradient>
+ <linearGradient id="bronze" x2="1" y2=".3"><stop stop-color="#6d4b32"/><stop offset=".25" stop-color="#e8c68b"/><stop offset=".5" stop-color="#9b7148"/><stop offset=".75" stop-color="#f8ddb0"/><stop offset="1" stop-color="#765236"/></linearGradient>
+ <linearGradient id="stone" x2="1" y2="1"><stop stop-color="#d1c1a2"/><stop offset=".55" stop-color="#9c8c75"/><stop offset="1" stop-color="#665e57"/></linearGradient>
+ <linearGradient id="roof" x2="0" y2="1"><stop stop-color="#4c6f76"/><stop offset="1" stop-color="#1e373f"/></linearGradient>
+ <linearGradient id="cover" x2="1" y2="1"><stop stop-color="#364d68"/><stop offset="1" stop-color="#152335"/></linearGradient>
+ <linearGradient id="beam" x2="0" y2="1"><stop stop-color="#ffe7ad" stop-opacity=".3"/><stop offset="1" stop-color="#ffe7ad" stop-opacity="0"/></linearGradient>
+ <radialGradient id="aura"><stop stop-color="#d2a575" stop-opacity=".22"/><stop offset="1" stop-color="#d2a575" stop-opacity="0"/></radialGradient>
+ <radialGradient id="radar"><stop stop-color="#2c2948"/><stop offset="1" stop-color="#101c29"/></radialGradient>
+ <pattern id="grain" width="6" height="6" patternUnits="userSpaceOnUse"><path d="M0 1H6M1 0V6" stroke="#fff" stroke-opacity=".025"/></pattern>
+ <pattern id="mapgrid" width="38" height="38" patternUnits="userSpaceOnUse"><path d="M38 0H0V38" fill="none" stroke="#526f75" stroke-opacity=".24"/></pattern>
+ <filter id="shadow" x="-30%" y="-30%" width="170%" height="190%"><feDropShadow dx="0" dy="10" stdDeviation="9" flood-color="#000" flood-opacity=".45"/></filter>
+ <filter id="glow" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+ <marker id="edge-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M1 1L9 5L1 9" fill="none" stroke="#2e7b63" stroke-width="1.5"/></marker>
+ <clipPath id="mapclip"><path d="M0 16L30 0H760L790 18V325L755 344H24L0 326Z"/></clipPath>
+ <g id="tree"><path d="M0 0V27" stroke="#897864" stroke-width="5"/><path d="M-22 5L0 -42L22 5ZM-17 -14L0 -55L17 -14Z" fill="#315c54"/><path d="M0 -55V5" stroke="#739881" opacity=".4"/></g>
+</defs>
+<style>
+ text{font-family:'Segoe UI',Arial,sans-serif;fill:#f3eee3}
+ .mono{font-family:Consolas,'Courier New',monospace;letter-spacing:2px}
+ .twinkle{animation:twinkle 8s ease-in-out infinite}
+ .windows{animation:windows 7s ease-in-out infinite}
+ .flag{animation:flag 4s ease-in-out infinite}
+ .float{animation:float 6s ease-in-out infinite}
+ .ripples{transform-box:fill-box;transform-origin:center;animation:ripples 4s ease-out infinite}
+ .sweep{animation:sweep 12s linear infinite;transform-origin:0 0}
+ .needle{animation:needle 8s ease-in-out infinite;transform-origin:0 0}
+ .stamp{animation:stamp 7s ease-in-out infinite}
+ .drawer{animation:drawer 9s ease-in-out infinite}
+ .draft{stroke-dasharray:18 250;animation:draft 8s linear infinite}
+ .flow{stroke-dasharray:10 24;animation:flow 4s linear infinite}
+ .traveler{offset-rotate:0deg;animation:travel 14s linear infinite}
+ .water{animation:water 6s ease-in-out infinite}
+ .lamp{animation:lamp 9s ease-in-out infinite}
+ @keyframes twinkle{0%,100%{opacity:.25}50%{opacity:.9}}
+ @keyframes windows{0%,100%{opacity:.65}50%{opacity:1}}
+ @keyframes flag{0%,100%{transform:skewY(-4deg)}50%{transform:skewY(6deg)}}
+ @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+ @keyframes ripples{0%{transform:scale(.72);opacity:.8}100%{transform:scale(1.2);opacity:.05}}
+ @keyframes sweep{to{transform:rotate(360deg)}}
+ @keyframes needle{0%,100%{transform:rotate(-12deg)}50%{transform:rotate(16deg)}}
+ @keyframes stamp{0%,25%,100%{transform:translateY(-16px)}35%,55%{transform:translateY(0)}}
+ @keyframes drawer{0%,20%,100%{transform:translateX(0)}35%,65%{transform:translateX(18px)}}
+ @keyframes draft{to{stroke-dashoffset:-268}}
+ @keyframes flow{to{stroke-dashoffset:-68}}
+ @keyframes travel{to{offset-distance:100%}}
+ @keyframes water{0%,100%{opacity:.55}50%{opacity:.95}}
+ @keyframes lamp{0%,100%{opacity:.6}50%{opacity:.9}}
+ @media(prefers-reduced-motion:reduce){.twinkle,.windows,.flag,.float,.ripples,.sweep,.needle,.stamp,.drawer,.draft,.flow,.traveler,.water,.lamp{animation:none!important}}
+</style>
+<defs><clipPath id="frame"><rect width="1400" height="680" rx="22"/></clipPath></defs><g clip-path="url(#frame)"><rect width="1400" height="680" fill="url(#sky)"/><ellipse cx="870" cy="340.0" rx="740" ry="340" fill="url(#aura)"/><circle class="twinkle" style="animation-delay:-0s" cx="390" cy="24" r="1.0" fill="#e4d8c3"/><circle class="twinkle" style="animation-delay:-1s" cx="527" cy="67" r="1.35" fill="#e4d8c3"/><circle class="twinkle" style="animation-delay:-2s" cx="664" cy="110" r="1.7" fill="#e4d8c3"/><circle class="twinkle" style="animation-delay:-3s" cx="801" cy="153" r="1.0" fill="#e4d8c3"/><circle class="twinkle" style="animation-delay:-4s" cx="938" cy="46" r="1.35" fill="#e4d8c3"/><circle class="twinkle" style="animation-delay:-5s" cx="1075" cy="89" r="1.7" fill="#e4d8c3"/><circle class="twinkle" style="animation-delay:-6s" cx="1212" cy="132" r="1.0" fill="#e4d8c3"/><circle class="twinkle" style="animation-delay:-0s" cx="1349" cy="25" r="1.35" fill="#e4d8c3"/><circle class="twinkle" style="animation-delay:-1s" cx="516" cy="68" r="1.7" fill="#e4d8c3"/><circle class="twinkle" style="animation-delay:-2s" cx="653" cy="111" r="1.0" fill="#e4d8c3"/><circle class="twinkle" style="animation-delay:-3s" cx="790" cy="154" r="1.35" fill="#e4d8c3"/><circle class="twinkle" style="animation-delay:-4s" cx="927" cy="47" r="1.7" fill="#e4d8c3"/><circle class="twinkle" style="animation-delay:-5s" cx="1064" cy="90" r="1.0" fill="#e4d8c3"/><circle class="twinkle" style="animation-delay:-6s" cx="1201" cy="133" r="1.35" fill="#e4d8c3"/><circle class="twinkle" style="animation-delay:-0s" cx="1338" cy="26" r="1.7" fill="#e4d8c3"/><circle class="twinkle" style="animation-delay:-1s" cx="505" cy="69" r="1.0" fill="#e4d8c3"/><circle class="twinkle" style="animation-delay:-2s" cx="642" cy="112" r="1.35" fill="#e4d8c3"/><circle class="twinkle" style="animation-delay:-3s" cx="779" cy="155" r="1.7" fill="#e4d8c3"/><circle class="twinkle" style="animation-delay:-4s" cx="916" cy="48" r="1.0" fill="#e4d8c3"/><circle class="twinkle" style="animation-delay:-5s" cx="1053" cy="91" r="1.35" fill="#e4d8c3"/><circle class="twinkle" style="animation-delay:-6s" cx="1190" cy="134" r="1.7" fill="#e4d8c3"/><circle class="twinkle" style="animation-delay:-0s" cx="1327" cy="27" r="1.0" fill="#e4d8c3"/><path d="M0 565H1400V680H0Z" fill="url(#desk)"/><g transform="translate(111 270) scale(1.3)"><path d="M0 4Q120 -8 234 4L247 217Q120 232 -12 217Z" fill="url(#paper)" stroke="#a89776" filter="url(#shadow)"/>
+<path d="M12 21H215M20 170H217" stroke="#8f805f"/>
+<path d="M23 82H207M23 105H189M23 127H203M23 150H167" stroke="#63767a" stroke-width="3" opacity=".55"/><text x="22" y="51" font-size="18" style="fill:#34484c" font-weight="600">THE CIVIC CHARTER</text><text x="25" y="200" font-size="12" style="fill:#34484c" class="mono">SOURCE / OWNER / DATE</text><g transform="translate(195 213) scale(0.6)"><circle r="34" fill="url(#bronze)" stroke="#efcf95" stroke-width="2"/>
+<circle r="26" fill="#836045" stroke="#efcf95" stroke-width="1.5" stroke-dasharray="2 4"/>
+<path d="M-15 -14H15V0Q15 15 0 21Q-15 15 -15 0Z" fill="none" stroke="#ffe4b0" stroke-width="2"/>
+<path class="windows" d="M-8 0L-1 7L10 -7" fill="none" stroke="#ffe4b0" stroke-width="3"/></g></g><g transform="translate(544 368) scale(1.14)"><circle r="73" fill="url(#bronze)" stroke="#e9c893" stroke-width="2" filter="url(#shadow)"/><circle r="62" fill="#132c36" stroke="#dcc496"/><path d="M52.00 0.00L58.00 0.00" stroke="#d7c29b"/><path d="M50.23 13.46L56.02 15.01" stroke="#d7c29b"/><path d="M45.03 26.00L50.23 29.00" stroke="#d7c29b"/><path d="M36.77 36.77L41.01 41.01" stroke="#d7c29b"/><path d="M26.00 45.03L29.00 50.23" stroke="#d7c29b"/><path d="M13.46 50.23L15.01 56.02" stroke="#d7c29b"/><path d="M0.00 52.00L0.00 58.00" stroke="#d7c29b"/><path d="M-13.46 50.23L-15.01 56.02" stroke="#d7c29b"/><path d="M-26.00 45.03L-29.00 50.23" stroke="#d7c29b"/><path d="M-36.77 36.77L-41.01 41.01" stroke="#d7c29b"/><path d="M-45.03 26.00L-50.23 29.00" stroke="#d7c29b"/><path d="M-50.23 13.46L-56.02 15.01" stroke="#d7c29b"/><path d="M-52.00 0.00L-58.00 0.00" stroke="#d7c29b"/><path d="M-50.23 -13.46L-56.02 -15.01" stroke="#d7c29b"/><path d="M-45.03 -26.00L-50.23 -29.00" stroke="#d7c29b"/><path d="M-36.77 -36.77L-41.01 -41.01" stroke="#d7c29b"/><path d="M-26.00 -45.03L-29.00 -50.23" stroke="#d7c29b"/><path d="M-13.46 -50.23L-15.01 -56.02" stroke="#d7c29b"/><path d="M-0.00 -52.00L-0.00 -58.00" stroke="#d7c29b"/><path d="M13.46 -50.23L15.01 -56.02" stroke="#d7c29b"/><path d="M26.00 -45.03L29.00 -50.23" stroke="#d7c29b"/><path d="M36.77 -36.77L41.01 -41.01" stroke="#d7c29b"/><path d="M45.03 -26.00L50.23 -29.00" stroke="#d7c29b"/><path d="M50.23 -13.46L56.02 -15.01" stroke="#d7c29b"/><text x="0" y="-34" font-size="16" style="fill:#f1ca85" text-anchor="middle">N</text><g class="needle"><path d="M0 -29L12 24L0 14L-12 24Z" fill="#f1ca85"/><path d="M0 -29V14L-12 24Z" fill="#9e7155"/></g><circle r="5" fill="#e5c58d"/></g><g transform="translate(784 294) scale(0.68)"><path d="M0 16L30 0H760L790 18V325L755 344H24L0 326Z" fill="url(#paper)" stroke="#d7c8a6" filter="url(#shadow)"/>
+<g clip-path="url(#mapclip)"><rect width="790" height="344" fill="url(#mapgrid)"/>
+<path d="M0 78Q210 114 340 72T790 90M0 125Q230 166 400 127T790 145M0 274Q240 230 420 280T790 260" stroke="#bfae83" stroke-width="2" fill="none" opacity=".6"/>
+<path d="M515 -15Q459 70 553 150T508 360" fill="none" stroke="#668994" stroke-width="38" opacity=".7"/>
+<path class="flow" d="M515 -15Q459 70 553 150T508 360" fill="none" stroke="#d0e5df" stroke-width="2" opacity=".7"/>
+<path d="M24 191H750M168 24V314M370 24V314M653 24V314" stroke="#718077" stroke-width="14" fill="none"/>
+<path d="M24 191H750M168 24V314M370 24V314M653 24V314" stroke="#dcd4b9" stroke-width="8" fill="none"/>
+<path d="M40 28H288V128H40ZM218 225H421V314H218ZM580 29H745V136H580Z" fill="none" stroke="#73877a" stroke-width="1.5"/>
+<g fill="#748d69" opacity=".6"><path d="M46 230H143V315H46Z"/><path d="M588 224H740V313H588Z"/></g>
+<path d="M269 0V344M526 0V344" stroke="#a89c79" opacity=".6"/>
+</g><g transform="translate(370 173) scale(0.38)"><ellipse cx="0" cy="18" rx="147" ry="24" fill="#07131d" opacity=".45"/>
+<path d="M-120 -120H120V0H-120Z" fill="url(#stone)" stroke="#e1cfac"/>
+<path d="M-143 -119L0 -207L143 -119Z" fill="url(#roof)" stroke="#a8beb6" stroke-width="2"/>
+<path d="M-110 -123L0 -187L110 -123Z" fill="none" stroke="#728e89"/>
+<rect x="-32" y="-128" width="64" height="128" fill="#253645"/>
+<path d="M-150 0H150M-140 10H140M-126 20H126" stroke="#c6b99f" stroke-width="8"/>
+<g fill="url(#paper)" stroke="#706e63"><path d="M-96 -112H-78V-3H-96ZM-58 -112H-40V-3H-58ZM40 -112H58V-3H40ZM78 -112H96V-3H78Z"/></g>
+<g class="windows" fill="#f1ca85"><path d="M-113 -82H-103V-50H-113ZM103 -82H113V-50H103Z"/><path d="M-19 -90H19V-61H-19Z" opacity=".5"/></g>
+<circle cx="0" cy="-146" r="18" fill="#132b37" stroke="#d7c499" stroke-width="3"/><path d="M0 -158V-146L9 -139" stroke="#f1ca85" stroke-width="2" fill="none"/>
+<path d="M0 -208V-261" stroke="#cfb98c" stroke-width="3"/>
+<g transform="translate(2 -258)"><path class="flag" d="M0 0Q20 -8 42 0V22Q20 13 0 22Z" fill="#c9a06e"/></g></g><g transform="translate(655 178) scale(0.42)"><ellipse cy="20" rx="72" ry="17" fill="#061421" opacity=".5"/>
+<path d="M-36 -110L-52 15M36 -110L52 15M-36 -87L44 -7M36 -87L-44 -7M-44 -8H44" stroke="#90a9b1" stroke-width="6" fill="none"/>
+<path d="M-58 -167Q0 -188 58 -167V-109Q0 -87 -58 -109Z" fill="url(#roof)" stroke="#b7c5bd" stroke-width="2"/>
+<ellipse cy="-167" rx="58" ry="17" fill="#789398" stroke="#b7c5bd"/>
+<path d="M-48 -159V-117" stroke="#d0dfd7" stroke-width="5" opacity=".35"/>
+<path d="M-59 -100H59M-63 -94V-109M63 -94V-109" stroke="#d5bb88" fill="none" stroke-width="3"/>
+<path d="M-8 -178V-204H8V-178" fill="#729298"/>
+<circle class="windows" cy="-207" r="5" fill="#f1ca85" filter="url(#glow)"/></g><g transform="translate(171 177) scale(0.5)"><ellipse cy="10" rx="63" ry="13" fill="#07121b" opacity=".4"/>
+<path d="M-50 -68H50V0H-50Z" fill="#957a62"/><path d="M-66 -65L0 -117L66 -65Z" fill="#334f59" stroke="#8ca2a1"/>
+<path d="M-43 -60H43" stroke="#d1b58f"/><path d="M-8 -36H14V0H-8Z" fill="#223c49"/>
+<g class="windows" fill="#f1ca85"><path d="M-34 -43H-16V-22H-34ZM23 -43H41V-22H23Z"/></g>
+<path d="M-25 -43V-22M32 -43V-22" stroke="#705c4d" stroke-width="2"/></g><g transform="translate(385 281) scale(0.4)"><ellipse cx="4" cy="18" rx="98" ry="12" fill="#07131c" opacity=".45"/>
+<path d="M-91 -45H20V-71H62L91 -39V4H-91Z" fill="#bb8860" stroke="#f1ca85" stroke-width="2"/>
+<path d="M29 -63H56L75 -40H29Z" fill="#18394c" stroke="#9ab9bf"/>
+<path d="M-80 -35H10M-80 -24H10M19 -37V-4" stroke="#704d39" stroke-width="2"/>
+<g fill="#0a1721" stroke="#7f969f" stroke-width="4"><circle cx="-53" cy="6" r="18"/><circle cx="58" cy="6" r="18"/></g>
+<g fill="#b8bdb2"><circle cx="-53" cy="6" r="7"/><circle cx="58" cy="6" r="7"/></g>
+<path class="lamp" d="M87 -31L190 -54V13L87 -15Z" fill="url(#beam)"/>
+<rect class="windows" x="81" y="-30" width="9" height="14" fill="#ffe4a3"/>
+<path d="M37 -78H53" stroke="#f1ca85" stroke-width="6"/></g><g transform="translate(70 275) scale(0.45)"><use href="#tree"/></g><g transform="translate(108 290) scale(0.45)"><use href="#tree"/></g><g transform="translate(610 277) scale(0.45)"><use href="#tree"/></g><g transform="translate(700 286) scale(0.45)"><use href="#tree"/></g><path d="M171 191H370" fill="none" stroke="#2e7b63" stroke-width="3" marker-end="url(#edge-arrow)"/><path class="draft" d="M171 191H370" fill="none" stroke="#8de4bd" stroke-width="2"/><path d="M171 191V71H653V191" fill="none" stroke="#2e7b63" stroke-width="3" marker-end="url(#edge-arrow)"/><path class="draft" d="M171 191V71H653V191" fill="none" stroke="#8de4bd" stroke-width="2"/><path d="M653 191V279H385" fill="none" stroke="#2e7b63" stroke-width="3" marker-end="url(#edge-arrow)"/><path class="draft" d="M653 191V279H385" fill="none" stroke="#8de4bd" stroke-width="2"/><text x="240" y="215" font-size="15" style="fill:#27594e" >located at</text><text x="400" y="61" font-size="15" style="fill:#27594e" >concerns</text><text x="475" y="302" font-size="15" style="fill:#27594e" >maintained by</text><text x="131" y="246" font-size="15" style="fill:#27594e" font-weight="600">Complaint</text><text x="331" y="246" font-size="15" style="fill:#27594e" font-weight="600">Address</text><text x="608" y="226" font-size="15" style="fill:#27594e" font-weight="600">Water Main</text><text x="330" y="328" font-size="15" style="fill:#27594e" font-weight="600">Public Works</text></g><path d="M901 424L1035 424L1228 424L1228 484L1045 484" fill="none" stroke="#f4a7d7" stroke-width="2" opacity=".4"/><circle class="traveler" r="6" fill="#f4a7d7" filter="url(#glow)" style="offset-path:path('M901 424L1035 424L1228 424L1228 484L1045 484');animation-duration:9s"/><text x="75" y="226" font-size="23" style="fill:#8de4bd" font-weight="600">THE CHARTER / MEANING</text><text x="75" y="258" font-size="19" style="fill:#becbd0" >What is it? Who asserted it?</text><text x="806" y="226" font-size="23" style="fill:#f4a7d7" font-weight="600">THE COMPASS / EXECUTION</text><text x="806" y="258" font-size="19" style="fill:#becbd0" >What is reachable? Which path exists?</text><text x="76" y="616" font-size="29" style="fill:#f1ca85" >The legend defines the map. The engine finds the route.</text><rect width="1400" height="680" fill="url(#grain)"/><text x="54" y="46" font-size="16" style="fill:#f1ca85" class="mono">CIVIC EVIDENCE LAB / A CITY READ FOUR WAYS</text><text x="52" y="107" font-size="44" font-weight="700">The charter is not the compass.</text><text x="54" y="148" font-size="23" style="fill:#c6d3d5" >A graph engine can execute connections. It cannot invent their governed meaning.</text><text x="54" y="658" font-size="14" style="fill:#b0c2c9" class="mono">CONCEPTUAL MUNICIPAL SCENE / NOT PRODUCT UI</text></g><rect x="1" y="1" width="1398" height="678" rx="21" fill="none" stroke="#66818d" stroke-opacity=".5"/></svg>
