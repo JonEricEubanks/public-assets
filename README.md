@@ -4,6 +4,7 @@ Publicly accessible images, icons, screenshots, diagrams, and media assets used 
 ## Civic Evidence Lab
 
 - [Illustrated vector search, knowledge graphs, and Fabric Graph blog](blogs/vector-search-knowledge-graphs-fabric.html)
+- [Tech Community paste-ready HTML with public image URLs](blogs/vector-search-knowledge-graphs-fabric-techcommunity.html)
 - [Visual theme, screenshot capture checklist, and publishing guide](blogs/civic-evidence-lab-guide.md)
 - [SVG artwork generator](tools/build_civic_evidence_art.py)
 

@@ -63,11 +63,11 @@ Hero: 1400 x 800. Section diagrams: 1400 x 680. Divider/footer: 1400 x 260.
 | Composition | The recurring civic instruments operate together around one map |
 | Footer | The magenta traveler returns to the familiar municipal skyline |
 
-The [blog preview](vector-search-knowledge-graphs-fabric.html) defaults to **Animated SVGs** and includes an explicit **Still PNGs** switch. Its preview script upgrades the artwork to SVG `<object>` documents, with PNG fallback children, so browser playback is visible. Open the HTML in a browser to see motion; an editor thumbnail, PNG, or screenshot cannot demonstrate animation. If the operating system requests reduced motion, SVG movement is disabled intentionally.
+The [blog preview](vector-search-knowledge-graphs-fabric.html) defaults to **Animated SVGs** and includes an explicit **Still PNGs** switch. Its preview script upgrades the artwork to SVG `<object>` documents, with PNG fallback children, so browser playback is visible. Open the HTML in a browser to see motion; an editor thumbnail, PNG, or screenshot cannot demonstrate animation.
 
-**Important browser distinction:** the tested Chromium browser reports reduced motion inside an SVG loaded through `<img>`, even when the page reports normal motion. These accessible SVGs therefore may appear still in ordinary image embeds. Opening the SVG directly or embedding it as an SVG document restores normal preference-aware playback. Do not remove the reduced-motion protection just to force animation.
+**Why the SVGs have no `prefers-reduced-motion` rule:** an earlier build included one, and the tested Chromium browser applied it to SVGs loaded through `<img>` even when the page itself had no reduced-motion preference. Every SVG then rendered still on GitHub and in blog embeds. The rule was removed so the SVGs animate like the existing Night Shift and sewer CCTV artwork. The trade-off is that viewers who request reduced motion will still see movement; the motion is slow and decorative.
 
-Meaning never depends on movement. Every SVG includes a title, description, and `prefers-reduced-motion` override. There is no SVG JavaScript, embedded remote image, or external font dependency.
+Meaning never depends on movement. Every SVG includes a title and description. There is no SVG JavaScript, embedded remote image, or external font dependency.
 
 ## Take these five real screenshots
 
@@ -132,6 +132,32 @@ Use **one synthetic incident throughout**, for example asset `WM-481`, complaint
 
 ## Preview and publishing
 
+### Tech Community: use the publishing fragment, not the local preview
+
+Use [the Tech Community HTML fragment](vector-search-knowledge-graphs-fabric-techcommunity.html)
+in the editor's HTML/source mode. Enter the article title separately. Do not paste
+the full local preview document, its script, or its document shell.
+
+The fragment follows the existing sewer CCTV blog's embedding pattern:
+`<figure>` containing `<img>` with a public SVG URL, alternative text,
+`loading="lazy"`, and `width: 100%; max-width: 960px; height: auto`.
+It embeds all 11 original animated SVGs directly, preserving captions without
+additional "open SVG" links or display instructions. It removes local preview
+controls, draft metadata, and the five capture notes. The fragment starts with
+the hero image. Actual inline motion depends on the platform and browser.
+If the editor blocks externally hosted images,
+upload the PNGs through its image-upload workflow and use the resulting platform
+URLs instead.
+
+Relative paths such as `../images/` resolve against the Tech Community page, not
+your GitHub repository, so they cannot be used in pasted article HTML.
+
+Regenerate the fragment after editing the preview:
+
+```powershell
+python .\tools\build_civic_blog_publish.py
+```
+
 - Open [the illustrated blog](vector-search-knowledge-graphs-fabric.html) locally in a browser. All image paths are relative and work from this checkout.
 - This is an editorial draft, not an update to the live Tech Community post. No assets have been pushed and no article has been published.
 - For a rich-text blog editor, use the content inside `<article>` only. Do not paste the document shell, preview CSS, local publishing notice, artwork-switch controls, or preview script. The SVGs animate independently of the preview script.
@@ -140,7 +166,7 @@ Use **one synthetic incident throughout**, for example asset `WM-481`, complaint
 - Verify the target editor accepts SVG and preserves animation; neither support nor sanitization behavior is assumed. The source article uses portable `<img>` markup, while the local preview script uses SVG documents. Test actual motion in the published/draft viewer, not only inside the editor.
 - On a site you control, use inline SVG or an allowed SVG-document embed with an accessible name and a static fallback; do not bypass user motion preferences. A platform that allows only image uploads may still render these SVGs statically. If motion is essential there, export a platform-supported animated format (such as GIF or video) from the original SVGs. Animated GIF/video exports are not included in this collection.
 - If SVG is unsupported or a static illustration is acceptable, use matching PNG exports from [images](../images). These preserve all labels and the base visual state, but **do not preserve animation**. Upload them through the platform's normal image workflow, switch image extensions to `.png`, and keep the captions and alt text.
-- SVGs also degrade to a complete static composition when animation is disabled. No information requires a moving frame.
+- No information requires a moving frame; the static PNG exports show the complete composition.
 - Confirm Fabric Graph status and product claims against current official documentation before publishing. This task improves presentation; it is not a product availability audit.
 
 ## Regeneration

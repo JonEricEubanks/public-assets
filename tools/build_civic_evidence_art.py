@@ -60,7 +60,6 @@ DEFS = """
  @keyframes travel{to{offset-distance:100%}}
  @keyframes water{0%,100%{opacity:.55}50%{opacity:.95}}
  @keyframes lamp{0%,100%{opacity:.6}50%{opacity:.9}}
- @media(prefers-reduced-motion:reduce){.twinkle,.windows,.flag,.float,.ripples,.sweep,.needle,.stamp,.drawer,.draft,.flow,.traveler,.water,.lamp{animation:none!important}}
 </style>
 """
 

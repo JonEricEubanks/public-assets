@@ -1,0 +1,256 @@
+<figure>
+      <img
+        style="width: 100%; max-width: 960px; height: auto"
+        src="https://raw.githubusercontent.com/JonEricEubanks/public-assets/main/images/municipal-information-city-hero.svg"
+        alt="A lamplit civic survey desk overlooking city hall holds a leather asset register, brass radar, compass, sealed charter, and a parchment street atlas with a traveling route light."
+        loading="lazy"
+      />
+      <figcaption>A city read four ways: its memory, its listening signal, its shared legend, and its connected journey. The recurring objects represent complementary responsibilities, not competing replacements.</figcaption>
+    </figure>
+    <h2>Records, radar, maps, and routes: making sense of AI data architecture</h2>
+    <p>One of the most confused topics in AI is the difference between a vector database and a knowledge graph. The terms are often used as if they describe competing versions of the same technology. They do not.</p>
+    <p>A vector database finds information that is similar in meaning. A knowledge graph defines what entities mean and how they are connected. A relational database preserves authoritative records and transactions. Microsoft Fabric Graph provides an engine for following complex paths and patterns across connected data in OneLake.</p>
+    <p>For local government, picture a <strong>Civic Evidence Lab</strong>: a lamplit survey desk overlooking city hall, with one water-main incident under examination. A leather register is the city's memory. A brass scanner is its listening signal. A sealed charter and street atlas are its shared legend. A compass and traveling light represent the journey through connected records. These objects recur throughout the illustrations because the instruments work together, but their findings are not interchangeable.</p>
+    <figure>
+      <img
+        style="width: 100%; max-width: 960px; height: auto"
+        src="https://raw.githubusercontent.com/JonEricEubanks/public-assets/main/images/municipal-information-city-divider.svg"
+        alt=""
+        loading="lazy"
+      />
+    </figure>
+    <h2>Think of government data as a municipal information city</h2>
+    <p>Every city has records offices, detection systems, official maps, and route-planning tools. Each serves a different purpose. Government data architecture works the same way. In our evidence lab, those citywide responsibilities become four distinct instruments:</p>
+    <p><strong>The relational database is the records office.</strong> It stores official permits, parcels, inspections, assets, payments, cases, and work orders under known identifiers.</p>
+    <p><strong>The vector database is the similarity radar.</strong> It detects documents, reports, images, or complaints that are close in meaning, even when they use different words.</p>
+    <p><strong>The knowledge graph is the official map and legend.</strong> It identifies the important things in the city, defines what they mean, and describes how they are allowed to relate.</p>
+    <p><strong>Microsoft Fabric Graph is the citywide route engine.</strong> It follows paths through connected OneLake data to find relationships and patterns that may be difficult to uncover with conventional joins.</p>
+    <blockquote><strong>Relational tells us what was recorded. Vector tells us what appears similar. A knowledge graph tells us what things mean and how they relate. Fabric Graph lets us follow those relationships at scale.</strong></blockquote>
+
+    <h2>The records office: relational databases</h2>
+    <p>A records office is designed around exactness. Every permit has a permit number. Every parcel has a parcel identifier. Every inspection belongs to a known case, property, asset, or application.</p>
+    <p>That is the role of a relational database. Information is organized into tables with rows, columns, primary keys, foreign keys, constraints, and transactions. The database protects the integrity of the official record.</p>
+    <figure>
+      <img
+        style="width: 100%; max-width: 960px; height: auto"
+        src="https://raw.githubusercontent.com/JonEricEubanks/public-assets/main/images/municipal-records-office.svg"
+        alt="A stone municipal records office stands beside a brass-handled archive cabinet. A work-order drawer opens slowly beside a leather asset register."
+        loading="lazy"
+      />
+      <figcaption>The city's memory: an archive drawer opens, but the official record stays exact. The fictional asset, work-order, and inspection IDs are examples, not real resident data.</figcaption>
+    </figure>
+    <p>A relational database is the right tool for questions such as:</p>
+    <ul><li>Which permits are overdue?</li><li>Which inspections failed this month?</li><li>What open work orders belong to water asset 481?</li><li>How much revenue was collected by fund and month?</li></ul>
+    <p>For developers, this is the transactional layer: SQL tables, Dataverse tables, keys, relationships, constraints, joins, aggregations, and ACID transactions.</p>
+    <p>The introduction of AI does not make this layer obsolete. Permits, payments, inspections, case statuses, and asset records still need an authoritative system of record.</p>
+
+    <h2>The similarity radar: vector databases</h2>
+    <p>Residents rarely describe the same problem using the same words. One resident might report “water bubbling through the pavement.” Another might write “standing water near the curb.” A public works employee might classify both as a possible underground main break.</p>
+    <p>A keyword search may miss that connection. A vector database is designed to find it.</p>
+    <figure>
+      <img
+        style="width: 100%; max-width: 960px; height: auto"
+        src="https://raw.githubusercontent.com/JonEricEubanks/public-assets/main/images/municipal-similarity-radar.svg"
+        alt="Folded complaint sheets float around a sweeping brass radar above a municipal skyline; a purple wave represents similarity without asserted graph edges."
+        loading="lazy"
+      />
+      <figcaption>The city's listening signal: differently worded reports drift around the scanner. The moving sweep finds resemblance; it does not validate a shared asset or incident.</figcaption>
+    </figure>
+    <p>Documents, emails, chat messages, images, audio, service requests, and other content can be converted into numerical representations called <em>embeddings</em>. When someone submits a query, the system creates an embedding for that query and looks for nearby vectors.</p>
+    <p>A vector database or vector-enabled search service is useful for questions such as:</p>
+    <ul><li>Which previous complaints sound like this report?</li><li>Which policies discuss a concept similar to this question?</li><li>Which plan sheets resemble this uploaded image?</li><li>Which knowledge-base articles are most relevant to this request?</li></ul>
+    <p>For developers, the typical pattern is:</p>
+    <pre><code>Content
+  → chunking
+  → embedding model
+  → vector index
+  → query embedding
+  → nearest-neighbor retrieval
+  → metadata and security filtering
+  → grounded AI response</code></pre>
+    <p>Metadata and security filtering must be applied according to the retrieval service's supported behavior and the application's authorization design. An embedding is not an access-control mechanism.</p>
+    <p>Vector similarity is useful evidence, but it is not an authoritative relationship. Two complaints may be semantically similar without referring to the same property, asset, incident, or responsible party.</p>
+    <p>That distinction matters. The similarity radar can say, “These appear related.” It cannot independently declare, “These are officially connected.”</p>
+
+    <h2>The official map and legend: knowledge graphs</h2>
+    <p>A city map does more than place points on a page. Its legend explains what those points represent. It distinguishes a parcel from a building, a public water main from a private service line, and an owner from an occupant.</p>
+    <p>A knowledge graph serves a similar purpose. It defines important entities, assigns meaning to their relationships, and provides a shared vocabulary across systems and departments.</p>
+    <figure>
+      <img
+        style="width: 100%; max-width: 960px; height: auto"
+        src="https://raw.githubusercontent.com/JonEricEubanks/public-assets/main/images/municipal-knowledge-map.svg"
+        alt="A parchment municipal atlas with labeled connections sits beside a gently settling brass compass and a charter bearing a gold governance seal."
+        loading="lazy"
+      />
+      <figcaption>The city's shared legend: the atlas gives connections a place; the sealed charter gives them meaning, source, and ownership. The moving drafting highlight never changes a relationship's status.</figcaption>
+    </figure>
+    <p>For example:</p>
+    <pre><code>(Resident)
+    └── reported ──▶ (Complaint)
+                         ├── located at ──▶ (Address)
+                         │                      └── on ──▶ (Parcel)
+                         └── concerns ──▶ (Water Main)
+                                              ├── owned by ──▶ (Municipality)
+                                              └── maintained by ──▶ (Public Works)</code></pre>
+    <p>The relationships are explicit. A resident <em>reported</em> a complaint. The complaint is <em>located at</em> an address. The address is <em>on</em> a parcel. The complaint <em>concerns</em> a water main. The water main is <em>maintained by</em> Public Works.</p>
+    <p>The knowledge layer can also carry definitions, provenance, and rules:</p>
+    <pre><code>Definition:
+Water Main = buried public infrastructure that carries potable water
+
+Policy rule:
+An active leak near a critical facility receives elevated priority
+
+Security rule:
+Resident contact information is visible only to authorized roles
+
+Provenance:
+Asset ownership came from the municipal asset-management system</code></pre>
+    <p>Representing a rule in a graph is not the same as enforcing it. Authorization, retention, and audit controls still need implementation and testing in the systems that serve the data.</p>
+    <p>A knowledge graph is useful for questions such as:</p>
+    <ul><li>How is this complaint connected to a city-owned asset?</li><li>Which department is responsible for that asset?</li><li>Which policy governs the department's response?</li><li>Which contractor performed work at that location?</li><li>Where did each relationship come from?</li></ul>
+    <p>For developers, the knowledge graph is the meaning-rich information product. It includes governed entities, typed relationships, shared definitions, provenance, effective dates, and business rules.</p>
+
+    <h2>The route engine: Microsoft Fabric Graph</h2>
+    <p>An official map becomes more useful when a route engine can navigate it. The engine can follow several streets, evaluate different paths, and identify patterns across the network.</p>
+    <p>That is where Microsoft Fabric Graph fits.</p>
+    <figure>
+      <img
+        style="width: 100%; max-width: 960px; height: auto"
+        src="https://raw.githubusercontent.com/JonEricEubanks/public-assets/main/images/fabric-graph-route-engine.svg"
+        alt="A magenta traveler crosses a large civic atlas between municipal landmarks. A labeled execution bracket and blue OneLake source rail distinguish engine and data foundation."
+        loading="lazy"
+      />
+      <figcaption>The connected journey: the magenta traveler follows modeled connections across the atlas. Fabric Graph executes the traversal; OneLake supplies source data. No moving light creates a new fact.</figcaption>
+    </figure>
+    <p>Fabric Graph maps structured OneLake data into nodes, edges, labels, keys, and properties. It then creates a graph optimized for traversal and pattern matching.</p>
+    <p>Instead of asking only about one record, an analyst can ask about the path connecting several records:</p>
+    <pre><code>Complaint
+  → located at Parcel
+  → near Water Main
+  → associated with Work Order
+  → assigned to Contractor
+  → followed by Inspection
+  → governed by Department</code></pre>
+    <p>This is a conceptual path. In an implementation, define the direction, source, and validation status of every edge. A spatial association such as <code>near</code> is not the same as an authoritative incident-to-asset relationship.</p>
+    <p>Fabric Graph becomes valuable when the question involves several hops:</p>
+    <ul><li>Which water mains are connected to repeated complaints, recent repairs, and failed contractor inspections?</li><li>Which vendors share addresses, officers, payments, or contracts?</li><li>Which facilities depend on an asset that is scheduled for replacement?</li><li>Which identities, devices, applications, and services are within the potential impact path of a security incident?</li></ul>
+    <p>For developers, Fabric Graph is a labeled property graph capability integrated with Microsoft Fabric and OneLake. It supports graph traversal and pattern matching over connected data without turning the graph into the transactional system of record.</p>
+
+    <h2>A knowledge graph and Fabric Graph are not the same thing</h2>
+    <p>This is where the terminology often becomes confusing.</p>
+    <blockquote><strong>A knowledge graph is defined by the meaning carried in the graph. Fabric Graph is an execution capability for modeling and traversing graph-shaped data.</strong></blockquote>
+    <figure>
+      <img
+        style="width: 100%; max-width: 960px; height: auto"
+        src="https://raw.githubusercontent.com/JonEricEubanks/public-assets/main/images/knowledge-versus-execution.svg"
+        alt="A sealed municipal charter defines meaning while a moving brass compass and a traveling light on a miniature city atlas represent route execution."
+        loading="lazy"
+      />
+      <figcaption>The charter is not the compass. One defines what a connection means; the other navigates it. Neither a technology name nor a moving route establishes governance on its own.</figcaption>
+    </figure>
+    <p>A knowledge graph focuses on meaning:</p>
+    <ul><li>What is a resident?</li><li>What is a service location?</li><li>What does “owned by” mean?</li><li>Which system asserted the relationship?</li><li>When was the relationship effective?</li><li>Which policy governs its use?</li></ul>
+    <p>Fabric Graph focuses on execution:</p>
+    <ul><li>Which paths exist?</li><li>How are these entities connected?</li><li>Which patterns repeat across the network?</li><li>What is reachable from this starting point?</li><li>Which dependencies sit downstream?</li></ul>
+    <p>A Fabric graph can implement or execute part of a knowledge graph, but a collection of nodes and edges does not automatically become a governed knowledge graph. The meaning, definitions, provenance, and ownership still need to be designed.</p>
+
+    <h2>One water-main incident, four different questions</h2>
+    <p>Consider a resident reporting water bubbling through the pavement. Each part of the municipal information city answers a different question.</p>
+    <figure>
+      <img
+        style="width: 100%; max-width: 960px; height: auto"
+        src="https://raw.githubusercontent.com/JonEricEubanks/public-assets/main/images/water-main-four-views.svg"
+        alt="A house, bubbling street puddle, public-works truck, and water tower sit above a flowing water-main cutaway. A complaint sheet, register, compass, and seal frame the investigation."
+        loading="lazy"
+      />
+      <figcaption>One leak, four questions. The street scene keeps the architecture grounded in a municipal service problem; the underground water flow is physical context, not a database pipeline.</figcaption>
+    </figure>
+    <p><strong>The records office asks:</strong> Which official asset, complaint, inspection, or work-order records match this identifier or location?</p>
+    <p><strong>The similarity radar asks:</strong> Which previous resident reports, technician notes, photographs, or documents resemble this incident?</p>
+    <p><strong>The official map and legend ask:</strong> What entities are involved, what do those entities mean, and which relationships are considered authoritative?</p>
+    <p><strong>The route engine asks:</strong> What multistep path connects the complaint, parcel, asset, repair history, contractor, inspection result, responsible department, and governing policy?</p>
+    <h3>The developer contract: a match is not yet an edge</h3>
+    <p>Keep the retrieval candidate separate from the relationship assertion. A useful demo shows a similar report remaining a candidate until a governed process resolves its entity identifiers and checks the evidence.</p>
+    <pre><code>Similarity candidate:
+  queryReportId: CR-017
+  candidateReportId: CR-009
+  retrievalMethod: vector
+  relationshipStatus: unverified
+
+Validated relationship:
+  from: CR-017
+  predicate: concerns
+  to: WM-481
+  sourceRecordId: WO-204
+  validationStatus: verified
+  validatedByRole: PublicWorksReviewer
+  effectiveFrom: 2026-10-02
+
+Illustrative application contract, not Fabric Graph API syntax.</code></pre>
+    <p>The second record is justified by reviewed source evidence, not by the similarity score. Your application's actual validation workflow, identity model, and audit trail must supply that evidence.</p>
+
+    <h2>The visual language matters</h2>
+    <p>When diagrams mix similarity and relationships together, they reinforce the same confusion the architecture is supposed to solve. The symbols should make the difference visible.</p>
+    <figure>
+      <img
+        style="width: 100%; max-width: 960px; height: auto"
+        src="https://raw.githubusercontent.com/JonEricEubanks/public-assets/main/images/municipal-data-symbols.svg"
+        alt="A leather register, rotating radar, sealed charter, and moving compass form a physical symbol legend above solid, dashed, dotted, and wavy line samples."
+        loading="lazy"
+      />
+      <figcaption>The objects are the legend. Their silhouettes identify the responsibility; line styles identify the status of a connection. Color and movement never carry meaning alone.</figcaption>
+    </figure>
+    <ul>
+      <li><strong>The navy leather register and archive cabinet</strong> represent authoritative relational records: the city's memory.</li>
+      <li><strong>The purple radar, floating reports, and waves</strong> represent semantic similarity: the city's listening signal.</li>
+      <li><strong>The parchment atlas and green labeled connections</strong> represent entities and explicit relationships: the city's shared legend.</li>
+      <li><strong>Gold seals and shields</strong> represent definitions, rules, provenance, and governance.</li>
+      <li><strong>The brass compass, magenta traveler, and labeled execution bracket</strong> represent Fabric Graph execution: the connected journey.</li>
+      <li><strong>A blue source-data rail</strong> represents OneLake source data. Blue water in the incident cutaway is a physical water main, not a OneLake diagram.</li>
+    </ul>
+    <p>The line style should also communicate certainty:</p>
+    <pre><code>━━━━ reported by ━━━━▶   Authoritative relationship
+- - - may concern - - -▶   Inferred relationship
+···· possible match ····▶  Proposed or unverified relationship
+≈≈≈≈ semantic similarity ≈≈≈≈  Similarity, not a factual relationship</code></pre>
+    <p>This distinction is critical:</p>
+    <pre><code>Parcel ━━━ contains ━━━▶ Building
+Complaint ≈≈≈ similar to ≈≈≈ Complaint</code></pre>
+    <p>The first is an asserted relationship. The second is a similarity result. Similarity should not become an authoritative graph edge unless a governed process validates it.</p>
+
+    <h2>Do not choose a winner</h2>
+    <p>The wrong architectural question is, “Should we use SQL, a vector database, a knowledge graph, or Fabric Graph?”</p>
+    <p>The better question is, “Which responsibility does each layer need to perform?”</p>
+    <figure>
+      <img
+        style="width: 100%; max-width: 960px; height: auto"
+        src="https://raw.githubusercontent.com/JonEricEubanks/public-assets/main/images/municipal-information-layers.svg"
+        alt="City hall and a water tower frame an evidence desk where the asset register, radar, charter, and traced city atlas work together without a stack of boxes."
+        loading="lazy"
+      />
+      <figcaption>Compose the city, not a winner. The recurring instruments share one scene because their responsibilities complement each other; they are not a required stack or a linear pipeline.</figcaption>
+    </figure>
+    <ul>
+      <li>Use <strong>relational storage</strong> for transactions, integrity, exact filtering, and authoritative records.</li>
+      <li>Use <strong>vector search</strong> for semantic retrieval across documents, correspondence, images, and other unstructured content.</li>
+      <li>Use a <strong>knowledge graph</strong> for governed entities, definitions, provenance, typed relationships, and shared meaning.</li>
+      <li>Use <strong>Microsoft Fabric Graph</strong> when the workload depends on deep traversal, path finding, dependencies, network patterns, or repeated many-to-many relationships across OneLake data.</li>
+    </ul>
+    <p>Use them together when an AI assistant or agent must retrieve relevant documents, resolve governed entities, and follow authoritative relationships in the same interaction.</p>
+
+    <h2>What this means for local government</h2>
+    <p>Local government already manages data this way conceptually. Clerks preserve official records. Departments classify assets and cases. GIS teams maintain maps and locations. Policies define responsibilities. Analysts trace connections across departments, contractors, properties, programs, and funding sources.</p>
+    <p>Modern AI architecture brings those responsibilities into a more deliberate technical model.</p>
+    <p>It also introduces important boundaries. A similarity score is not an official fact. A generated relationship needs validation. Every graph edge needs a source. Sensitive resident information still requires role-based access, retention controls, auditability, and an identified business owner.</p>
+    <p>The goal is not to turn every municipal system into a graph or generate embeddings for every column. The goal is to choose the smallest combination of capabilities that answers the actual question while preserving the integrity of the public record.</p>
+    <blockquote><strong>The records office preserves the truth. The radar finds what looks related. The map explains what the relationships mean. The route engine follows those relationships across the city.</strong></blockquote>
+    <p>Once those roles are separated, the difference between relational databases, vector search, knowledge graphs, and Microsoft Fabric Graph becomes much easier to understand.</p>
+    <figure>
+      <img
+        style="width: 100%; max-width: 960px; height: auto"
+        src="https://raw.githubusercontent.com/JonEricEubanks/public-assets/main/images/municipal-information-city-footer.svg"
+        alt="A route light crosses the familiar city-hall skyline toward a municipal seal: preserve the record, understand the evidence, and keep people accountable."
+        loading="lazy"
+      />
+    </figure>
+    <p>Illustrations: Civic Evidence Lab. Original conceptual artwork; no product interface or official Microsoft endorsement is implied.</p>
