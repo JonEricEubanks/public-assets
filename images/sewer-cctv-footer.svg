@@ -91,7 +91,7 @@
   <g transform="translate(855 160)"><g class="sw" style="animation-delay:-1.8s"><line x1="0" y1="0" x2="0" y2="20" stroke="#2f6aa6" stroke-width="1.4"/><rect x="-95" y="20" width="190" height="70" rx="8" fill="#0a1d38" stroke="#38b6ff" stroke-width="1.5"/><circle cy="32" r="5" fill="#030b18" stroke="#1d4b7a"/><text y="62" text-anchor="middle" font-size="13" font-weight="700" letter-spacing="1" class="mono" fill="#cfeeff">KEYFRAME THUMBS</text><text y="79" text-anchor="middle" font-size="10.5" class="muted">evidence beside each finding</text></g></g>
   <circle cx="1060" cy="160" r="3" fill="#38b6ff"/>
   <g transform="translate(1060 160)"><g class="sw" style="animation-delay:-2.7s"><line x1="0" y1="0" x2="0" y2="20" stroke="#2f6aa6" stroke-width="1.4"/><rect x="-95" y="20" width="190" height="70" rx="8" fill="#0a1d38" stroke="#38b6ff" stroke-width="1.5"/><circle cy="32" r="5" fill="#030b18" stroke="#1d4b7a"/><text y="62" text-anchor="middle" font-size="13" font-weight="700" letter-spacing="1" class="mono" fill="#cfeeff">MI + DELEGATION SAS</text><text y="79" text-anchor="middle" font-size="10.5" class="muted">no keys anywhere</text></g></g>
-  <text x="340" y="282" font-size="13" class="dim">Azure AI Content Understanding · Azure Functions · Power Automate · Power Apps · SharePoint</text>
+  <text x="340" y="282" font-size="13" class="dim">Azure Content Understanding · Azure Functions · Power Automate · Power Apps · SharePoint</text>
 
   <rect width="1200" height="300" fill="url(#scan)" opacity=".2"/>
   <g class="corner"><path d="M14 36 V14 H36 M1164 14 H1186 V36 M1186 264 V286 H1164 M36 286 H14 V264" fill="none" stroke="#38b6ff" stroke-width="2"/></g>
