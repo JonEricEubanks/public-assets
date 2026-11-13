@@ -1,0 +1,388 @@
+<figure>
+  <img
+    style="width: 100%; max-width: 960px; height: auto"
+    src="https://raw.githubusercontent.com/JonEricEubanks/public-assets/main/images/municipal-foundry-daylight-hero.png"
+    alt="Better service, clear ownership: a two-level municipal service counter. A resident's request card and service bell sit on the frosted-blue public ledge. On the staff surface behind it, guidance, a park photo and a note sit beside a partly written response that has not been handed over."
+    loading="eager"
+  />
+  <figcaption>
+    AI helps staff gather what they need behind the counter. The response
+    reaches the resident only when the municipality is ready to stand behind it.
+  </figcaption>
+</figure>
+
+<p>
+  <strong>
+    Local government does not need another AI product name. It needs a
+    supportable way to build secure, governed, maintainable AI services.
+  </strong>
+</p>
+
+<h2>What Microsoft Foundry is - and why municipalities should care</h2>
+<p>
+  Microsoft Foundry is Microsoft’s Azure platform for building and operating
+  custom AI applications and agents. It brings models, agents, organizational
+  knowledge, specialized AI services, evaluation, monitoring, and governance
+  capabilities into a more cohesive development and operating model.
+</p>
+<p>
+  For municipalities, the value is not the product diagram. It is the ability
+  to assemble these capabilities without treating every proof of concept as a
+  separate, one-off experiment.
+</p>
+<blockquote>
+  <p>
+    <strong>The practical definition</strong><br />
+    Foundry supplies managed AI capabilities and operating surfaces. Your team
+    still owns the application experience, business rules, authoritative data,
+    security design, records obligations, human approvals, accessibility, and
+    cost controls.
+  </p>
+</blockquote>
+
+<h2>First: what happened to Azure AI Foundry?</h2>
+<p>
+  The naming has genuinely been confusing. At Microsoft Ignite in November
+  2024, Microsoft introduced Azure AI Foundry, with the portal replacing what
+  had previously been called Azure AI Studio. Current Microsoft documentation
+  reflects the progression:
+</p>
+<p><strong>Azure AI Studio → Azure AI Foundry → Microsoft Foundry</strong></p>
+
+<figure>
+  <img
+    style="width: 100%; max-width: 960px; height: auto"
+    src="https://raw.githubusercontent.com/JonEricEubanks/public-assets/main/images/municipal-foundry-rename-path.png"
+    alt="Same seat, new nameplate: two removed frosted-blue name inserts lie beside a solid desk nameplate holder that now holds a third, identical insert. The names are Azure AI Studio, Azure AI Foundry and Microsoft Foundry."
+    loading="lazy"
+  />
+  <figcaption>
+    The insert changed twice; the holder never moved. The holder stands for
+    your team's responsibility, not the platform's architecture, which did
+    change. Check the project type before expanding an earlier experiment.
+  </figcaption>
+</figure>
+
+<p>
+  By Ignite 2025, Microsoft was using the Microsoft Foundry name across models,
+  agents, knowledge, tooling, and governance announcements. More importantly,
+  the newer architecture centers on Foundry resources and projects. Older
+  hub-based projects still exist through the classic experience, so teams that
+  experimented earlier should verify which project architecture they are using
+  before expanding it.
+</p>
+
+<h2>The platform in one picture</h2>
+<p>
+  The cleanest way to understand the platform is to separate what the
+  municipality builds from what Foundry manages and what remains a separately
+  governed Azure resource.
+</p>
+
+<figure>
+  <img
+    style="width: 100%; max-width: 960px; height: auto"
+    src="https://raw.githubusercontent.com/JonEricEubanks/public-assets/main/images/municipal-foundry-service-pavilion.png"
+    alt="One hub, many front doors: a frosted-blue hub connects along one rail to a phone, a tablet, a laptop and a desktop monitor. Each device has its own lock."
+    loading="lazy"
+  />
+  <figcaption>
+    Figure 1. Your team builds the experiences: a resident app on a phone, a
+    field-inspection app on a tablet, a staff workspace on a laptop, a
+    back-office tool on a desktop. Foundry is the shared hub behind them. Each
+    experience keeps its own lock: sign-in, permissions and support. Search,
+    storage, Key Vault and systems of record remain separately governed Azure
+    resources with their own controls and meters.
+  </figcaption>
+</figure>
+
+<h2>What is actually inside Microsoft Foundry?</h2>
+
+<h3>1. Foundry Models</h3>
+<p>
+  Foundry Models is the discovery, evaluation, and deployment layer for models
+  from Microsoft, Azure OpenAI, Anthropic, Meta, Mistral, Cohere, Hugging Face,
+  and other providers. Microsoft documentation and product pages currently
+  describe a catalog exceeding 10,000 models.
+</p>
+<p>
+  That number needs context. Models differ by provider terms, region,
+  deployment type, lifecycle, pricing, safety behavior, and government-cloud
+  availability. A catalog entry does not guarantee that a model is available in
+  every region or project type.
+</p>
+<blockquote>
+  <p>
+    <strong>The better selection question</strong><br />
+    Do not ask, “How many models can we access?” Ask, “Which model meets this
+    workload’s security, cost, performance, support, and governance
+    requirements?”
+  </p>
+</blockquote>
+
+<h3>2. Foundry Agent Service</h3>
+<p>
+  Foundry Agent Service is the managed environment for building and operating
+  agents. Prompt agents are largely configured through models, instructions,
+  and tools. Hosted agents let developers bring custom code and orchestration,
+  including supported agent frameworks.
+</p>
+<p>
+  Foundry does not eliminate application development. Your team still owns the
+  user experience, APIs, deterministic business rules, integrations, exception
+  handling, human approvals, source control, and deployment pipelines.
+</p>
+
+<h3>3. Foundry IQ and organizational knowledge</h3>
+<p>
+  Foundry IQ should not be described as Azure AI Search renamed. It is a
+  managed knowledge layer built on Azure AI Search that helps agents retrieve
+  and reason over organizational information. Azure AI Search still exists
+  independently and remains appropriate for custom RAG architectures.
+</p>
+<p>
+  For government, the stronger pattern is not to let a model “know everything.”
+  Give it controlled access to authoritative sources, enforce permissions,
+  return citations, and maintain clear content ownership and refresh processes.
+</p>
+
+<h3>4. Foundry Tools</h3>
+<p>
+  Foundry Tools is the current umbrella for capabilities many Azure developers
+  previously knew as Azure AI Services or Cognitive Services. This includes
+  Document Intelligence, Content Understanding, Vision, Speech, Language,
+  Translator, Content Safety, and Azure AI Search. These remain separately
+  metered capabilities with their own APIs, regions, limitations, and pricing.
+</p>
+
+<h2>Where the developer boundary sits</h2>
+<p>
+  A useful architecture boundary is simple: developers build the application
+  and domain logic; Foundry provides managed AI infrastructure around it.
+</p>
+<table>
+  <thead>
+    <tr>
+      <th>The municipality and development team own</th>
+      <th>Foundry can manage</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>User experience and accessibility</td>
+      <td>Model deployments and inference</td>
+    </tr>
+    <tr>
+      <td>APIs and integration contracts</td>
+      <td>Prompt-agent or hosted-agent runtime</td>
+    </tr>
+    <tr>
+      <td>Business rules and approvals</td>
+      <td>Agent identities, endpoints, and tools</td>
+    </tr>
+    <tr>
+      <td>System-of-record transactions</td>
+      <td>Knowledge retrieval and grounding</td>
+    </tr>
+    <tr>
+      <td>Source control, ALM, and support model</td>
+      <td>Tracing, evaluation, and guardrails</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>A safe municipal AI pattern</h2>
+<p>
+  The safest production pattern keeps approved source data, AI assistance,
+  staff validation, and the authoritative transaction visibly separate.
+</p>
+
+<figure>
+  <img
+    style="width: 100%; max-width: 960px; height: auto"
+    src="https://raw.githubusercontent.com/JonEricEubanks/public-assets/main/images/municipal-foundry-review-bridge.png"
+    alt="Prepared is not approved: a draft notice on a proofing lightbox has one line struck through and flagged for correction. A separate public notice display case beside it is still empty."
+    loading="lazy"
+  />
+  <figcaption>
+    Figure 2. AI can produce the proof; staff mark it up. Corrections,
+    clarifications and escalations happen on the proof, and only an approved
+    outcome reaches the display: the official record or the public.
+  </figcaption>
+</figure>
+
+<h2>What could a municipality actually do with it?</h2>
+
+<h3>Document and records intelligence</h3>
+<p>
+  Document Intelligence or Content Understanding can extract structured
+  information from permit packets, inspection reports, invoices, meeting
+  materials, archived forms, and supporting attachments. The output should
+  enter a review queue rather than silently becoming an official record.
+</p>
+
+<h3>Grounded internal knowledge</h3>
+<p>
+  A municipality can ground an internal assistant in approved policies,
+  procedures, ordinances, engineering standards, or program guidance. Citations
+  and permission-aware retrieval improve verifiability, but the municipality
+  still owns source freshness, access cleanup, records classification, and
+  content stewardship.
+</p>
+
+<h3>Inspections and infrastructure</h3>
+<p>
+  Vision, Content Understanding, and language models can assist with sewer CCTV
+  review, asset-image classification, inspection-note summarization, and
+  suspected-defect triage. AI can focus an inspector’s attention; it should not
+  independently become the official engineering, compliance, or public-safety
+  determination.
+</p>
+
+<h3>Permitting and resident services</h3>
+<p>
+  A resident-facing service could explain requirements, identify potentially
+  missing documents, translate approved guidance, or retrieve case status
+  through a controlled API. Approvals, denials, fees, enforcement actions, and
+  official case changes should remain behind deterministic rules and
+  accountable review.
+</p>
+
+<h3>Bounded internal agents</h3>
+<p>
+  A prompt agent may be enough for a staff assistant that retrieves approved
+  guidance and calls a small set of controlled tools. Use a hosted agent when
+  custom code, specialized orchestration, or framework-specific behavior is
+  genuinely required. Do not start with a multi-agent architecture merely
+  because the platform supports one.
+</p>
+<blockquote>
+  <p>
+    <strong>Public-sector design rule</strong><br />
+    Use AI to reduce reading, searching, extracting, summarizing, and triage
+    effort. Keep consequential decisions, authoritative transactions, and
+    exceptions under accountable human control.
+  </p>
+</blockquote>
+
+<h2>What to check before starting</h2>
+<ol>
+  <li>
+    <strong>Use case and authority.</strong> Define what the system may
+    retrieve, recommend, draft, or execute - and what always requires staff
+    confirmation.
+  </li>
+  <li>
+    <strong>Identity and least privilege.</strong> Prefer Microsoft Entra ID,
+    managed identities, and narrowly scoped Azure RBAC. Treat every tool call
+    and connected data source as a separate permission decision.
+  </li>
+  <li>
+    <strong>Data and network boundaries.</strong> Confirm processing location,
+    model deployment type, private connectivity, outbound paths, and the
+    independent controls on Search, Storage, Key Vault, databases, and
+    municipal systems.
+  </li>
+  <li>
+    <strong>Tracing, audit, and records.</strong> Decide what prompts,
+    responses, citations, tool calls, approvals, and generated artifacts must
+    be logged or retained. Traces may contain resident, employee, or case data,
+    so minimize access and set deliberate retention.
+  </li>
+  <li>
+    <strong>Quality and responsible AI.</strong> Test groundedness, missing
+    information, prompt injection, unsafe tool use, accessibility, inconsistent
+    treatment, and low-confidence behavior using representative municipal
+    scenarios.
+  </li>
+  <li>
+    <strong>ALM and cost controls.</strong> Separate development, test, and
+    production. Version prompts, agent definitions, tools, evaluation datasets,
+    policies, and infrastructure. Budget for separate meters across models,
+    Search, tools, hosting, storage, monitoring, and networking.
+  </li>
+</ol>
+
+<h2>Where I would start</h2>
+<p>Do not begin with, “Where can we deploy an AI agent?” Begin with:</p>
+<blockquote>
+  <p>
+    <strong>A better starting question</strong><br />
+    Where are employees spending significant time reading, searching,
+    extracting, summarizing, or validating information?
+  </p>
+</blockquote>
+<p>
+  Choose one bounded process. Give the AI only the information and tools it
+  needs. Keep the existing system of record authoritative. Measure accuracy,
+  staff time saved, failure cases, and cost under realistic traffic. Expand
+  only when the evidence supports it.
+</p>
+
+<h2>The practical takeaway</h2>
+<p>
+  Microsoft Foundry matters to local government because it provides a more
+  coherent Azure foundation for custom AI services - not because the name
+  changed.
+</p>
+<p>
+  It brings models, managed and code-based agents, knowledge retrieval,
+  specialized AI services, evaluations, observability, and governance into a
+  more unified operating model. But the municipality still owns the hard parts:
+  lawful purpose, identity, authoritative data, accessibility, records
+  retention, consequential decisions, cost, and accountability.
+</p>
+<blockquote>
+  <p>
+    <strong>Start small. Govern deliberately. Scale with evidence.</strong
+    ><br />
+    Use the simplest capable component, keep systems of record authoritative,
+    and require human validation whenever an outcome affects a resident, public
+    asset, fee, eligibility decision, enforcement action, or public-safety
+    determination.
+  </p>
+</blockquote>
+
+<h2>Microsoft sources</h2>
+<ul>
+  <li>
+    <a href="https://learn.microsoft.com/azure/foundry/"
+      >Microsoft Foundry documentation</a
+    >
+  </li>
+  <li>
+    <a
+      href="https://learn.microsoft.com/azure/foundry/concepts/foundry-models-overview"
+      >Microsoft Foundry Models</a
+    >
+  </li>
+  <li>
+    <a href="https://learn.microsoft.com/azure/foundry/agents/overview"
+      >Microsoft Foundry Agent Service</a
+    >
+  </li>
+  <li>
+    <a href="https://learn.microsoft.com/azure/search/"
+      >Azure AI Search documentation</a
+    >
+  </li>
+  <li>
+    <a href="https://azure.microsoft.com/pricing/details/microsoft-foundry/"
+      >Microsoft Foundry pricing</a
+    >
+  </li>
+</ul>
+
+<figure>
+  <img
+    style="width: 100%; max-width: 960px; height: auto"
+    src="https://raw.githubusercontent.com/JonEricEubanks/public-assets/main/images/municipal-foundry-evidence-footer.png"
+    alt="Start with one plot, earn the next: a parks planning model with one planted plot, measured by three stakes, beside empty plots awaiting a decision."
+    loading="lazy"
+  />
+  <figcaption>
+    Plant one plot. Measure accuracy, staff time, failures and cost. The empty
+    plots wait for evidence, not enthusiasm. The stakes are illustrative, not
+    performance data.
+  </figcaption>
+</figure>
